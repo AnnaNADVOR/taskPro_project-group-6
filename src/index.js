@@ -8,7 +8,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter basename="/taskPro_project-group-6">
       <App />
-    </BrowserRouter>
-    
+    </BrowserRouter>    
   </React.StrictMode>
 );
