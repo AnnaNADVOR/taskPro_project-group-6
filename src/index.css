@@ -1,5 +1,5 @@
 @import-normalize; /* bring in normalize.css styles */
-@import './assets/theme/colorsVar.css';
+@import './assets/theme/colorVars.css';
 
 @font-face {
   font-family: 'Poppins';
