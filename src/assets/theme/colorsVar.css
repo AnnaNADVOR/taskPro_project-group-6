@@ -1,0 +1,30 @@
+:root {
+    /* priority label*/
+    --priority-low-color: #8fa1d0; 
+    --priority-medium-color: #e09cb5;
+    --priority-high-color: #bedbb0;
+    --priority-without-color: rgba(22, 22, 22, 0.3);
+
+    /* welcome page*/ 
+    --primary-black-text-color: #161616;
+    --light-green-color: #bedbb0; 
+    --bacground-welcome-form-color: #151515;
+    --white-color: #ffffff;
+    --secondary-text-color: rgba(22, 22, 22, 0.3);
+
+
+    /* black theme */
+    html[data-theme='dark'] {
+        --pimary-background-color: #1f1f1f;
+    }
+
+    /* light theme */
+    html[data-theme='light'] {
+        --pimary-background-color: #f6f6f7;
+    }
+
+    /* violet theme */
+    html[data-theme='violet'] {
+        --pimary-background-color: #ecedfd;
+    }
+}
