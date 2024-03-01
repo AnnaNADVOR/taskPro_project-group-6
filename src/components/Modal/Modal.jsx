@@ -28,7 +28,7 @@ function Modal({ closeModal, children}) {
             <div className={css.modal}>
                 <button className={css.closeButton} onClick={closeModal}>
                     <svg className={css.closeButtonSvg}>
-                        <use href={`${sprite}#icon-close-18`} />
+                        <use href={`${sprite}#close-18`} />
                     </svg>
                 </button>               
                 {children}      
