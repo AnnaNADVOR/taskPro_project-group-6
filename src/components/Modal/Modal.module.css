@@ -1,0 +1,56 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(137, 137, 137, 0.2);
+    z-index: 1200;
+}
+
+.modal {
+    position: absolute;
+    width: calc(90vw);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    background-color: #151515;
+    border: 1px solid rgba(190, 219, 176, 0.5);
+    border-radius: 8px;
+    padding: 24px;
+
+    @media screen and (min-width: 375px) {
+        width: 350px;
+    }
+}
+
+.closeButton {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 14px;
+    right: 14px;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.closeButton:hover>svg,
+.closeButton:focus>svg {
+    stroke: #bedbb0;
+    transform: scale(0.7);
+}
+
+.closeButtonSvg {
+    fill: currentColor;
+    stroke: white;
+    width: 18px;
+    height: 18px;
+    transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
