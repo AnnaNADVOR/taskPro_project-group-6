@@ -1,0 +1,17 @@
+.labelWrapper {
+    display: inline-flex;
+    gap: 8px;
+}
+
+.label {
+    appearance: none;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+
+.label:checked {
+    outline: 1.8px solid #151515;
+    outline-offset: -3px;
+}
