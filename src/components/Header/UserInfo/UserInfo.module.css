@@ -1,0 +1,23 @@
+.user_info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-left: 14px;
+  justify-content: center;
+}
+.user_name {
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-right: 8px;
+}
+.user_icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  object-fit: cover;
+  fill: #1f1f1f;
+}
