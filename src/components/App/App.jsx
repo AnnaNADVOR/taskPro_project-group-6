@@ -1,7 +1,5 @@
-export const App = () => {
-  return (
-    <div>
+const App = () => {
       
-    </div>
-  );
 };
+
+export default App; 
