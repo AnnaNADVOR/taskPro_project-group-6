@@ -1,0 +1,19 @@
+.btn_burger {
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  border: none;
+  outline: none;
+  background-color: transparent;
+
+  cursor: pointer;
+}
+.burger_icon {
+  width: 32px;
+  height: 32px;
+  stroke: #fff;
+}
+
+@media screen and (min-width: 1280px) {
+  .btn_burger {
+    display: none;
+  }
+}
