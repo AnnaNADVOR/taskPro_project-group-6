@@ -1,14 +1,317 @@
 :root {
     /* priority label*/
-    --priority-low-color: #8fa1d0; 
+    --priority-low-color: #8fa1d0;
     --priority-medium-color: #e09cb5;
     --priority-high-color: #bedbb0;
     --priority-without-color: rgba(22, 22, 22, 0.3);
 
-    /* welcome page*/ 
+    /* welcome page*/
     --primary-black-text-color: #161616;
-    --light-green-color: #bedbb0; 
+    --light-green-color: #bedbb0;
     --bacground-welcome-form-color: #151515;
     --white-color: #ffffff;
     --secondary-text-color: rgba(22, 22, 22, 0.3);
+}
+
+[data-theme='light'] {
+    /*main-page*/
+    --primary-bg-color: #fdfdfd;
+    --secondary-bg-color: #f6f6f7;
+    --header-bg-color: #fcfcfc;
+    --sidebar-help-bg-color: #f6f6f7;
+    --sidebar-help-backdrop-bg-color: #ffffff;
+    --primary-button-color: #ffffff;
+    --secondary-button-color: #9dc888;
+    --plus-button-color: #bedbb0;
+    --plus-button-hover-color: #9dc888;
+    --logout-button-color: #bedbb0;
+    --logout-hover-button-color: #9dc888;
+    --scrollbar-color: #bedbb0;
+    --add-column-button-color: #ffffff;
+    --primary-card-bg-color: #fdfdfd;
+    --primary-bg-sidebar-color: #fdfdfd;
+    --secondary-text-sidebar-color: #161616;
+    --border-line-sidebar-color: #d6d2d2;
+    --board-item-sidebar-bg-color: #f6f6f7;
+    --board-item-sidebar-color: #b7b7b7;
+    --dashboard-default-text-color: rgba(22, 22, 22, 0.7);
+    /*modals and dropdowns*/
+    --modal-backdrop-bg-color: rgba(137, 137, 137, 0.2);
+    --modal-window-color: #fdfdfd;
+    --modal-window-shadow: rgba(22, 22, 22, 0.05);
+    --modal-board-text: #161616;
+    --primary-modal-card-color: #bedbb0;
+    --datepicker-bg-color: #ffffff;
+    --datepicker-bg-hover-color: #bedbb0;
+    --datepicker-current-month: #161616;
+    --datepicker-current-day: #161616;
+    --datepicker-disabled-day: rgba(22, 22, 22, 0.2);
+    --datepicker-hover-disabled-day: rgba(22, 22, 22, 0.2);
+    --textarea-border-color: rgba(190, 219, 176, 0.4);
+    --datepicker-dayname-color: rgba(22, 22, 22, 0.5);
+    --modal-filters-text: #161616;
+    --modal-help-text: #161616;
+    --modal-title-color: #161616;
+    --modal-close-icon-color: #161616;
+    --modal-filter-form-line: rgba(22, 22, 22, 0.2);
+    --theme-switcher-dropdown-border: #bedbb0;
+    --theme-switcher-dropdown-hover: #8ee560;
+    --theme-switcher-dropdown-text: #161616;
+    /*font and icons*/
+    --primary-heading-color: #161616;
+    --secondary-heading-color: #161616;
+    --primary-text-color: #b7b7b7;
+    --secondary-deadline-color: #999999;
+    --secondary-line-color: #999999;
+    --first-priority-color: #8fa1d0;
+    --second-priority-color: #e09cb5;
+    --third-priority-color: #999999;
+    --first-icon-stroke-color: #161616;
+    --second-icon-stroke-color: #121212;
+    --sidebar-icon-fill-color: transparent;
+    --sidebar-icon-stroke-color: #ffffff80;
+    --sidebar-icon-edit-stroke-color: #b7b7b7;
+    --sidebar-icon-active-stroke-color: #161616;
+    /*modal elements*/
+    --modal-button-text-color: #161616;
+    --modal-input-border-color: rgba(190, 219, 176, 0.4);
+    --modal-input-border-hover-color: #bedbb0;
+    --input-need-help-background-focus: #fff;
+    --modal-input-text-color: #161616;
+    --modal-input-placeholder-color: #161616;
+    --modal-plus-icon-dark-big: #121212;
+    --modal-plus-icon-dark-small: #121212;
+    --modal-plus-icon-color: #ffffff;
+    --modal-add-column-button: #ffffff;
+    --modal-add-column-button-border: #121212;
+    --modal-black-plus-button: #161616;
+    --modal-progress-text-color: rgba(22, 22, 22, 1);
+    --modal-progress-icon-stroke-color: rgba(22, 22, 22, 1);
+    --modal-progress-text-hover-color: #bedbb0;
+    --modal-progress-icon--hover-stroke-color: #bedbb0;
+    --modal-progress-background-color: #fcfcfc;
+    --modal-progress-boxshadow-color: rgba(17, 17, 17, 0.1);
+    /*radio elements*/
+    --radio-label-checked-bg-color: #ffffff;
+    --radio-label-grey-color: rgba(22, 22, 22, 0.3);
+    --radio-icons-color: rgba(22, 22, 22, 0.6);
+    --radio-icons-checked: #161616;
+    --radio-button-text-color: rgba(22, 22, 22, 0.5);
+    /*user*/
+    --user-icon-fill-color: #f6f6f7;
+    --user-icon-stroke-color: rgba(246, 246, 247, 1);
+    --user-edit-icon-plus-fill-color: #bedbb0;
+    --user-edit-icon-plus-hover-color: #9dc888;
+    --avatar-border-color: #bedbb0;
+    /*columns*/
+    --column-bg-color: #fff;
+    --column-text-color: #161616;
+    --column-icon-edit-stroke-color: #b7b7b7;
+    --column-icon-plus-color: #161616;
+    --column-icon-plus-stroke-color: rgba(255, 255, 255, 1);
+    /*scroll*/
+    --scrollbar-bg-color: #b6b4b4;
+    --scrollbar-base-color: #dddbdb;
+}
+
+[data-theme='dark'] {
+    /*main-page*/
+    --primary-bg-color: #121212;
+    --secondary-bg-color: #1f1f1f;
+    --header-bg-color: #161616;
+    --sidebar-help-bg-color: #1f1f1f;
+    --sidebar-help-backdrop-bg-color: rgba(0, 0, 0, 0.7);
+    --primary-button-color: #bedbb0;
+    --secondary-button-color: #9dc888;
+    --plus-button-color: #bedbb0;
+    --plus-button-hover-color: #9dc888;
+    --logout-button-color: #bedbb0;
+    --logout-hover-button-color: #9dc888;
+    --scrollbar-color: #bedbb0;
+    --add-column-button-color: #121212;
+    --primary-card-bg-color: #121212;
+    --primary-bg-sidebar-color: #121212;
+    --secondary-text-sidebar-color: #ffffff;
+    --border-line-sidebar-color: #ffffff1a;
+    --board-item-sidebar-bg-color: #161616;
+    --board-item-sidebar-color: #ffffff;
+    --dashboard-default-text-color: rgba(255, 255, 255, 0.5);
+    /*modals and dropdowns*/
+    --modal-backdrop-bg-color: rgba(137, 137, 137, 0.2);
+    --modal-window-color: #161616;
+    --modal-window-shadow: rgba(22, 22, 22, 0.05);
+    --modal-board-text: #ffffff;
+    --primary-modal-card-color: #bedbb0;
+    --datepicker-bg-color: #1f1f1f;
+    --datepicker-bg-hover-color: #bedbb0;
+    --datepicker-current-month: #ffffff;
+    --datepicker-current-day: #ffffff;
+    --datepicker-disabled-day: rgba(255, 255, 255, 0.2);
+    --datepicker-hover-disabled-day: rgba(255, 255, 255, 0.2);
+    --textarea-border-color: rgba(190, 219, 176, 0.4);
+    --datepicker-dayname-color: rgba(255, 255, 255, 0.5);
+    --modal-filters-text: #ffffff;
+    --modal-help-text: #ffffff;
+    --modal-title-color: #ffffff;
+    --modal-close-icon-color: #ffffff;
+    --modal-filter-form-line: rgba(255, 255, 255, 0.1);
+    --theme-switcher-dropdown-border: #bedbb0;
+    --theme-switcher-dropdown-hover: #8ee560;
+    --theme-switcher-dropdown-text: rgba(255, 255, 255, 0.5);
+    /*font and icons*/
+    --primary-heading-color: #ffffff;
+    --secondary-heading-color: #ffffff;
+    --primary-text-color: #b7b7b7;
+    --secondary-deadline-color: #999999;
+    --secondary-line-color: #232323;
+    --first-priority-color: #8fa1d0;
+    --second-priority-color: #e09cb5;
+    --third-priority-color: #999999;
+    --first-icon-stroke-color: #ffffff;
+    --second-icon-stroke-color: #121212;
+    --sidebar-icon-fill-color: transparent;
+    --sidebar-icon-stroke-color: #ffffff80;
+    --sidebar-icon-edit-stroke-color: #ffffff80;
+    --sidebar-icon-active-stroke-color: #fff;
+    /*modal elements*/
+    --modal-button-text-color: #161616;
+    --modal-input-border-color: rgba(190, 219, 176, 0.4);
+    --modal-input-border-hover-color: #bedbb0;
+    --input-need-help-background-focus: #1f1f1f;
+    --modal-input-text-color: #ffffff;
+    --modal-input-placeholder-color: #ffffff;
+    --modal-plus-icon-dark-big: #121212;
+    --modal-plus-icon-dark-small: #121212;
+    --modal-plus-icon-color: #ffffff;
+    --modal-add-column-button: #ffffff;
+    --modal-add-column-button-border: #121212;
+    --modal-black-plus-button: #161616;
+    --modal-progress-text-color: rgba(255, 255, 255, 0.5);
+    --modal-progress-icon-stroke-color: rgba(255, 255, 255, 0.5);
+    --modal-progress-text-hover-color: #bedbb0;
+    --modal-progress-icon--hover-stroke-color: #bedbb0;
+    --modal-progress-background-color: #1f1f1f;
+    --modal-progress-boxshadow-color: rgba(17, 17, 17, 0.1);
+    /*radio elements*/
+    --radio-label-checked-bg-color: #151512;
+    --radio-label-grey-color: rgba(255, 255, 255, 0.3);
+    --radio-icons-color: rgba(255, 255, 255, 0.5);
+    --radio-icons-checked: #fff;
+    --radio-button-text-color: rgba(255, 255, 255, 0.5);
+    /*user*/
+    --user-icon-fill-color: #1f1f1f;
+    --user-icon-stroke-color: rgba(21, 21, 21, 1);
+    --user-edit-icon-plus-fill-color: #bedbb0;
+    --user-edit-icon-plus-hover-color: #9dc888;
+    --avatar-border-color: #bedbb0;
+    /*columns*/
+    --column-bg-color: #121212;
+    --column-text-color: #fff;
+    --column-icon-edit-stroke-color: #999999;
+    --column-icon-plus-color: #fff;
+    --column-icon-plus-stroke-color: rgba(18, 18, 18, 1);
+    /*scroll*/
+    --scrollbar-bg-color: #444;
+    --scrollbar-base-color: #222;
+}
+
+[data-theme='violet'] {
+    /*main-page*/
+    --primary-bg-color: #ecedfd;
+    --secondary-bg-color: #ecedfd;
+    --header-bg-color: #fff;
+    --sidebar-help-bg-color: rgba(236, 237, 253, 0.4);
+    --sidebar-help-backdrop-bg-color: #fff;
+    --primary-button-color: #5255bc;
+    --secondary-button-color: #7b7ede;
+    --plus-button-color: #7b7ede;
+    --plus-button-hover-color: #979cea;
+    --logout-button-color: #fff;
+    --logout-hover-button-color: #161616;
+    --scrollbar-color: #fff;
+    --primary-card-bg-color: #fdfdfd;
+    --primary-bg-sidebar-color: #5255bc;
+    --add-column-button-color: #ffffff;
+    --secondary-text-sidebar-color: #ffffff;
+    --border-line-sidebar-color: #ffffff1a;
+    --board-item-sidebar-bg-color: #979cea;
+    --board-item-sidebar-color: #ffffff;
+    --dashboard-default-text-color: rgba(22, 22, 22, 0.7);
+    /*modals and dropdowns*/
+    --modal-backdrop-bg-color: rgba(137, 137, 137, 0.2);
+    --modal-window-color: #fdfdfd;
+    --modal-window-shadow: rgba(22, 22, 22, 0.05);
+    --modal-board-text: #161616;
+    --primary-modal-card-color: #7b7ede;
+    --datepicker-bg-color: #fff;
+    --datepicker-bg-hover-color: #5255bc;
+    --datepicker-current-month: #161616;
+    --datepicker-current-day: #161616;
+    --datepicker-disabled-day: rgba(22, 22, 22, 0.2);
+    --datepicker-hover-disabled-day: rgba(22, 22, 22, 0.2);
+    --textarea-border-color: rgb(172, 192, 241);
+    --datepicker-dayname-color: rgba(22, 22, 22, 0.5);
+    --modal-filters-text: #161616;
+    --modal-help-text: #161616;
+    --modal-title-color: #161616;
+    --modal-close-icon-color: #161616;
+    --modal-filter-form-line: rgba(22, 22, 22, 0.2);
+    --theme-switcher-dropdown-border: #ecedfd;
+    --theme-switcher-dropdown-hover: #2e35fe;
+    --theme-switcher-dropdown-text: #161616;
+    /*font and icons*/
+    --primary-heading-color: #161616;
+    --secondary-heading-color: #ffffff;
+    --primary-text-color: #b7b7b7;
+    --secondary-deadline-color: #999999;
+    --secondary-line-color: #999999;
+    --first-priority-color: #8fa1d0;
+    --second-priority-color: #e09cb5;
+    --third-priority-color: #999999;
+    --first-icon-stroke-color: #161616;
+    --second-icon-stroke-color: #fff;
+    --sidebar-icon-fill-color: transparent;
+    --sidebar-icon-stroke-color: #ffffff80;
+    --sidebar-icon-edit-stroke-color: #ffffff80;
+    --sidebar-icon-active-stroke-color: #fff;
+    /*modal elements*/
+    --modal-button-text-color: #fff;
+    --modal-input-border-color: rgb(172, 192, 241);
+    --modal-input-border-hover-color: #5255bc;
+    --input-need-help-background-focus: #fff;
+    --modal-input-text-color: #161616;
+    --modal-input-placeholder-color: #161616;
+    --modal-plus-icon-dark-big: #fff;
+    --modal-plus-icon-dark-small: #fff;
+    --modal-plus-icon-color: #161616;
+    --modal-add-column-button: #121212;
+    --modal-add-column-button-border: #fff;
+    --modal-black-plus-button: #fff;
+    --modal-progress-text-color: rgba(22, 22, 22, 1);
+    --modal-progress-icon-stroke-color: rgba(22, 22, 22, 1);
+    --modal-progress-text-hover-color: rgba(82, 85, 188, 1);
+    --modal-progress-icon--hover-stroke-color: rgba(82, 85, 188, 1);
+    --modal-progress-background-color: #fcfcfc;
+    --modal-progress-boxshadow-color: rgba(17, 17, 17, 0.1);
+    /*radio elements*/
+    --radio-label-checked-bg-color: #fff;
+    --radio-label-grey-color: rgba(22, 22, 22, 0.3);
+    --radio-icons-color: rgba(22, 22, 22, 0.6);
+    --radio-icons-checked: #161616;
+    --radio-button-text-color: rgba(22, 22, 22, 0.5);
+    /*user*/
+    --user-icon-fill-color: #ecedfd;
+    --user-icon-stroke-color: rgba(236, 237, 253, 1);
+    --user-edit-icon-plus-fill-color: #ecedfd;
+    --user-edit-icon-plus-hover-color: #7b7ede;
+    --avatar-border-color: #7b7ede;
+    /*columns*/
+    --column-bg-color: #fff;
+    --column-text-color: #161616;
+    --column-icon-edit-stroke-color: #b7b7b7;
+    --column-icon-plus-color: #5255bc;
+    --column-icon-plus-stroke-color: rgba(255, 255, 255, 1);
+    /*scroll*/
+    --scrollbar-bg-color: #b8bcfd;
+    --scrollbar-base-color: #fff;
 }
