@@ -1,11 +1,11 @@
 import css from "../MainButton/MainButton.module.css";
 
-const MainButton = ({ click }) => {
+const SendButton = ({ click, text }) => {
     return (
         <button className={css.button} onClick={click} type="submit">            
-            Send
+            {text}
         </button>
     )
 }
 
-export default MainButton;
+export default SendButton;
