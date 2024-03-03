@@ -62,5 +62,15 @@
     width: 20px;
     height: 20px;
     stroke: var(--main-text-color);
-    fill: none;   
+    fill: none;
+}
+
+.helpModal {
+    width: 335px;
+}
+
+@media screen and (min-width: 768px) {
+    .helpModal {
+        width: 400px;
+    }
 }

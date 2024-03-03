@@ -4,16 +4,17 @@ import plant2x from 'assets/images/plant-2x-54x78.png';
 import sprite from 'assets/images/sprite.svg';
 import Modal from 'components/Modal/Modal';
 import css from './NeedHelp.module.css';
+import HelpForm from 'components/Forms/BoardForms/HelpForm/HelpForm';
 
 const NeedHelp = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpenModal = () => {
-    if (isOpen) {
-    } else {
-    }
+    setIsOpen(true);    
+  };
 
-    setIsOpen(!isOpen);
+  const handleCloseModal = () => {
+    setIsOpen(false);
   };
 
   const dpr = window.devicePixelRatio || 1;
@@ -43,7 +44,13 @@ const NeedHelp = () => {
         </span>
         Need help?
       </button>
-      {/* <Modal></Modal> */}
+
+      <Modal
+        open={isOpen}
+        closeModal={handleCloseModal}
+        className={css.helpModal}
+        children={<HelpForm closeModal={handleCloseModal} />}
+      />
     </div>
   );
 };

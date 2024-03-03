@@ -21,7 +21,7 @@ const SideBar = () => {
         <h2 className={css.sidebarBoardsHeading}>My boards</h2>
         <div className={css.createBoardBlock}>
           <h3 className={css.createBoardText}>Create a new board</h3>
-          {/* <SecondaryAddButton /> */}
+          <SecondaryAddButton />
         </div>
       </div>
       <div className={css.sidebarBoardsList}></div>

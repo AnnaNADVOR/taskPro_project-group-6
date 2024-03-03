@@ -1,0 +1,58 @@
+.helpForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.helpLabel {
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: -0.02em;
+    color: var(--main-text-color);
+    margin-bottom: 24px;
+}
+
+.helpEmailInput {
+    border: 1px solid var(--theme-wrapper-border);
+    border-radius: 8px;
+    width: 287px;
+    height: 49px;
+    margin-bottom: 14px;
+    padding: 14px 18px;
+    color: var(--theme-text-color);
+}
+
+.helpEmailInput::placeholder {
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    color: var(--theme-main-text-color);
+}
+
+@media screen and (min-width: 768px) {
+    .helpEmailInput {
+        width: 352px;
+    }
+}
+
+.helpCommentInput {
+    border: 1px solid var(--theme-wrapper-border);
+    border-radius: 8px;
+    width: 287px;
+    height: 120px;
+    margin-bottom: 24px;
+    padding: 14px 18px;
+    color: var(--theme-text-color);
+}
+
+.helpCommentInput::placeholder {
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    color: var(--theme-main-text-color);
+}
+
+@media screen and (min-width: 768px) {
+    .helpCommentInput {
+        width: 352px;
+    }
+}
