@@ -1,0 +1,127 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 225px;
+    height: 100vh;
+    background: var(--main-aside-color);
+}
+
+@media screen and (min-width: 768px) {
+    .sidebar {
+        width: 260px;
+    }
+}
+
+.sidebarHeader {
+    padding: 14px 14px 0;
+}
+
+@media screen and (min-width: 768px) {
+    .sidebarHeader {
+        padding: 24px 24px 0;
+    }
+}
+
+.sidebarWrapper {
+    padding: 0 14px;
+}
+
+@media screen and (min-width: 768px) {
+    .sidebarWrapper {
+        padding: 0 24px;
+    }
+}
+
+.logoBlock {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    width: 104px;
+    height: 32px;
+    margin-bottom: 70px;
+}
+
+@media screen and (min-width: 768px) {
+    .logoBlock {
+        margin-bottom: 64px;
+    }
+}
+
+.logoFlashIcon {
+    display: block;
+    width: 32px;
+    height: 32px;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: -0.04em;
+    color: var(--main-text-color);
+}
+
+.sidebarBoardsHeading {
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: -0.02em;
+    color: var(--main-text-color-low-op);
+    margin-bottom: 8px;
+}
+
+.createBoardBlock {
+    display: flex;
+    width: 197px;
+    height: 70px;
+    margin-bottom: 40px;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--modal-border-color-low-op);
+    border-bottom: 1px solid var(--modal-border-color-low-op);
+}
+
+@media screen and (min-width: 768px) {
+    .createBoardBlock {
+        width: 212px;
+        height: 70px;
+    }
+}
+
+.createBoardText {
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    color: var(--main-text-color);
+    width: 76px;
+    height: 42px;
+}
+
+.sidebarBoardsList {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.logoutBlock {
+    padding: 0 0 24px 24px;
+    display: flex;
+    align-items: center;
+}
+
+.logoutLink {
+    display: flex;
+    width: 105px;
+    height: 32px;
+    gap: 14px;
+    align-items: center;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--main-text-color);
+}
+
+.logoutIcon {
+    display: block;
+    width: 32px;
+    height: 32px;
+    stroke: var(--logout-icon);
+    fill: none;
+}

@@ -1,0 +1,66 @@
+.helpBlock {
+    border-radius: 8px;
+    width: 197px;
+    height: 238px;
+    background: var(--need-help-bg-color);
+    display: flex;
+    flex-direction: column;
+    padding: 14px;
+    margin-bottom: 24px;
+}
+
+@media screen and (min-width: 768px) {
+    .helpBlock {
+        width: 212px;
+        height: 272px;
+        padding: 20px;
+    }
+}
+
+.plant {
+    width: 54px;
+    height: 78px;
+    margin-bottom: 14px;
+}
+
+.helpText {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.33333;
+    letter-spacing: -0.02em;
+    color: var(--main-text-color);
+    margin-bottom: 18px;
+}
+
+@media screen and (min-width: 768px) {
+    .helpText {
+        font-size: 14px;
+        line-height: 1.42857;
+    }
+}
+
+.helpText span {
+    color: var(--accent-text-color);
+}
+
+.helpOpenModal {
+    display: flex;
+    width: 94px;
+    height: 20px;
+    gap: 8px;
+    align-items: center;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: -0.02em;
+    color: var(--main-text-color);
+    background-color: transparent;
+    border: none;
+}
+
+.helpOpenModalIcon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    stroke: var(--main-text-color);
+    fill: none;   
+}

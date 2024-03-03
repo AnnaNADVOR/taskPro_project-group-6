@@ -1,5 +1,5 @@
 import sprite from '../../../assets/images/sprite.svg';
-import css from './SecondaryButton.module.css';
+import css from './SecondaryAddButton.module.css';
 
 const SecondaryAddButton = ({ click }) => {
   return (
