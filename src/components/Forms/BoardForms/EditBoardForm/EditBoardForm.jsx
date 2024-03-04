@@ -24,7 +24,7 @@ const EditBoardForm = ({
   onEditBoard,
 }) => {
   const [backgroundName, setBackgroundName] = useState('00');
-  const [iconName, setIconName] = useState('marc-circuls-18');
+  const [iconName, setIconName] = useState('mark-circuls-18');
   const [isDuplicate, setIsDuplicate] = useState(false);
   // const boards = useSelector(getBoardSelector);
   const [boards, setBoards] = useState([]);
@@ -38,7 +38,7 @@ const EditBoardForm = ({
     updatedBackground =
       backgroundName !== '00' ? backgroundName : currentBoard.background;
 
-    updatedIcon = iconName !== 'icon-project' ? iconName : currentBoard.icon;
+    updatedIcon = iconName !== 'mark-circuls-18' ? iconName : currentBoard.icon;
   }
 
   const handleEditBoard = boardInfo => {
@@ -111,6 +111,7 @@ const EditBoardForm = ({
               )}
 
               <p className={css.subtitle}>Icons</p>
+
               <BoardMarkPicker
                 onChangeIcon={setIconName}
                 currentBoardIcon={updatedIcon}

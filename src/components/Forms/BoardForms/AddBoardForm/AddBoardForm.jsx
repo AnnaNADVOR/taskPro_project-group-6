@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { useEffect } from 'react';
 // import { useSelector } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import { Formik, Form, ErrorMessage, Field } from 'formik';
@@ -24,7 +25,7 @@ const AddBoardForm = ({
   currentBoard,
 }) => {
   const [backgroundName, setBackgroundName] = useState('00');
-  const [iconName, setIconName] = useState('icon-project');
+  const [iconName, setIconName] = useState('mark-circuls-18');
   const [isDuplicate, setIsDuplicate] = useState(false);
   // const boards = useSelector(getBoardSelector);
   const [boards, setBoards] = useState([]);
@@ -32,14 +33,12 @@ const AddBoardForm = ({
   const [showModal, setShowModal] = useState(false);
   const toggleModal = () => setShowModal(prevShowModal => !prevShowModal);
 
-  let updatedBackground;
-  let updatedIcon;
-  if (btnName === 'Edit') {
-    updatedBackground =
-      backgroundName !== '00' ? backgroundName : currentBoard.background;
-
-    updatedIcon = iconName !== 'marc-circuls-18' ? iconName : currentBoard.icon;
-  }
+  useEffect(() => {
+    if (currentBoard) {
+      setBackgroundName(currentBoard.background || '00');
+      setIconName(currentBoard.icon || 'mark-circuls-18');
+    }
+  }, [currentBoard]);
 
   const handleCreateBoard = boardInfo => {
     const newBoard = { ...boardInfo, id: boards.length + 1 };
@@ -110,16 +109,12 @@ const AddBoardForm = ({
               )}
 
               <p className={css.subtitle}>Icons</p>
-              <BoardMarkPicker
-                onChangeIcon={setIconName}
-                currentBoardIcon={updatedIcon}
-              />
+
+              <BoardMarkPicker onChangeIcon={setIconName} />
+
               <p className={css.subtitle}>Background</p>
 
-              <BoardBackgroundPicker
-                onChangeImage={setBackgroundName}
-                currentBoardBackground={updatedBackground}
-              />
+              <BoardBackgroundPicker onChangeImage={setBackgroundName} />
 
               <MainAddButton
                 type="submit"
