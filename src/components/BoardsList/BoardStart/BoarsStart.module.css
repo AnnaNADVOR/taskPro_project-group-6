@@ -1,0 +1,39 @@
+.boardStartContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: calc(100vh - 68px);
+  background-color: #1f1f1f;
+}
+@media screen and (max-width: 768px) {
+  .boardStartContainer {
+    height: calc(100vh - 60px);
+  }
+}
+
+.boardStartText {
+  width: 486px;
+  height: 72px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+@media screen and (max-width: 768px) {
+  .boardStartText {
+    font-size: 12px;
+    line-height: 16px;
+    width: 100%;
+    max-height: 80px;
+  }
+}
+
+.boardStartTextAccent {
+  color: #bedbb0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}

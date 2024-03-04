@@ -1,14 +1,13 @@
-import { HeaderBurger } from './HeaderBurger/HeaderBurger';
-import { Theme } from './Theme/Theme';
-import { UserInfo } from './UserInfo/UserInfo';
+import HeaderBurger from './HeaderBurger/HeaderBurger';
+import Theme from './ThemePicker/ThemePicker';
 import CSS from './Header.module.css';
+
 export const Header = () => {
   return (
-    <div className={CSS.header_container}>
+    <div className={CSS.headerContainer}>
       <HeaderBurger />
-      <div className={CSS.userblock}>
+      <div className={CSS.userBlock}>
         <Theme />
-        <UserInfo />
       </div>
     </div>
   );

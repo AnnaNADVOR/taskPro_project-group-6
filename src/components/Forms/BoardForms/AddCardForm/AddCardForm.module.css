@@ -1,0 +1,64 @@
+.formTitle {
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin-bottom: 24px;
+}
+
+.formText {
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: -0.02em;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.inputForm {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #bedbb0;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.08);
+    background-color: #1f1f1f;
+    outline: rgba(0, 0, 0, 0);
+    opacity: 0.4;
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+    line-height: 1.28571;
+    letter-spacing: -0.02em;
+
+}
+
+.inputForm:hover,
+.inputForm:focus {
+    opacity: 1;
+}
+
+.errorField {
+    position: absolute;
+    right: 3px;
+    top: -30px;
+    font-size: 12px;
+    color: #bedbb0;
+}
+
+.label {
+    position: relative;
+}
+
+.description {
+    composes: inputForm;
+    resize: none;
+    height: 154px;
+    margin-top: 14px;
+    margin-bottom: 24px;
+}
+
+.priorityWrapper {
+    margin-bottom: 14px;
+}
+
+.deadlineWrapper {
+    margin-bottom: 40px;
+}
