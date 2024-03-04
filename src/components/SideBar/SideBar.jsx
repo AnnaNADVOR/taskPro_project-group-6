@@ -17,7 +17,7 @@ const SideBar = () => {
         <a href="/" className={css.logoBlock}>
           <div className={css.logoIcon}>
             <svg className={css.logoFlashIcon}>
-              <use href={`${sprite}#logo-black`}></use>
+              <use href={`${sprite}#flash`}></use>
             </svg>
           </div>
           <p className={css.logo}>Task Pro</p>

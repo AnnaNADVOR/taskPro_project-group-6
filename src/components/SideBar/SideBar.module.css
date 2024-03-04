@@ -53,10 +53,21 @@
     }
 }
 
-.logoFlashIcon {
-    display: block;
+.logoIcon {
+    display: flex;
     width: 32px;
     height: 32px;
+    border-radius: 8px;
+    background-color: var(--logo-icon-bg-color);
+    padding: 8px 10px;
+}
+
+.logoFlashIcon {
+    display: block;
+    width: 12px;
+    height: 16px;
+    fill: var(--logo-icon-color);
+    stroke: none;
 }
 
 .logo {
@@ -110,7 +121,8 @@
     background-color: var(--buttons-bg-color);
 }
 
-.button:hover, .button:focus {
+.button:hover,
+.button:focus {
     background-color: var(--add-board-button-hover-bg);
 }
 
