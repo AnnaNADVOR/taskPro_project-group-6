@@ -1,0 +1,88 @@
+.labelContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+}
+
+.filterWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 14px;
+}
+
+.textLeabel {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0px;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.buttonLeabel {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  font-weight: 400;
+
+  text-decoration: underline;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.leabelGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  /* align-items: baseline; */
+}
+
+.labelItems {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.24px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.inputFormik {
+  width: 14px;
+  height: 14px;
+  background-color: transparent;
+
+  display: grid;
+  place-content: center;
+
+  ::after {
+    content: '';
+    left: 6.4%;
+    position: absolute;
+    transform: translate(6px, 1px);
+    width: 12px;
+    height: 12px;
+    border: 2.5px solid black;
+    border-radius: 50%;
+    opacity: 0;
+  }
+  ::before {
+    content: '';
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    transition: 120ms transform ease-in-out;
+    /* background-color:  ; */
+  }
+
+  :checked::after {
+    opacity: 1;
+  }
+}
