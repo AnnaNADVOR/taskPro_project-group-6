@@ -29,6 +29,10 @@
     outline: none;
 }
 
+.helpEmailInput:valid {
+    opacity: 1;
+}
+
 .helpEmailInput:hover,
 .helpEmailInput:focus,
 .helpEmailInput:active {
@@ -80,6 +84,10 @@
     font-size: 14px;
     letter-spacing: -0.02em;
     color: var(--theme-main-text-color);
+}
+
+.helpCommentInput:valid {
+    opacity: 1;
 }
 
 @media screen and (min-width: 768px) {
