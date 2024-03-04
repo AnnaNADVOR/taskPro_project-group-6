@@ -7,7 +7,7 @@
     font-weight: 500;
     font-size: 18px;
     letter-spacing: -0.02em;
-    color: var(--main-text-color);
+    color: var(--secondary-text-color);
     margin-bottom: 24px;
 }
 
@@ -19,6 +19,12 @@
     margin-bottom: 14px;
     padding: 14px 18px;
     color: var(--theme-text-color);
+}
+
+.helpEmailInput:hover,
+.helpEmailInput:focus,
+.helpEmailInput:active {
+    border: 1px solid var(--theme-text-hover-color);
 }
 
 .helpEmailInput::placeholder {
@@ -42,6 +48,12 @@
     margin-bottom: 24px;
     padding: 14px 18px;
     color: var(--theme-text-color);
+}
+
+.helpCommentInput:hover,
+.helpCommentInput:focus,
+.helpCommentInput:active {
+    border: 1px solid var(--theme-text-hover-color);
 }
 
 .helpCommentInput::placeholder {

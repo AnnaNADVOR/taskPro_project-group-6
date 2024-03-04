@@ -31,6 +31,7 @@
     --modal-bg-color: rgba(21, 21, 21, 0.30);
     --need-help-bg-color: #f6f6f7;
     --modal-windows-bg-color: #fcfcfc;
+    --modal-windows-border-color: transparent;
     --main-aside-color: #fff;
     --main-header-color: #fcfcfc;
     --main-page-text-color: rgba(22, 22, 22, 0.70);
@@ -85,6 +86,7 @@
     --modal-bg-color: rgba(21, 21, 21, 0.30);
     --need-help-bg-color: #1f1f1f;
     --modal-windows-bg-color: #151515;
+    --modal-windows-border-color: rgba(190, 219, 176, 0.5);
     --main-aside-color: #121212;
     --main-header-color: #161616;
     --main-page-text-color: rgba(255, 255, 255, 0.5);
@@ -139,6 +141,7 @@
     --modal-bg-color: rgba(21, 21, 21, 0.30);
     --need-help-bg-color: rgba(236, 237, 253, 0.40);
     --modal-windows-bg-color: #fcfcfc;
+    --modal-windows-border-color: transparent;
     --main-aside-color: #5255bc;
     --main-header-color: #fff;
     --main-page-text-color: rgba(22, 22, 22, 0.70);
