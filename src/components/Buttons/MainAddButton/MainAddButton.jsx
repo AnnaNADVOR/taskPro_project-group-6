@@ -1,5 +1,5 @@
 import sprite from "../../../assets/images/sprite.svg";
-import css from "./MainButton.module.css";
+import css from "./MainAddButton.module.css";
 
 const MainAddButton = ({ text, click }) => {
     return (
