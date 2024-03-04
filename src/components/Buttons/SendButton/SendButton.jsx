@@ -1,4 +1,4 @@
-import css from "../MainButton/MainButton.module.css";
+import css from "../MainAddButton/MainAddButton.module.css";
 
 const SendButton = ({ click, text }) => {
     return (

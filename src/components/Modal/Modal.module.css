@@ -23,7 +23,7 @@
     padding: 24px;
 
     @media screen and (min-width: 375px) {
-        width: 350px;
+        width: 335px;
     }
 }
 
@@ -42,8 +42,7 @@
 
 .closeButton:hover>svg,
 .closeButton:focus>svg {
-    stroke: #bedbb0;
-    transform: scale(0.7);
+    stroke: #bedbb0;    
 }
 
 .closeButtonSvg {
@@ -51,6 +50,5 @@
     stroke: white;
     width: 18px;
     height: 18px;
-    transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1),        
 }

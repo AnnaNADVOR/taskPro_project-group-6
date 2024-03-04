@@ -1,9 +1,11 @@
 import { Header } from "../../components/Header/Header";
+import SideBar from "components/SideBar/SideBar";
 
 const HomePage = () => {
     return (
         <div>
-            <Header/>                   
+            <Header />  
+            <SideBar/>
         </div>
     )
 }
