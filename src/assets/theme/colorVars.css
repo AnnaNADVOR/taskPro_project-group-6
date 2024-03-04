@@ -20,6 +20,7 @@
     --secondary-text-color: #161616;
     --buttons-color: #161616;
     --secondary-buttons-color: #121212;
+    --add-board-button-hover-bg: #9dc888;
     --buttons-bg-color: #bedbb0;
     --burger-color: #161616;
     --main-bg-color: #f6f6f7;
@@ -30,6 +31,7 @@
     --modal-bg-color: rgba(21, 21, 21, 0.30);
     --need-help-bg-color: #f6f6f7;
     --modal-windows-bg-color: #fcfcfc;
+    --modal-windows-border-color: transparent;
     --main-aside-color: #fff;
     --main-header-color: #fcfcfc;
     --main-page-text-color: rgba(22, 22, 22, 0.70);
@@ -52,6 +54,7 @@
     --scroll-thumb: rgba(22, 22, 22, 0.10);
     --scroll-bar: #e8e8e8;
     --logout-icon: #bedbb0;
+    --logout-hover-icon: #9dc888;
     --modal-btn-hover: #9dc888;
     --modal-plus-icon: #fff;
     --modal-plus-icon-wrapper: #161616;
@@ -72,6 +75,7 @@
     --secondary-text-color: #fff;
     --buttons-color: #161616;
     --secondary-buttons-color: #121212;
+    --add-board-button-hover-bg: #9dc888;
     --buttons-bg-color: #bedbb0;
     --burger-color: #fff;
     --main-bg-color: #1f1f1f;
@@ -82,6 +86,7 @@
     --modal-bg-color: rgba(21, 21, 21, 0.30);
     --need-help-bg-color: #1f1f1f;
     --modal-windows-bg-color: #151515;
+    --modal-windows-border-color: rgba(190, 219, 176, 0.5);
     --main-aside-color: #121212;
     --main-header-color: #161616;
     --main-page-text-color: rgba(255, 255, 255, 0.5);
@@ -104,6 +109,7 @@
     --scroll-thumb: rgba(72, 72, 72, 0.5);
     --scroll-bar: #121212;
     --logout-icon: #bedbb0;
+    --logout-hover-icon: #9dc888;
     --modal-btn-hover: #9dc888;
     --modal-plus-icon: #fff;
     --modal-plus-icon-wrapper: #161616;
@@ -124,6 +130,7 @@
     --secondary-text-color: #161616;
     --buttons-color: #fff;
     --secondary-buttons-color: #fff;
+    --add-board-button-hover-bg: #979cea;
     --buttons-bg-color: #b8bcfd;
     --burger-color: #161616;
     --main-bg-color: #d6d8ff;
@@ -134,6 +141,7 @@
     --modal-bg-color: rgba(21, 21, 21, 0.30);
     --need-help-bg-color: rgba(236, 237, 253, 0.40);
     --modal-windows-bg-color: #fcfcfc;
+    --modal-windows-border-color: transparent;
     --main-aside-color: #5255bc;
     --main-header-color: #fff;
     --main-page-text-color: rgba(22, 22, 22, 0.70);
@@ -156,6 +164,7 @@
     --scroll-thumb: #b8bcfd;
     --scroll-bar: #fff;
     --logout-icon: #fff;
+    --logout-hover-icon: #b8bcfd;
     --modal-btn-hover: #7b7ede;
     --modal-plus-icon: #161616;
     --modal-plus-icon-wrapper: #fff;

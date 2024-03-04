@@ -62,5 +62,24 @@
     width: 20px;
     height: 20px;
     stroke: var(--main-text-color);
-    fill: none;   
+    fill: none;
+}
+
+.helpModal {
+    background-color: var(--modal-windows-bg-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    border: 1px solid var(--modal-windows-border-color);
+    border-radius: 8px;
+    padding: 24px;
+    width: 335px;
+    box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.05);
+}
+
+@media screen and (min-width: 768px) {
+    .helpModal {
+        width: 400px;
+    }
 }
