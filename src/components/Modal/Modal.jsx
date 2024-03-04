@@ -3,7 +3,7 @@ import sprite from "../../assets/images/sprite.svg";
 import css from "./Modal.module.css";
 
 
-function Modal({ closeModal, children}) {
+function Modal({ closeModal, children, style}) {
     useEffect(() => {
         const onEscClick = (event) => {
             if (event.code === "Escape") {
@@ -17,15 +17,15 @@ function Modal({ closeModal, children}) {
 
     }, [closeModal]);
     
-    const onOverlayClisk = (event) => {
+    const onOverlayCliсk = (event) => {
         if (event.target === event.currentTarget) {
             closeModal();
         }
     }
 
     return ( 
-        <div className={css.backdrop} onClick={onOverlayClisk}>
-            <div className={css.modal}>
+        <div className={css.backdrop} onClick={onOverlayCliсk}>
+            <div className={style || css.modal}>
                 <button className={css.closeButton} onClick={closeModal}>
                     <svg className={css.closeButtonSvg}>
                         <use href={`${sprite}#close-18`} />

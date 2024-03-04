@@ -17,13 +17,21 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
-    background-color: #151515;
-    border: 1px solid rgba(190, 219, 176, 0.5);
+    background-color: var(--modal-windows-bg-color);
+    border: 1px solid var(--modal-windows-border-color);
     border-radius: 8px;
     padding: 24px;
+}
+    
+@media screen and (min-width: 375px) {
+    .modal {
+        width: 335px;  
+    }       
+}
 
-    @media screen and (min-width: 375px) {
-        width: 335px;
+@media screen and (min-width: 768px) {
+    .modal {
+        width: 350px;
     }
 }
 
@@ -40,15 +48,15 @@
     align-items: center;    
 }
 
-.closeButton:hover>svg,
-.closeButton:focus>svg {
-    stroke: #bedbb0;    
+.closeButton:hover svg,
+.closeButton:focus svg {
+    stroke: var(--add-board-button-hover-bg);    
 }
 
 .closeButtonSvg {
     fill: currentColor;
-    stroke: white;
+    stroke: var(--burger-color);
     width: 18px;
     height: 18px;
-    transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1),        
+    transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);      
 }
