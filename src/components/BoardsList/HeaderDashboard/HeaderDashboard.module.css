@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: #1f1f1f;
+}
+.projectTitle {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.36px;
+  margin: 0;
+  color: #fff;
+}
+.buttonFilter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px;
+  background-color: transparent;
+
+  border: none;
+  outline: none;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.filterTitle {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.28px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.filterIcon {
+  /* stroke: rgba(255, 255, 255, 0.8); */
+  fill: rgba(255, 255, 255, 0.8);
+}
