@@ -47,6 +47,12 @@
     }
 }
 
+@media screen and (min-width: 1440px) {
+    .logoBlock {
+        margin-bottom: 60px;
+    }
+}
+
 .logoFlashIcon {
     display: block;
     width: 32px;
@@ -93,6 +99,7 @@
     color: var(--main-text-color);
     width: 76px;
     height: 42px;
+    display: flex;
 }
 
 .button {
@@ -101,6 +108,10 @@
     border-radius: 6px;
     padding: 8px 10px;
     background-color: var(--buttons-bg-color);
+}
+
+.button:hover, .button:focus {
+    background-color: var(--add-board-button-hover-bg);
 }
 
 .plusIcon {
@@ -113,6 +124,7 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
+    margin-bottom: auto;
 }
 
 .logoutBlock {
@@ -132,10 +144,21 @@
     color: var(--main-text-color);
 }
 
+
 .logoutIcon {
     display: block;
     width: 32px;
     height: 32px;
     stroke: var(--logout-icon);
     fill: none;
+}
+
+.logoutLink:hover,
+.logoutLink:hover .logoutIcon {
+    stroke: var(--logout-hover-icon);
+}
+
+.logoutLink:focus,
+.logoutLink:focus .logoutIcon {
+    stroke: var(--logout-hover-icon);
 }
