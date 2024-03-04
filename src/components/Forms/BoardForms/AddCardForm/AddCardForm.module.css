@@ -2,7 +2,7 @@
     font-weight: 500;
     font-size: 18px;
     letter-spacing: -0.02em;
-    color: #fff;
+    color: var(--secondary-text-color);
     margin-bottom: 24px;
 }
 
@@ -10,28 +10,34 @@
     font-weight: 400;
     font-size: 12px;
     letter-spacing: -0.02em;
-    color: rgba(255, 255, 255, 0.5);
+    color:var(--secondary-text-color-low-op);
+    padding-top: 4px;
 }
 
 .inputForm {
     width: 100%;
     padding: 14px;
-    border: 1px solid #bedbb0;
+    border: 1px solid var(--accent-text-color);
     border-radius: 8px;
     box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.08);
-    background-color: #1f1f1f;
+    background-color:var(--modal-input-bg);
     outline: rgba(0, 0, 0, 0);
-    opacity: 0.4;
     font-weight: 400;
     font-size: 14px;
-    color: white;
+    color: var(--secondary-text-color);
     line-height: 1.28571;
     letter-spacing: -0.02em;
+    opacity: 0.4;
 
+ 
 }
 
 .inputForm:hover,
 .inputForm:focus {
+    opacity: 1;
+}
+
+.inputForm:valid {
     opacity: 1;
 }
 

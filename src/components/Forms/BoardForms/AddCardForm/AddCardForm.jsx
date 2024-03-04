@@ -27,10 +27,10 @@ const AddCardForm = () => {
     }
 
     const priorityOptions = [
-        { value: 'low', color: "#8FA1D0" },
-        { value: 'medium', color: "#E09CB5" },
-        { value: 'high', color: "#BEDBB0" },
-        { value: 'without', color: `rgba(255, 255, 255, 0.3)` },
+        { value: 'low', color: `var(--priority-low-color)`},
+        { value: 'medium', color: `var(--priority-medium-color)`},
+        { value: 'high', color: `var(--priority-high-color)` },
+        { value: 'without', color: `var(--priority-color-without)`},
     ];
 
     return (
@@ -38,13 +38,18 @@ const AddCardForm = () => {
             <Form autoComplete="off">
                 <h4 className={css.formTitle}>Add card</h4>
                 <label className={css.label} htmlFor="title">
-                    <Field className={css.inputForm} as="input" type="text" name="title" placeholder="Title" autoFocus />
+                    <Field className={css.inputForm} as="input" type="text" name="title" required="true" placeholder="Title" autoFocus />
                     <span className={css.errorField}>
                         <ErrorMessage name="title" />
                     </span>                    
                 </label>
                 <label htmlFor="description">
-                    <Field className={css.description} as="textarea" type="text" name="description" placeholder="Description" />
+                    <Field className={css.description}
+                        as="textarea"
+                        type="text"
+                        required="true"
+                        name="description"
+                        placeholder="Description" />
                 </label>           
                 <div className={css.priorityWrapper}>
                     <p className={css.formText}>Label color</p>
