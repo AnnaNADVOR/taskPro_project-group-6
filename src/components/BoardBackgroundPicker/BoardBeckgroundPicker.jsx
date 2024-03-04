@@ -53,7 +53,7 @@ const BoardBackgroundPicker = ({ onChangeImage, currentBoardBackground }) => {
               onChange={() => handleRadioChange(index)}
             />
             <img
-              src={require(`../../images/background/${image}`)}
+              src={require(`../../assets/images/boardBackgrounds${image}`)}
               alt={`option ${index + 1}`}
               width="28px"
               height="28px"

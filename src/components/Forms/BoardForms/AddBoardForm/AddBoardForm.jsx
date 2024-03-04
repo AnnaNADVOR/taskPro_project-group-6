@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import { Formik, Form, ErrorMessage, Field } from 'formik';
 import * as Yup from 'yup';
 import Modal from 'components/Modal/Modal';
-import MainButton from 'components/Buttons/MainButton';
+import MainAddButton from 'components/Buttons/MainAddButton/MainAddButton';
 import BoardBackgroundPicker from 'components/BoardBackgroundPicker/BoardBeckgroundPicker';
 import BoardMarkPicker from 'components/BoardMarkPicker/BoardMarkPicker';
 // import { getBoardSelector } from 'redux/auth/authSelectors';
@@ -121,7 +121,7 @@ const AddBoardForm = ({
                 currentBoardBackground={updatedBackground}
               />
 
-              <MainButton
+              <MainAddButton
                 type="submit"
                 text="Create"
                 click={handleCreateBoard}

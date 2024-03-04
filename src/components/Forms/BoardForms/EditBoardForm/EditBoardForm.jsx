@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import { Formik, Form, ErrorMessage, Field } from 'formik';
 import * as Yup from 'yup';
 import Modal from 'components/Modal/Modal';
-import MainButton from 'components/Buttons/MainButton';
+import MainAddButton from 'components/Buttons/MainAddButton/MainAddButton';
 import BoardBackgroundPicker from 'components/BoardBackgroundPicker/BoardBeckgroundPicker';
 import BoardMarkPicker from 'components/BoardMarkPicker/BoardMarkPicker';
 // import { getBoardSelector } from 'redux/auth/authSelectors';
@@ -122,7 +122,11 @@ const EditBoardForm = ({
                 currentBoardBackground={updatedBackground}
               />
 
-              <MainButton type="submit" text="Edit" click={handleEditBoard} />
+              <MainAddButton
+                type="submit"
+                text="Edit"
+                click={handleEditBoard}
+              />
             </Form>
           )}
         </Formik>
