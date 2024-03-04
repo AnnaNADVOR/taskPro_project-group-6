@@ -95,6 +95,20 @@
     height: 42px;
 }
 
+.button {
+    width: 40px;
+    height: 36px;
+    border-radius: 6px;
+    padding: 8px 10px;
+    background-color: var(--buttons-bg-color);
+}
+
+.plusIcon {
+    width: 20px;
+    height: 20px;
+    stroke: var(--secondary-buttons-color);
+}
+
 .sidebarBoardsList {
     display: flex;
     flex-direction: column;

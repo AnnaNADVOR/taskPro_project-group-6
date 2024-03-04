@@ -13,9 +13,7 @@ const initialValues = {
 };
 
 const HelpForm = () => {
-  const handleSubmit = () => {
-    console.log('submit');
-  };
+  const handleSubmit = () => {};
 
   return (
     <Formik
@@ -24,8 +22,8 @@ const HelpForm = () => {
       onSubmit={handleSubmit}
     >
       <Form className={css.helpForm} autoComplete="off">
-        <h4 className={css.helpLabel}>Need help</h4>
-        <label className={css.label} htmlFor="title">
+        <h4 className={css.helpFormTitle}>Need help</h4>
+        <label className={css.label} htmlFor="email">
           <Field
             className={css.helpEmailInput}
             as="input"
@@ -46,7 +44,7 @@ const HelpForm = () => {
             name="description"
             placeholder="Comment"
           />
-        </label>       
+        </label>
         <SendButton text="Send"></SendButton>
       </Form>
     </Formik>
