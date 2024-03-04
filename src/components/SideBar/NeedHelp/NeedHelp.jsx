@@ -22,9 +22,9 @@ const NeedHelp = () => {
 
   return (
     <div className={css.helpBlock}>
-      <img
+      <img 
         src={plantImage}
-        alt="Plant as a helper image"
+        alt="Plant as a helper"
         className={css.plant}
       />
       <p className={css.helpText}>
