@@ -2,20 +2,13 @@ import React, { useState } from 'react';
 import plant from 'assets/images/plant-54x78.png';
 import plant2x from 'assets/images/plant-2x-54x78.png';
 import sprite from 'assets/images/sprite.svg';
-// import Modal from 'components/Modal/Modal';
+import Modal from 'components/Modal/Modal';
 import css from './NeedHelp.module.css';
 import HelpForm from 'components/Forms/BoardForms/HelpForm/HelpForm';
 
 const NeedHelp = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleOpenModal = () => {
-    setIsOpen(true);    
-  };
-
-  const handleCloseModal = () => {
-    setIsOpen(false);
-  };
+  const [showModal, setShowModal] = useState(false);
+  const toggleModal = () => setShowModal(prevShowModal => !prevShowModal);
 
   const dpr = window.devicePixelRatio || 1;
 
@@ -23,20 +16,12 @@ const NeedHelp = () => {
 
   return (
     <div className={css.helpBlock}>
-      <img 
-        src={plantImage}
-        alt="Plant as a helper"
-        className={css.plant}
-      />
+      <img src={plantImage} alt="Plant as a helper" className={css.plant} />
       <p className={css.helpText}>
         If you need help with <span>TaskPro</span>, check out our support
         resources or reach out to our customer support team.
       </p>
-      <button
-        className={css.helpOpenModal}
-        type="button"
-        onClick={handleOpenModal}
-      >
+      <button className={css.helpOpenModal} type="button" onClick={toggleModal}>
         <span>
           <svg className={css.helpOpenModalIcon}>
             <use href={`${sprite}#help-circle-20`}></use>
@@ -45,12 +30,11 @@ const NeedHelp = () => {
         Need help?
       </button>
 
-      <Modal
-        open={isOpen}
-        closeModal={handleCloseModal}
-        className={css.helpModal}
-        children={<HelpForm closeModal={handleCloseModal} />}
-      />
+      {showModal && (
+        <Modal closeModal={toggleModal}>
+          <HelpForm />
+        </Modal>
+      )}
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import sprite from 'assets/images/sprite.svg';
-// import SecondaryAddButton from 'components/Buttons/SecondaryAddButton/SecondaryAddButton';
+import SecondaryAddButton from 'components/Buttons/SecondaryAddButton/SecondaryAddButton';
 import NeedHelp from './NeedHelp/NeedHelp';
 import css from './SideBar.module.css';
 

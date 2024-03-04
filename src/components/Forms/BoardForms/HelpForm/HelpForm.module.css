@@ -56,3 +56,11 @@
         width: 352px;
     }
 }
+
+.helpErrorField {
+    position: absolute;
+    right: 3px;
+    top: -30px;
+    font-size: 12px;
+    color: var(--error-color);
+}
