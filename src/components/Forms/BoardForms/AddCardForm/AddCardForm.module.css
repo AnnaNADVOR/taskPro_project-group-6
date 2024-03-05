@@ -27,9 +27,7 @@
     color: var(--secondary-text-color);
     line-height: 1.28571;
     letter-spacing: -0.02em;
-    opacity: 0.4;
-
- 
+    opacity: 0.4; 
 }
 
 .inputForm:hover,

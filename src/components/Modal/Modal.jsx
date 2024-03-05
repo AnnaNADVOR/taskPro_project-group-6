@@ -17,14 +17,14 @@ function Modal({ closeModal, children, style}) {
 
     }, [closeModal]);
     
-    const onOverlayCliсk = (event) => {
+    const onOverlayClick = (event) => {
         if (event.target === event.currentTarget) {
             closeModal();
         }
     }
 
     return ( 
-        <div className={css.backdrop} onClick={onOverlayCliсk}>
+        <div className={css.backdrop} onClick={onOverlayClick}>
             <div className={style || css.modal}>
                 <button className={css.closeButton} onClick={closeModal}>
                     <svg className={css.closeButtonSvg}>
