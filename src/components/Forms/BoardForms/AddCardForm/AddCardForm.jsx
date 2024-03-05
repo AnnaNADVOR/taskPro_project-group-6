@@ -34,11 +34,20 @@ const AddCardForm = () => {
     ];
 
     return (
-        <Formik validationSchema={addCardSchema} initialValues={{ title: "", description: "" }} onSubmit={handleSubmit}>
+        <Formik validationSchema={addCardSchema}
+            initialValues={{ title: "", description: "" }}
+            onSubmit={handleSubmit}>
             <Form autoComplete="off">
                 <h4 className={css.formTitle}>Add card</h4>
                 <label className={css.label} htmlFor="title">
-                    <Field className={css.inputForm} as="input" type="text" name="title" required="true" placeholder="Title" autoFocus />
+                    <Field className={css.inputForm}
+                        as="input"
+                        type="text"
+                        name="title"
+                        placeholder="Title"
+                        required={true}
+                        autoFocus
+                    />
                     <span className={css.errorField}>
                         <ErrorMessage name="title" />
                     </span>                    
@@ -47,9 +56,10 @@ const AddCardForm = () => {
                     <Field className={css.description}
                         as="textarea"
                         type="text"
-                        required="true"
                         name="description"
-                        placeholder="Description" />
+                        placeholder="Description"
+                        required={true}
+                    />
                 </label>           
                 <div className={css.priorityWrapper}>
                     <p className={css.formText}>Label color</p>
