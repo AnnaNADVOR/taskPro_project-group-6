@@ -8,7 +8,6 @@ import sprite from 'assets/images/sprite.svg';
 import css from './SideBar.module.css';
 
 const SideBar = ({ isOpen }) => {
-
   const [showModal, setShowModal] = useState(false);
   const toggleModal = () => setShowModal(prevShowModal => !prevShowModal);
 
