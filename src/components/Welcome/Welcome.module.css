@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    color: #161616;
+    color: var(--primary-black-text-color);
     font-family: Poppins;
     font-size: 14px;
     font-weight: 400;
@@ -12,7 +12,6 @@
     padding: 0 20px;
     display: flex;
         
-
     @media screen and (min-width: 375px) {
         width: 335px;
     }
@@ -47,7 +46,6 @@
     }
 }
 
-
 .icon {
     width: 40px;
         height: 40px;
@@ -55,19 +53,16 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        fill: #fff;
+        fill: var(--white-color);
    
-
     @media screen and (min-width: 768px) {
         width: 48px;
         height: 48px;
     }
 }
 
-
-
 .title {
-    color: #161616;
+    color: var(--primary-black-text-color);
     font-size: 28px;
     font-weight: 600;
     letter-spacing: -0.04em;
@@ -77,7 +72,6 @@
     }
 }
 
-
 .text {
     width: 335px;
     margin-bottom: 48px;
@@ -86,9 +80,7 @@
     line-height: 1.28571;
     letter-spacing: -0.02em;
     text-align: center;
-    color: #161616;
-
-  
+    color: var(--primary-black-text-color);
 
     @media screen and (min-width: 768px) {
         width: 473px;
@@ -106,17 +98,17 @@
 }
 
 .login {
-    color: #161616;
+    color: var(--primary-black-text-color);
 }
 
 .login:hover {
-    color: #fff;
-    background-color: #161616;
+    color: var(--white-color);;
+    background-color: var(--primary-black-text-color);
 }
 
 .register {
-    color: #fff;
-    background-color: #161616;
+    color: var(--white-color);;
+    background-color: var(--primary-black-text-color);
 
     @media screen and (min-width: 768px) {
         width: 344px;
