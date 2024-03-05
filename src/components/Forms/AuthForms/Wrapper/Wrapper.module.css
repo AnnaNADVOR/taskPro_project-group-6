@@ -1,0 +1,11 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    height: 770px;
+    margin: 0 auto;
+    background: linear-gradient(180deg, #ffffff 25%, #bedbb0 92.19%);
+}
