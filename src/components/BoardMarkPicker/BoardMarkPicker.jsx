@@ -1,4 +1,4 @@
-import sprite from '../../images/sprite.svg';
+import sprite from '../../assets/images/sprite.svg';
 import { useState, useEffect } from 'react';
 import css from '../Forms/BoardForms/EditBoardForm/EditBoardForm.module.css';
 
