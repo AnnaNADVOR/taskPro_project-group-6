@@ -18,13 +18,26 @@
     height: 49px;
     margin-bottom: 14px;
     padding: 14px 18px;
-    color: var(--theme-text-color);
+    color: var(--secondary-text-color);
+    background-color: var(--modal-input-bg);
+    box-shadow: 0 4px 16px 0 var(--modal-input-shadow);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.28571;
+    letter-spacing: -0.02em;
+    opacity: 0.4;
+    outline: none;
+}
+
+.helpEmailInput:valid {
+    opacity: 1;
 }
 
 .helpEmailInput:hover,
 .helpEmailInput:focus,
 .helpEmailInput:active {
     border: 1px solid var(--theme-text-hover-color);
+    opacity: 1;
 }
 
 .helpEmailInput::placeholder {
@@ -47,13 +60,23 @@
     height: 120px;
     margin-bottom: 24px;
     padding: 14px 18px;
-    color: var(--theme-text-color);
+    color: var(--secondary-text-color);
+    background-color: var(--modal-input-bg);
+    box-shadow: 0 4px 16px 0 var(--modal-input-shadow);
+    resize: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.28571;
+    letter-spacing: -0.02em;
+    opacity: 0.4;
+    outline: none;
 }
 
 .helpCommentInput:hover,
 .helpCommentInput:focus,
 .helpCommentInput:active {
     border: 1px solid var(--theme-text-hover-color);
+    opacity: 1;
 }
 
 .helpCommentInput::placeholder {
@@ -61,6 +84,10 @@
     font-size: 14px;
     letter-spacing: -0.02em;
     color: var(--theme-main-text-color);
+}
+
+.helpCommentInput:valid {
+    opacity: 1;
 }
 
 @media screen and (min-width: 768px) {

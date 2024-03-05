@@ -31,6 +31,7 @@ const HelpForm = () => {
             name="email"
             placeholder="Email"
             autoFocus
+            required="true"
           />
           <span className={css.helpErrorField}>
             <ErrorMessage name="email" />
@@ -43,6 +44,7 @@ const HelpForm = () => {
             type="text"
             name="description"
             placeholder="Comment"
+            required="true"
           />
         </label>
         <SendButton text="Send"></SendButton>

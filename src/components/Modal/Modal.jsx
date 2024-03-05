@@ -34,7 +34,8 @@ function Modal({ closeModal, children, style}) {
                 {children}      
             </div>
         </div>
-    )    
+      </div>
+    );    
 }
 
 export default Modal; 

@@ -74,12 +74,13 @@
     border: 1px solid var(--modal-windows-border-color);
     border-radius: 8px;
     padding: 24px;
-    width: 335px;
+    max-width: 335px;
     box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.05);
 }
 
 @media screen and (min-width: 768px) {
     .helpModal {
+        max-width: unset;
         width: 400px;
     }
 }

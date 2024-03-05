@@ -1,14 +1,30 @@
 .sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
     width: 225px;
     height: 100vh;
     background: var(--main-aside-color);
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.isOpen {
+    transform: translateX(0);
 }
 
 @media screen and (min-width: 768px) {
     .sidebar {
         width: 260px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .sidebar {
+        transform: translateX(0);
+        position: unset;
     }
 }
 
@@ -53,10 +69,21 @@
     }
 }
 
-.logoFlashIcon {
-    display: block;
+.logoIcon {
+    display: flex;
     width: 32px;
     height: 32px;
+    border-radius: 8px;
+    background-color: var(--logo-icon-bg-color);
+    padding: 8px 10px;
+}
+
+.logoFlashIcon {
+    display: block;
+    width: 12px;
+    height: 16px;
+    fill: var(--logo-icon-color);
+    stroke: none;
 }
 
 .logo {
@@ -110,7 +137,8 @@
     background-color: var(--buttons-bg-color);
 }
 
-.button:hover, .button:focus {
+.button:hover,
+.button:focus {
     background-color: var(--add-board-button-hover-bg);
 }
 
