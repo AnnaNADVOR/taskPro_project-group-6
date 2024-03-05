@@ -1,14 +1,13 @@
-import TestBtn from "components/TestBtn/TestBtn";
+import BoardStart from 'components/BoardsList/BoardStart/BoardStart';
+import TestBtn from 'components/TestBtn/TestBtn';
 
 const ScreensPage = () => {
-    return (
-
-        <div>
-            This is Screens page
-            <TestBtn/>
-        </div>      
-    )
- 
-}
+  return (
+    <div>
+      <TestBtn />
+      <BoardStart />
+    </div>
+  );
+};
 
 export default ScreensPage;
