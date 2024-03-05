@@ -2,13 +2,14 @@ import HeaderBurger from './HeaderBurger/HeaderBurger';
 import Theme from './ThemePicker/ThemePicker';
 import CSS from './Header.module.css';
 
-export const Header = () => {
+const Header = ({ toggleSidebar }) => {
   return (
     <div className={CSS.headerContainer}>
-      <HeaderBurger />
+      <HeaderBurger toggleSidebar={toggleSidebar} />
       <div className={CSS.userBlock}>
         <Theme />
       </div>
     </div>
   );
 };
+export default Header;
