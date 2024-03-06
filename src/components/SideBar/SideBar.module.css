@@ -1,192 +1,191 @@
 .sidebar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    width: 225px;
-    height: 100vh;
-    background: var(--main-aside-color);
-    transform: translateX(-100%);
-    transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 225px;
+  height: 100vh;
+  background: var(--main-aside-color);
+  transform: translateX(0px);
+  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.isOpen {
-    transform: translateX(0);
+.showSidebar {
+  transform: translateX(0);
 }
 
 @media screen and (min-width: 768px) {
-    .sidebar {
-        width: 260px;
-    }
+  .sidebar {
+    width: 260px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
-    .sidebar {
-        transform: translateX(0);
-        position: unset;
-    }
+  .sidebar {
+    transform: translateX(0);
+    position: unset;
+  }
 }
 
 .sidebarHeader {
-    padding: 14px 14px 0;
+  padding: 14px 14px 0;
 }
 
 @media screen and (min-width: 768px) {
-    .sidebarHeader {
-        padding: 24px 24px 0;
-    }
+  .sidebarHeader {
+    padding: 24px 24px 0;
+  }
 }
 
 .sidebarWrapper {
-    padding: 0 14px;
+  padding: 0 14px;
 }
 
 @media screen and (min-width: 768px) {
-    .sidebarWrapper {
-        padding: 0 24px;
-    }
+  .sidebarWrapper {
+    padding: 0 24px;
+  }
 }
 
 .logoBlock {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    width: 104px;
-    height: 32px;
-    margin-bottom: 70px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 104px;
+  height: 32px;
+  margin-bottom: 70px;
 }
 
 @media screen and (min-width: 768px) {
-    .logoBlock {
-        margin-bottom: 64px;
-    }
+  .logoBlock {
+    margin-bottom: 64px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
-    .logoBlock {
-        margin-bottom: 60px;
-    }
+  .logoBlock {
+    margin-bottom: 60px;
+  }
 }
 
 .logoIcon {
-    display: flex;
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    background-color: var(--logo-icon-bg-color);
-    padding: 8px 10px;
+  display: flex;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background-color: var(--logo-icon-bg-color);
+  padding: 8px 10px;
 }
 
 .logoFlashIcon {
-    display: block;
-    width: 12px;
-    height: 16px;
-    fill: var(--logo-icon-color);
-    stroke: none;
+  display: block;
+  width: 12px;
+  height: 16px;
+  fill: var(--logo-icon-color);
+  stroke: none;
 }
 
 .logo {
-    font-weight: 600;
-    font-size: 16px;
-    letter-spacing: -0.04em;
-    color: var(--main-text-color);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: -0.04em;
+  color: var(--main-text-color);
 }
 
 .sidebarBoardsHeading {
-    font-weight: 400;
-    font-size: 12px;
-    letter-spacing: -0.02em;
-    color: var(--main-text-color-low-op);
-    margin-bottom: 8px;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: -0.02em;
+  color: var(--main-text-color-low-op);
+  margin-bottom: 8px;
 }
 
 .createBoardBlock {
-    display: flex;
-    width: 197px;
-    height: 70px;
-    margin-bottom: 40px;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 1px solid var(--modal-border-color-low-op);
-    border-bottom: 1px solid var(--modal-border-color-low-op);
+  display: flex;
+  width: 197px;
+  height: 70px;
+  margin-bottom: 40px;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--modal-border-color-low-op);
+  border-bottom: 1px solid var(--modal-border-color-low-op);
 }
 
 @media screen and (min-width: 768px) {
-    .createBoardBlock {
-        width: 212px;
-        height: 70px;
-    }
+  .createBoardBlock {
+    width: 212px;
+    height: 70px;
+  }
 }
 
 .createBoardText {
-    font-weight: 500;
-    font-size: 14px;
-    letter-spacing: -0.02em;
-    color: var(--main-text-color);
-    width: 76px;
-    height: 42px;
-    display: flex;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: var(--main-text-color);
+  width: 76px;
+  height: 42px;
+  display: flex;
 }
 
 .button {
-    width: 40px;
-    height: 36px;
-    border-radius: 6px;
-    padding: 8px 10px;
-    background-color: var(--buttons-bg-color);
+  width: 40px;
+  height: 36px;
+  border-radius: 6px;
+  padding: 8px 10px;
+  background-color: var(--buttons-bg-color);
 }
 
 .button:hover,
 .button:focus {
-    background-color: var(--add-board-button-hover-bg);
+  background-color: var(--add-board-button-hover-bg);
 }
 
 .plusIcon {
-    width: 20px;
-    height: 20px;
-    stroke: var(--secondary-buttons-color);
+  width: 20px;
+  height: 20px;
+  stroke: var(--secondary-buttons-color);
 }
 
 .sidebarBoardsList {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    margin-bottom: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: auto;
 }
 
 .logoutBlock {
-    padding: 0 0 24px 24px;
-    display: flex;
-    align-items: center;
+  padding: 0 0 24px 24px;
+  display: flex;
+  align-items: center;
 }
 
 .logoutLink {
-    display: flex;
-    width: 105px;
-    height: 32px;
-    gap: 14px;
-    align-items: center;
-    font-weight: 500;
-    font-size: 14px;
-    color: var(--main-text-color);
+  display: flex;
+  width: 105px;
+  height: 32px;
+  gap: 14px;
+  align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--main-text-color);
 }
 
-
 .logoutIcon {
-    display: block;
-    width: 32px;
-    height: 32px;
-    stroke: var(--logout-icon);
-    fill: none;
+  display: block;
+  width: 32px;
+  height: 32px;
+  stroke: var(--logout-icon);
+  fill: none;
 }
 
 .logoutLink:hover,
 .logoutLink:hover .logoutIcon {
-    stroke: var(--logout-hover-icon);
+  stroke: var(--logout-hover-icon);
 }
 
 .logoutLink:focus,
 .logoutLink:focus .logoutIcon {
-    stroke: var(--logout-hover-icon);
+  stroke: var(--logout-hover-icon);
 }

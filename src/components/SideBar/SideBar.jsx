@@ -7,13 +7,12 @@ import AddBoardForm from 'components/Forms/BoardForms/AddBoardForm/AddBoardForm'
 import sprite from 'assets/images/sprite.svg';
 import css from './SideBar.module.css';
 
-const SideBar = ({ isOpen }) => {
-
+const SideBar = ({ showSidebar }) => {
   const [showModal, setShowModal] = useState(false);
   const toggleModal = () => setShowModal(prevShowModal => !prevShowModal);
 
   return (
-    <aside className={`${css.sidebar} ${isOpen ? css.isOpen : ''}`}>
+    <aside className={`${css.sidebar} ${showSidebar ? css.showSidebar : ''}`}>
       <div className={css.sidebarHeader}>
         <a href="/" className={css.logoBlock}>
           <div className={css.logoIcon}>
