@@ -13,7 +13,7 @@
 .cardTitle {
     font-weight: 600;
     font-size: 14px;
-    color:var(--burger-color);
+    color: var(--burger-color);
     margin-bottom: 8px;
 }
 
@@ -68,6 +68,7 @@
 
 .optionsBtnList {
     display: flex;
+    position: relative;
 }
 
 .optionBtn {
@@ -95,10 +96,11 @@
     width: 16px;
     height: 16px;
     stroke: var(--secondary-text-color-low-op);
-    fill:none; 
+    fill: none;
+    transition: stroke var(--transition);
 }
 
-.bell{
+.bell {
     width: 16px;
     height: 16px;
     stroke: var(--accent-text-color);
@@ -106,3 +108,13 @@
     /* filter: drop-shadow(0 0 5px white); */
 }
 
+.optionsBtnList svg:hover,
+.optionsBtnList svg:focus {
+    stroke: var(--accent-text-color);
+}
+
+.progressContainer {
+    position: absolute;
+    right: -25px;
+    top: 30px;
+}

@@ -1,0 +1,47 @@
+.popupMenu {
+    border-radius: 8px;
+    width: 135px;
+    height: 86px;
+    box-shadow: 0 4px 16px 0 rgba(17, 17, 17, 0.1);
+    background: var(--progress-bg-color);
+    padding: 18px;
+}
+
+.progressList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.progressListBtn {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    color: var(--theme-text-color);
+    background-color: transparent;
+    border: none;
+    width: 99px;
+    transition: all var(--transition);
+}
+
+.progressBtnSvg {
+    display: block;
+    width: 16px;
+    height: 17px;
+    stroke: var(--theme-text-color);
+    fill: none;
+    transition: all var(--transition);
+}
+
+.progressListBtn:hover,
+.progressListBtn:focus {
+    color: var(--accent-text-color);
+}
+
+.progressListBtn:hover .progressBtnSvg,
+.progressListBtn:focus .progressBtnSvg {
+    stroke: var(--accent-text-color);
+    color: var(--accent-text-color);
+}

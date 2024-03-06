@@ -36,6 +36,7 @@
     --main-text-color-very-low-op: rgba(22, 22, 22, 0.10);
     --modal-border-color-low-op: rgba(22, 22, 22, 0.10);
     --modal-bg-color: rgba(21, 21, 21, 0.30);
+    --progress-bg-color: #fcfcfc;
     --need-help-bg-color: #f6f6f7;
     --modal-windows-bg-color: #fcfcfc;
     --modal-windows-border-color: transparent;
@@ -93,6 +94,7 @@
     --main-text-color-very-low-op: rgba(255, 255, 255, 0.10);
     --modal-border-color-low-op: rgba(255, 255, 255, 0.10);
     --modal-bg-color: rgba(21, 21, 21, 0.30);
+    --progress-bg-color: #1f1f1f;
     --need-help-bg-color: #1f1f1f;
     --modal-windows-bg-color: #151515;
     --modal-windows-border-color: rgba(190, 219, 176, 0.5);
@@ -150,6 +152,7 @@
     --main-text-color-very-low-op: rgba(255, 255, 255, 0.10);
     --modal-border-color-low-op: rgba(22, 22, 22, 0.10);
     --modal-bg-color: rgba(21, 21, 21, 0.30);
+    --progress-bg-color: #fcfcfc;
     --need-help-bg-color: rgba(236, 237, 253, 0.40);
     --modal-windows-bg-color: #fcfcfc;
     --modal-windows-border-color: transparent;
