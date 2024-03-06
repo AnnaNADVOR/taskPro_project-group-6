@@ -2,14 +2,12 @@
     position: relative;
     padding: 24px;
     border-radius: 8px;
+    width: 100%;
     background: var(--bacground-welcome-form-color);
-
-    @media screen and (min-width: 375px) {
-        width: 287px;
-    }
-
+    width: 335px;
+    
     @media screen and (min-width: 768px) {
-        width: 344px;
+        width: 424px;
         padding: 40px;
     }
 }
@@ -30,7 +28,7 @@
     border-radius: 8px;
     border: 1px solid var(--light-green-color);
     background: #1f1f1f;
-    box-shadow: 0px 4px 16px 0px var(--modal-input-shadow);
+    box-shadow: 0px 4px 16px 0px var(--shadow-color);
     box-sizing: border-box;
     opacity: 0.4;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -52,7 +50,7 @@
 
 .wrap {
     width: 100%;
-    color: var(--secondary-text-color);
+    color: var(--inactive-link-color);
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -68,7 +66,7 @@ svg:active {
 }
 
 .link {
-    color: var(--white-color-low-op);
+    color: var(--inactive-link-color);
     font-size: 18px;
     font-weight: 500;
     letter-spacing: -0.36px;
@@ -85,9 +83,10 @@ svg:active {
 }
 
 .errorMessage {
-    color: var(--error-color);
+    color: var(--validation-error-color);
     margin: 0 0 5px 0;
     text-align-last: left;
+    font-size: 12px;
 }
 
 .wrapper {
@@ -110,7 +109,6 @@ svg:active {
     height: 49px;
     justify-content: center;
     align-items: center;
-
     border: none;
     border-radius: 8px;
     font-size: 14px;

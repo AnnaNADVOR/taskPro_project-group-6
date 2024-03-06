@@ -34,7 +34,7 @@ return (
  <Formik
         initialValues={initialValues}
         validationSchema={Schema}
-        onSubmit={handleForSubmit}
+    onSubmit={handleForSubmit}
       >
  <Form className={style.form}>
     <div className={style.inputBox}>
