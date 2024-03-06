@@ -1,18 +1,36 @@
 .container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+
+  align-items: center;
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
-  background: #1f1f1f;
+  background: var(--main-bg-color);
+  height: 71px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+    height: 79px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+    height: 47px;
+  }
 }
 .projectTitle {
   font-size: 18px;
   font-weight: 500;
   letter-spacing: -0.36px;
   margin: 0;
-  color: #fff;
+  color: var(--secondary-text-color);
 }
 .buttonFilter {
   display: flex;
@@ -31,10 +49,11 @@
   font-size: 14px;
   font-weight: 500;
   letter-spacing: -0.28px;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--theme-main-text-color);
 }
 
 .filterIcon {
-  /* stroke: rgba(255, 255, 255, 0.8); */
-  fill: rgba(255, 255, 255, 0.8);
+  background: transparent;
+  stroke: var(--theme-main-text-color);
+  fill: none;
 }

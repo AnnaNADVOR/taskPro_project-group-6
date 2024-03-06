@@ -4,7 +4,7 @@
   align-items: center;
   text-align: center;
   gap: 8px;
-  background-color: #121212;
+  background-color: var(--add-column-btn);
   width: 334px;
   height: 56px;
   padding: 14px 0;
@@ -13,5 +13,5 @@
   font-weight: 500;
   font-size: 14px;
   letter-spacing: -0.02em;
-  color: #fff;
+  color: var(--secondary-text-color);
 }
