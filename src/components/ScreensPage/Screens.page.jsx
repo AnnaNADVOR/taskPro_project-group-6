@@ -1,11 +1,13 @@
-import BoardStart from 'components/BoardsList/BoardStart/BoardStart';
-import TestBtn from 'components/TestBtn/TestBtn';
+// import BoardStart from 'components/BoardsList/BoardStart/BoardStart';
+import AddBtnColumn from 'components/BoardsList/AddBtnColumn/AddBtnColumn';
+// import TestBtn from 'components/TestBtn/TestBtn';
 
 const ScreensPage = () => {
   return (
-    <div>
-      <TestBtn />
-      <BoardStart />
+    <div style={{ padding: '20px' }}>
+      {/* <TestBtn /> */}
+      {/* <BoardStart /> */}
+      <AddBtnColumn />
     </div>
   );
 };
