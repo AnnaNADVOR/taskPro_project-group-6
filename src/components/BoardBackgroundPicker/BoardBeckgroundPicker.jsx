@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
-import css from '../Forms/BoardForms/EditBoardForm/EditBoardForm.module.css';
+import css from '../Forms/BoardForms/AddBoardForm/AddBoardForm.module.css';
 
 const BoardBackgroundPicker = ({ onChangeImage, currentBoardBackground }) => {
   const images = [
