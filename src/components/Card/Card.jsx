@@ -52,7 +52,7 @@ const Card = () => {
                 <ul className={css.optionsBtnList}>
                     <li className={css.deadlineNotify}>
                         <button className={css.optionBtn} type="button">
-                            <svg>
+                            <svg className={css.bell}>
                                 <use href={`${sprite}#bell-16`}></use>                           
                             </svg>                                
                         </button>
@@ -60,21 +60,21 @@ const Card = () => {
                     <li>
                         <button className={css.optionBtn} type="button">
                             <svg fill="none">
-                                <use href={`${sprite}#icon-remove-16`} ></use>
+                                <use href={`${sprite}#remove-16`} ></use>
                             </svg>
                         </button>
                     </li>
                     <li className={css.btnItem}>
                         <button className={css.optionBtn} type="button">
                             <svg fill="none">
-                                <use href={`${sprite}#icon-pencil-16`} ></use>
+                                <use href={`${sprite}#pencil-16`} ></use>
                             </svg>
                         </button>
                     </li>
                     <li>
                         <button className={css.optionBtn} type="button">
                             <svg  fill="none">
-                                <use href={`${sprite}#icon-trash-16`} ></use>
+                                <use href={`${sprite}#trash-16`} ></use>
                             </svg>
                         </button>
                     </li>                    

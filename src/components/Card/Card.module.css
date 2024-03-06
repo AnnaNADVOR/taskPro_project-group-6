@@ -1,31 +1,26 @@
 .card {
     border-radius: 8px;
     width: 335px;
-    background: #121212;
+    background-color: var(--add-column-btn);
     padding: 14px 24px;
     font-weight: 400;
     font-size: 10px;
     letter-spacing: -0.02em;
-    color: #fff;
+    color: var(--burger-color);
     /* border-left: 4px solid #8fa1d0; */
 }
 
 .cardTitle {
-    font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-size: 14px;
-    letter-spacing: -0.02em;
-    color: #fff;
+    lcolor:var(--burger-color);
     margin-bottom: 8px;
 }
 
 .cardDescription {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
     font-size: 12px;
     line-height: 16px;
-    letter-spacing: -0.02em;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--main-page-text-color);
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -38,7 +33,7 @@
     justify-content: space-between;
     align-items: center;
     padding-top: 14px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--modal-border-color-low-op);
 }
 
 .optionsInfo {
@@ -49,15 +44,12 @@
 .optonWrapper {
     display: inline-flex;
     flex-direction: column;
-    gap: 4px;
 }
 
 .optionTitle {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
     font-size: 8px;
-    letter-spacing: -0.02em;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--secondary-text-color-low-op);
+    margin-bottom: 4px;
 }
 
 .priorityMark {
@@ -88,7 +80,7 @@
 .optionBtn svg {
     width: 16px;
     height: 16px;
-    stroke: rgba(255, 255, 255, 0.5);
+    stroke: var(--secondary-text-color-low-op);
 }
 
 .deadlineNotify {
@@ -96,9 +88,9 @@
 }
 
 .deadlineNotify svg {
-    stroke: #BEDBB0;
+    stroke: var(--accent-text-color);
     fill: none;
-    filter: drop-shadow(0 0 5px white);
+    /* filter: drop-shadow(0 0 5px white); */
 }
 
 .btnItem {

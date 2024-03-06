@@ -9,7 +9,7 @@ const MainAddButton = ({ text, click }) => {
             iconId = "#plus-white-background";
             break;  
         default:
-            iconId= "#plus-black-background";               
+            iconId = "#plus-black-background";               
         }   
     return (
         <button className={css.button} onClick={click} type="submit">
