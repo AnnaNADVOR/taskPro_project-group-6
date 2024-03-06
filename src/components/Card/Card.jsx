@@ -34,67 +34,65 @@ const Card = () => {
             color = "rgba(255, 255, 255, 0.3)";               
         }   
 
-    return (
-          
-    <>
-        <div className={css.card} style={{borderLeft: `4px solid ${color}`}}>
-            <h4 className={css.cardTitle}>Design and Prototyping SoYummy</h4>
-            <p className={css.cardDescription}>Create visually appealing and functional design prototypes based on the approved concepts,
-                ensuring seamless user experience and incorporating feedback for iterative improvements.
-            </p>
-            <div className={css.cardOptions} >
-                <div className={css.optionsInfo}>
-                    <div className={css.optionWrapper}>
-                        <h5 className={css.optionTitle}>Priority</h5>
-                        <div className={css.priorityLabel}>
-                            <span className={css.priorityMark} style={{backgroundColor: color}}></span> 
-                            <p>Low</p>
+    return (          
+        <>
+            <div className={css.card} style={{borderLeft: `4px solid ${color}`}}>
+                <h4 className={css.cardTitle}>Design and Prototyping SoYummy</h4>
+                <p className={css.cardDescription}>Create visually appealing and functional design prototypes based on the approved concepts,
+                    ensuring seamless user experience and incorporating feedback for iterative improvements.
+                 </p>
+                <div className={css.cardOptions} >
+                    <div className={css.optionsInfo}>
+                        <div className={css.optionWrapper}>
+                            <h5 className={css.optionTitle}>Priority</h5>
+                            <div className={css.priorityLabel}>
+                                <span className={css.priorityMark} style={{backgroundColor: color}}></span> 
+                                <p>Low</p>
+                            </div>
+                        </div>
+                        <div className={css.optionWrapper}>
+                            <h5 className={css.optionTitle}>Deadline</h5>
+                            <p>{formattedDate}</p>                        
                         </div>
                     </div>
-                    <div className={css.optionWrapper}>
-                        <h5 className={css.optionTitle}>Deadline</h5>
-                        <p>{formattedDate}</p>                        
-                    </div>
-                </div>
-                <ul className={css.optionsBtnList}>
-                    <li className={css.deadlineNotify}>
-                        <button className={css.optionBtn} type="button">
-                            <svg className={css.bell}>
-                                <use href={`${sprite}#bell-16`}></use>                           
-                            </svg>                                
-                        </button>
-                    </li>
-                    <li>
-                        <button className={css.optionBtn} type="button" >
-                            <svg className={css.optionBtnSvg} >
-                                <use href={`${sprite}#remove-16`} ></use>
-                            </svg>
-                        </button>
-                    </li>
-                    <li className={css.btnItem}>
-                        <button className={css.optionBtn} type="button" onClick={toggleModal}>
+                    <ul className={css.optionsBtnList}>
+                        <li className={css.deadlineNotify}>
+                            <button className={css.optionBtn} type="button">
+                                <svg className={css.bell}>
+                                    <use href={`${sprite}#bell-16`}></use>                           
+                                </svg>                                
+                            </button>
+                        </li>
+                        <li>
+                            <button className={css.optionBtn} type="button" >
+                                <svg className={css.optionBtnSvg} >
+                                    <use href={`${sprite}#remove-16`} ></use>
+                                </svg>
+                            </button>
+                        </li>
+                        <li className={css.btnItem}>
+                            <button className={css.optionBtn} type="button" onClick={toggleModal}>
                                 <svg className={css.optionBtnSvg}>
-                                <use href={`${sprite}#pencil-16`} ></use>
-                            </svg>
-                        </button>
-                    </li>
-                    <li>
-                        <button className={css.optionBtn} type="button">
-                            <svg className={css.optionBtnSvg}>
-                                <use href={`${sprite}#trash-16`} ></use>
-                            </svg>
-                        </button>
-                    </li>                    
-                </ul>
+                                    <use href={`${sprite}#pencil-16`} ></use>
+                                </svg>
+                            </button>
+                        </li>
+                        <li>
+                            <button className={css.optionBtn} type="button">
+                                <svg className={css.optionBtnSvg}>
+                                    <use href={`${sprite}#trash-16`} ></use>
+                                </svg>
+                            </button>
+                        </li>                    
+                    </ul>
+                </div>
             </div>
-        </div>
-        {showModal && (
+            {showModal && (
                 <Modal closeModal={toggleModal}>       
                     <CardForm title="Edit card" action="Edit" />    
                 </Modal>
-    )
-    }    
-    </>
+            )}
+        </>
     )
 }
 
