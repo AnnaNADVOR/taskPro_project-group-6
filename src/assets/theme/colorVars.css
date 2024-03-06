@@ -11,6 +11,13 @@
     --bacground-welcome-form-color: #151515;
     --white-color: #ffffff;
     --secondary-text-color: rgba(22, 22, 22, 0.3);
+    --validation-error-color: #ff2929;
+    --shadow-color: rgba(22, 22, 22, 0.08);
+    --hover-color: #9dc888;
+    --inactive-link-color: rgba(255, 255, 255, 0.3);
+
+    /* transition */
+    --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
 [data-theme='light'] {

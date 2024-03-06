@@ -1,0 +1,107 @@
+.card {
+    border-radius: 8px;
+    width: 335px;
+    background: #121212;
+    padding: 14px 24px;
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: -0.02em;
+    color: #fff;
+    /* border-left: 4px solid #8fa1d0; */
+}
+
+.cardTitle {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.cardDescription {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.02em;
+    color: rgba(255, 255, 255, 0.5);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+
+.cardOptions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.optionsInfo {
+    display: flex;
+    gap: 14px;
+}
+
+.optonWrapper {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.optionTitle {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 8px;
+    letter-spacing: -0.02em;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.priorityMark {
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    /* background-color: #8fa1d0;; */
+}
+
+.priorityLabel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.optionsBtnList {
+    display: flex;
+}
+
+.optionBtn {
+    width: 16px;
+    height: 16px;
+    border: none;
+    background-color: transparent;
+}
+
+.optionBtn svg {
+    width: 16px;
+    height: 16px;
+    stroke: rgba(255, 255, 255, 0.5);
+}
+
+.deadlineNotify {
+    margin-right: 12px;
+}
+
+.deadlineNotify svg {
+    stroke: #BEDBB0;
+    fill: none;
+    filter: drop-shadow(0 0 5px white);
+}
+
+.btnItem {
+    margin-left: 8px;
+    margin-right: 8px;
+}
