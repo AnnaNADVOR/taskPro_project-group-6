@@ -21,7 +21,9 @@ const HomePage = () => {
   }, []);
 
   const closeSidebar = useCallback(() => {
-    setShowSidebar(false);
+    if (window.innerWidth < 1440) {
+      setShowSidebar(false);
+    }
   }, []);
 
   useEffect(() => {
