@@ -78,6 +78,11 @@
     background-color: transparent;
 }
 
+.optionBtn>svg:hover,
+.optionBtn>svg:focus {
+    stroke: var(--modal-btn-hover)
+}
+
 .deadlineNotify {
     margin-right: 12px;
 }
