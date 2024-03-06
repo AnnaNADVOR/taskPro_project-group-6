@@ -30,28 +30,27 @@ const BoardBackgroundPicker = ({ onChangeImage, currentBoardBackground }) => {
     }
   }, [currentBoardBackground, selectedValue]);
 
-  const handleRadioChange = index => {
-    setSelectedValue(index <= 9 ? `0${index}` : `${index}`);
-    const paddedIndex = index.toString().padStart(2, '0');
-    const backgroundValue = `${paddedIndex}`;
-    onChangeImage(backgroundValue);
+  const handleRadioChange = imgId => {
+    setSelectedValue(imgId);
+    onChangeImage(imgId);
   };
 
   return (
     <div className={css.backPickerWrapper}>
       {images.map(({ alt, imgId }, index) => {
+        const imgKey = imgId.replace('.png', '');
         return (
-          <label className={css.backPickerLabel} key={index}>
+          <label className={css.backPickerLabel} key={imgKey}>
             <input
               className={css.backPickerInput}
               type="radio"
-              value={index}
+              value={imgId}
               name="image"
-              checked={selectedValue === imgId.substring(0, 2)}
-              onChange={() => handleRadioChange(index)}
+              checked={selectedValue === imgKey}
+              onChange={() => handleRadioChange(imgKey)}
             />
             <img
-              src={require(`../../assets/images/boardBacgrounds${imgId}`)}
+              src={require(`../../assets/images/boardBacgrounds/${imgId}`)}
               alt={alt}
               width="28px"
               height="28px"
