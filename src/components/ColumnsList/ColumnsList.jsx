@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import MainAddButton from '../Buttons/MainAddButton/MainAddButton';
 import Modal from '../Modal/Modal';
-import EditColumnForm from '../Forms/BoardForms/EditColumnForm/EditColumnForm';
+import AddCardForm from '../Forms/BoardForms/AddCardForm/AddCardForm';
+import Card from '../Card/Card';
 import css from './ColumnsList.module.css';
 import sprite from '../../assets/images/sprite.svg';
 
@@ -20,7 +21,7 @@ const ColumnsList = () => {
             <div>
               <p className={css.columnTitle}>
                 To do
-                <button className={css.btnIcon} onClick={toggleModal}>
+                <button className={css.btnIcon}>
                   <svg className={css.columnTitleIcon} width={16} height={16}>
                     <use href={`${sprite}#pencil-16`}></use>
                   </svg>
@@ -31,15 +32,17 @@ const ColumnsList = () => {
                   </svg>
                 </button>
               </p>
-              <div>{/* CARDS */}</div>
-              <MainAddButton text="Add another card" />
+              <div>
+                <Card />
+              </div>
+              <MainAddButton text="Add another card" click={toggleModal} />
             </div>
           </li>
           <li className={css.columnItem}>
             <div>
               <p className={css.columnTitle}>
                 In progress
-                <button className={css.btnIcon} onClick={toggleModal}>
+                <button className={css.btnIcon}>
                   <svg className={css.columnTitleIcon} width={16} height={16}>
                     <use href={`${sprite}#pencil-16`}></use>
                   </svg>
@@ -50,18 +53,17 @@ const ColumnsList = () => {
                   </svg>
                 </button>
               </p>
-              <div>{/* CARDS */}</div>
-              <MainAddButton
-                text="Add another card"
-                className={css.addCardBtn}
-              />
+              <div>
+                <Card />
+              </div>
+              <MainAddButton text="Add another card" click={toggleModal} />
             </div>
           </li>
         </ul>
       </div>
       {isOpen && (
         <Modal closeModal={toggleModal}>
-          <EditColumnForm />
+          <AddCardForm />
         </Modal>
       )}
     </>
