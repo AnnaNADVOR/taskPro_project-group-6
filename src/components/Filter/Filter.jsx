@@ -3,32 +3,35 @@ import css from './Filter.module.css';
 import { useState } from 'react';
 
 const Filter = () => {
+  const [priority, setPriority] = useState('without');
+  const priorityOptions = [
+    {
+      value: 'without',
+      color: `var(--priority-color-without)`,
+      text: 'Without priority',
+    },
+    { value: 'low', color: `var(--priority-low-color)`, text: 'Low' },
+    { value: 'medium', color: `var(--priority-medium-color)`, text: 'Medium' },
+    { value: 'high', color: `var(--priority-high-color)`, text: 'High' },
+  ];
   const [isShowAllActive, setIsShowAllActive] = useState(false);
-
   const handleChange = event => {
-    const filter = event.target.value;
-    console.log(filter);
+    setPriority(event.target.value);
   };
-
   const handleShowAll = () => {
     setIsShowAllActive(true);
   };
 
-  const handleRadioClick = () => {
-    if (isShowAllActive) {
-      setIsShowAllActive(false);
-    }
-  };
   const initialValues = {
     background: 0,
-    currentPrority: '',
+    priority: '',
   };
   return (
     <div>
       <h2 className={css.filterTitle}>Filters</h2>
       <Formik initialValues={initialValues}>
         <Form onChange={handleChange}>
-          <div>
+          <div className={css.filterContainer}>
             <div className={css.filterWrap}>
               <p className={css.textLeabel}>Label color</p>
               <button
@@ -40,53 +43,26 @@ const Filter = () => {
                 Show all
               </button>
             </div>
-            <div className={css.leabelGroup}>
-              <label className={css.labelItems}>
-                <Field
-                  className={css.inputFormik}
-                  type="radio"
-                  name="priority"
-                  value="without"
-                  // color="#5b5b5b"
-                  // checked={priority === 'without'}
-                  onClick={handleRadioClick}
-                />
-                Without priority
-              </label>
-              <label className={css.labelItems}>
-                <Field
-                  type="radio"
-                  name="priority"
-                  value="low"
-                  // color="#8FA1D0"
-                  // checked={priority === 'low'}
-                  onClick={handleRadioClick}
-                />
-                Low
-              </label>
-              <label className={css.labelItems}>
-                <Field
-                  type="radio"
-                  name="priority"
-                  value="high"
-                  // color="#E09CB5"
-                  // checked={priority === 'medium'}
-                  onClick={handleRadioClick}
-                />
-                Medium
-              </label>
-              <label className={css.labelItems}>
-                <Field
-                  type="radio"
-                  name="priority"
-                  value="high"
-                  // color="#BEDBB0"
-                  // checked={priority === 'high'}
-                  onClick={handleRadioClick}
-                />
-                High
-              </label>
-            </div>
+
+            {
+              <ul>
+                {priorityOptions.map(({ value, color, text }) => (
+                  <li key={value} className={css.leabelGroup}>
+                    <Field
+                      as="input"
+                      type="radio"
+                      name="priority"
+                      value={value}
+                      checked={priority === value}
+                      style={{ backgroundColor: color }}
+                      onClick={handleChange}
+                      className={css.label}
+                    />{' '}
+                    <span className={css.labeltext}> {text}</span>
+                  </li>
+                ))}
+              </ul>
+            }
           </div>
         </Form>
       </Formik>
