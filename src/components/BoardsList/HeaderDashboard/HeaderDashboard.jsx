@@ -4,7 +4,7 @@ import css from './HeaderDashboard.module.css';
 import sprite from 'assets/images/sprite.svg';
 import Modal from 'components/Modal/Modal';
 
-const Dashboard = () => {
+const HeaderDashboard = () => {
   const [isOpen, setIsOpen] = useState();
   const toggleModal = () => {
     setIsOpen(isOpen => !isOpen);
@@ -24,4 +24,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default HeaderDashboard;
