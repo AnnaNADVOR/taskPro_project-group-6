@@ -1,17 +1,13 @@
-import { Link } from "react-router-dom";
+import Wrapper from 'components/Forms/AuthForms/Wrapper/Wrapper';
+import ActiveAuth from 'components/AuthNav/AutNav';
+import Logo from 'components/Logo/Logo';
 
-const AuthPage = () => {
-    return (
-        <div>
-            <Link to="register">Register</Link>
-            <Link style={{ marginRight:15, marginLeft:15, }}to="login">Login</Link>
-            <span>
-                ©
-                <Link to="/">TaskPro</Link>
-                2024
-            </span>
-        </div>
-    )
+export default function AuthPage() {
+  return (
+    <Wrapper>
+      <ActiveAuth />
+      <Logo />
+    </Wrapper>
+    
+  );
 }
-
-export default AuthPage;

@@ -4,16 +4,12 @@ import sprite  from '../../assets/images/sprite.svg';
 import style from './Welcome.module.css'
 import Wrapper from 'components/Forms/AuthForms/Wrapper/Wrapper';
 
-
 export default function Welcome() {
     return (
-     
-        <Wrapper>
-    
+<Wrapper>
 <div className={style.section}>
    <img src={avatar} alt="Avatar" className={style.image} />
-      
-    <div className={style.box}>
+   <div className={style.box}>
         <svg className={style.icon}>
             <use href={`${sprite}#logo-black`} />
           </svg>
@@ -33,9 +29,7 @@ export default function Welcome() {
           Log In
         </NavLink>
     </div>
-
 </div>
-        
         </Wrapper>
   );
 }

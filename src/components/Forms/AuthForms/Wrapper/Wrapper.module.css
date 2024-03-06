@@ -7,5 +7,5 @@
     width: 100%;
     height: 770px;
     margin: 0 auto;
-    background: linear-gradient(180deg, #ffffff 25%, #bedbb0 92.19%);
+    background: linear-gradient(180deg, var(--white-color) 25%, var(--light-green-color) 92.19%);
 }
