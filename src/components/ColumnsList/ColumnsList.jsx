@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import MainAddButton from '../Buttons/MainAddButton/MainAddButton';
 import Modal from '../Modal/Modal';
-import AddCardForm from '../Forms/BoardForms/AddCardForm/AddCardForm';
+import CardForm from '../Forms/BoardForms/CardForm/CardForm';
 import Card from '../Card/Card';
 import css from './ColumnsList.module.css';
 import sprite from '../../assets/images/sprite.svg';
@@ -63,7 +63,7 @@ const ColumnsList = () => {
       </div>
       {isOpen && (
         <Modal closeModal={toggleModal}>
-          <AddCardForm />
+          <CardForm title="Add card" action="Add" />
         </Modal>
       )}
     </>

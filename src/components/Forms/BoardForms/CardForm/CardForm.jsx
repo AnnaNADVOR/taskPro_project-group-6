@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
-import css from "./AddCardForm.module.css"; 
+import css from "./CardForm.module.css"; 
 import PriorityOptions from '../../../PriorityOptions/PriorityOptions';
 import Calendar from '../../../Calendar/Calendar';
 import MainAddButton from '../../../Buttons/MainAddButton/MainAddButton';
@@ -14,7 +14,12 @@ const addCardSchema = Yup.object().shape({
     description: Yup.string(),
 });
 
-const AddCardForm = () => {
+const initialValues = {
+    title: "",
+    description: "", 
+}
+
+const CardForm = ({title, action}) => {
     const [priority, setPriority] = useState('without');
     const [deadline, setDeadline] = useState(new Date());
 
@@ -22,8 +27,15 @@ const AddCardForm = () => {
         setPriority(event.target.value);
     }
 
-    const handleSubmit = () => {
-        console.log("submit")
+    const handleSubmit = (values, actions) => {
+       const newCard = {
+            title: values.title,
+            description: values.description,
+            priority: values.priority,
+            deadline: deadline,
+        }
+        actions.resetForm()
+        console.log(newCard);   
     }
 
     const priorityOptions = [
@@ -35,10 +47,10 @@ const AddCardForm = () => {
 
     return (
         <Formik validationSchema={addCardSchema}
-            initialValues={{ title: "", description: "" }}
+            initialValues={initialValues}
             onSubmit={handleSubmit}>
             <Form autoComplete="off">
-                <h4 className={css.formTitle}>Add card</h4>
+                <h4 className={css.formTitle}>{title}</h4>
                 <label className={css.label} htmlFor="title">
                     <Field className={css.inputForm}
                         as="input"
@@ -47,6 +59,7 @@ const AddCardForm = () => {
                         placeholder="Title"
                         required={true}
                         autoFocus
+                        // value={title}
                     />
                     <span className={css.errorField}>
                         <ErrorMessage name="title" />
@@ -59,6 +72,7 @@ const AddCardForm = () => {
                         name="description"
                         placeholder="Description"
                         required={true}
+                        // value={description}
                     />
                 </label>           
                 <div className={css.priorityWrapper}>
@@ -73,12 +87,10 @@ const AddCardForm = () => {
                     <p className={css.formText}>Deadline</p>
                     <Calendar date={deadline} changeDate={setDeadline} />
                 </div>
-                <MainAddButton
-                    text="Add"
-                    click={handleSubmit} />
+                <MainAddButton text={action}/>
             </Form>
         </Formik>
     )
 }
 
-export default AddCardForm; 
+export default CardForm; 
