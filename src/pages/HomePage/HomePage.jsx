@@ -1,10 +1,11 @@
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import Header from 'components/Header/Header';
 import ScreensPage from 'components/ScreensPage/Screens.page';
 import SideBar from 'components/SideBar/SideBar';
-import { useEffect, useState } from 'react';
 
 const HomePage = () => {
   const [showSidebar, setShowSidebar] = useState(false);
+  const sidebarRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -19,6 +20,39 @@ const HomePage = () => {
     };
   }, []);
 
+  const closeSidebar = useCallback(() => {
+    setShowSidebar(false);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = event => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        closeSidebar();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [closeSidebar]);
+
+  const onEscClick = useCallback(
+    event => {
+      if (event.code === 'Escape') {
+        closeSidebar();
+      }
+    },
+    [closeSidebar]
+  );
+
+  useEffect(() => {
+    window.addEventListener('keydown', onEscClick);
+    return () => {
+      window.removeEventListener('keydown', onEscClick);
+    };
+  }, [onEscClick]);
+
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
   };
@@ -26,7 +60,11 @@ const HomePage = () => {
   return (
     <div>
       <div style={{ display: 'flex' }}>
-        {showSidebar && <SideBar />}
+        {showSidebar && (
+          <div ref={sidebarRef}>
+            <SideBar closeSidebar={toggleSidebar} />
+          </div>
+        )}
         <div
           style={{ display: 'flex', flexDirection: 'column', width: '100%' }}
         >
@@ -41,5 +79,5 @@ const HomePage = () => {
     </div>
   );
 };
-    
+
 export default HomePage;
