@@ -8,7 +8,8 @@
   height: 100vh;
   background: var(--main-aside-color);
   transform: translateX(0px);
-  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: transform var(--transition);
+  z-index: 200;
 }
 
 .showSidebar {
@@ -135,6 +136,7 @@
   border-radius: 6px;
   padding: 8px 10px;
   background-color: var(--buttons-bg-color);
+  transition: background-color var(--transition);
 }
 
 .button:hover,
@@ -145,6 +147,11 @@
 .plusIcon {
   width: 20px;
   height: 20px;
+  stroke: var(--secondary-buttons-color);
+}
+
+.plusIcon:hover,
+.plusIcon:focus {
   stroke: var(--secondary-buttons-color);
 }
 
@@ -170,6 +177,7 @@
   font-weight: 500;
   font-size: 14px;
   color: var(--main-text-color);
+  transition: stroke var(--transition);
 }
 
 .logoutIcon {
@@ -178,6 +186,7 @@
   height: 32px;
   stroke: var(--logout-icon);
   fill: none;
+  transition: stroke var(--transition);
 }
 
 .logoutLink:hover,
