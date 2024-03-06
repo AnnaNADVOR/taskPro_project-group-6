@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import NeedHelp from './NeedHelp/NeedHelp';
 import Modal from 'components/Modal/Modal';
@@ -14,14 +15,14 @@ const SideBar = ({ showSidebar }) => {
   return (
     <aside className={`${css.sidebar} ${showSidebar ? css.showSidebar : ''}`}>
       <div className={css.sidebarHeader}>
-        <a href="/" className={css.logoBlock}>
+        <Link to="/home" className={css.logoBlock}>
           <div className={css.logoIcon}>
             <svg className={css.logoFlashIcon}>
               <use href={`${sprite}#flash`}></use>
             </svg>
           </div>
           <p className={css.logo}>Task Pro</p>
-        </a>
+        </Link>
       </div>
       <div className={css.sidebarWrapper}>
         <h2 className={css.sidebarBoardsHeading}>My boards</h2>
@@ -39,14 +40,14 @@ const SideBar = ({ showSidebar }) => {
         <NeedHelp />
       </div>
       <div className={css.logoutBlock}>
-        <a href="/" className={css.logoutLink}>
+        <Link to="/" className={css.logoutLink}>
           <span>
             <svg className={css.logoutIcon}>
               <use href={`${sprite}#logOut-32`}></use>
             </svg>
           </span>
           <p className={css.logoutText}>Log out</p>
-        </a>
+        </Link>
       </div>
 
       {showModal && (

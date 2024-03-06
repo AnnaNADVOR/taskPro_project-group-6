@@ -27,6 +27,7 @@
     letter-spacing: -0.02em;
     opacity: 0.4;
     outline: none;
+    transition: all var(--transition);
 }
 
 .helpEmailInput:valid {
@@ -70,6 +71,7 @@
     letter-spacing: -0.02em;
     opacity: 0.4;
     outline: none;
+    transition: all var(--transition);
 }
 
 .helpCommentInput:hover,
