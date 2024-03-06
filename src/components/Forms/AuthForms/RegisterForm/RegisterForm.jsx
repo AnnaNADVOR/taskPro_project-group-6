@@ -9,8 +9,6 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import style from '../../../AuthNav/AuthNav.module.css';
 import sprite from '../../../../assets/images/sprite.svg';
 import Schema from '../Schemas/Schemas';
-import SendButton from '../../../Buttons/SendButton/SendButton';
- 
 const initialValues = {
   name: '',
   email: '',
@@ -93,7 +91,9 @@ resetForm();
               </div>
             </div>
           </div>
-         <SendButton  text="Register Now" />
+       <button className={style.button} type="submit">
+            Register Now
+          </button>
           </Form>
       </Formik>
     </>
