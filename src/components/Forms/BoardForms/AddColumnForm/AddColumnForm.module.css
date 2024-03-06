@@ -1,0 +1,34 @@
+.addColumnModalTitle {
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  color: var(--secondary-text-color);
+  margin-bottom: 24px;
+}
+
+.addColumnForm {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.addColumnInput {
+  width: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  width: 100%;
+  color: var(--secondary-text-color);
+  background-color: var(--modal-input-bg);
+  padding: 18px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.08);
+  border: 1px solid var(--accent-text-color);
+  outline: rgba(0, 0, 0, 0);
+  opacity: 0.4;
+}
+
+.addColumnInput:hover,
+.addColumnInput:focus {
+  opacity: 1;
+}
