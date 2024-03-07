@@ -11,27 +11,15 @@ const AddBtnColumn = () => {
     setIsOpen(isOpen => !isOpen);
   };
 
-  const theme = localStorage.getItem('selectedTheme');
-  console.log(theme);
-  let iconId;
-  switch (theme) {
-    case 'violet':
-      iconId = '#plus-violet-background';
-      break;
-    case 'light':
-      iconId = '#plus-black-background';
-      break;
-    default:
-      iconId = '#plus-white-background';
-  }
-
   return (
     <>
       <button className={css.btnAddColumn} type="button" onClick={toggleModal}>
-        <svg aria-label="plus" width="28" height="28">
-          <use href={sprite + iconId}></use>
-        </svg>
-        <p>Add another column</p>
+        <div className={css.btnPlus}>
+          <svg aria-label="plus">
+            <use href={`${sprite}#plus-20`}></use>
+          </svg>
+        </div>
+        <p className={css.btnText}>Add another column</p>
       </button>
       {isOpen && (
         <Modal closeModal={toggleModal}>

@@ -14,12 +14,23 @@ const HeaderDashboard = () => {
     <div className={css.container}>
       <h2 className={css.projectTitle}>Name of project</h2>
       <button className={css.buttonFilter} type=" button" onClick={toggleModal}>
-        <svg aria-label="filter icon" width="16" height="16">
-          <use className={css.filterIcon} href={`${sprite}#filter-16`}></use>
+        <svg
+          className={css.filterIcon}
+          aria-label="filter icon"
+          width="16"
+          height="16"
+        >
+          <use href={`${sprite}#filter-16`}></use>
         </svg>
         <p className={css.filterTitle}>Filters</p>
       </button>
-      {isOpen && <Modal closeModal={toggleModal} children={<Filter />} />}
+      {isOpen && (
+        <Modal
+          style={css.modalStyle}
+          closeModal={toggleModal}
+          children={<Filter />}
+        />
+      )}
     </div>
   );
 };

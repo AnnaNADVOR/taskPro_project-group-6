@@ -7,11 +7,35 @@
   background-color: var(--add-column-btn);
   width: 334px;
   height: 56px;
-  padding: 14px 0;
+  padding: 14px 0px;
   border-radius: 8px;
   border: none;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: -0.02em;
   color: var(--secondary-text-color);
+  transition: var(--transition);
+}
+
+.btnPlus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--add-column-plus-wrapper);
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  padding: 7px;
+  text-align: center;
+}
+
+.btnPlus:hover,
+.btnPlus:focus {
+  background-color: var(--modal-btn-hover);
+}
+
+.btnPlus > svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--add-column-btn);
 }
