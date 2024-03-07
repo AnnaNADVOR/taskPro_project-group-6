@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { cardsSlice } from './cards/slice';
+import { tasksSlice } from './tasks/slice';
 import { authReducer } from './auth/slice';
 import { columnsSlice } from './columns/slice';
 import { filterSlice } from './filter/slice';
@@ -16,7 +16,7 @@ import {
 
 export const store = configureStore({
     reducer: {
-        cards: cardsSlice.reducer,
+        tasks: tasksSlice.reducer,
         columns: columnsSlice.reducer,
         boards: boardsSlice.reducer,
         auth: authReducer,

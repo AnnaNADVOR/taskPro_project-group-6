@@ -1,4 +1,4 @@
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 // import { lazy } from "react";
 // const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 // const AuthPage = lazy(() => import("../../pages/AuthPage/AuthPage"));
@@ -12,7 +12,6 @@ import SharedLayout from "components/SharedLayuout/SharedLayout";
 const App = () => {
     return (
         <>
-           <Link to="/home" style={{ marginRight:15, marginLeft:15, }}>Home</Link>
             <Routes>
                 <Route path="/" element={<WelcomePage />} />
                 <Route path="/auth/:id" element={<AuthPage />} />
