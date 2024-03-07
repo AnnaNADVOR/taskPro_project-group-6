@@ -4,6 +4,7 @@
   margin-bottom: 14px;
   color: var(--secondary-text-color);
 }
+
 .filterWrap {
   display: flex;
   justify-content: space-between;
@@ -35,6 +36,14 @@
   cursor: pointer;
 }
 
+.buttonLeabel:hover,
+.buttonLeabel:focus {
+  background: transparent;
+  color: var(--theme-text-hover-color);
+  transition: stroke var(--transition);
+  fill: none;
+}
+
 .leabelGroup {
   display: flex;
 
@@ -42,6 +51,10 @@
 }
 .leabelGroup:not(:last-child) {
   padding-bottom: 10px;
+}
+
+.leabelGroup:last-child {
+  padding-bottom: 20px;
 }
 
 .label {
@@ -64,4 +77,9 @@
   letter-spacing: -0.02em;
   font-weight: 400;
   font-size: 12px;
+}
+
+.label:checked + .labeltext {
+  color: var(--secondary-text-color);
+  transition: stroke var(--transition);
 }
