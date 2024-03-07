@@ -8,7 +8,7 @@ import AddBoardForm from 'components/Forms/BoardForms/AddBoardForm/AddBoardForm'
 import sprite from 'assets/images/sprite.svg';
 import css from './SideBar.module.css';
 
-const SideBar = ({ showSidebar }) => {
+const SideBar = ({ showSidebar, closeModal }) => {
   const [showModal, setShowModal] = useState(false);
   const toggleModal = () => setShowModal(prevShowModal => !prevShowModal);
 
@@ -36,7 +36,7 @@ const SideBar = ({ showSidebar }) => {
         </div>
       </div>
       <div className={css.sidebarBoardsList}>
-        <Link to="/home/rte">Bord</Link>
+        <Link to="/home/rte">Board</Link>
       </div>
       <div className={css.sidebarWrapper}>
         <NeedHelp />
@@ -53,7 +53,12 @@ const SideBar = ({ showSidebar }) => {
       </div>
 
       {showModal && (
-        <Modal closeModal={toggleModal}>
+        <Modal
+          closeModal={() => {
+            toggleModal();
+            closeModal();
+          }}
+        >
           <AddBoardForm />
         </Modal>
       )}
