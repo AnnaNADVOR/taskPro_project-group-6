@@ -1,5 +1,4 @@
 .container {
-  padding-left: 32px;
   display: flex;
   background: var(--main-bg-color);
   /* height: calc(100vh - 139px); */
