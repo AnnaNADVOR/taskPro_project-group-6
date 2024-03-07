@@ -35,7 +35,9 @@ const SideBar = ({ showSidebar }) => {
           </button>
         </div>
       </div>
-      <div className={css.sidebarBoardsList}></div>
+      <div className={css.sidebarBoardsList}>
+        <Link to="/home/rte">Bord</Link>
+      </div>
       <div className={css.sidebarWrapper}>
         <NeedHelp />
       </div>
