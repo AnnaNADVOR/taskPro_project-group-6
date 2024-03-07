@@ -60,22 +60,18 @@ export const SharedLayout = () => {
     
     return (
         <>   
+            <header>
+                <Header toggleSidebar={toggleSidebar} />
+            </header>    
+            <main>
+                <Outlet />              
+            </main>
+
             {showSidebar && (
                 <div ref={sidebarRef}>
                     <SideBar closeSidebar={toggleSidebar} />
                 </div>
-            )}
-            <div
-                style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    width: '100%'
-                }}>
-                <header>
-                    <Header toggleSidebar={toggleSidebar} />
-                </header>                      
-            </div>       
-            <Outlet />      
+            )}    
         </>
     )
 }
