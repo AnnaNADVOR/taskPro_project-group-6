@@ -9,7 +9,7 @@ const AuthPage = () => {
   const { id } = useParams();
   return (
     <Wrapper>
-      {id === 'register' ? <RegisterForm /> : <LoginForm />};
+      {id === 'register' ? <RegisterForm /> : <LoginForm />}
       <Logo/>
     </Wrapper>
   ) 
