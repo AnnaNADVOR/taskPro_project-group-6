@@ -37,7 +37,7 @@ const Card = () => {
 
   //progress popup
   const [showMenu, setShowMenu] = useState(false);
-  const [progress, setProgress] = useState('');
+  const [setProgress] = useState('');
 
   useEffect(() => {
     const handleClickOutside = event => {
