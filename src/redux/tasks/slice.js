@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const cardsSlice = createSlice({
-    name: 'cards',
+export const tasksSlice = createSlice({
+    name: 'tasks',
     initialState: {
-        cardsList: [],
+        tasksList: [],
         error: null,
         isLoading: false,
     },

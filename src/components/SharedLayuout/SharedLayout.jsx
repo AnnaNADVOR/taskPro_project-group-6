@@ -12,6 +12,27 @@ export const SharedLayout = () => {
     const handleResize = () => {
       setShowSidebar(window.innerWidth >= 1440);
     };
+    
+    return (
+        <div> 
+            <div style={{display:"flex", position:"relative"}}>
+                {showSidebar && (
+                    <div ref={sidebarRef}>
+                        <SideBar closeSidebar={toggleSidebar} />
+                    </div>
+                )} 
+                <div style={{ width:"100%"}}>
+                    <header>
+                        <Header toggleSidebar={toggleSidebar} />
+                    </header>    
+                    <main style={{padding:"32px",}}>
+                        <Outlet />              
+                    </main>  
+                </div>
+            </div>  
+        </div>
+    )
+}
 
     handleResize();
     window.addEventListener('resize', handleResize);
