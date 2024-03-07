@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import sprite from "../../assets/images/sprite.svg";
 import css from "./Modal.module.css";
+import { createPortal } from "react-dom";
 
 
 function Modal({ closeModal, children, style}) {
@@ -23,18 +24,19 @@ function Modal({ closeModal, children, style}) {
         }
     }
 
-    return ( 
+    return createPortal (
         <div className={css.backdrop} onClick={onOverlayClick}>
-            <div className={style || css.modal}>
-                <button className={css.closeButton} onClick={closeModal}>
-                    <svg className={css.closeButtonSvg}>
-                        <use href={`${sprite}#close-18`} />
-                    </svg>
-                </button>               
-                {children}      
-            </div>
-        </div>
-    );    
+          <div className={style || css.modal}>
+               <button className={css.closeButton} onClick={closeModal}>
+                   <svg className={css.closeButtonSvg}>
+                    <use href={`${sprite}#close-18`} />
+                   </svg>
+             </button>               
+              {children}      
+          </div>
+       </div>,
+    document.getElementById("modal-root")
+    )
 }
 
 export default Modal; 
