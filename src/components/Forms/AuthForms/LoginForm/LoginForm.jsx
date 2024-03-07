@@ -1,7 +1,6 @@
 import style from '../../../AuthNav/AuthNav.module.css';
 import sprite from '../../../../assets/images/sprite.svg';
 import Schema from '../Schemas/Schemas'
-import SendButton from '../../../Buttons/SendButton/SendButton';
 import { useState } from 'react';
 /* // useEffect
 import { useNavigate } from 'react-router-dom';
@@ -66,7 +65,7 @@ return (
                 placeholder="Confirm a password"
             />
         <div className={style.wrapper}>
-                <svg
+                <svg 
                   width={18}
                   height={18}
                   className={style.icon}
@@ -77,7 +76,9 @@ return (
         </div>
         </div>
     </div>
-          <SendButton text="Log In Now"  />
+          <button className={style.button} type="submit">
+          Log In Now
+        </button>
         </Form>
       </Formik>
     );
