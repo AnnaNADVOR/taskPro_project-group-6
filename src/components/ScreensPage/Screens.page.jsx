@@ -1,7 +1,7 @@
-import AddBtnColumn from 'components/BoardsList/AddBtnColumn/AddBtnColumn';
+import AddBtnColumn from 'components/Board/AddBtnColumn/AddBtnColumn';
 import ColumnsList from '../ColumnsList/ColumnsList';
 import css from './Screens.page.module.css';
-import HeaderDashboard from 'components/BoardsList/HeaderDashboard/HeaderDashboard';
+import HeaderDashboard from 'components/Board/HeaderDashboard/HeaderDashboard';
 
 const ScreensPage = () => {
   return (
