@@ -9,12 +9,15 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import style from '../../../AuthNav/AuthNav.module.css';
 import sprite from '../../../../assets/images/sprite.svg';
 import Schema from '../Schemas/Schemas';
+import ActiveAuth from 'components/AuthNav/AuthNav';
+
 const initialValues = {
   name: '',
   email: '',
   password: '',
 };
- export default function RegisterForm() {
+
+export default function RegisterForm() {
   /*   const dispatch = useDispatch();
   const isLogin = useSelector(isLoggedIn);
   const navigate = useNavigate();
@@ -30,7 +33,8 @@ const handleForSubmit = async (values, { resetForm }) => {
 resetForm();
   };
   return (
-    <>
+    <div className={style.box}>
+      <ActiveAuth/>
       <Formik
         initialValues={initialValues}
         validationSchema={Schema}
@@ -96,6 +100,7 @@ resetForm();
           </button>
           </Form>
       </Formik>
-    </>
+    
+    </div>
   );
 }

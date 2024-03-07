@@ -34,6 +34,7 @@
 
 body {
   margin: 0;
+  background-color: var(--main-bg-color);
   font-family: -apple-system, BlinkMacSystemFont, 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;

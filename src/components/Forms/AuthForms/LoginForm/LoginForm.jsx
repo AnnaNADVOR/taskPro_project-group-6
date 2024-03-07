@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../../redux/auth/operations';
 import { isLoggedIn } from '../../../redux/auth/selectors'; */
 import { ErrorMessage, Field, Form, Formik } from 'formik';
+import ActiveAuth from 'components/AuthNav/AuthNav';
 
 const initialValues = {
   email: '',
@@ -29,7 +30,9 @@ const handleForSubmit = async (values, { resetForm }) => {
     resetForm();
   };
 
-return (
+  return (
+   <div className={style.box}>
+  <ActiveAuth/>
  <Formik
         initialValues={initialValues}
         validationSchema={Schema}
@@ -80,6 +83,8 @@ return (
           Log In Now
         </button>
         </Form>
-      </Formik>
+        </Formik>
+ 
+     </div>
     );
   }

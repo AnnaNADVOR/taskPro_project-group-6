@@ -105,7 +105,7 @@
     height: 16px;
     stroke: var(--accent-text-color);
     fill: none;
-    /* filter: drop-shadow(0 0 5px white); */
+    filter: drop-shadow(0 0 5px var(--accent-text-color));
 }
 
 .optionsBtnList svg:hover,

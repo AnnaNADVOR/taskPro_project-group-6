@@ -1,13 +1,18 @@
-import Wrapper from 'components/Forms/AuthForms/Wrapper/Wrapper';
-import ActiveAuth from 'components/AuthNav/AutNav';
+import { useParams } from 'react-router-dom';
+
+import Wrapper from "components/Forms/AuthForms/Wrapper/Wrapper";
+import RegisterForm from "components/Forms/AuthForms/RegisterForm/RegisterForm";
+import LoginForm from "components/Forms/AuthForms/LoginForm/LoginForm";
 import Logo from 'components/Logo/Logo';
 
-export default function AuthPage() {
+const AuthPage = () => {
+  const { id } = useParams();
   return (
     <Wrapper>
-      <ActiveAuth />
-      <Logo />
+      {id === 'register' ? <RegisterForm /> : <LoginForm />};
+      <Logo/>
     </Wrapper>
-    
-  );
+  ) 
 }
+
+export default AuthPage;
