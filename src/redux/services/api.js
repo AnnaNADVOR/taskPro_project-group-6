@@ -85,8 +85,16 @@ export async function deleteColumnById(columnId) {
 }
 
 //--------------------tasks-------------------//
-export async function addTask(column,title) {
-    const response = await axios.post("/tasks", {column, title});
+export async function addTask(data) {
+    return {
+  "_id": "64c8e005a6e42b970c671aa7",
+  "title": "Task01",
+  "description": "Create visually appealing and functional design prototypes base the approved concepts, ensuring seamless user experience and incorporating feedback for iterative improvements.",
+  "priority": "Low",
+  "deadline": "2023-08-01T10:35:49.188Z",
+  "updatedAt": "2023-08-01T10:35:49.195Z"
+}
+    const response = await axios.post("/tasks", {data});
     return response; 
 }
 

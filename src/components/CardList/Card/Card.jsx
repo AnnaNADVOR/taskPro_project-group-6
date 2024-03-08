@@ -1,13 +1,16 @@
 import css from './Card.module.css';
-import sprite from '../../assets/images/sprite.svg';
+import sprite from '../../../assets/images/sprite.svg';
 import { useState, useEffect } from 'react';
+// import { useDispatch, useSelector } from "react-redux";
 import Modal from 'components/Modal/Modal';
 import CardForm from 'components/Forms/BoardForms/CardForm/CardForm';
-import Progress from './Progress/Progress';
+import Progress from '../Progress/Progress';
 
-const Card = () => {
+const Card = (newCard) => {
   const [showModal, setShowModal] = useState(false);
   const toggleModal = () => setShowModal(prevShowModal => !prevShowModal);
+  // const dispatch = useDispatch(); 
+
   //date
   const today = new Date();
   function formatDate(date) {
@@ -68,14 +71,15 @@ const Card = () => {
     setShowMenu(false);
   };
 
+  
   return (
     <>
       <div className={css.card} style={{ borderLeft: `4px solid ${color}` }}>
-        <h4 className={css.cardTitle}>Design and Prototyping SoYummy</h4>
-        <p className={css.cardDescription}>
-          Create visually appealing and functional design prototypes based on
+        <h4 className={css.cardTitle}>{newCard.title}</h4>
+        <p className={css.cardDescription}>{newCard.description}
+          {/* Create visually appealing and functional design prototypes based on
           the approved concepts, ensuring seamless user experience and
-          incorporating feedback for iterative improvements.
+          incorporating feedback for iterative improvements. */}
         </p>
         <div className={css.cardOptions}>
           <div className={css.optionsInfo}>
@@ -86,7 +90,7 @@ const Card = () => {
                   className={css.priorityMark}
                   style={{ backgroundColor: color }}
                 ></span>
-                <p>Low</p>
+                <p>{newCard.priority}</p>
               </div>
             </div>
             <div className={css.optionWrapper}>
