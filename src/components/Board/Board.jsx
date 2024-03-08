@@ -1,5 +1,3 @@
-const Board = () => {
- 
-}
+const Board = () => {};
 
 export default Board;

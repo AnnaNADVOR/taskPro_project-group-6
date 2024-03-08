@@ -1,5 +1,6 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addBoard } from '../../../../redux/boards/operation';
 import { Formik, Form, ErrorMessage, Field } from 'formik';
 import * as Yup from 'yup';
 import MainAddButton from 'components/Buttons/MainAddButton/MainAddButton';
@@ -12,10 +13,19 @@ const TitleSchema = Yup.object().shape({
 });
 
 const AddBoardForm = () => {
+  const dispatch = useDispatch();
   const [backgroundName, setBackgroundName] = useState('00');
   const [iconName, setIconName] = useState('mark-circuls-18');
 
-  const handleSubmit = () => {};
+  const handleSubmit = values => {
+    dispatch(
+      addBoard({
+        title: values.boardTitle,
+        icon: iconName,
+        background: backgroundName,
+      })
+    );
+  };
 
   return (
     <Formik
@@ -38,19 +48,14 @@ const AddBoardForm = () => {
         <span className={css.inputErrorMessage}>
           <ErrorMessage name="boardTitle" />
         </span>
-
         <p className={css.subtitle}>Icons</p>
-
         <BoardMarkPicker iconName={iconName} onChangeIcon={setIconName} />
-
         <p className={css.subtitle}>Background</p>
-
         <BoardBackgroundPicker
           backgroundName={backgroundName}
           onChangeImage={setBackgroundName}
         />
-
-        <MainAddButton text="Create" click={handleSubmit} />
+        <MainAddButton text="Create" type="submit" />
       </Form>
     </Formik>
   );
