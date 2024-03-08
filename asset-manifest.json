@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/taskPro_project-group-6/static/css/main.8706de6e.css",
-    "main.js": "/taskPro_project-group-6/static/js/main.6aa9280b.js",
+    "main.css": "/taskPro_project-group-6/static/css/main.45d745c8.css",
+    "main.js": "/taskPro_project-group-6/static/js/main.4a178ae8.js",
     "static/media/blooming-tree-2x.jpg": "/taskPro_project-group-6/static/media/blooming-tree-2x.1503ef821b76785c0130.jpg",
     "static/media/azure-coast-2x.jpg": "/taskPro_project-group-6/static/media/azure-coast-2x.4acdbf3b5ee62890ec3f.jpg",
     "static/media/fern-2x.jpg": "/taskPro_project-group-6/static/media/fern-2x.8d26b4cf1ad49f290bf4.jpg",
@@ -43,11 +43,11 @@
     "static/media/drop.jpg": "/taskPro_project-group-6/static/media/drop.eace6461f046e6ec2f83.jpg",
     "static/media/moon.jpg": "/taskPro_project-group-6/static/media/moon.32da5be9f33c6d69cc85.jpg",
     "index.html": "/taskPro_project-group-6/index.html",
-    "main.8706de6e.css.map": "/taskPro_project-group-6/static/css/main.8706de6e.css.map",
-    "main.6aa9280b.js.map": "/taskPro_project-group-6/static/js/main.6aa9280b.js.map"
+    "main.45d745c8.css.map": "/taskPro_project-group-6/static/css/main.45d745c8.css.map",
+    "main.4a178ae8.js.map": "/taskPro_project-group-6/static/js/main.4a178ae8.js.map"
   },
   "entrypoints": [
-    "static/css/main.8706de6e.css",
-    "static/js/main.6aa9280b.js"
+    "static/css/main.45d745c8.css",
+    "static/js/main.4a178ae8.js"
   ]
 }
