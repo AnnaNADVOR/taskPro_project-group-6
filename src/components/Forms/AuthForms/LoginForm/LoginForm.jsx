@@ -83,8 +83,7 @@ const handleForSubmit = async (values, { resetForm }) => {
           Log In Now
         </button>
         </Form>
-        </Formik>
- 
-     </div>
+        </Formik> 
+    </div>
     );
   }
