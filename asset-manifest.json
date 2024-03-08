@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/taskPro_project-group-6/static/css/main.d7e28294.css",
+    "main.css": "/taskPro_project-group-6/static/css/main.8706de6e.css",
     "main.js": "/taskPro_project-group-6/static/js/main.6aa9280b.js",
     "static/media/blooming-tree-2x.jpg": "/taskPro_project-group-6/static/media/blooming-tree-2x.1503ef821b76785c0130.jpg",
     "static/media/azure-coast-2x.jpg": "/taskPro_project-group-6/static/media/azure-coast-2x.4acdbf3b5ee62890ec3f.jpg",
@@ -43,11 +43,11 @@
     "static/media/drop.jpg": "/taskPro_project-group-6/static/media/drop.eace6461f046e6ec2f83.jpg",
     "static/media/moon.jpg": "/taskPro_project-group-6/static/media/moon.32da5be9f33c6d69cc85.jpg",
     "index.html": "/taskPro_project-group-6/index.html",
-    "main.d7e28294.css.map": "/taskPro_project-group-6/static/css/main.d7e28294.css.map",
+    "main.8706de6e.css.map": "/taskPro_project-group-6/static/css/main.8706de6e.css.map",
     "main.6aa9280b.js.map": "/taskPro_project-group-6/static/js/main.6aa9280b.js.map"
   },
   "entrypoints": [
-    "static/css/main.d7e28294.css",
+    "static/css/main.8706de6e.css",
     "static/js/main.6aa9280b.js"
   ]
 }
