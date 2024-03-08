@@ -4,12 +4,21 @@
   align-items: center;
   text-align: center;
   width: 100%;
-  height: calc(100vh - 60px);
+  padding-top: 292px;
+  /* height: calc(100vh - 60px); */
   background: var(--main-bg-color);
 }
 @media screen and (min-width: 768px) {
   .boardStartContainer {
-    height: calc(100vh - 68px);
+    padding-top: 408px;
+    /* height: calc(100vh - 68px); */
+  }
+}
+
+@media screen and (min-width: 1140px) {
+  .boardStartContainer {
+    padding-top: 281px;
+    /* height: calc(100vh - 68px); */
   }
 }
 
