@@ -5,12 +5,13 @@ import { useState, useEffect } from 'react';
 import Modal from 'components/Modal/Modal';
 import CardForm from 'components/Forms/BoardForms/CardForm/CardForm';
 import Progress from '../Progress/Progress';
+// import { useDispatch } from "react-redux";
 
-const Card = (newCard) => {
+const Card = ({ newCard }) => {
   const [showModal, setShowModal] = useState(false);
   const toggleModal = () => setShowModal(prevShowModal => !prevShowModal);
-  // const dispatch = useDispatch(); 
 
+console.log("new", newCard.newCard)
   //date
   const today = new Date();
   function formatDate(date) {
@@ -22,20 +23,23 @@ const Card = (newCard) => {
   const formattedDate = formatDate(today);
 
   //priorityOptions
-  const priority = 'medium';
+  const priority = newCard.priority;
   let color;
   switch (priority) {
-    case 'low':
-      color = '#8fa1d0';
+    case 'Low':
+      color = 'var(--priority-low-color)';
       break;
-    case 'medium':
+    case 'Medium':
       color = '#E09CB5';
       break;
-    case 'high':
+    case 'High':
       color = '#BEDBB0';
       break;
+    case "Without":
+      color = 'var(--priority-color-without)';
+      break;
     default:
-      color = 'rgba(255, 255, 255, 0.3)';
+      color = `var(--priority-color-without)`;
   }
 
   //progress popup
@@ -71,7 +75,8 @@ const Card = (newCard) => {
     setShowMenu(false);
   };
 
-  
+  // const dispatch = useDispatch(); 
+
   return (
     <>
       <div className={css.card} style={{ borderLeft: `4px solid ${color}` }}>
