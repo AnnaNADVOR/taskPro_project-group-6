@@ -1,8 +1,11 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import SendButton from 'components/Buttons/SendButton/SendButton';
-import css from './HelpForm.module.css';
+
 import { requestHelp } from '../../../../redux/user/operation';
+import SendButton from 'components/Buttons/SendButton/SendButton';
+
+import css from './HelpForm.module.css';
+
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Email is required'),
