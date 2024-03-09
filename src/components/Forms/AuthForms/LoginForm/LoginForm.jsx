@@ -1,43 +1,36 @@
+
 import style from '../../../AuthNav/AuthNav.module.css';
 import sprite from '../../../../assets/images/sprite.svg';
 import Schema from '../Schemas/Schemas'
 import { useState } from 'react';
-/* // useEffect
-import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { login } from '../../../redux/auth/operations';
-import { isLoggedIn } from '../../../redux/auth/selectors'; */
+import { logIn } from '../../../../redux/auth/operation';
+import { selectIsLoadingLogin } from '../../../../redux/auth/selectors';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import ActiveAuth from 'components/AuthNav/AuthNav';
 
+const LoginForm = () => {
+const dispatch = useDispatch();
+const isLoading = useSelector(selectIsLoadingLogin);
+const handleSubmit = (values, { resetForm}) => {
+        dispatch(logIn(values));
+        resetForm();
+    };
 const initialValues = {
   email: '',
   password: '',
 };
-export default function LoginForm() {
-  /*   const dispatch = useDispatch();
-  const isLogin = useSelector(isLoggedIn);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (isLogin) navigate('/home', { replace: true });
-  }, [isLogin, navigate]); */
 const [showPassword, setShowPassword] = useState(false);
 const handleTogglePassword = () => {
       setShowPassword(!showPassword);};
-const handleForSubmit = async (values, { resetForm }) => {
-    // await dispatch(login(values));
-    resetForm();
-  };
-
+  
   return (
    <div className={style.box}>
   <ActiveAuth/>
  <Formik
-        initialValues={initialValues}
-        validationSchema={Schema}
-    onSubmit={handleForSubmit}
+       initialValues={initialValues} validationSchema={Schema} onSubmit={handleSubmit}
       >
+        {({ isSubmitting }) => (
  <Form className={style.form}>
     <div className={style.inputBox}>
         <div className={style.wrap}>
@@ -79,11 +72,14 @@ const handleForSubmit = async (values, { resetForm }) => {
         </div>
         </div>
     </div>
-          <button className={style.button} type="submit">
-          Log In Now
+          <button className={style.button} type="submit" disabled={isSubmitting || isLoading}>
+         {isLoading ? 'Loading...' : 'Log In Now'}
         </button>
-        </Form>
+          </Form>
+          )}
         </Formik> 
     </div>
     );
   }
+
+export default LoginForm;
