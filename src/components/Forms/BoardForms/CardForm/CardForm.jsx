@@ -7,8 +7,8 @@ import PriorityOptions from '../../../PriorityOptions/PriorityOptions';
 import Calendar from '../../../Calendar/Calendar';
 import MainAddButton from '../../../Buttons/MainAddButton/MainAddButton';
 
-import { useDispatch, useSelector } from "react-redux";
-import { selectTasks } from '../../../../redux/tasks/selectors';
+import { useDispatch } from "react-redux";
+// import { selectTasks } from '../../../../redux/tasks/selectors';
 import { addTask } from '../../../../redux/tasks/operation';
 
 const addCardSchema = Yup.object().shape({
