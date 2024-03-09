@@ -1,26 +1,36 @@
 import { Route, Routes } from "react-router-dom";
-// import { lazy } from "react";
-// const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
-// const AuthPage = lazy(() => import("../../pages/AuthPage/AuthPage"));
-// const WelcomePage = lazy(() => import("../../pages/WelcomePage/WelcomePage")); 
 import WelcomePage from "pages/WelcomePage/WelcomePage";
-import HomePage from "pages/HomePage/HomePage";
-import AuthPage from "pages/AuthPage/AuthPage";
-import ScreensPage from "components/ScreensPage/Screens.page";
 import SharedLayout from "components/SharedLayuout/SharedLayout";
+import { refreshUser } from "../../redux/auth/operation";
+import { useAuth } from "hooks/useAuth";
+import { RestrictedRoute } from "components/RestrictedRoute";
+import { PrivateRoute } from "components/PrivateRoute";
+import { useDispatch } from "react-redux";
+import { useEffect, lazy, Suspense } from "react";
+
+const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
+const AuthPage = lazy(() => import("../../pages/AuthPage/AuthPage"));
+const ScreensPage = lazy(()=>import("../ScreensPage/Screens.page"))
 
 const App = () => {
+    const dispatch = useDispatch();
+    const { isRefreshing } = useAuth(); 
+    useEffect(() => {
+    dispatch(refreshUser())
+  }, [dispatch]);
     return (
-        <>
-            <Routes>
-                <Route path="/" element={<WelcomePage />} />
-                <Route path="/auth/:id" element={<AuthPage />} />
-                <Route path="/home" element={<SharedLayout />} >
-                    <Route index element={<HomePage/>} />
-                    <Route path="/home/rte" element={<ScreensPage />} />
-                </Route>            
-            </Routes>          
-        </>  
+        !isRefreshing && (
+            <Suspense>
+                <Routes>
+                    <Route path="/" element={<WelcomePage/>}/>
+                    <Route path="/auth/:id" element={<RestrictedRoute component={AuthPage} redirectTo="/home" />}/>
+                    <Route path="/home" element={<SharedLayout />} >
+                        <Route index element={<PrivateRoute component={HomePage} redirectTo="/auth/login"/>} />
+                        <Route path="/home/rte" element={<PrivateRoute component={ScreensPage} redirectTo="/auth/login"/>} />
+                    </Route>            
+                </Routes>   
+            </Suspense>
+        )             
     )
 };
 
