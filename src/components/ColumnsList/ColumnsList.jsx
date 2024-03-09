@@ -2,11 +2,9 @@ import { useState } from 'react';
 import MainAddButton from '../Buttons/MainAddButton/MainAddButton';
 import Modal from '../Modal/Modal';
 import CardForm from '../Forms/BoardForms/CardForm/CardForm';
-// import Card from '../CardList/Card/Card';
 import css from './ColumnsList.module.css';
 import sprite from '../../assets/images/sprite.svg';
 import CardList from 'components/CardList/CradList';
-import { nanoid } from 'nanoid';
 
 const ColumnsList = () => {
   const [isOpen, setIsOpen] = useState(false);
