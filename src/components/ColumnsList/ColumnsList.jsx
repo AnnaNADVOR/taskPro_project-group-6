@@ -2,6 +2,7 @@ import { useState } from 'react';
 import MainAddButton from '../Buttons/MainAddButton/MainAddButton';
 import Modal from '../Modal/Modal';
 import CardForm from '../Forms/BoardForms/CardForm/CardForm';
+import CardList from '../CardList/CradList';
 import css from './ColumnsList.module.css';
 import sprite from '../../assets/images/sprite.svg';
 
@@ -31,26 +32,9 @@ const ColumnsList = () => {
                   </svg>
                 </button>
               </p>
-              <div></div>
-              <MainAddButton text="Add another card" click={toggleModal} />
-            </div>
-          </li>
-          <li className={css.columnItem}>
-            <div>
-              <p className={css.columnTitle}>
-                In progress
-                <button className={css.btnIcon}>
-                  <svg className={css.columnTitleIcon} width={16} height={16}>
-                    <use href={`${sprite}#pencil-16`}></use>
-                  </svg>
-                </button>
-                <button className={css.btnIcon}>
-                  <svg className={css.columnTitleIcon} width={16} height={16}>
-                    <use href={`${sprite}#trash-16`}></use>
-                  </svg>
-                </button>
-              </p>
-              <div></div>
+              <div>
+                <CardList />
+              </div>
               <MainAddButton text="Add another card" click={toggleModal} />
             </div>
           </li>
