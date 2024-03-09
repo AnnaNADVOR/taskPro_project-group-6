@@ -1,9 +1,10 @@
 import { useSelector } from "react-redux";
-import { selectTasks } from "redux/tasks/selectors";
+import { selectTasks } from "../../redux/tasks/selectors";
 import Card from "../CardList/Card/Card";
 
 const CardList = () => {
-    const cards = useSelector(selectTasks)
+    const cards = useSelector(selectTasks);
+    console.log("card", cards)
     return (
         <ul>
             {cards.map(card =>
