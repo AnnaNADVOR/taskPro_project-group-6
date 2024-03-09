@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import EditBoardForm from 'components/Forms/BoardForms/EditBoardForm/EditBoardForm';
 import Modal from 'components/Modal/Modal';
 
 const BoardList = ({
@@ -12,9 +11,9 @@ const BoardList = ({
 }) => {
   return (
     <div>
-      {boards.map(({ _id: id, icon, titleBoard }) => (
+      {boards.map(({ _id: id, icon, title }) => (
         <li key={id} onClick={() => handleClick(id)}>
-          <NavLink to={`/home/${titleBoard}`} state={{ from: location }}>
+          <NavLink to={`/home/${title}`} state={{ from: location }}>
             <div>
               <div>
                 <svg width="18" height="18">
@@ -31,9 +30,10 @@ const BoardList = ({
         </li>
       ))}
       {isOpenModalEditBoard && (
-        <Modal openEditBoardModal={openEditBoardModal} boardId={boardId}>
-          <EditBoardForm />
-        </Modal>
+        <Modal
+          openEditBoardModal={openEditBoardModal}
+          boardId={boardId}
+        ></Modal>
       )}
     </div>
   );
