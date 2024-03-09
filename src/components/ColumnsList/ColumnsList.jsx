@@ -2,7 +2,6 @@ import { useState } from 'react';
 import MainAddButton from '../Buttons/MainAddButton/MainAddButton';
 import Modal from '../Modal/Modal';
 import CardForm from '../Forms/BoardForms/CardForm/CardForm';
-import Card from '../Card/Card';
 import css from './ColumnsList.module.css';
 import sprite from '../../assets/images/sprite.svg';
 
@@ -32,9 +31,7 @@ const ColumnsList = () => {
                   </svg>
                 </button>
               </p>
-              <div>
-                <Card />
-              </div>
+              <div></div>
               <MainAddButton text="Add another card" click={toggleModal} />
             </div>
           </li>
@@ -53,9 +50,7 @@ const ColumnsList = () => {
                   </svg>
                 </button>
               </p>
-              <div>
-                <Card />
-              </div>
+              <div></div>
               <MainAddButton text="Add another card" click={toggleModal} />
             </div>
           </li>
