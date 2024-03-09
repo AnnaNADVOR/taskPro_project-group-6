@@ -1,6 +1,6 @@
 .card {
     border-radius: 8px;
-    width: 335px;
+    /* width: 335px; */
     background-color: var(--add-column-btn);
     padding: 14px 24px;
     font-weight: 400;

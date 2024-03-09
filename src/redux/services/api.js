@@ -1,5 +1,5 @@
 import axios from "axios";
-axios.defaults.baseURL = "https://project-team-6-backend.onrender.com/api";
+axios.defaults.baseURL = "https://project-team-6-backend.onrender.com";
 
 //--------------------auth-------------------//
 export const setAuthHeader = token => {
@@ -11,35 +11,35 @@ const clearAuthHeader = () => {
 }
 
 export async function registration(credentials) {
-    const response = await axios.post("/users/register", credentials);
+    const response = await axios.post("api/users/register", credentials);
     setAuthHeader(response.data.token);
     return response.data; 
 }
 
 export async function logIn(credentials) {
-    const response = await axios.post("/users/login", credentials);
+    const response = await axios.post("api/users/login", credentials);
     setAuthHeader(response.data.token);
     return response.data; 
 }
 
 export async function logOut() {
-    await axios.post("/users/logout");
+    await axios.post("api/users/logout");
     clearAuthHeader();
 }
 
 export async function refresh() {
-    const response = await axios.get("/users/current");
+    const response = await axios.get("api/users/current");
     return response.data; 
 }
 
 //--------------------user-------------------//
 export async function support(credentials) {
-    const response = await axios.post("/help", credentials); 
+    const response = await axios.post("api/help", credentials); 
     return response.data;
 }
 
 export async function editUser(data) {
-    const response = await axios.patch("/users/update", data, {
+    const response = await axios.patch("api/users/update", data, {
         headers: {
             "Content-Type": "multipart/form-data",
         },
@@ -49,54 +49,62 @@ export async function editUser(data) {
 
 //--------------------board-------------------//
 export async function addBoard(data) {
-    const response = await axios.post('/boards', data);
+    const response = await axios.post('api/boards', data);
     return response.data; 
 }
 
 export async function getBoardById(boardId) {
-    const response = await axios.get(`/boards/${boardId}`);
+    const response = await axios.get(`api/boards/${boardId}`);
     return response.data;    
 }
 
 export async function deleteBoard(boardId) {
-    const response = await axios.delete(`/boards/${boardId}`);
+    const response = await axios.delete(`api/boards/${boardId}`);
     return response.data;
 }
 
 export async function editBoard(boardId, data) {
-    const response = await axios.patch(`/tasks/${boardId}`, data);
+    const response = await axios.patch(`api/boards/${boardId}`, data);
     return response.data;
 }
 
 //--------------------columns-------------------//
 export async function addColumn(data) {
-    const response = await axios.post('/columns', data);
+    const response = await axios.post('api/columns', data);
     return response.data; 
 }
 
 export async function editColumn(columnId, data) {
-    const response = await axios.patch(`/columns/${columnId}`, data);
+    const response = await axios.patch(`api/columns/${columnId}`, data);
     return response.data; 
 }
 
 export async function deleteColumnById(columnId) {
-    const response = await axios.delete(`/columns/${columnId}`);
+    const response = await axios.delete(`api/columns/${columnId}`);
     return response.data;
 }
 
 //--------------------tasks-------------------//
-export async function addTask(column,title) {
-    const response = await axios.post("/tasks", {column, title});
+export async function addTask(data) {
+//     return {
+//   "_id": "64c8e005a6e42b970c671aa7",
+//   "title": "Task01",
+//   "description": "Create visually appealing and functional design prototypes base the approved concepts, ensuring seamless user experience and incorporating feedback for iterative improvements.",
+//   "priority": "Low",
+//   "deadline": "2023-08-01T10:35:49.188Z",
+//   "updatedAt": "2023-08-01T10:35:49.195Z"
+// }
+    const response = await axios.post("api/tasks", {data});
     return response; 
 }
 
 export async function deleteTask(taskId) {
-    const response = await axios.delete(`/tasks/${taskId}`);
+    const response = await axios.delete(`api/tasks/${taskId}`);
     return response.data; 
 }
 
 export async function editTask(taskId, data) {
-    const response = await axios.patch(`/tasks/${taskId}`, data);
+    const response = await axios.patch(`api/tasks/${taskId}`, data);
     return response;
 }
 

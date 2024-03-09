@@ -7,6 +7,10 @@ import PriorityOptions from '../../../PriorityOptions/PriorityOptions';
 import Calendar from '../../../Calendar/Calendar';
 import MainAddButton from '../../../Buttons/MainAddButton/MainAddButton';
 
+import { useDispatch } from "react-redux";
+// import { selectTasks } from '../../../../redux/tasks/selectors';
+import { addTask } from '../../../../redux/tasks/operation';
+
 const addCardSchema = Yup.object().shape({
     title: Yup.string()
         .required("Please enter the title")
@@ -27,15 +31,20 @@ const CardForm = ({title, action}) => {
         setPriority(event.target.value);
     }
 
+    const dispatch = useDispatch();
+    // const cards = useSelector(selectTasks); 
+
     const handleSubmit = (values, actions) => {
-       const newCard = {
+        const newCard = {
             title: values.title,
             description: values.description,
             priority: values.priority,
             deadline: deadline,
         }
+        console.log(newCard);  
+        dispatch(addTask(newCard));
         actions.resetForm()
-        console.log(newCard);   
+         
     }
 
     const priorityOptions = [
