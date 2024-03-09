@@ -23,7 +23,7 @@ const initialValues = {
     description: "", 
 }
 
-const CardForm = ({title, action}) => {
+const CardForm = ({title, action, taskTitle, taskDescription, taskPriority, taskDeadline, taskId, columnId}) => {
     const [priority, setPriority] = useState('without');
     const [deadline, setDeadline] = useState(new Date());
 
@@ -36,15 +36,14 @@ const CardForm = ({title, action}) => {
 
     const handleSubmit = (values, actions) => {
         const newCard = {
+            column: columnId,
             title: values.title,
             description: values.description,
             priority: values.priority,
             deadline: deadline,
         }
-        console.log(newCard);  
         dispatch(addTask(newCard));
-        actions.resetForm()
-         
+        actions.resetForm()         
     }
 
     const priorityOptions = [
