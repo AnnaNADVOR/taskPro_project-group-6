@@ -1,45 +1,36 @@
+
 import { useState } from 'react';
-/* // useEffect
-import { useNavigate } from 'react-router-dom';
+import { register } from '../../../../redux/auth/operation';
 import { useDispatch, useSelector } from 'react-redux';
-import { register } from '../../../redux/auth/operations';
-import { isLoggedIn } from '../../../redux/auth/selectors'; */
-// Error
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import style from '../../../AuthNav/AuthNav.module.css';
 import sprite from '../../../../assets/images/sprite.svg';
 import Schema from '../Schemas/Schemas';
 import ActiveAuth from 'components/AuthNav/AuthNav';
+import { selectIsLoadingRegister } from "../../../../redux/auth/selectors";
 
+const RegisterForm = () => {
+const dispatch = useDispatch();
 const initialValues = {
-  name: '',
-  email: '',
-  password: '',
-};
-
-export default function RegisterForm() {
-  /*   const dispatch = useDispatch();
-  const isLogin = useSelector(isLoggedIn);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (isLogin) navigate('/home', { replace: true });
-  }, [isLogin, navigate]); */
+        name: '',
+        email: '',
+        password: ''
+    };
+const handleSubmit = (values, { resetForm }) => {
+    dispatch(register(values));
+    resetForm();}
 const [showPassword, setShowPassword] = useState(false);
 const handleTogglePassword = () => {
-      setShowPassword(!showPassword);};
-const handleForSubmit = async (values, { resetForm }) => {
-    // await dispatch(register(values));
-resetForm();
-  };
+    setShowPassword(!showPassword); };
+const isLoading = useSelector(selectIsLoadingRegister);
+  
   return (
     <div className={style.box}>
       <ActiveAuth/>
       <Formik
-        initialValues={initialValues}
-        validationSchema={Schema}
-        onSubmit={handleForSubmit}
+      initialValues={initialValues} validationSchema={Schema } onSubmit={handleSubmit}
       >
+        {({ isSubmitting }) => (
         <Form className={style.form} autoComplete="off" >
           <div className={style.inputBox}>
             <div className={style.wrap}>
@@ -95,12 +86,13 @@ resetForm();
               </div>
             </div>
           </div>
-       <button className={style.button} type="submit">
-            Register Now
-          </button>
+          <button className={style.button} type="submit" disabled={isSubmitting || isLoading}>
+           {isLoading ? 'Loading...' : 'Register Now'} </button>
           </Form>
+          )}
       </Formik>
-    
     </div>
   );
 }
+
+export default RegisterForm;
