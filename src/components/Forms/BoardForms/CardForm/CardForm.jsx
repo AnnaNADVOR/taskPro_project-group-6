@@ -32,8 +32,7 @@ const CardForm = ({title, action, taskTitle, taskDescription, taskPriority, task
     }
 
     const dispatch = useDispatch();
-    // const cards = useSelector(selectTasks); 
-
+    
     const handleSubmit = (values, actions) => {
         const newCard = {
             column: columnId,
