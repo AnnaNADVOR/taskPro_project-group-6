@@ -1,20 +1,22 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getBoard } from '../../../redux/boards/operation';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { selectBoards } from '../../../redux/boards/selectors';
 import BoardListItem from '../BoardListItem/BoardListItem';
 
 const BoardList = () => {
-  const dispatch = useDispatch();
-  const boards = useSelector(state => state.boards.boards) || [];
+  const boards = useSelector(selectBoards);
 
-  useEffect(() => {
-    dispatch(getBoard());
-  }, [dispatch]);
+  if (!Array.isArray(boards) || boards.length === 0) {
+    console.error('Boards array is empty or undefined:', boards);
+    return null;
+  }
 
   return (
     <ul>
-      {boards.map(({ boardId, title, icon }) => (
-        <BoardListItem key={boardId} title={title} icon={icon} />
+      {boards.map(board => (
+        <li key={board._id}>
+          <BoardListItem board={board} allBoards={boards} />
+        </li>
       ))}
     </ul>
   );
