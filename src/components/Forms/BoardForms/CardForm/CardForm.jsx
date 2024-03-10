@@ -12,21 +12,28 @@ import { useDispatch } from "react-redux";
 import { addTask } from '../../../../redux/tasks/operation';
 
 const addCardSchema = Yup.object().shape({
-    title: Yup.string()
+    cardTitle: Yup.string()
         .required("Please enter the title")
         .max(25, "Must be no more than 25 characters long"),
     description: Yup.string(),
 });
 
-const initialValues = {
-    title: "",
-    description: "", 
-}
 
-const CardForm = ({title, action, taskTitle, taskDescription, taskPriority, taskDeadline, taskId, columnId}) => {
-    const [priority, setPriority] = useState('Without');
+
+const CardForm = ({ title, action, taskTitle, taskDescription, taskPriority, taskDeadline, taskId, columnId }) => {
+
+    const initialValues = {
+        cardTitle: "",
+        description: "", 
+    }
+
+    const [priority, setPriority] = useState(taskPriority || "Without");
     const [deadline, setDeadline] = useState(new Date());
 
+    if (taskId) {
+        initialValues.cardTitle = taskTitle;
+        initialValues.description = taskDescription; 
+    }
     const priorityChange = (event) => {
         setPriority(event.target.value);
     }
@@ -36,13 +43,13 @@ const CardForm = ({title, action, taskTitle, taskDescription, taskPriority, task
     const handleSubmit = (values, actions) => {
         const newCard = {
             columnId: columnId,
-            title: values.title,
+            title: values.cardTitle,
             description: values.description,
-            priority: values.priority,
-            deadline: deadline,
+            priority: priority,
+            deadline: deadline.toISOString(),
         }
         dispatch(addTask(newCard));
-        actions.resetForm()         
+        actions.resetForm();         
     }
 
     const priorityOptions = [
@@ -58,18 +65,17 @@ const CardForm = ({title, action, taskTitle, taskDescription, taskPriority, task
             onSubmit={handleSubmit}>
             <Form autoComplete="off">
                 <h4 className={css.formTitle}>{title}</h4>
-                <label className={css.label} htmlFor="title">
+                <label className={css.label} htmlFor="cardTitle">
                     <Field className={css.inputForm}
                         as="input"
                         type="text"
-                        name="title"
+                        name="cardTitle"
                         placeholder="Title"
                         required={true}
-                        autoFocus
-                        // value={title}
+                        autoFocus                       
                     />
                     <span className={css.errorField}>
-                        <ErrorMessage name="title" />
+                        <ErrorMessage name="cardTitle" />
                     </span>                    
                 </label>
                 <label htmlFor="description">
@@ -78,8 +84,7 @@ const CardForm = ({title, action, taskTitle, taskDescription, taskPriority, task
                         type="text"
                         name="description"
                         placeholder="Description"
-                        required={true}
-                        // value={description}
+                        required={true}                        
                     />
                 </label>           
                 <div className={css.priorityWrapper}>

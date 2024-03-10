@@ -1,5 +1,5 @@
 import axios from "axios";
-import { nanoid } from "nanoid";
+// import { nanoid } from "nanoid";
 axios.defaults.baseURL = "https://project-team-6-backend.onrender.com";
 
 //--------------------auth-------------------//
@@ -87,16 +87,17 @@ export async function deleteColumnById(columnId) {
 
 //--------------------tasks-------------------//
 export async function addTask(data) {
-    return { data: {
-        "_id": nanoid(),
-            "title": "Task01",
-                "description": "Create visually appealing and functional design prototypes base the approved concepts, ensuring seamless user experience and incorporating feedback for iterative improvements.",
-                    "priority": "Without",
-                        "deadline": "2023-08-01T10:35:49.188Z",
-        "updatedAt": "2023-08-01T10:35:49.195Z",
-                            columnId: "dyfyyugiglhihoh76432",
-    }
-}
+//     console.log("CardData", data)
+//     return { data: {
+//         "_id": nanoid(),
+//             "title": "Task01",
+//                 "description": "Create visually appealing and functional design prototypes base the approved concepts, ensuring seamless user experience and incorporating feedback for iterative improvements.",
+//                     "priority": "Low",
+//                         "deadline": "2024-08-01T10:35:49.188Z",
+//         "updatedAt": "2023-08-01T10:35:49.195Z",
+//                             columnId: "dyfyyugiglhihoh76432",
+//     }
+// }
     const response = await axios.post("api/tasks", data);
     return response.data; 
 }
