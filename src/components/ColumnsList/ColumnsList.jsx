@@ -12,6 +12,7 @@ const ColumnsList = () => {
   const [isOpen, setIsOpen] = useState(false);
   
   const allColumns = useSelector(selectAllColumns); 
+  
   let columnId = ""
   
   const toggleModal = () => {
