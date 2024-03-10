@@ -156,10 +156,27 @@
 }
 
 .sidebarBoardsList {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  overflow-y: auto;
+  overflow-x: hidden;
   margin-bottom: auto;
+}
+
+.sidebarBoardsList::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+}
+
+.sidebarBoardsList::-webkit-scrollbar-track {
+  background: var(--modal-border-color-low-op);
+  border-radius: 8px;
+  opacity: 0.08;
+  cursor: pointer;
+}
+
+.sidebarBoardsList::-webkit-scrollbar-thumb {
+  background: var(--buttons-bg-color);
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .logoutBlock {

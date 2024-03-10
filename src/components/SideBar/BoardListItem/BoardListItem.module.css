@@ -4,6 +4,38 @@
     height: 61px;
     align-items: center;
     padding: 20px 24px;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        top: 0;
+        right: 0;
+        width: 4px;
+        border-radius: 4px 0px 0px 4px;
+        border-right: 4px solid transparent;
+        transition: all var(--transition);
+    }
+
+    &:hover,
+    &:focus {
+        background-color: var(--active-navlink-bg);
+        cursor: pointer;
+
+        &::after {
+            border-right: 4px solid var(--logout-icon);
+        }
+
+        & .boardTitle {
+            color: var(--main-text-color);
+            z-index: 5;
+        }
+
+        & .boardIcon {
+            stroke: var(--main-text-color);
+        }
+    }
 }
 
 .boardItemTitleBlock {
@@ -17,7 +49,7 @@
     stroke-width: 1.50px;
     stroke: var(--main-text-color-low-op);
     fill: none;
-    margin-right: 8px;
+    transition: all var(--transition);
 }
 
 .boardTitle {
@@ -25,10 +57,11 @@
     font-size: 14px;
     letter-spacing: -0.02em;
     color: var(--main-text-color-low-op);
+    transition: all var(--transition);
 }
 
 .boardItemButtonsBlock {
-    display: flex;
+    display: none;
     gap: 8px;
 }
 
@@ -43,7 +76,6 @@
 .boardBtnSvg {
     width: 16px;
     height: 16px;
-    stroke: var(--main-text-color-low-op);
+    stroke: var(--secondary-text-color-low-op);
     fill: none;
-    transition: stroke var(--transition);
 }

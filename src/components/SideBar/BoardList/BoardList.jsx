@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 import { getBoard } from '../../../redux/boards/operation';
 import { selectUser } from '../../../redux/auth/selectors';
 import BoardListItem from '../BoardListItem/BoardListItem';
-import { NavLink } from 'react-router-dom';
+
+import css from './BoardList.module.css';
 
 const BoardList = () => {
-  const [boardId] = useState('');
   const location = useLocation();
 
   const { user } = useSelector(selectUser);
@@ -21,10 +21,14 @@ const BoardList = () => {
   };
 
   return (
-    <ul>
+    <ul className={css.boardList}>
       {boards.map(board => (
         <li key={board._id} onClick={() => handleClick(board._id)}>
-          <NavLink to={`/home/${board.title}`} state={{ from: location }}>
+          <NavLink
+            to={`/home/${board.title}`}
+            state={{ from: location }}
+            className={css.navLink}
+          >
             <BoardListItem board={board} allBoards={boards} />
           </NavLink>
         </li>
