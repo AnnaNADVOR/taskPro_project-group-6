@@ -1,23 +1,53 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getBoard } from 'redux/boards/operation';
+import React, { useState } from 'react';
 
-const Board = () => {
-  const dispatch = useDispatch();
+import sprite from 'assets/images/sprite.svg';
+import Modal from 'components/Modal/Modal';
+import AddBoardForm from 'components/Forms/BoardForms/AddBoardForm/AddBoardForm';
 
-  const board = useSelector(state => state.board);
+import css from './BoardListItem.module.css';
 
-  useEffect(() => {
-    dispatch(getBoard('boardId'));
-  }, [dispatch]);
+
+const BoardListItem = ({ board }) => {
+  const [showModal, setShowModal] = useState(false);
+  const toggleModal = () => setShowModal(prevShowModal => !prevShowModal);
 
   return (
-    <div>
-      <h2>Board Component</h2>
-      <p>Board ID: {board.id}</p>
-      <p>Board Title: {board.title}</p>
+    <div className={css.boardItem}>
+      <div className={css.boardItemTitleBlock}>
+        <svg className={css.boardIcon}>
+          <use href={`${sprite}#${board.icon}`}></use>
+        </svg>
+        <h2 className={css.boardTitle}>Title:{board.title}</h2>
+      </div>
+      <div>
+        <ul className={css.boardItemButtonsBlock}>
+          <li>
+            <button
+              className={css.boardBtn}
+              type="button"
+              onClick={toggleModal}
+            >
+              <svg className={css.boardBtnSvg}>
+                <use href={`${sprite}#pencil-16`}></use>
+              </svg>
+            </button>
+          </li>
+          <li>
+            <button className={css.boardBtn} type="button">
+              <svg className={css.boardBtnSvg}>
+                <use href={`${sprite}#trash-16`}></use>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+      {showModal && (
+        <Modal closeModal={toggleModal}>
+          <AddBoardForm />
+        </Modal>
+      )}
     </div>
   );
 };
 
-export default Board;
+export default BoardListItem;
