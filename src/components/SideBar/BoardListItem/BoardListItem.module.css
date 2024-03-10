@@ -95,7 +95,7 @@
 .boardBtnSvg {
     width: 16px;
     height: 16px;
-    stroke: var(--secondary-text-color-low-op);
+    stroke: var(--main-text-color);
     fill: none;
     transition: transform var(--transition);
 }
