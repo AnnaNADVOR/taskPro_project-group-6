@@ -31,7 +31,7 @@ export const boardsSlice = createSlice({
       .addCase(getBoard.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.board.push(action.payload);
+        state.board = action.payload;
       })
       .addCase(getBoard.rejected, (state, action) => {
         state.isLoading = false;

@@ -19,15 +19,12 @@ const addCardSchema = Yup.object().shape({
 });
 
 
-
 const CardForm = ({ title, action, taskTitle, taskDescription, taskPriority, taskDeadline, taskId, columnId }) => {
- console.log("columnId", columnId)
-
     const initialValues = {
         cardTitle: "",
         description: "", 
     }
-console.log("deadline:", taskDeadline )
+
     const [priority, setPriority] = useState(taskPriority || "Without");
     const [deadline, setDeadline] = useState(taskDeadline ? new Date(taskDeadline) : new Date());
 

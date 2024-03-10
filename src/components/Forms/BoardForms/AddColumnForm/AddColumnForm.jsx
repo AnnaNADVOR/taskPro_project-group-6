@@ -1,29 +1,49 @@
-import { useState } from 'react';
+
+import { useSelector } from "react-redux";
 import MainAddButton from 'components/Buttons/MainAddButton/MainAddButton';
 import css from './AddColumnForm.module.css';
+import { useDispatch } from "react-redux";
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import { addColumn } from '../../../../redux/columns/operation';
+import { selectBoard } from '../../../../redux/boards/selectors';
+
+const addColumnSchema = Yup.object().shape({
+    columnTitle: Yup.string()
+        .required("Please enter the title"),           
+});
 
 const AddColumnForm = () => {
-  const [title, setTitle] = useState('');
+  const board = useSelector(selectBoard); 
+  const dispatch = useDispatch();
+  
+  const handleSubmit = (values, actions) => {
+    dispatch(addColumn({
+      title: values.columnTitle,
+      board: board._id,
+    }));  
+    actions.resetForm(); 
+  }
 
-  const handleChange = ({ target: { value } }) => {
-    setTitle(value);
-  };
   return (
-    <div>
-      <h3 className={css.addColumnModalTitle}>Add column</h3>
-      <form className={css.addColumnForm}>
-        <input
-          className={css.addColumnInput}
-          name="title"
-          value={title}
+    <Formik validationSchema={addColumnSchema}
+      initialValues={{ columnTitle: "" }}
+      onSubmit={handleSubmit}>
+      <Form>
+        <h3 className={css.addColumnModalTitle}>Add column</h3>
+        <Field className={css.addColumnInput}
+          as="input"
           type="text"
+          name="columnTitle"
           placeholder="Title"
-          onChange={handleChange}
-          required
+          required={true}
+          autoFocus 
         />
-        <MainAddButton text="Add" />
-      </form>
-    </div>
+        <MainAddButton text="Add"/>
+      </Form>
+       
+      
+    </Formik>
   );
 };
 

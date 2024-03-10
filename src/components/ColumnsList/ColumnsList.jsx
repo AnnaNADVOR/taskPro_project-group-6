@@ -17,8 +17,9 @@ const ColumnsList = () => {
     <>
       <div className={css.columnsListContainer}>
         <ul className={css.columnList}>
-          <li className={css.columnItem}>
+          {/* <li className={css.columnItem}>
             <div>
+              
               <p className={css.columnTitle}>
                 To do
                 <button className={css.btnIcon}>
@@ -55,10 +56,10 @@ const ColumnsList = () => {
               </p>
               <div>
                 {/* <Card /> */}
-              </div>
+              {/* </div>
               <MainAddButton text="Add another card" click={toggleModal} />
-            </div>
-          </li>
+            </div> */}
+          {/* </li> */} 
         </ul>
       </div>
       {isOpen && (

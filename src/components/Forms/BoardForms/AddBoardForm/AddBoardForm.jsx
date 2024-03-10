@@ -8,6 +8,7 @@ import BoardBackgroundPicker from 'components/BoardBackgroundPicker/BoardBeckgro
 import BoardMarkPicker from 'components/BoardMarkPicker/BoardMarkPicker';
 import css from '../AddBoardForm/AddBoardForm.module.css';
 
+
 const TitleSchema = Yup.object().shape({
   boardTitle: Yup.string().required('Title is required'),
 });

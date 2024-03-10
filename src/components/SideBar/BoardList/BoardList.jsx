@@ -17,13 +17,14 @@ const BoardList = () => {
   const dispatch = useDispatch();
 
   const handleClick = boardId => {
+    console.log(boardId)
     dispatch(getBoard(boardId));
   };
 
   return (
     <ul>
       {boards.map(board => (
-        <li key={board._id} onClick={() => handleClick(boardId)}>
+        <li key={board._id} onClick={() => handleClick(board._id)}>
           <NavLink to={`/home/${board.title}`} state={{ from: location }}>
             <BoardListItem board={board} allBoards={boards} />
           </NavLink>
