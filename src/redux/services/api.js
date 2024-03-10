@@ -111,14 +111,14 @@ export async function editTaskById(taskId, data) {
 }
 
 
-export async function deleteTaskById(taskId) {
-    console.log("task ID", taskId)
-    return { data:{
-        "_id": taskId
-    }}
-    const response = await axios.delete(`api/tasks/${taskId}`);
-    return response.data; 
-}
+// export async function deleteTaskById(taskId) {
+//     console.log("task ID", taskId)
+//     return { data:{
+//         "_id": taskId
+//     }}
+//     const response = await axios.delete(`api/tasks/${taskId}`);
+//     return response.data; 
+// }
 
 
 
