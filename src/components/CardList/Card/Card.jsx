@@ -10,8 +10,7 @@ import Progress from '../Progress/Progress';
 const Card = ({ newCard }) => {
   const [showModal, setShowModal] = useState(false);
   const toggleModal = () => setShowModal(prevShowModal => !prevShowModal);
-
-console.log("new", newCard.newCard)
+  
   //date
   const today = new Date();
   function formatDate(date) {

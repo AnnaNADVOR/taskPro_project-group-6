@@ -24,7 +24,7 @@ const initialValues = {
 }
 
 const CardForm = ({title, action, taskTitle, taskDescription, taskPriority, taskDeadline, taskId, columnId}) => {
-    const [priority, setPriority] = useState('without');
+    const [priority, setPriority] = useState('Without');
     const [deadline, setDeadline] = useState(new Date());
 
     const priorityChange = (event) => {
@@ -35,7 +35,7 @@ const CardForm = ({title, action, taskTitle, taskDescription, taskPriority, task
     
     const handleSubmit = (values, actions) => {
         const newCard = {
-            column: columnId,
+            columnId: columnId,
             title: values.title,
             description: values.description,
             priority: values.priority,
@@ -46,10 +46,10 @@ const CardForm = ({title, action, taskTitle, taskDescription, taskPriority, task
     }
 
     const priorityOptions = [
-        { value: 'low', color: `var(--priority-low-color)`},
-        { value: 'medium', color: `var(--priority-medium-color)`},
-        { value: 'high', color: `var(--priority-high-color)` },
-        { value: 'without', color: `var(--priority-color-without)`},
+        { value: 'Low', color: `var(--priority-low-color)`},
+        { value: 'Medium', color: `var(--priority-medium-color)`},
+        { value: 'High', color: `var(--priority-high-color)` },
+        { value: 'Without', color: `var(--priority-color-without)`},
     ];
 
     return (
