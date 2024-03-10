@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import sprite from '../../../assets/images/sprite.svg';
 import CSS from './ThemePicker.module.css';
 import UserInfo from '../UserInfo/UserInfo';
+import { useDispatch } from 'react-redux';
+import { updateTheme } from '../../../redux/themes/operation';
 
 const Theme = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -13,6 +15,13 @@ const Theme = () => {
   const menuRef = useRef(null);
   const textRef = useRef(null);
   const svgRef = useRef(null);
+
+  const dispatch = useDispatch();
+
+  const handleThemeChange = theme => {
+    dispatch(updateTheme({ theme }));
+    setSelectedTheme(theme);
+  };
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', selectedTheme);
@@ -48,9 +57,6 @@ const Theme = () => {
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
-  };
-  const handleThemeChange = theme => {
-    setSelectedTheme(theme);
   };
 
   return (

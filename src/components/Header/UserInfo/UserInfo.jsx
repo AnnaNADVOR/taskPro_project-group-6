@@ -1,6 +1,10 @@
 import CSS from './UserInfo.module.css';
 import sprite from '../../../assets/images/sprite.svg';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../../redux/auth/selectors';
 const UserInfo = ({ selectedTheme }) => {
+  const { user, avatarURL } = useSelector(selectUser);
+
   let iconId;
   switch (selectedTheme) {
     case 'dark':
@@ -16,11 +20,17 @@ const UserInfo = ({ selectedTheme }) => {
       iconId = '#default-user-icon-dark-68';
   }
 
+  if (!user) {
+    return null;
+  }
+
+  const iconToShow = avatarURL ? avatarURL : iconId;
+
   return (
     <div className={CSS.userInfo}>
-      <p className={CSS.userName}>Name</p>
+      <p className={CSS.userName}>{user.name}</p>
       <svg className={CSS.userIcon}>
-        <use href={sprite + iconId} />
+        <use href={sprite + iconToShow} />
       </svg>
     </div>
   );
