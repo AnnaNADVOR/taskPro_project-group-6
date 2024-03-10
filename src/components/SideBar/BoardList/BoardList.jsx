@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ import BoardListItem from '../BoardListItem/BoardListItem';
 import { NavLink } from 'react-router-dom';
 
 const BoardList = () => {
-  const [boardId] = useState('');
+  // const [boardId] = useState('');
   const location = useLocation();
 
   const { user } = useSelector(selectUser);
