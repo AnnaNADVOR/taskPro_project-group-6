@@ -74,7 +74,6 @@ const authSlice = createSlice({
     }
 }); 
 
-
 const persistConfig = {
     key: 'auth', 
     storage,

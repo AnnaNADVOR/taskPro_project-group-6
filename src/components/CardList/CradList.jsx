@@ -4,7 +4,6 @@ import Card from "../CardList/Card/Card";
 
 const CardList = () => {
     const cards = useSelector(selectTasks);
-    console.log("card", cards)
     return (
         <ul>
             {cards.map(card =>

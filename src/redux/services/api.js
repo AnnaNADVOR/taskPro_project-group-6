@@ -5,24 +5,25 @@ axios.defaults.baseURL = 'https://project-team-6-backend.onrender.com';
 //--------------------auth-------------------//
 export const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-};
+}
 
 const clearAuthHeader = () => {
   axios.defaults.headers.common.Authorization = '';
-};
+}
 
 export async function registration(credentials) {
+
   const response = await axios.post('api/users/register', credentials);
-  setAuthHeader(response.data.token);
+  setAuthHeader(response.data.user.token);
   return response.data;
 }
 
 export async function logIn(credentials) {
   const response = await axios.post('api/users/login', credentials);
-  setAuthHeader(response.data.token);
+  setAuthHeader(response.data.user.token);
   return response.data;
 }
-
+   
 export async function logOut() {
   await axios.post('api/users/logout');
   clearAuthHeader();
@@ -87,6 +88,7 @@ export async function deleteColumnById(columnId) {
 
 //--------------------tasks-------------------//
 export async function addTask(data) {
+
   // return { data: {
   //     "_id": nanoid(),
   //         "title": "Task01",
@@ -98,7 +100,7 @@ export async function addTask(data) {
   // }
   // }
   const response = await axios.post('api/tasks', data);
-  return response;
+  return response.data;
 }
 
 export async function editTaskById(taskId, data) {

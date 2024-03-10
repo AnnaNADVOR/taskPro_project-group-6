@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { addBoard } from './operation';
+import { addBoard, getBoard } from './operation';
 
 export const boardsSlice = createSlice({
   name: 'boards',
   initialState: {
-    boardsList: [],
+    boardList: [],
     board: {},
     background: null,
     error: null,
@@ -19,9 +19,21 @@ export const boardsSlice = createSlice({
       .addCase(addBoard.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.boardsList.push(action.payload);
+        state.boardList.push(action.payload);
       })
       .addCase(addBoard.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+      .addCase(getBoard.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(getBoard.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.board.push(action.payload);
+      })
+      .addCase(getBoard.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       });

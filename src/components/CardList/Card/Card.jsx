@@ -11,16 +11,7 @@ const Card = ({ newCard }) => {
   const [showModal, setShowModal] = useState(false);
   const toggleModal = () => setShowModal(prevShowModal => !prevShowModal);
 
-console.log("new", newCard.newCard)
-  //date
-  const today = new Date();
-  function formatDate(date) {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    return `${day}/${month}/${year}`;
-  }
-  const formattedDate = formatDate(today);
+  const deadline = newCard.deadline.replace(/T.*/, '').split('-').reverse().join('/'); 
 
   //priorityOptions
   const priority = newCard.priority;
@@ -81,11 +72,7 @@ console.log("new", newCard.newCard)
     <>
       <div className={css.card} style={{ borderLeft: `4px solid ${color}` }}>
         <h4 className={css.cardTitle}>{newCard.title}</h4>
-        <p className={css.cardDescription}>{newCard.description}
-          {/* Create visually appealing and functional design prototypes based on
-          the approved concepts, ensuring seamless user experience and
-          incorporating feedback for iterative improvements. */}
-        </p>
+        <p className={css.cardDescription}>{newCard.description}</p>
         <div className={css.cardOptions}>
           <div className={css.optionsInfo}>
             <div className={css.optionWrapper}>
@@ -100,7 +87,7 @@ console.log("new", newCard.newCard)
             </div>
             <div className={css.optionWrapper}>
               <h5 className={css.optionTitle}>Deadline</h5>
-              <p>{formattedDate}</p>
+              <p>{deadline}</p>
             </div>
           </div>
           <ul className={css.optionsBtnList}>
@@ -155,7 +142,12 @@ console.log("new", newCard.newCard)
 
       {showModal && (
         <Modal closeModal={toggleModal}>
-          <CardForm title="Edit card" action="Edit" />
+          <CardForm title="Edit card" action="Edit"
+            taskTitle={newCard.title}
+            taskDescription={newCard.description}
+            taskId={newCard._id}
+            taskPriority={newCard.priority}
+            taskDeadline={newCard.deadline}/>
         </Modal>
       )}
     </>

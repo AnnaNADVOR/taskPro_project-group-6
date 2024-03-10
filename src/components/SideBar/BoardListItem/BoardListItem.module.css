@@ -1,0 +1,49 @@
+.boardItem {
+    display: flex;
+    justify-content: space-between;
+    height: 61px;
+    align-items: center;
+    padding: 20px 24px;
+}
+
+.boardItemTitleBlock {
+    display: flex;
+    gap: 8px;
+}
+
+.boardIcon {
+    width: 18px;
+    height: 18px;
+    stroke-width: 1.50px;
+    stroke: var(--main-text-color-low-op);
+    fill: none;
+    margin-right: 8px;
+}
+
+.boardTitle {
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    color: var(--main-text-color-low-op);
+}
+
+.boardItemButtonsBlock {
+    display: flex;
+    gap: 8px;
+}
+
+.boardBtn {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: none;
+    background-color: transparent;
+}
+
+.boardBtnSvg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--main-text-color-low-op);
+    fill: none;
+    transition: stroke var(--transition);
+}
