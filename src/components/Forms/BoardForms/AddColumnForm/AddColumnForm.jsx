@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import MainAddButton from 'components/Buttons/MainAddButton/MainAddButton';
 import css from './AddColumnForm.module.css';
 import { useDispatch } from "react-redux";
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { addColumn } from '../../../../redux/columns/operation';
 import { selectBoard } from '../../../../redux/boards/selectors';
@@ -40,9 +40,7 @@ const AddColumnForm = () => {
           autoFocus 
         />
         <MainAddButton text="Add"/>
-      </Form>
-       
-      
+      </Form>     
     </Formik>
   );
 };
