@@ -15,6 +15,7 @@ function Modal({ closeModal, children, style}) {
         return () => {
             window.removeEventListener('keydown', onEscClick);
         }
+           ;
 
     }, [closeModal]);
     

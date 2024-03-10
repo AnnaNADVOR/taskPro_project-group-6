@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import MainAddButton from '../Buttons/MainAddButton/MainAddButton';
+// import MainAddButton from '../Buttons/MainAddButton/MainAddButton';
 import Modal from '../Modal/Modal';
 import CardForm from '../Forms/BoardForms/CardForm/CardForm';
 import css from './ColumnsList.module.css';
-import sprite from '../../assets/images/sprite.svg';
-import CardList from 'components/CardList/CradList';
+// import sprite from '../../assets/images/sprite.svg';
+// import CardList from 'components/CardList/CradList';
 
 const ColumnsList = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,8 +17,9 @@ const ColumnsList = () => {
     <>
       <div className={css.columnsListContainer}>
         <ul className={css.columnList}>
-          <li className={css.columnItem}>
+          {/* <li className={css.columnItem}>
             <div>
+              
               <p className={css.columnTitle}>
                 To do
                 <button className={css.btnIcon}>
@@ -55,10 +56,10 @@ const ColumnsList = () => {
               </p>
               <div>
                 {/* <Card /> */}
-              </div>
+              {/* </div>
               <MainAddButton text="Add another card" click={toggleModal} />
-            </div>
-          </li>
+            </div> */}
+          {/* </li> */} 
         </ul>
       </div>
       {isOpen && (
