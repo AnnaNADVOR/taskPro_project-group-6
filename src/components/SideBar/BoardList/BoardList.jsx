@@ -17,7 +17,6 @@ const BoardList = () => {
   const dispatch = useDispatch();
 
   const handleClick = boardId => {
-    console.log(boardId)
     dispatch(getBoard(boardId));
   };
 
