@@ -1,20 +1,19 @@
 import { Formik, Form, Field } from 'formik';
 import css from './Filter.module.css';
 import { useState } from 'react';
-import BoardBackgroundPicker from 'components/BoardBackgroundPicker/BoardBeckgroundPicker';
 
 const Filter = () => {
-  const [priority, setPriority] = useState('without');
-  const [backgroundName, setBackgroundName] = useState('00');
+  const [priority, setPriority] = useState('Without');
+
   const priorityOptions = [
     {
-      value: 'without',
+      value: 'Without',
       color: `var(--priority-color-without)`,
       text: 'Without priority',
     },
-    { value: 'low', color: `var(--priority-low-color)`, text: 'Low' },
-    { value: 'medium', color: `var(--priority-medium-color)`, text: 'Medium' },
-    { value: 'high', color: `var(--priority-high-color)`, text: 'High' },
+    { value: 'Low', color: `var(--priority-low-color)`, text: 'Low' },
+    { value: 'Medium', color: `var(--priority-medium-color)`, text: 'Medium' },
+    { value: 'High', color: `var(--priority-high-color)`, text: 'High' },
   ];
   const [isShowAllActive, setIsShowAllActive] = useState(false);
   const handleChange = event => {
@@ -25,7 +24,6 @@ const Filter = () => {
   };
 
   const initialValues = {
-    background: '00',
     priority: '',
   };
   return (
@@ -65,10 +63,6 @@ const Filter = () => {
                 ))}
               </ul>
             }
-            <BoardBackgroundPicker
-              backgroundName={backgroundName}
-              onChangeImage={setBackgroundName}
-            />
           </div>
         </Form>
       </Formik>
