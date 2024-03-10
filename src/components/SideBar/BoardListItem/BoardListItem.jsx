@@ -2,14 +2,20 @@ import React, { useState } from 'react';
 
 import sprite from 'assets/images/sprite.svg';
 import Modal from 'components/Modal/Modal';
-import AddBoardForm from 'components/Forms/BoardForms/AddBoardForm/AddBoardForm';
+import EditBoardForm from 'components/Forms/BoardForms/EditBoardForm/EditBoardForm';
+import { deleteBoard } from '../../../redux/boards/operation';
+import { useDispatch } from 'react-redux';
 
 import css from './BoardListItem.module.css';
-
 
 const BoardListItem = ({ board }) => {
   const [showModal, setShowModal] = useState(false);
   const toggleModal = () => setShowModal(prevShowModal => !prevShowModal);
+  const dispatch = useDispatch();
+
+  const handleDeleteBoard = boardId => {
+    dispatch(deleteBoard(boardId));
+  };
 
   return (
     <div className={css.boardItem}>
@@ -33,7 +39,11 @@ const BoardListItem = ({ board }) => {
             </button>
           </li>
           <li>
-            <button className={css.boardBtn} type="button">
+            <button
+              onClick={() => handleDeleteBoard(board._id)}
+              className={css.boardBtn}
+              type="button"
+            >
               <svg className={css.boardBtnSvg}>
                 <use href={`${sprite}#trash-16`}></use>
               </svg>
@@ -43,7 +53,12 @@ const BoardListItem = ({ board }) => {
       </div>
       {showModal && (
         <Modal closeModal={toggleModal}>
-          <AddBoardForm />
+          <EditBoardForm
+            board={board}
+            initialTitle={board.title}
+            initialIconName={board.icon}
+            initialBackgroundName={board.background}
+          />
         </Modal>
       )}
     </div>

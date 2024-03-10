@@ -1,138 +1,80 @@
-import React from 'react';
-import { useState } from 'react';
-// import { useSelector } from 'react-redux';
-import { ToastContainer, toast } from 'react-toastify';
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { editBoard } from '../../../../redux/boards/operation';
 import { Formik, Form, ErrorMessage, Field } from 'formik';
 import * as Yup from 'yup';
-import Modal from 'components/Modal/Modal';
 import MainAddButton from 'components/Buttons/MainAddButton/MainAddButton';
 import BoardBackgroundPicker from 'components/BoardBackgroundPicker/BoardBeckgroundPicker';
 import BoardMarkPicker from 'components/BoardMarkPicker/BoardMarkPicker';
-// import { getBoardSelector } from 'redux/auth/authSelectors';
-import 'react-toastify/dist/ReactToastify.css';
-import css from './EditBoardForm.module.css';
+import css from '../AddBoardForm/AddBoardForm.module.css';
 
 const TitleSchema = Yup.object().shape({
   boardTitle: Yup.string().required('Title is required'),
 });
 
 const EditBoardForm = ({
-  onClose,
-  btnName,
-  boardName,
-  currentBoard,
-  onEditBoard,
+  board,
+  initialTitle,
+  initialIconName,
+  initialBackgroundName,
 }) => {
-  const [backgroundName, setBackgroundName] = useState('00');
-  const [iconName, setIconName] = useState('mark-circuls-18');
-  const [isDuplicate, setIsDuplicate] = useState(false);
-  // const boards = useSelector(getBoardSelector);
-  const [boards, setBoards] = useState([]);
+  const dispatch = useDispatch();
+  // const [backgroundName, setBackgroundName] = useState('00');
+  // const [iconName, setIconName] = useState('mark-circuls-18');
+  const [backgroundName, setBackgroundName] = useState(initialBackgroundName);
+  const [iconName, setIconName] = useState(initialIconName);
 
-  const [showModal, setShowModal] = useState(false);
-  const toggleModal = () => setShowModal(prevShowModal => !prevShowModal);
-
-  let updatedBackground;
-  let updatedIcon;
-  if (btnName === 'Edit') {
-    updatedBackground =
-      backgroundName !== '00' ? backgroundName : currentBoard.background;
-
-    updatedIcon = iconName !== 'mark-circuls-18' ? iconName : currentBoard.icon;
-  }
-
-  const handleEditBoard = boardInfo => {
-    const updatedBoards = boards.map(board =>
-      board.id === boardInfo.id ? boardInfo : board
+  const handleSubmit = values => {
+    dispatch(
+      editBoard(board._id, {
+        title: values.boardTitle,
+        icon: iconName,
+        background: backgroundName,
+      })
     );
-    setBoards(updatedBoards);
+  };
+
+  useEffect(() => {
+    setBackgroundName(initialBackgroundName);
+    setIconName(initialIconName);
+  }, [board, initialBackgroundName, initialIconName]);
+
+  const initialValues = {
+    boardTitle: initialTitle,
   };
 
   return (
-    !showModal && (
-      <Modal onClose={toggleModal}>
-        <ToastContainer
-          position="top-right"
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="dark"
+    <Formik
+      initialValues={initialValues}
+      validationSchema={TitleSchema}
+      onSubmit={handleSubmit}
+    >
+      <Form autoComplete="off">
+        <h4 className={css.modalTitle}>Edit Board</h4>
+        <label htmlFor="boardTitle"></label>
+        <Field
+          className={css.inputField}
+          placeholder="Title"
+          id="boardTitle"
+          name="boardTitle"
+          type="text"
+          autoFocus
+          required={true}
         />
-        <h2 className={css.modalTitle}>Edit Board</h2>
+        <span className={css.inputErrorMessage}>
+          <ErrorMessage name="boardTitle" />
+        </span>
+        <p className={css.subtitle}>Icons</p>
+        <BoardMarkPicker iconName={iconName} onChangeIcon={setIconName} />
+        <p className={css.subtitle}>Background</p>
+        <BoardBackgroundPicker
+          backgroundName={backgroundName}
+          onChangeImage={setBackgroundName}
+        />
 
-        <Formik
-          initialValues={{
-            boardTitle: boardName,
-          }}
-          validationSchema={TitleSchema}
-          onSubmit={(values, { resetForm }) => {
-            if (btnName === 'Create') {
-              if (boards.some(el => el.title === values.boardTitle)) {
-                setIsDuplicate(true);
-                return toast.warn('This title already exists!');
-              }
-              const boardInfo = {
-                values,
-                background: backgroundName,
-                icon: iconName,
-              };
-              onEditBoard(boardInfo);
-              setIsDuplicate(false);
-
-              resetForm();
-              onClose();
-            }
-          }}
-        >
-          {({ handleChange, values }) => (
-            <Form>
-              <label htmlFor="boardTitle"></label>
-              <Field
-                className={css.inputField}
-                text="Title"
-                id="boardTitle"
-                name="boardTitle"
-                type="text"
-                onChange={handleChange}
-                value={values.boardTitle || ''}
-              />
-              <ErrorMessage
-                className={css.inputErrorMessage}
-                name="boardTitle"
-                component={'p'}
-              />
-              {isDuplicate && (
-                <p className={css.duplicate}>Title is duplicate!</p>
-              )}
-
-              <p className={css.subtitle}>Icons</p>
-
-              <BoardMarkPicker
-                onChangeIcon={setIconName}
-                currentBoardIcon={updatedIcon}
-              />
-              <p className={css.subtitle}>Background</p>
-
-              <BoardBackgroundPicker
-                onChangeImage={setBackgroundName}
-                currentBoardBackground={updatedBackground}
-              />
-
-              <MainAddButton
-                type="submit"
-                text="Edit"
-                click={handleEditBoard}
-              />
-            </Form>
-          )}
-        </Formik>
-      </Modal>
-    )
+        <MainAddButton text="Edit" type="submit" />
+      </Form>
+    </Formik>
   );
 };
 

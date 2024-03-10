@@ -1,5 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { addBoard, getBoard } from './operation';
+import { addBoard, getBoard, deleteBoard, editBoard } from './operation';
+
+const handlePending = state => {
+  state.isLoading = true;
+};
+
+const handleRejected = (state, action) => {
+  state.isLoading = false;
+  state.error = action.payload;
+};
 
 export const boardsSlice = createSlice({
   name: 'boards',
@@ -36,7 +45,27 @@ export const boardsSlice = createSlice({
       .addCase(getBoard.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
-      });
+      })
+      .addCase(deleteBoard.pending, handlePending)
+      .addCase(deleteBoard.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        const index = state.boardList.findIndex(
+          board => board._id === action.payload._id
+        );
+        state.boardList.splice(index, 1);
+      })
+      .addCase(deleteBoard.rejected, handleRejected)
+      .addCase(editBoard.pending, handlePending)
+      .addCase(editBoard.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        const index = state.boardList.findIndex(
+          el => el._id === action.payload._id
+        );
+        state.boardList[index] = action.payload;
+      })
+      .addCase(editBoard.rejected, handleRejected);
   },
 });
 

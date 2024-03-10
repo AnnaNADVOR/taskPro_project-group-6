@@ -24,3 +24,27 @@ export const getBoard = createAsyncThunk(
     }
   }
 );
+
+export const editBoard = createAsyncThunk(
+  'boards/editBoard',
+  async (boardId, data, { rejectWithValue }) => {
+    try {
+      const response = await AuthAPI.editBoard(boardId, data);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const deleteBoard = createAsyncThunk(
+  'boards/ deleteBoard',
+  async (boardId, { rejectWithValue }) => {
+    try {
+      const response = await AuthAPI.deleteBoard(boardId);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
