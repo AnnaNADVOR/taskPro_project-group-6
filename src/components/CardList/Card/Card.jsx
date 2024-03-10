@@ -1,14 +1,22 @@
 import css from './Card.module.css';
 import sprite from '../../../assets/images/sprite.svg';
 import { useState, useEffect } from 'react';
-// import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import Modal from 'components/Modal/Modal';
 import CardForm from 'components/Forms/BoardForms/CardForm/CardForm';
 import Progress from '../Progress/Progress';
-// import { useDispatch } from "react-redux";
+// import { selectDeletetaskId } from "../../../redux/tasks/selectors";
+import { deleteTask } from '../../../redux/tasks/operation';
 
 const Card = ({ newCard }) => {
   const [showModal, setShowModal] = useState(false);
+
+  const dispatch = useDispatch(); 
+
+  const onDeleteTask = () => {
+        dispatch(deleteTask(newCard._id));           
+  }
+  
   const toggleModal = () => setShowModal(prevShowModal => !prevShowModal);
 
   const deadline = newCard.deadline.replace(/T.*/, '').split('-').reverse().join('/'); 
@@ -66,8 +74,7 @@ const Card = ({ newCard }) => {
     setShowMenu(false);
   };
 
-  // const dispatch = useDispatch(); 
-
+  
   return (
     <>
       <div className={css.card} style={{ borderLeft: `4px solid ${color}` }}>
@@ -130,7 +137,7 @@ const Card = ({ newCard }) => {
               </button>
             </li>
             <li>
-              <button className={css.optionBtn} type="button">
+              <button className={css.optionBtn} onClick={onDeleteTask} type="button">
                 <svg className={css.optionBtnSvg}>
                   <use href={`${sprite}#trash-16`}></use>
                 </svg>
@@ -147,7 +154,8 @@ const Card = ({ newCard }) => {
             taskDescription={newCard.description}
             taskId={newCard._id}
             taskPriority={newCard.priority}
-            taskDeadline={newCard.deadline}/>
+            taskDeadline={newCard.deadline}
+            columnId={newCard.columnId} />
         </Modal>
       )}
     </>

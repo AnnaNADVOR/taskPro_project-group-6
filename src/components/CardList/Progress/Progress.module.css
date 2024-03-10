@@ -1,7 +1,6 @@
 .popupMenu {
     border-radius: 8px;
     width: 135px;
-    height: 86px;
     box-shadow: 0 4px 16px 0 rgba(17, 17, 17, 0.1);
     background: var(--progress-bg-color);
     padding: 18px;

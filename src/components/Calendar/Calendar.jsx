@@ -7,6 +7,7 @@ import en from "date-fns/locale/en-GB";
 
 
 const Calendar = ({ date, changeDate }) => {
+  
     const getDateFormat = (date) => {
     const today = new Date();
     const tomorrow = new Date();
