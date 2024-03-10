@@ -1,21 +1,32 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { selectBoards } from '../../../redux/boards/selectors';
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+
+import { getBoard } from '../../../redux/boards/operation';
+import { selectUser } from '../../../redux/auth/selectors';
 import BoardListItem from '../BoardListItem/BoardListItem';
+import { NavLink } from 'react-router-dom';
 
 const BoardList = () => {
-  const boards = useSelector(selectBoards);
+  const [boardId] = useState('');
+  const location = useLocation();
 
-  if (!Array.isArray(boards) || boards.length === 0) {
-    console.error('Boards array is empty or undefined:', boards);
-    return null;
-  }
+  const { user } = useSelector(selectUser);
+  const boards = user.boards;
+
+  const dispatch = useDispatch();
+
+  const handleClick = boardId => {
+    dispatch(getBoard(boardId));
+  };
 
   return (
     <ul>
       {boards.map(board => (
-        <li key={board._id}>
-          <BoardListItem board={board} allBoards={boards} />
+        <li key={board._id} onClick={() => handleClick(boardId)}>
+          <NavLink to={`/home/${board.title}`} state={{ from: location }}>
+            <BoardListItem board={board} allBoards={boards} />
+          </NavLink>
         </li>
       ))}
     </ul>

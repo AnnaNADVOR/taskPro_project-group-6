@@ -6,18 +6,21 @@ import AddBoardForm from 'components/Forms/BoardForms/AddBoardForm/AddBoardForm'
 
 import css from './BoardListItem.module.css';
 
+
 const BoardListItem = ({ board }) => {
   const [showModal, setShowModal] = useState(false);
   const toggleModal = () => setShowModal(prevShowModal => !prevShowModal);
 
   return (
-    <div>
-      <svg>
-        <use href={`${sprite}#${board.icon}`}></use>
-      </svg>
-      <h2>Title:{board.title}</h2>
+    <div className={css.boardItem}>
+      <div className={css.boardItemTitleBlock}>
+        <svg className={css.boardIcon}>
+          <use href={`${sprite}#${board.icon}`}></use>
+        </svg>
+        <h2 className={css.boardTitle}>Title:{board.title}</h2>
+      </div>
       <div>
-        <ul>
+        <ul className={css.boardItemButtonsBlock}>
           <li>
             <button
               className={css.boardBtn}

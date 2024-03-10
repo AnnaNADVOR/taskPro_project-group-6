@@ -40,9 +40,7 @@ const SideBar = ({ showSidebar }) => {
         </div>
       </div>
       <div className={css.sidebarBoardsList}>
-        <Link to="/home/rte">
-          <BoardList />
-        </Link>
+        <BoardList />
       </div>
       <div className={css.sidebarWrapper}>
         <NeedHelp />

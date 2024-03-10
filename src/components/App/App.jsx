@@ -19,19 +19,37 @@ const App = () => {
     dispatch(refreshUser())
   }, [dispatch]);
     return (
-        !isRefreshing && (
-            <Suspense>
-                <Routes>
-                    <Route path="/" element={<WelcomePage/>}/>
-                    <Route path="/auth/:id" element={<RestrictedRoute component={AuthPage} redirectTo="/home" />}/>
-                    <Route path="/home" element={<SharedLayout />} >
-                        <Route index element={<PrivateRoute component={HomePage} redirectTo="/auth/login"/>} />
-                        <Route path="/home/rte" element={<PrivateRoute component={ScreensPage} redirectTo="/auth/login"/>} />
-                    </Route>            
-                </Routes>   
-            </Suspense>
-        )             
-    )
+      !isRefreshing && (
+        <Suspense>
+          <Routes>
+            <Route path="/" element={<WelcomePage />} />
+            <Route
+              path="/auth/:id"
+              element={
+                <RestrictedRoute component={AuthPage} redirectTo="/home" />
+              }
+            />
+            <Route path="/home" element={<SharedLayout />}>
+              <Route
+                index
+                element={
+                  <PrivateRoute component={HomePage} redirectTo="/auth/login" />
+                }
+              />
+              <Route
+                path="/home/:boardTitle"
+                element={
+                  <PrivateRoute
+                    component={ScreensPage}
+                    redirectTo="/auth/login"
+                  />
+                }
+              />
+            </Route>
+          </Routes>
+        </Suspense>
+      )
+    );
 };
 
 export default App; 
