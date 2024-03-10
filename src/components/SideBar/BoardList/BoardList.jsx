@@ -1,41 +1,22 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import Modal from 'components/Modal/Modal';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getBoard } from '../../../redux/boards/operation';
+import BoardListItem from '../BoardListItem/BoardListItem';
 
-const BoardList = ({
-  boards,
-  handleClick,
-  openEditBoardModal,
-  handleDelete,
-  location,
-}) => {
+const BoardList = () => {
+  const dispatch = useDispatch();
+  const boards = useSelector(state => state.boards.boards) || [];
+
+  useEffect(() => {
+    dispatch(getBoard());
+  }, [dispatch]);
+
   return (
-    <div>
-      {boards.map(({ _id: id, icon, title }) => (
-        <li key={id} onClick={() => handleClick(id)}>
-          <NavLink to={`/home/${title}`} state={{ from: location }}>
-            <div>
-              <div>
-                <svg width="18" height="18">
-                  <use href={`${sprite}#${icon}-dark`} />
-                </svg>
-              </div>
-              <h2>{titleBoard}</h2>
-            </div>
-            <ul>
-              <button onClick={() => openEditBoardModal(id)} />
-              <button onClick={() => handleDelete(id)} />
-            </ul>
-          </NavLink>
-        </li>
+    <ul>
+      {boards.map(({ boardId, title, icon }) => (
+        <BoardListItem key={boardId} title={title} icon={icon} />
       ))}
-      {isOpenModalEditBoard && (
-        <Modal
-          openEditBoardModal={openEditBoardModal}
-          boardId={boardId}
-        ></Modal>
-      )}
-    </div>
+    </ul>
   );
 };
 

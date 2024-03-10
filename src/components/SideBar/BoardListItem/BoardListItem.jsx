@@ -1,23 +1,13 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getBoard } from 'redux/boards/operation';
+import React from 'react';
 
-const Board = () => {
-  const dispatch = useDispatch();
-
-  const board = useSelector(state => state.board);
-
-  useEffect(() => {
-    dispatch(getBoard('boardId'));
-  }, [dispatch]);
+const BoardListItem = ({ title, icon }) => {
 
   return (
-    <div>
-      <h2>Board Component</h2>
-      <p>Board ID: {board.id}</p>
-      <p>Board Title: {board.title}</p>
-    </div>
+    <li>
+      <span>{icon}</span>
+      <h2>{title}</h2>
+    </li>
   );
 };
 
-export default Board;
+export default BoardListItem;

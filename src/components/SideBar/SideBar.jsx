@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
+import { logOut } from '../../redux/auth/operation';
+import BoardList from './BoardList/BoardList';
 import NeedHelp from './NeedHelp/NeedHelp';
 import Modal from 'components/Modal/Modal';
 import AddBoardForm from 'components/Forms/BoardForms/AddBoardForm/AddBoardForm';
@@ -9,6 +12,7 @@ import sprite from 'assets/images/sprite.svg';
 import css from './SideBar.module.css';
 
 const SideBar = ({ showSidebar }) => {
+  const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
   const toggleModal = () => setShowModal(prevShowModal => !prevShowModal);
 
@@ -36,13 +40,19 @@ const SideBar = ({ showSidebar }) => {
         </div>
       </div>
       <div className={css.sidebarBoardsList}>
-        <Link to="/home/rte">Board</Link>
+        <Link to="/home/rte">
+          <BoardList />
+        </Link>
       </div>
       <div className={css.sidebarWrapper}>
         <NeedHelp />
       </div>
       <div className={css.logoutBlock}>
-        <Link to="/" className={css.logoutLink}>
+        <Link
+          to="/"
+          className={css.logoutLink}
+          onClick={() => dispatch(logOut())}
+        >
           <span>
             <svg className={css.logoutIcon}>
               <use href={`${sprite}#logOut-32`}></use>
