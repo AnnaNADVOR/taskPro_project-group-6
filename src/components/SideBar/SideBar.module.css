@@ -8,7 +8,7 @@
   height: 100vh;
   background: var(--main-aside-color);
   transform: translateX(0px);
-  transition: transform var(--transition);
+  transition: all var(--transition);
   z-index: 200;
 }
 
@@ -56,6 +56,17 @@
   width: 104px;
   height: 32px;
   margin-bottom: 70px;
+  animation: fadeInOut 3s ease-in-out alternate;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 @media screen and (min-width: 768px) {
