@@ -68,22 +68,17 @@ export const boardsSlice = createSlice({
         );
         state.boardList[index] = action.payload;
       })
-      .addCase(editBoard.rejected, handleRejected);
-  },
-
+      .addCase(editBoard.rejected, handleRejected)
       .addCase(deleteCardOnBoard.fulfilled, (state, action) => {
-        
         let taskId = action.payload 
         state.board.columns = state.board.columns.map((column) => {
-         
           return {
             ...column,
             tasks: column.tasks.filter(task => task._id !== taskId)
           }
         })
-      }
-      )
-  }
+      })
+    }
 
 });
 

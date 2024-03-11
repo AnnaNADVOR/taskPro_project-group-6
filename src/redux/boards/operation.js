@@ -47,8 +47,10 @@ export const deleteBoard = createAsyncThunk(
     } catch (error) {
       return rejectWithValue(error.message);
     }
+  }
+); 
 
-    export const deleteCardOnBoard = createAsyncThunk(
+  export const deleteCardOnBoard = createAsyncThunk(
   'boards/deleteCardOnBoard',
   async (taskId) => {
     return taskId
