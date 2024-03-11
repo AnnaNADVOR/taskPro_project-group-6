@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { addBoard, getBoard, deleteBoard, editBoard } from './operation';
+
+import { addBoard, getBoard, deleteBoard, editBoard, deleteCardOnBoard } from './operation';
 
 const handlePending = state => {
   state.isLoading = true;
@@ -9,6 +10,7 @@ const handleRejected = (state, action) => {
   state.isLoading = false;
   state.error = action.payload;
 };
+
 
 export const boardsSlice = createSlice({
   name: 'boards',
@@ -40,12 +42,13 @@ export const boardsSlice = createSlice({
       .addCase(getBoard.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.board.push(action.payload);
+        state.board = action.payload;
       })
       .addCase(getBoard.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       })
+
       .addCase(deleteBoard.pending, handlePending)
       .addCase(deleteBoard.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -67,6 +70,21 @@ export const boardsSlice = createSlice({
       })
       .addCase(editBoard.rejected, handleRejected);
   },
+
+      .addCase(deleteCardOnBoard.fulfilled, (state, action) => {
+        
+        let taskId = action.payload 
+        state.board.columns = state.board.columns.map((column) => {
+         
+          return {
+            ...column,
+            tasks: column.tasks.filter(task => task._id !== taskId)
+          }
+        })
+      }
+      )
+  }
+
 });
 
 export const boardsReducer = boardsSlice.reducer;

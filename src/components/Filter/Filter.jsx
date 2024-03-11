@@ -1,27 +1,38 @@
 import { Formik, Form, Field } from 'formik';
 import css from './Filter.module.css';
 import { useState } from 'react';
-import BoardBackgroundPicker from 'components/BoardBackgroundPicker/BoardBeckgroundPicker';
+
+import { useDispatch } from 'react-redux';
+import { setFilter } from '../../redux/filter/slice';
 
 const Filter = () => {
-  const [priority, setPriority] = useState('without');
-  const [backgroundName, setBackgroundName] = useState('00');
+  
+  const dispatch = useDispatch()
+  
+    const onChange = event => {
+        dispatch(setFilter(event.currentTarget.value));
+    }
+    
+  const [priority, setPriority] = useState('');
+
   const priorityOptions = [
     {
-      value: 'without',
+      value: 'Without',
       color: `var(--priority-color-without)`,
       text: 'Without priority',
     },
-    { value: 'low', color: `var(--priority-low-color)`, text: 'Low' },
-    { value: 'medium', color: `var(--priority-medium-color)`, text: 'Medium' },
-    { value: 'high', color: `var(--priority-high-color)`, text: 'High' },
+    { value: 'Low', color: `var(--priority-low-color)`, text: 'Low' },
+    { value: 'Medium', color: `var(--priority-medium-color)`, text: 'Medium' },
+    { value: 'High', color: `var(--priority-high-color)`, text: 'High' },
   ];
-  const [isShowAllActive, setIsShowAllActive] = useState(false);
+ 
   const handleChange = event => {
     setPriority(event.target.value);
   };
   const handleShowAll = () => {
-    setIsShowAllActive(true);
+    setPriority("");
+    dispatch(setFilter(""));
+    
   };
 
   const initialValues = {
@@ -39,7 +50,6 @@ const Filter = () => {
               <button
                 type="button"
                 onClick={handleShowAll}
-                disabled={isShowAllActive}
                 className={css.buttonLeabel}
               >
                 Show all
@@ -58,17 +68,14 @@ const Filter = () => {
                       checked={priority === value}
                       style={{ backgroundColor: color }}
                       onClick={handleChange}
+                      onChange={ onChange }
                       className={css.label}
                     />{' '}
                     <span className={css.labeltext}> {text}</span>
                   </li>
                 ))}
               </ul>
-            }
-            <BoardBackgroundPicker
-              backgroundName={backgroundName}
-              onChangeImage={setBackgroundName}
-            />
+            }           
           </div>
         </Form>
       </Formik>

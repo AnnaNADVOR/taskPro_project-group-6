@@ -6,7 +6,7 @@ export const addBoard = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     try {
       const response = await AuthAPI.addBoard(data);
-      return response.data;
+      return response;
     } catch (error) {
       return rejectWithValue(error.message);
     }
@@ -18,12 +18,13 @@ export const getBoard = createAsyncThunk(
   async (boardId, { rejectWithValue }) => {
     try {
       const response = await AuthAPI.getBoardById(boardId);
-      return response.data;
+      return response;
     } catch (error) {
       return rejectWithValue(error.message);
     }
   }
 );
+
 
 export const editBoard = createAsyncThunk(
   'boards/editBoard',
@@ -46,5 +47,11 @@ export const deleteBoard = createAsyncThunk(
     } catch (error) {
       return rejectWithValue(error.message);
     }
+
+    export const deleteCardOnBoard = createAsyncThunk(
+  'boards/deleteCardOnBoard',
+  async (taskId) => {
+    return taskId
+
   }
 );
