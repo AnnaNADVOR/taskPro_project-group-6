@@ -1,8 +1,7 @@
-import * as AuthAPI from '../services/api'
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import * as AuthAPI from '../services/api';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
-
-//import toast 
+//import toast
 /*//import axios from 'axios';
 const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -19,12 +18,11 @@ export const register = createAsyncThunk('auth/register', async (credentials, {r
   }
 });/*/
 
-
 export const register = createAsyncThunk(
-  "auth/register",
+  'auth/register',
   async (credentials, { rejectWithValue }) => {
     try {
-        const response = await AuthAPI.registration(credentials);
+      const response = await AuthAPI.registration(credentials);
       return response;
     } catch (error) {
       //toast.error(error.response.data.message)
@@ -34,7 +32,7 @@ export const register = createAsyncThunk(
 );
 
 export const logIn = createAsyncThunk(
-    "auth/login", 
+  'auth/login',
   async (credentials, { rejectWithValue }) => {
     try {
       const response = await AuthAPI.logIn(credentials);
@@ -43,33 +41,33 @@ export const logIn = createAsyncThunk(
       return rejectWithValue(error.message);
     }
   }
-)
+);
 
 export const logOut = createAsyncThunk(
-    "auth/logout", 
-    async (_, { rejectWithValue }) => {
+  'auth/logout',
+  async (_, { rejectWithValue }) => {
     try {
-        await AuthAPI.logOut();       
+      await AuthAPI.logOut();
     } catch (error) {
       return rejectWithValue(error.message);
     }
   }
-)
+);
 
 export const refreshUser = createAsyncThunk(
-  "auth/refresh",
+  'auth/refresh',
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
     const token = state.auth.token;
     if (!token) {
-      return thunkAPI.rejectWithValue("No valid token"); 
+      return thunkAPI.rejectWithValue('No valid token');
     }
-    AuthAPI.setAuthHeader(token); 
-    try {      
+    AuthAPI.setAuthHeader(token);
+    try {
       const response = await AuthAPI.refresh();
-      return response; 
+      return response;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
   }
-) 
+);
