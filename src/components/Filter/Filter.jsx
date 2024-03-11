@@ -1,14 +1,12 @@
 import { Formik, Form, Field } from 'formik';
 import css from './Filter.module.css';
 import { useState } from 'react';
-import { selectFilter } from '../../redux/filter/selectors';
-import { useDispatch, useSelector } from 'react-redux';
+
+import { useDispatch } from 'react-redux';
 import { setFilter } from '../../redux/filter/slice';
 
 const Filter = () => {
   
-  const filter = useSelector(selectFilter);
-
   const dispatch = useDispatch()
   
     const onChange = event => {

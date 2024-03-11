@@ -1,5 +1,4 @@
 import axios from "axios";
-// import { nanoid } from "nanoid";
 axios.defaults.baseURL = "https://project-team-6-backend.onrender.com";
 
 //--------------------auth-------------------//
