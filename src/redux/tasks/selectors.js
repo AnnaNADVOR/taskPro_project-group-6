@@ -14,6 +14,21 @@ export const selectVisibleTasks = createSelector([selectTasks, selectAllColumns,
         }))
     }, tasks)
 
-    const findTask = currentTasks.filter(task => task && task.priority.includes(filter));
+    const idSet = new Set([])
+
+    const findTask = currentTasks.filter(task => {
+        if (!task) {
+            return false
+        }
+
+        if (idSet.has(task._id)) {
+            return false
+        }
+
+        idSet.add(task._id)
+
+        return task.priority.includes(filter)
+    } );
+    
     return findTask;
 })
