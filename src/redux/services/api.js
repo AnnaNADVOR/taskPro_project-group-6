@@ -92,7 +92,7 @@ export async function addTask(data) {
 
 export async function editTaskById(taskId, data) {
   const response = await axios.patch(`api/tasks/${taskId}`, data);
-  return response;
+  return response.data;
 }
 
 export async function deleteTaskById(taskId) {
@@ -100,6 +100,7 @@ export async function deleteTaskById(taskId) {
   return response.data;
 }
 
-// export async function replaseTask(taskId, columns) {
-
-// }
+export async function replaceTask(taskId, column) {
+    const response = await axios.post(`api/tasks/${taskId}/replace`, {column})
+    return response.data; 
+}

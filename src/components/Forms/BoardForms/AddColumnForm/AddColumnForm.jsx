@@ -4,37 +4,56 @@ import css from './AddColumnForm.module.css';
 import { useDispatch } from 'react-redux';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-import { addColumn } from '../../../../redux/columns/operation';
+import { addColumn, editColumn } from '../../../../redux/boards/operation';
 import { selectBoard } from '../../../../redux/boards/selectors';
 
 const addColumnSchema = Yup.object().shape({
   columnTitle: Yup.string().required('Please enter the title'),
 });
 
-const AddColumnForm = () => {
-  const board = useSelector(selectBoard);
+const AddColumnForm = ({ title, action, columnId, columnTitle }) => {
+  console.log("columnId",columnId)
+  const board = useSelector(selectBoard); 
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    dispatch(
-      addColumn({
-        title: values.columnTitle,
-        board: board._id,
-      })
-    );
-    actions.resetForm();
-  };
+    if (columnId) {
+      dispatch(editColumn({
+        columnId: columnId,
+        newColumnData: {
+        // column: columnId,
+          board: board._id,
+          // boardId: board._id,
+          title: values.columnTitle,
+        }
+      }
+      ))
+      actions.resetForm();
+    } else {
+      dispatch(addColumn({
+      title: values.columnTitle,
+      board: board._id,
+      }));  
+     actions.resetForm();   
+    }
+    
+   
+  }
+  const initialValues = {
+    columnTitle: ""
+  }
+
+   if (columnId) {
+        initialValues.columnTitle = columnTitle;       
+    }
 
   return (
-    <Formik
-      validationSchema={addColumnSchema}
-      initialValues={{ columnTitle: '' }}
-      onSubmit={handleSubmit}
-    >
+    <Formik validationSchema={addColumnSchema}
+      initialValues={initialValues}
+      onSubmit={handleSubmit}>
       <Form>
-        <h3 className={css.addColumnModalTitle}>Add column</h3>
-        <Field
-          className={css.addColumnInput}
+        <h3 className={css.addColumnModalTitle}>{title}</h3>
+        <Field className={css.addColumnInput}
           as="input"
           type="text"
           name="columnTitle"
@@ -42,8 +61,8 @@ const AddColumnForm = () => {
           required={true}
           autoFocus
         />
-        <MainAddButton text="Add" />
-      </Form>
+        <MainAddButton text={action} />
+      </Form>     
     </Formik>
   );
 };

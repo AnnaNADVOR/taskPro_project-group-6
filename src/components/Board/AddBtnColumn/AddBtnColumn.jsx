@@ -23,7 +23,7 @@ const AddBtnColumn = () => {
       </button>
       {isOpen && (
         <Modal closeModal={toggleModal}>
-          <AddColumnForm />
+          <AddColumnForm title="Add column" action="Add" />
         </Modal>
       )}
     </>

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import sprite from 'assets/images/sprite.svg';
 import Modal from 'components/Modal/Modal';
 import EditBoardForm from 'components/Forms/BoardForms/EditBoardForm/EditBoardForm';
-import { deleteBoard } from '../../../redux/boards/operation';
+import { deleteBoard } from '../../../redux/auth/operation';
 import { useDispatch } from 'react-redux';
 
 import css from './BoardListItem.module.css';

@@ -1,35 +1,34 @@
 import css from './Card.module.css';
 import sprite from '../../../assets/images/sprite.svg';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useDispatch } from "react-redux";
 import Modal from 'components/Modal/Modal';
 import CardForm from 'components/Forms/BoardForms/CardForm/CardForm';
 import Progress from '../Progress/Progress';
 // import { selectDeletetaskId } from "../../../redux/tasks/selectors";
-import { deleteTask } from '../../../redux/tasks/operation';
-import { deleteCard } from '../../../redux/columns/operation';
-import { deleteCardOnBoard } from '../../../redux/boards/operation';
+import { deleteTask } from '../../../redux/boards/operation';
 
-const Card = ({ newCard }) => {
+
+const Card = ({ newCard, columnId }) => {
   const [showModal, setShowModal] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   
   const toggleModal = () => setShowModal(prevShowModal => !prevShowModal);
   const toggleMenu = () => setShowMenu(prevShowMenu => !prevShowMenu);
-  useEffect(() => {
-    const handleClickOutside = () => {
-      setShowMenu(false);
-    };
-    window.addEventListener('mousedown', handleClickOutside)
-  }, []);
+  // useEffect(() => {
+  //   const handleClickOutside = () => {
+  //     setShowMenu(false);
+  //   };
+  //   window.addEventListener('mousedown', handleClickOutside)
+  // }, []);
 
   const dispatch = useDispatch();
 
   const onDeleteTask = () => {
     dispatch(deleteTask(newCard._id)); 
-    dispatch(deleteCard(newCard._id)); 
-    dispatch(deleteCardOnBoard(newCard._id)); 
+       // dispatch(deleteCardOnBoard(newCard._id)); 
   }
+
   
   const deadline = newCard.deadline.replace(/T.*/, '').split('-').reverse().join('/'); 
   const priority = newCard.priority;
@@ -93,7 +92,7 @@ const Card = ({ newCard }) => {
               </button>
               <div className={css.progressContainer}>
                 {showMenu && (
-                  <Progress closeMenu = {toggleMenu}/>
+                  <Progress closeMenu={toggleMenu} columnId={ columnId } currentTask = {newCard} />
                 )}
               </div>
             </li>
