@@ -1,17 +1,16 @@
-import axios from "axios";
-axios.defaults.baseURL = "https://project-team-6-backend.onrender.com";
+import axios from 'axios';
+axios.defaults.baseURL = 'https://project-team-6-backend.onrender.com';
 
 //--------------------auth-------------------//
 export const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-}
+};
 
 const clearAuthHeader = () => {
   axios.defaults.headers.common.Authorization = '';
-}
+};
 
 export async function registration(credentials) {
-
   const response = await axios.post('api/users/register', credentials);
   setAuthHeader(response.data.user.token);
   return response.data;
@@ -22,7 +21,7 @@ export async function logIn(credentials) {
   setAuthHeader(response.data.user.token);
   return response.data;
 }
-   
+
 export async function logOut() {
   await axios.post('api/users/logout');
   clearAuthHeader();
@@ -97,8 +96,8 @@ export async function editTaskById(taskId, data) {
 }
 
 export async function deleteTaskById(taskId) {
-    const response = await axios.delete(`api/tasks/${taskId}`);
-    return response.data; 
+  const response = await axios.delete(`api/tasks/${taskId}`);
+  return response.data;
 }
 
 // export async function replaseTask(taskId, columns) {
