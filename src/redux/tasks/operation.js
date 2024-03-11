@@ -7,7 +7,7 @@ export const addTask = createAsyncThunk(
         try {
           const response = await tasksAPI.addTask({ column, title, description, priority, deadline });
           console.log("response", response)
-      return response.data;
+      return response;
     } catch (error) {
       return rejectWithValue(error.message);
     }
@@ -19,8 +19,8 @@ export const editTask = createAsyncThunk(
   async ({ _id, column, title, description, priority, deadline }, { rejectWithValue }) => {
     console.log("task data", { _id, column, title, description, priority, deadline })
     try {
-      const response = await tasksAPI.editTaskById(_id, { _id, column, title, description, priority, deadline });
-      return response.data;
+      const response = await tasksAPI.editTaskById(_id, { column, title, description, priority, deadline });
+      return response;
     } catch (error) {
       return rejectWithValue(error.message);
     }
@@ -32,7 +32,7 @@ export const deleteTask = createAsyncThunk(
   async (taskId, { rejectWithValue }) => {
     try {
       const deleteContact = await tasksAPI.deleteTaskById(taskId); 
-      return deleteContact.data;
+      return deleteContact;
     } 
     catch (error) {
       return rejectWithValue(error.message);

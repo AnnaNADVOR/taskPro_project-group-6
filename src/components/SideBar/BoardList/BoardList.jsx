@@ -13,7 +13,7 @@ const BoardList = () => {
 
   const { user } = useSelector(selectUser);
   const boards = user.boards;
-
+  
   const dispatch = useDispatch();
 
   const handleClick = boardId => {

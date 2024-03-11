@@ -1,16 +1,17 @@
 import { useSelector } from "react-redux";
-import { selectTasks, selectVisibleTasks } from "../../redux/tasks/selectors";
+import { selectVisibleTasks } from "../../redux/tasks/selectors";
 import Card from "../CardList/Card/Card";
 
-const CardList = () => {
-    const cards = useSelector(selectTasks);
+const CardList = ({columnId}) => {
     const visibleCards = useSelector(selectVisibleTasks);
-   
+
+    const columnCards = visibleCards.filter(item => item.columnId === columnId )
+
     return (
         <ul>
-            {cards.length > 0 && visibleCards.length === 0 ? (console.log("no!")):
+            {columnCards.length > 0 &&
            <>
-                {visibleCards.map(card =>
+                {columnCards.map(card =>
                     <li key={card._id}>
                         <Card newCard={card} />
                     </li>

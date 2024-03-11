@@ -20,6 +20,8 @@ const addCardSchema = Yup.object().shape({
 
 
 const CardForm = ({ title, action, taskTitle, taskDescription, taskPriority, taskDeadline, taskId, columnId }) => {
+   
+    console.log("id in form", columnId)
     const initialValues = {
         cardTitle: "",
         description: "", 

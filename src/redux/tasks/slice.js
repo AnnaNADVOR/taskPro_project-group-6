@@ -46,7 +46,11 @@ export const tasksSlice = createSlice({
                 console.log("action payload",action.payload)
                 state.isLoading = false;
                 state.error = null;
-                state.tasksList = state.tasksList.filter(task => task._id !== action.payload._id);
+                const index = state.tasksList.findIndex(
+          (card) => card._id === action.payload._id
+        );
+        state.tasksList.splice(index, 1);
+                // state.tasksList = state.tasksList.filter(task => task._id !== action.payload._id);
             })
             .addCase(deleteTask.rejected, (state, action) => {
                 state.isLoading = false;

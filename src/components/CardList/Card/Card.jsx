@@ -11,7 +11,7 @@ import { deleteTask } from '../../../redux/tasks/operation';
 const Card = ({ newCard }) => {
   const [showModal, setShowModal] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
-
+  
   const toggleModal = () => setShowModal(prevShowModal => !prevShowModal);
   const toggleMenu = () => setShowMenu(prevShowMenu => !prevShowMenu);
   useEffect(() => {
@@ -22,7 +22,12 @@ const Card = ({ newCard }) => {
   }, []);
 
   const dispatch = useDispatch();
-  const onDeleteTask = () => {
+
+  useEffect(() => {
+   
+  }, [])
+  
+   const onDeleteTask = () => {
     dispatch(deleteTask(newCard._id));           
   }
   
