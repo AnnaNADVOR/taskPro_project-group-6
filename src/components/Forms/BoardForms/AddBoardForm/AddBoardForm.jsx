@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBoard } from '../../../../redux/boards/operation';
+import { addBoard } from '../../../../redux/auth/operation';
 import { Formik, Form, ErrorMessage, Field } from 'formik';
 import * as Yup from 'yup';
 import MainAddButton from 'components/Buttons/MainAddButton/MainAddButton';

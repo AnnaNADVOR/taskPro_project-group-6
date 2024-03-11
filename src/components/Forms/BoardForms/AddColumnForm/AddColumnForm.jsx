@@ -5,7 +5,7 @@ import css from './AddColumnForm.module.css';
 import { useDispatch } from "react-redux";
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-import { addColumn } from '../../../../redux/columns/operation';
+import { addColumn, editColumn } from '../../../../redux/boards/operation';
 import { selectBoard } from '../../../../redux/boards/selectors';
 
 const addColumnSchema = Yup.object().shape({
@@ -13,24 +13,48 @@ const addColumnSchema = Yup.object().shape({
         .required("Please enter the title"),           
 });
 
-const AddColumnForm = () => {
+const AddColumnForm = ({ title, action, columnId, columnTitle }) => {
+  console.log("columnId",columnId)
   const board = useSelector(selectBoard); 
   const dispatch = useDispatch();
   
   const handleSubmit = (values, actions) => {
-    dispatch(addColumn({
+    if (columnId) {
+      dispatch(editColumn({
+        columnId: columnId,
+        newColumnData: {
+        // column: columnId,
+          board: board._id,
+          // boardId: board._id,
+          title: values.columnTitle,
+        }
+      }
+      ))
+      actions.resetForm();
+    } else {
+      dispatch(addColumn({
       title: values.columnTitle,
       board: board._id,
-    }));  
-    actions.resetForm(); 
+      }));  
+     actions.resetForm();   
+    }
+    
+   
   }
+  const initialValues = {
+    columnTitle: ""
+  }
+
+   if (columnId) {
+        initialValues.columnTitle = columnTitle;       
+    }
 
   return (
     <Formik validationSchema={addColumnSchema}
-      initialValues={{ columnTitle: "" }}
+      initialValues={initialValues}
       onSubmit={handleSubmit}>
       <Form>
-        <h3 className={css.addColumnModalTitle}>Add column</h3>
+        <h3 className={css.addColumnModalTitle}>{title}</h3>
         <Field className={css.addColumnInput}
           as="input"
           type="text"
@@ -39,7 +63,7 @@ const AddColumnForm = () => {
           required={true}
           autoFocus 
         />
-        <MainAddButton text="Add"/>
+        <MainAddButton text={action} />
       </Form>     
     </Formik>
   );

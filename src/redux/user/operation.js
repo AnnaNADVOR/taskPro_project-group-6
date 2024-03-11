@@ -1,14 +1,15 @@
-import * as AuthAPI from '../services/api';
+import * as API from '../services/api';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const requestHelp = createAsyncThunk(
   'users/help/request',
   async (credentials, thunkAPI) => {
     try {
-      const res = await AuthAPI.support(credentials);
+      const res = await API.support(credentials);
       return res.data;
     } catch (err) {
       return thunkAPI.rejectWithValue(err.message);
     }
   }
 );
+
