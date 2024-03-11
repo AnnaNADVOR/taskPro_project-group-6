@@ -1,5 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { addBoard, getBoard, deleteCardOnBoard } from './operation';
+
+import { addBoard, getBoard, deleteBoard, editBoard, deleteCardOnBoard } from './operation';
+
+const handlePending = state => {
+  state.isLoading = true;
+};
+
+const handleRejected = (state, action) => {
+  state.isLoading = false;
+  state.error = action.payload;
+};
+
 
 export const boardsSlice = createSlice({
   name: 'boards',
@@ -37,6 +48,29 @@ export const boardsSlice = createSlice({
         state.isLoading = false;
         state.error = action.payload;
       })
+
+      .addCase(deleteBoard.pending, handlePending)
+      .addCase(deleteBoard.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        const index = state.boardList.findIndex(
+          board => board._id === action.payload._id
+        );
+        state.boardList.splice(index, 1);
+      })
+      .addCase(deleteBoard.rejected, handleRejected)
+      .addCase(editBoard.pending, handlePending)
+      .addCase(editBoard.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        const index = state.boardList.findIndex(
+          el => el._id === action.payload._id
+        );
+        state.boardList[index] = action.payload;
+      })
+      .addCase(editBoard.rejected, handleRejected);
+  },
+
       .addCase(deleteCardOnBoard.fulfilled, (state, action) => {
         
         let taskId = action.payload 
@@ -50,6 +84,7 @@ export const boardsSlice = createSlice({
       }
       )
   }
+
 });
 
 export const boardsReducer = boardsSlice.reducer;
