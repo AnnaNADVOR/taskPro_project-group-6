@@ -1,29 +1,39 @@
-import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { Formik, Form, Field } from 'formik';
 import MainAddButton from 'components/Buttons/MainAddButton/MainAddButton';
+import { editColumn } from '../../../../redux/columns/operation';
+
 import css from './EditColumnForm.module.css';
 
-const EditColumnForm = () => {
-  const [title, setTitle] = useState('');
+const EditColumnForm = ({ column, title, columnId }) => {
+  const dispatch = useDispatch();
 
-  const handleChange = ({ target: { value } }) => {
-    setTitle(value);
+  const handleSubmit = (values, actions) => {
+    dispatch(
+      editColumn({
+        title: values.columnTitle,
+        columnId: column._id,
+      })
+    );
+    actions.resetForm();
   };
+
   return (
-    <div>
-      <h3 className={css.editColumnModalTitle}>Edit column</h3>
-      <form className={css.editColumnForm}>
-        <input
+    <Formik initialValues={{ columnTitle: '' }} onSubmit={handleSubmit}>
+      <Form>
+        <h3 className={css.editColumnModalTitle}>Edit column</h3>
+        <Field
           className={css.editColumnInput}
-          name="title"
-          value={title}
+          as="input"
           type="text"
+          name="columnTitle"
           placeholder="Title"
-          onChange={handleChange}
-          required
+          required={true}
+          autoFocus
         />
-        <MainAddButton text="Add" />
-      </form>
-    </div>
+        <MainAddButton text="Edit" />
+      </Form>
+    </Formik>
   );
 };
 
