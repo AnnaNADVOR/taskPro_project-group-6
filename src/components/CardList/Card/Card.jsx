@@ -7,6 +7,8 @@ import CardForm from 'components/Forms/BoardForms/CardForm/CardForm';
 import Progress from '../Progress/Progress';
 // import { selectDeletetaskId } from "../../../redux/tasks/selectors";
 import { deleteTask } from '../../../redux/tasks/operation';
+import { deleteCard } from '../../../redux/columns/operation';
+import { deleteCardOnBoard } from '../../../redux/boards/operation';
 
 const Card = ({ newCard }) => {
   const [showModal, setShowModal] = useState(false);
@@ -23,12 +25,10 @@ const Card = ({ newCard }) => {
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-   
-  }, [])
-  
-   const onDeleteTask = () => {
-    dispatch(deleteTask(newCard._id));           
+  const onDeleteTask = () => {
+    dispatch(deleteTask(newCard._id)); 
+    dispatch(deleteCard(newCard._id)); 
+    dispatch(deleteCardOnBoard(newCard._id)); 
   }
   
   const deadline = newCard.deadline.replace(/T.*/, '').split('-').reverse().join('/'); 

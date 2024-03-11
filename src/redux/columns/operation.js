@@ -12,3 +12,11 @@ export const addColumn = createAsyncThunk(
     }
   }
 );
+
+export const deleteCard = createAsyncThunk(
+  'columns/deleteCard',
+  async (taskId) => {
+    return taskId
+  }
+);
+

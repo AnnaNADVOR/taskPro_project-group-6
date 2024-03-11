@@ -49,7 +49,6 @@ const CardForm = ({ title, action, taskTitle, taskDescription, taskPriority, tas
             priority: priority,
             deadline: deadline.toISOString(),
         }
-        console.log("handleSubmit:newCard", newCard)
         if (taskId) {
             dispatch(editTask(newCard))
         } else {

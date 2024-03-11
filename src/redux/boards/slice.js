@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { addBoard, getBoard } from './operation';
+import { addBoard, getBoard, deleteCardOnBoard } from './operation';
 
 export const boardsSlice = createSlice({
   name: 'boards',
@@ -36,8 +36,20 @@ export const boardsSlice = createSlice({
       .addCase(getBoard.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
-      });
-  },
+      })
+      .addCase(deleteCardOnBoard.fulfilled, (state, action) => {
+        
+        let taskId = action.payload 
+        state.board.columns = state.board.columns.map((column) => {
+         
+          return {
+            ...column,
+            tasks: column.tasks.filter(task => task._id !== taskId)
+          }
+        })
+      }
+      )
+  }
 });
 
 export const boardsReducer = boardsSlice.reducer;

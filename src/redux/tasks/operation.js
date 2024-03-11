@@ -17,7 +17,6 @@ export const addTask = createAsyncThunk(
 export const editTask = createAsyncThunk(
   "tasks/editTasks",
   async ({ _id, column, title, description, priority, deadline }, { rejectWithValue }) => {
-    console.log("task data", { _id, column, title, description, priority, deadline })
     try {
       const response = await tasksAPI.editTaskById(_id, { column, title, description, priority, deadline });
       return response;

@@ -24,3 +24,10 @@ export const getBoard = createAsyncThunk(
     }
   }
 );
+
+export const deleteCardOnBoard = createAsyncThunk(
+  'boards/deleteCardOnBoard',
+  async (taskId) => {
+    return taskId
+  }
+);

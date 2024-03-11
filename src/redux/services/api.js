@@ -87,17 +87,11 @@ export async function deleteColumnById(columnId) {
 
 //--------------------tasks-------------------//
 export async function addTask(data) {
-    console.log("CardData", data)
-
     const response = await axios.post("api/tasks", data);
-    console.log("cardresponse", response)
     return response.data; 
 }
 
 export async function editTaskById(taskId, data) {
-    console.log("edit data",data)
-    console.log("edit taskId",taskId);
-
     const response = await axios.patch(`api/tasks/${taskId}`, data);
     return response;
 }
