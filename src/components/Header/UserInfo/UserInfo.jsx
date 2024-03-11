@@ -3,7 +3,7 @@ import sprite from '../../../assets/images/sprite.svg';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../../redux/auth/selectors';
 const UserInfo = ({ selectedTheme }) => {
-  const { user, avatarURL } = useSelector(selectUser);
+  const { user } = useSelector(selectUser);
 
   let iconId;
   switch (selectedTheme) {
@@ -24,14 +24,16 @@ const UserInfo = ({ selectedTheme }) => {
     return null;
   }
 
-  const iconToShow = avatarURL ? avatarURL : iconId;
-
   return (
     <div className={CSS.userInfo}>
       <p className={CSS.userName}>{user.name}</p>
-      <svg className={CSS.userIcon}>
-        <use href={sprite + iconToShow} />
-      </svg>
+      {user.avatarURL ? (
+        <img src={user.avatarURL} alt="User Avatar" className={CSS.userIcon} />
+      ) : (
+        <svg className={CSS.userIcon}>
+          <use href={sprite + iconId} />
+        </svg>
+      )}
     </div>
   );
 };
