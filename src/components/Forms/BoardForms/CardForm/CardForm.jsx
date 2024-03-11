@@ -9,7 +9,7 @@ import MainAddButton from '../../../Buttons/MainAddButton/MainAddButton';
 
 import { useDispatch } from "react-redux";
 // import { selectTasks } from '../../../../redux/tasks/selectors';
-import { addTask } from '../../../../redux/tasks/operation';
+import { addTask, editTask } from '../../../../redux/tasks/operation';
 
 const addCardSchema = Yup.object().shape({
     cardTitle: Yup.string()
@@ -19,18 +19,17 @@ const addCardSchema = Yup.object().shape({
 });
 
 
-
 const CardForm = ({ title, action, taskTitle, taskDescription, taskPriority, taskDeadline, taskId, columnId }) => {
-
+   
     const initialValues = {
         cardTitle: "",
         description: "", 
     }
 
     const [priority, setPriority] = useState(taskPriority || "Without");
-    const [deadline, setDeadline] = useState(new Date());
+    const [deadline, setDeadline] = useState(taskDeadline ? new Date(taskDeadline) : new Date());
 
-    if (taskId) {
+      if (taskId) {
         initialValues.cardTitle = taskTitle;
         initialValues.description = taskDescription; 
     }
@@ -42,13 +41,18 @@ const CardForm = ({ title, action, taskTitle, taskDescription, taskPriority, tas
     
     const handleSubmit = (values, actions) => {
         const newCard = {
-            columnId: columnId,
+            _id: taskId,
+            column: columnId,
             title: values.cardTitle,
             description: values.description,
             priority: priority,
             deadline: deadline.toISOString(),
         }
-        dispatch(addTask(newCard));
+        if (taskId) {
+            dispatch(editTask(newCard))
+        } else {
+          dispatch(addTask(newCard));  
+        }
         actions.resetForm();         
     }
 
