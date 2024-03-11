@@ -17,7 +17,7 @@ const BoardListItem = ({ board }) => {
         <svg className={css.boardIcon}>
           <use href={`${sprite}#${board.icon}`}></use>
         </svg>
-        <h2 className={css.boardTitle}>Title:{board.title}</h2>
+        <h2 className={css.boardTitle}>{board.title}</h2>
       </div>
       <div>
         <ul className={css.boardItemButtonsBlock}>

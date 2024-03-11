@@ -76,6 +76,7 @@
     --default-icon-background: #f6f6f7;
     --calendar-bg-color: #fff;
     --calendar-numbers-out-low-op: rgba(22, 22, 22, 0.2);
+    --active-navlink-bg: #f6f6f7;
 }
 
 [data-theme='dark'] {
@@ -134,6 +135,7 @@
     --default-icon-background: #1f1f1f;
     --calendar-bg-color: #1f1f1f;
     --calendar-numbers-out-low-op: rgba(255, 255, 255, 0.2);
+    --active-navlink-bg: #1f1f1f;
 }
 
 [data-theme='violet'] {
@@ -192,4 +194,5 @@
     --default-icon-background: #ecedfd;
     --calendar-bg-color: #fff;
     --calendar-numbers-out-low-op: rgba(22, 22, 22, 0.2);
+    --active-navlink-bg: rgba(255, 255, 255, 0.5);
 }

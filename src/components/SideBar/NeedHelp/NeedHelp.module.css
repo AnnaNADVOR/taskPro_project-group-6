@@ -21,6 +21,22 @@
     width: 54px;
     height: 78px;
     margin-bottom: 14px;
+    animation: live-plant 5s ease-in-out infinite alternate;
+    transform-origin: center bottom;
+}
+
+@keyframes live-plant {
+    0% {
+        transform: rotateZ(-5deg);
+    }
+
+    50% {
+        transform: rotateZ(5deg);
+    }
+
+    100% {
+        transform: rotateZ(-5deg);
+    }
 }
 
 .helpText {
