@@ -30,6 +30,7 @@ const Card = ({ newCard }) => {
     dispatch(deleteCard(newCard._id)); 
     dispatch(deleteCardOnBoard(newCard._id)); 
   }
+
   
   const deadline = newCard.deadline.replace(/T.*/, '').split('-').reverse().join('/'); 
   const priority = newCard.priority;

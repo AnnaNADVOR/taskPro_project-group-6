@@ -2,15 +2,12 @@ import React from 'react';
 import css from './Progress.module.css';
 import sprite from 'assets/images/sprite.svg';
 import { useEffect } from "react"; 
+import { selectAllColumns } from "../../../redux/columns/selectors";
+import { useSelector } from 'react-redux';
 
 const Progress = ({closeMenu}) => {
-
-  const columnList = [
-    { id: "27397520852ogegldknvdvdnlk", title: "To to" },
-    { id: "327530janalal", title: "Done" },
-    {id: "gjfjfkfelkfelkfwekwfelk1", title: "Cuttent"}
-  ]
-
+  const columnList = useSelector(selectAllColumns);
+  
   useEffect(() => {
     const onEscClick = (event) => {
       if (event.code === "Escape") {

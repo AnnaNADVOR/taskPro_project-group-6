@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { addBoard, getBoard, deleteBoard, editBoard, deleteCardOnBoard } from './operation';
+import { addBoard, getBoard, deleteBoard, editBoard, deleteCardOnBoard, editCardOnBoard } from './operation';
 
 const handlePending = state => {
   state.isLoading = true;
@@ -69,6 +69,8 @@ export const boardsSlice = createSlice({
         state.boardList[index] = action.payload;
       })
       .addCase(editBoard.rejected, handleRejected)
+
+        //-------------Tasks case ------------------//  
       .addCase(deleteCardOnBoard.fulfilled, (state, action) => {
         let taskId = action.payload 
         state.board.columns = state.board.columns.map((column) => {
@@ -78,8 +80,18 @@ export const boardsSlice = createSlice({
           }
         })
       })
+
+    // .addCase(editCardOnBoard.fulfilled, (state, action) => {
+    //         console.log("payload in boardSlice", action.payload._id)
+    //         let taskId = action.payload._id;
+    //    state.board.columns   = state.board.columns.map(column =>
+    //             column.tasks._id === taskId ? action.payload : column.tasks);
+            
+           
+            
+    //     })
     }
 
 });
 
-export const boardsReducer = boardsSlice.reducer;
+// export const boardsReducer = boardsSlice.reducer;

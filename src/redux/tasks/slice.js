@@ -32,9 +32,15 @@ export const tasksSlice = createSlice({
                 state.isLoading = false;
                 state.error = null;
                 const taskIndex = state.tasksList.findIndex(task => task._id === action.payload._id);
-                state.tasksList[taskIndex] = action.payload;    
+                console.log(taskIndex)
+                state.tasksList[taskIndex] = action.payload;  
+                // const editedTask = state.tasksList.map((card) =>
+                //     card._id === action.payload._id ? action.payload : card
+                // );
+                // state.tasksList = editedTask;
             })
             .addCase(editTask.rejected, (state, action) => {
+                
                 state.isLoading = false;
                 state.error = action.payload;
             })

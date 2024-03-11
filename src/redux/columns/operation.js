@@ -13,10 +13,18 @@ export const addColumn = createAsyncThunk(
   }
 );
 
+//-------------Tasks operation ------------------//
 export const deleteCard = createAsyncThunk(
   'columns/deleteCard',
   async (taskId) => {
     return taskId
   }
 );
+
+export const editCardOnColumn = createAsyncThunk(
+  'columns/editCard',
+    async (taskId) => {
+      return taskId;
+  }
+)
 

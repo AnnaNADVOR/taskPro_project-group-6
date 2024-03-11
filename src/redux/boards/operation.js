@@ -50,10 +50,18 @@ export const deleteBoard = createAsyncThunk(
   }
 ); 
 
-  export const deleteCardOnBoard = createAsyncThunk(
+//-------------Tasks operation ------------------//
+export const deleteCardOnBoard = createAsyncThunk(
   'boards/deleteCardOnBoard',
   async (taskId) => {
-    return taskId
-
+    return taskId;
   }
 );
+
+export const editCardOnBoard = createAsyncThunk(
+  'boards/editCard',
+   async (taskId) => {
+      return taskId;
+  }
+)
+

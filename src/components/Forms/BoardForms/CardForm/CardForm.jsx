@@ -10,6 +10,8 @@ import MainAddButton from '../../../Buttons/MainAddButton/MainAddButton';
 import { useDispatch } from "react-redux";
 // import { selectTasks } from '../../../../redux/tasks/selectors';
 import { addTask, editTask } from '../../../../redux/tasks/operation';
+import { editCardOnColumn } from '../../../../redux/columns/operation';
+import { editCardOnBoard } from '../../../../redux/boards/operation';
 
 const addCardSchema = Yup.object().shape({
     cardTitle: Yup.string()
@@ -48,8 +50,18 @@ const CardForm = ({ title, action, taskTitle, taskDescription, taskPriority, tas
             priority: priority,
             deadline: deadline.toISOString(),
         }
+
+        const editCard = {
+             _id: taskId,
+            title: values.cardTitle,
+            description: values.description,
+            priority: priority,
+            deadline: deadline.toISOString(),
+        }
         if (taskId) {
-            dispatch(editTask(newCard))
+            dispatch(editTask(editCard));
+            dispatch(editCardOnColumn(newCard));
+            dispatch(editCardOnBoard(newCard))
         } else {
           dispatch(addTask(newCard));  
         }
