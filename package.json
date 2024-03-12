@@ -13,6 +13,7 @@
     "formik": "^2.4.5",
     "nanoid": "^5.0.6",
     "react": "^18.1.0",
+    "react-beautiful-dnd": "^13.1.1",
     "react-datepicker": "^6.2.0",
     "react-dom": "^18.1.0",
     "react-helmet-async": "^2.0.4",

@@ -25,7 +25,7 @@ const BoardListItem = ({ board }) => {
     <NavLink
       to={`/home/${board.title}`}
       state={{ from: location }}
-      className={css.boardItem}
+      className={css.boardItem} 
     >
       <div className={css.boardItemTitleBlock}>
         <svg className={css.boardIcon}>

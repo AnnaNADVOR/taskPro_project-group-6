@@ -4,3 +4,31 @@
     gap: 4px;
 }
 
+.activeBoard {
+    background-color: var(--active-navlink-bg);
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        top: 0;
+        right: 0;
+        width: 4px;
+        border-radius: 4px 0px 0px 4px;
+        border-right: 4px solid var(--logout-icon);
+        transition: all var(--transition);
+    }
+}
+
+.activeBoard h2 {
+    color: var(--main-text-color);
+}
+
+.activeBoard svg {
+    stroke: var(--main-text-color);
+}
+
+.activeBoard button {
+    display: block;
+}
