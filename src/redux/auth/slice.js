@@ -9,12 +9,27 @@ import {
   addBoard,
   editBoard,
   deleteBoard,
+  updateUser,
 } from './operation';
+
+const handlePending = state => {
+  state.isLoading = true;
+};
+
+const handleRejected = (state, action) => {
+  state.isLoading = false;
+  state.error = action.payload;
+};
 
 const authSlice = createSlice({
   name: 'auth',
   initialState: {
-    user: { name: null, email: null },
+    user: {
+      name: null,
+      email: null,
+      theme: null,
+      avatarURL: '',
+    },
     token: null,
     isLoadingRegister: false,
     isLoadingLogin: false,
@@ -24,92 +39,70 @@ const authSlice = createSlice({
   },
   extraReducers: builder => {
     builder
-      .addCase(register.pending, state => {
-        state.isLoadingRegister = true;
-      })
+      .addCase(register.pending, handlePending)
       .addCase(register.fulfilled, (state, action) => {
         state.isLoadingRegister = false;
         state.isLoggedIn = true;
         state.user = action.payload.user;
         state.token = action.payload.user.token;
       })
-      .addCase(register.rejected, state => {
-        state.isLoadingRegister = false;
-      })
-
-      .addCase(logIn.pending, state => {
-        state.isLoadingLogin = true;
-      })
+      .addCase(register.rejected, handleRejected)
+      .addCase(logIn.pending, handlePending)
       .addCase(logIn.fulfilled, (state, action) => {
         state.isLoadingLogin = false;
         state.isLoggedIn = true;
         state.user = action.payload;
         state.token = action.payload.user.token;
       })
-      .addCase(logIn.rejected, state => {
-        state.isLoadingLogin = false;
-      })
-
-      .addCase(logOut.pending, state => {
-        state.isLoadingLogout = true;
-      })
+      .addCase(logIn.rejected, handleRejected)
+      .addCase(logOut.pending, handlePending)
       .addCase(logOut.fulfilled, state => {
         state.isLoadingLogout = false;
         state.isLoggedIn = false;
         state.user = { name: null, email: null };
         state.token = null;
       })
-      .addCase(logOut.rejected, state => {
-        state.isLoadingLogout = false;
-      })
-
-      .addCase(refreshUser.pending, state => {
-        state.isRefreshing = true;
-      })
+      .addCase(logOut.rejected, handleRejected)
+      .addCase(refreshUser.pending, handlePending)
       .addCase(refreshUser.fulfilled, (state, action) => {
         state.user = action.payload;
         state.isLoggedIn = true;
         state.isRefreshing = false;
       })
-      .addCase(refreshUser.rejected, state => {
-        state.isRefreshing = false;
-      })
-
-      .addCase(deleteBoard.pending, state => {
-        //  state.isRefreshing = true;
-      })
+      .addCase(refreshUser.rejected, handleRejected)
+      .addCase(updateUser.rejected, handleRejected)
+      .addCase(updateUser.pending, handlePending)
+      .addCase(updateUser.fulfilled, (state, action) => {        
+        const { name, email, theme, avatarURL } = action.payload.user;
+        state.user.user.name = name;
+        state.user.user.email = email;
+        state.user.user.theme = theme;
+        state.user.user.avatarURL = avatarURL;        
+        state.isLoading = false;
+      })  
+      .addCase(deleteBoard.pending, handlePending)
       .addCase(deleteBoard.fulfilled, (state, action) => {
         state.user.user.boards = state.user.user.boards.filter(
           board => board._id !== action.payload.id
         );
       })
-      .addCase(deleteBoard.rejected, state => {
-        //  state.isRefreshing = false;
-      })
-      .addCase(addBoard.pending, state => {})
+      .addCase(deleteBoard.rejected, handleRejected)
+      .addCase(addBoard.pending, handlePending)
       .addCase(addBoard.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.user.user.boards.push(action.payload);
       })
-      .addCase(addBoard.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload;
-      })
-      .addCase(editBoard.pending, state => {
-        state.isLoading = true;
-      })
+      .addCase(addBoard.rejected, handleRejected)
+      .addCase(editBoard.pending, handlePending)
       .addCase(editBoard.fulfilled, (state, action) => {
         state.isLoading = false;
-          state.error = null;
-          console.log(action);
+        state.error = null;
         const index = state.user.user.boards.findIndex(
-          board => board._id === action.payload._id
-        );
-          state.user.user.boards[index].title = action.payload.title;
-          state.user.user.boards[index].icon = action.payload.icon;
-           state.user.user.boards[index].background =
-             action.payload.background;
+        board => board._id === action.payload._id);
+        state.user.user.boards[index].title = action.payload.title;
+        state.user.user.boards[index].icon = action.payload.icon;
+        state.user.user.boards[index].background =  action.payload.background;
       })
       .addCase(editBoard.rejected, (state, action) => {
         state.isLoading = false;

@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { authReducer } from './auth/slice';
-// import { columnsSlice } from './columns/slice';
 import { filterSlice } from './filter/slice';
-import { boardsSlice } from './boards/slice';
+import { boardsReducer } from './boards/slice';
+import { themeReducer } from './themes/slice';
 
 import {
   persistStore,
@@ -16,10 +16,12 @@ import {
 
 export const store = configureStore({
     reducer: {
-        boards: boardsSlice.reducer,
+        boards: boardsReducer,
         auth: authReducer,
-        filter: filterSlice.reducer,        
+        filter: filterSlice.reducer,  
+        theme: themeReducer,        
     },
+
     middleware (getDefaultMiddleware) {
         return getDefaultMiddleware({
             serializableCheck: {

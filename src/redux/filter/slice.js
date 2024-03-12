@@ -5,7 +5,7 @@ export const filterSlice = createSlice({
     initialState: {priority: ""},
     reducers: {
         setFilter: (state, action) => {
-            state.priority = action.payload;  
+            state.priority = action.payload; 
         },
     },
 })

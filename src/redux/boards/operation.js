@@ -12,7 +12,6 @@ import * as API from '../services/api';
 //     }
 //   }
 // );
-
 export const getBoard = createAsyncThunk(
   'boards/getBoard',
   async (boardId, { rejectWithValue }) => {
@@ -24,7 +23,6 @@ export const getBoard = createAsyncThunk(
     }
   }
 );
-
 
 // export const editBoard = createAsyncThunk(
 //   'boards/editBoard',
@@ -100,8 +98,6 @@ export const addTask = createAsyncThunk(
   }
 );
 
-
-
 export const deleteTask = createAsyncThunk(
   "tasks/deleteTask",
   async (taskId, { rejectWithValue }) => {
@@ -115,15 +111,12 @@ export const deleteTask = createAsyncThunk(
   }
 )
 
-
 export const editTask = createAsyncThunk(
   "tasks/editTask",
   async ({ _id, column, title, description, priority, deadline }, { rejectWithValue }) => {
     try {
       const response = await API.editTaskById(_id, { title, description, priority, deadline });
-
-      response.columnId = column
-
+      response.columnId = column;
       return response;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -134,12 +127,11 @@ export const editTask = createAsyncThunk(
 export const replaceTask = createAsyncThunk(
   "tasks/replaceTask", 
   async ({taskId, columnId, currentColumnId}, { rejectWithValue }) => {
-      console.log("boardOperation:replaceTask", taskId, columnId)
     try {
       const response = await API.replaceTask(taskId, columnId); 
-      response.taskId = taskId
-      response.columnId = columnId
-      response.currentColumnId = currentColumnId
+      response.taskId = taskId;
+      response.columnId = columnId;
+      response.currentColumnId = currentColumnId;
       return response;
     } 
     catch (error) {
