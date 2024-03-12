@@ -12,7 +12,7 @@ const TitleSchema = Yup.object().shape({
   boardTitle: Yup.string().required('Title is required'),
 });
 
-const AddBoardForm = () => {
+const AddBoardForm = ({handleClose}) => {
   const dispatch = useDispatch();
   const [backgroundName, setBackgroundName] = useState('00');
   const [iconName, setIconName] = useState('mark-circuls-18');
