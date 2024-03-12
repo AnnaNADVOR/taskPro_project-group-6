@@ -13,48 +13,64 @@ const Column = ({ id, title }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isModalColumnEditOpen, setIsModalColumnEditOpen] = useState(false);
 
-    const toggleModal = () => {
+  const toggleModal = () => {
     setIsOpen(isOpen => !isOpen);
   };
   const handleModalColumnEditOpen = () => {
     setIsModalColumnEditOpen(isModalColumnEditOpen => !isModalColumnEditOpen);
   };
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleRemoveClick = () => {
     dispatch(deleteColumn(id));
+  };
 
-  }
- 
-    return (
-         <>
-              <p className={css.columnTitle}>{title}
-                <button className={css.btnIcon} onClick={handleModalColumnEditOpen} type="button">
-                  <svg className={css.columnTitleIcon} width={16} height={16}>
-                    <use href={`${sprite}#pencil-16`}></use>
-                  </svg>
-              </button>
-              <button className={css.btnIcon} onClick={handleRemoveClick} type="button"> 
-                  <svg className={css.columnTitleIcon} width={16} height={16}>
-                    <use href={`${sprite}#trash-16`}></use>
-                  </svg>
-                </button>
-                  </p>
-                 <div>
-               <CardList columnId={id}/>
-              </div>
-              <MainAddButton text="Add another card" click={toggleModal} />   
-          {isOpen && (
-        
+  return (
+    <>
+      <p className={css.columnTitle}>
+        {title}
+        <button
+          className={css.btnIcon}
+          onClick={handleModalColumnEditOpen}
+          type="button"
+        >
+          <svg className={css.columnTitleIcon} width={16} height={16}>
+            <use href={`${sprite}#pencil-16`}></use>
+          </svg>
+        </button>
+        <button
+          className={css.btnIcon}
+          onClick={handleRemoveClick}
+          type="button"
+        >
+          <svg className={css.columnTitleIcon} width={16} height={16}>
+            <use href={`${sprite}#trash-16`}></use>
+          </svg>
+        </button>
+      </p>
+      <div className={css.cardContainer}>
+        <CardList columnId={id} />
+      </div>
+      <MainAddButton text="Add another card" click={toggleModal} />
+      {isOpen && (
         <Modal closeModal={toggleModal}>
-          <CardForm title="Add card" action="Add" columnId={id} />
+          <CardForm
+            title="Add card"
+            action="Add"
+            columnId={id}
+            handleClose={toggleModal}
+          />
         </Modal>
-        )}
-              {isModalColumnEditOpen && (
-        
+      )}
+      {isModalColumnEditOpen && (
         <Modal closeModal={handleModalColumnEditOpen}>
-          <AddColumnForm title="Edit column" action="Edit" columnId={id} columnTitle={title} />
+          <AddColumnForm
+            title="Edit column"
+            action="Edit"
+            columnId={id}
+            columnTitle={title}
+          />
         </Modal>
       )}
     </>
