@@ -4,7 +4,7 @@ import css from './HeaderDashboard.module.css';
 import sprite from 'assets/images/sprite.svg';
 import Modal from 'components/Modal/Modal';
 
-const HeaderDashboard = () => {
+const HeaderDashboard = ({ title }) => {
   const [isOpen, setIsOpen] = useState();
   const toggleModal = () => {
     setIsOpen(isOpen => !isOpen);
@@ -12,7 +12,7 @@ const HeaderDashboard = () => {
 
   return (
     <div className={css.container}>
-      <h2 className={css.projectTitle}>Name of project</h2>
+      <h2 className={css.projectTitle}>{title}</h2>
       <button className={css.buttonFilter} type=" button" onClick={toggleModal}>
         <svg
           className={css.filterIcon}
