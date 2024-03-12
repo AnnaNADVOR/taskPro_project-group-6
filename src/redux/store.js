@@ -3,7 +3,6 @@ import { authReducer } from './auth/slice';
 import { filterSlice } from './filter/slice';
 import { boardsReducer } from './boards/slice';
 import { themeReducer } from './themes/slice';
-import { userReducer } from './user/slice';
 
 import {
   persistStore,
