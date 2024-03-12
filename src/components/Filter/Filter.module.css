@@ -12,6 +12,7 @@
   margin-bottom: 14px;
   padding-top: 14px;
 }
+
 .filterContainer {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -82,4 +83,8 @@
 .label:checked + .labeltext {
   color: var(--secondary-text-color);
   transition: stroke var(--transition);
+}
+
+.filterForm {
+  border-top: 1px solid var(--secondary-text-color-low-op);
 }

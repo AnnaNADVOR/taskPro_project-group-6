@@ -8,19 +8,17 @@ const CardList = ({columnId}) => {
     const columnCards = visibleCards.filter(item => item.columnId === columnId)
    
     return (
-        <ul>
+        <ul style={{display: "flex", flexDirection:"column", gap:"8px"}}>
             {columnCards.length > 0 &&
-           <>
-                {columnCards.map(card =>
-                    <li key={card._id}>
-                        <Card newCard={card} columnId={columnId} />
-                    </li>
+                <>
+                    {columnCards.map(card =>
+                        <li key={card._id}>
+                            <Card newCard={card} columnId={columnId} />
+                        </li>
                     )}
-            </>
-          
+                </>          
             }
-        </ul>
-            
+        </ul>            
     )
 }
 

@@ -12,25 +12,23 @@ import { deleteTask } from '../../../redux/boards/operation';
 const Card = ({ newCard, columnId }) => {
   const [showModal, setShowModal] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
-  
+ 
   const toggleModal = () => setShowModal(prevShowModal => !prevShowModal);
   const toggleMenu = () => setShowMenu(prevShowMenu => !prevShowMenu);
-  // useEffect(() => {
-  //   const handleClickOutside = () => {
-  //     setShowMenu(false);
-  //   };
-  //   window.addEventListener('mousedown', handleClickOutside)
-  // }, []);
-
+ 
   const dispatch = useDispatch();
 
   const onDeleteTask = () => {
     dispatch(deleteTask(newCard._id)); 
-       // dispatch(deleteCardOnBoard(newCard._id)); 
+    
   }
-
+  const today = new Date().toISOString().replace(/T.*/, '').split('-').reverse().join('/'); 
   
+  
+   
+
   const deadline = newCard.deadline.replace(/T.*/, '').split('-').reverse().join('/'); 
+ 
   const priority = newCard.priority;
   let color;
   switch (priority) {
@@ -73,13 +71,17 @@ const Card = ({ newCard, columnId }) => {
             </div>
           </div>
           <ul className={css.optionsBtnList}>
-            <li className={css.deadlineNotify}>
-              <button className={css.optionBtn} type="button">
-                <svg className={css.bell}>
-                  <use href={`${sprite}#bell-16`}></use>
-                </svg>
-              </button>
-            </li>
+             
+            { today === deadline && (
+            <li className={css.deadlineNotify}> 
+                <button className={css.optionBtn} type="button">
+                  <svg className={css.bell}>
+                    <use href={`${sprite}#bell-16`}></use>
+                  </svg>
+                </button>
+             </li>   
+              )}
+             
             <li>
               <button
                 className={css.optionBtn}
@@ -126,7 +128,7 @@ const Card = ({ newCard, columnId }) => {
             taskId={newCard._id}
             taskPriority={newCard.priority}
             taskDeadline={newCard.deadline}
-            columnId={newCard.columnId} />
+            columnId={newCard.columnId} handleClose={toggleModal} />
         </Modal>
       )}
     </>
