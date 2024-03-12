@@ -1,5 +1,5 @@
-const { createSlice } = require('@reduxjs/toolkit');
-const { updateUser } = require('./operation');
+import { createSlice } from '@reduxjs/toolkit';
+import { updateUser } from './operation';
 
 const handlePending = state => {
   state.isLoading = true;

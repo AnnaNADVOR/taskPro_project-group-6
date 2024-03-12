@@ -1,120 +1,127 @@
 .card {
     border-radius: 8px;
-    /* width: 335px; */
+    width:100%;
     background-color: var(--add-column-btn);
     padding: 14px 24px;
     font-weight: 400;
     font-size: 10px;
     letter-spacing: -0.02em;
-    color: var(--burger-color);
-    /* border-left: 4px solid #8fa1d0; */
+    color: var(--burger-color);    
 }
 
 .cardTitle {
-    font-weight: 600;
-    font-size: 14px;
-    color: var(--burger-color);
-    margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--burger-color);
+  margin-bottom: 8px;
 }
 
 .cardDescription {
-    font-size: 12px;
-    line-height: 16px;
-    color: var(--main-page-text-color);
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-    margin-bottom: 14px;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--main-page-text-color);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-bottom: 14px;
 }
 
 .cardOptions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 14px;
-    border-top: 1px solid var(--modal-border-color-low-op);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  border-top: 1px solid var(--modal-border-color-low-op);
 }
 
 .optionsInfo {
-    display: flex;
-    gap: 14px;
+  display: flex;
+  gap: 14px;
 }
 
 .optonWrapper {
-    display: inline-flex;
-    flex-direction: column;
+  display: inline-flex;
+  flex-direction: column;
 }
 
 .optionTitle {
-    font-size: 8px;
-    color: var(--secondary-text-color-low-op);
-    margin-bottom: 4px;
+  font-size: 8px;
+  color: var(--secondary-text-color-low-op);
+  margin-bottom: 4px;
 }
 
 .priorityMark {
-    width: 12px;
-    height: 12px;
-    border-radius: 100%;
-    /* background-color: #8fa1d0;; */
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  /* background-color: #8fa1d0;; */
 }
 
 .priorityLabel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
 }
 
 .optionsBtnList {
-    display: flex;
-    position: relative;
+  display: flex;
+  position: relative;
 }
 
 .optionBtn {
-    width: 16px;
-    height: 16px;
-    border: none;
-    background-color: transparent;
+  width: 16px;
+  height: 16px;
+  border: none;
+  background-color: transparent;
 }
 
-.optionBtn>svg:hover,
-.optionBtn>svg:focus {
-    stroke: var(--modal-btn-hover)
+.optionBtn > svg:hover,
+.optionBtn > svg:focus {
+  stroke: var(--modal-btn-hover);
 }
 
 .deadlineNotify {
-    margin-right: 12px;
+  margin-right: 12px;
 }
 
 .btnItem {
-    margin-left: 8px;
-    margin-right: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 .optionBtnSvg {
-    width: 16px;
-    height: 16px;
-    stroke: var(--secondary-text-color-low-op);
-    fill: none;
-    transition: stroke var(--transition);
+  width: 16px;
+  height: 16px;
+  stroke: var(--secondary-text-color-low-op);
+  fill: none;
+  transition: stroke var(--transition);
 }
 
 .bell {
-    width: 16px;
-    height: 16px;
-    stroke: var(--accent-text-color);
-    fill: none;
-    filter: drop-shadow(0 0 5px var(--accent-text-color));
+  width: 16px;
+  height: 16px;
+  stroke: var(--accent-text-color);
+  fill: none;
+  filter: drop-shadow(0 0 5px var(--accent-text-color));
 }
 
 .optionsBtnList svg:hover,
 .optionsBtnList svg:focus {
-    stroke: var(--accent-text-color);
+  stroke: var(--accent-text-color);
 }
 
 .progressContainer {
-    position: absolute;
-    right: -25px;
-    top: 30px;
+  position: absolute;
+  right: -25px;
+  top: 30px;
+}
+
+.cardList {
+  display: flex;
+  flex-direction: column;
+  max-height: 480px;
+  gap: 8px; 
+  margin-right: 8px;
 }

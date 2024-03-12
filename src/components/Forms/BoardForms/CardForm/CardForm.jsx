@@ -20,7 +20,7 @@ const addCardSchema = Yup.object().shape({
 });
 
 
-const CardForm = ({ title, action, taskTitle, taskDescription, taskPriority, taskDeadline, taskId, columnId }) => {
+const CardForm = ({ title, action, taskTitle, taskDescription, taskPriority, taskDeadline, taskId, columnId, handleClose }) => {
    
     const initialValues = {
         cardTitle: "",
@@ -29,6 +29,7 @@ const CardForm = ({ title, action, taskTitle, taskDescription, taskPriority, tas
 
     const [priority, setPriority] = useState(taskPriority || "Without");
     const [deadline, setDeadline] = useState(taskDeadline ? new Date(taskDeadline) : new Date());
+   
 
       if (taskId) {
         initialValues.cardTitle = taskTitle;
@@ -60,10 +61,15 @@ const CardForm = ({ title, action, taskTitle, taskDescription, taskPriority, tas
         }
         if (taskId) {
             dispatch(editTask(editCard));
+            actions.resetForm(); 
+            handleClose();
+            
         } else {
-          dispatch(addTask(newCard));  
+            dispatch(addTask(newCard));  
+            actions.resetForm(); 
+            handleClose();
         }
-        actions.resetForm();         
+               
     }
   
 
@@ -76,7 +82,7 @@ const CardForm = ({ title, action, taskTitle, taskDescription, taskPriority, tas
     ];
 
     return (
-        <Formik validationSchema={addCardSchema}
+         <Formik validationSchema={addCardSchema}
             initialValues={initialValues}
             onSubmit={handleSubmit}>
             <Form autoComplete="off">
@@ -117,7 +123,7 @@ const CardForm = ({ title, action, taskTitle, taskDescription, taskPriority, tas
                 </div>
                 <MainAddButton text={action}/>
             </Form>
-        </Formik>
+        </Formik >        
     )
 }
 
