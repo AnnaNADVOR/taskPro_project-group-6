@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "../../redux/auth/selectors";
 import * as Yup from "yup";
 import { useState, useRef, useEffect } from "react";
-import { updateUser } from "../../redux/user/operation";
+import { updateUser } from "../../redux/auth/operation";
 import { Field, Formik, Form, ErrorMessage } from "formik";
 import sprite from '../../assets/images/sprite.svg';
 import styles from './UserMenu.module.css'
@@ -10,6 +10,7 @@ import styles from './UserMenu.module.css'
 const UserMenu = ({ selectedTheme, handleClose }) => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
+  
   const inputFileRef = useRef(null); 
 
   // const [showPassword, setShowPassword] = useState(false);
@@ -56,7 +57,7 @@ const UserMenu = ({ selectedTheme, handleClose }) => {
   };
 
 
-  const handleSubmit = async (values) => {
+  const handleSubmit = (values) => {
     const { name, email, password } = values;
 
     let formData = new FormData();
@@ -67,9 +68,9 @@ const UserMenu = ({ selectedTheme, handleClose }) => {
     if (password) formData.set('password', password);
     if (fileImage) formData.set('avatar', fileImage);
 
-    await dispatch(updateUser(formData));
+    dispatch(updateUser(formData));
 
-    handleClose()
+    handleClose();
   }
 
   const changeImage = () => {
@@ -92,7 +93,6 @@ const UserMenu = ({ selectedTheme, handleClose }) => {
   });
 
   let iconId;
-
   switch (selectedTheme) {
     case 'dark':
       iconId = '#default-user-icon-dark-68';

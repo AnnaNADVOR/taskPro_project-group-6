@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-
 import {
   // addBoard,
   getBoard,
@@ -11,9 +10,7 @@ import {
   replaceTask,
   deleteColumn,
   editColumn,
-
 } from './operation';
-
 
 const handlePending = state => {
   state.isLoading = true;
@@ -24,30 +21,16 @@ const handleRejected = (state, action) => {
   state.error = action.payload;
 };
 
-
-export const boardsSlice = createSlice({
+const boardsSlice = createSlice ({
   name: 'boards',
   initialState: {
-     board: [],
+    board: [],
     background: null,
     error: null,
     isLoading: false,
   },
-  reducers: {},
   extraReducers: builder => {
     builder
-      // .addCase(addBoard.pending, state => {
-      //   state.isLoading = true;
-      // })
-      // .addCase(addBoard.fulfilled, (state, action) => {
-      //   state.isLoading = false;
-      //   state.error = null;
-      //   state.boardList.push(action.payload);
-      // })
-      // .addCase(addBoard.rejected, (state, action) => {
-      //   state.isLoading = false;
-      //   state.error = action.payload;
-      // })
       .addCase(getBoard.pending, state => {
         state.isLoading = true;
       })
@@ -92,44 +75,35 @@ export const boardsSlice = createSlice({
       })
       .addCase(addColumn.rejected, handleRejected)
       .addCase(deleteColumn.fulfilled, (state, action) => {
-       
         state.isLoading = false;
         state.error = null;
         state.board.columns = state.board.columns.filter(
-              column => column._id !== action.payload.id
-            );
+        column => column._id !== action.payload.id
+        );
       })
-       .addCase(editColumn.fulfilled, (state, action) => {
-            state.isLoading = false;
-         state.error = null;
-          
-            const index = state.board.columns.findIndex(
-              column => column._id === action.payload._id
-            );
-            state.board.columns[index].title = action.payload.title;
-          })
-     
+      .addCase(editColumn.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        const index = state.board.columns.findIndex(
+          column => column._id === action.payload._id
+        );
+        state.board.columns[index].title = action.payload.title;
+      })
       //-------------Tasks case ------------------//
-
-       .addCase(addTask.pending, handlePending)
-            .addCase(addTask.fulfilled, (state, action) => {
-                state.isLoading = false;
-              state.error = null;
-              let columnId = action.payload.columnId 
-              
-              state.board.columns = state.board.columns.map(column => {
-                if (column._id === columnId) {
-                  column.tasks.push(action.payload)
-                }
-                return column
-
-              })
-                      
-            })
-            .addCase(addTask.rejected, handleRejected)
-       
+      .addCase(addTask.pending, handlePending)
+      .addCase(addTask.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        let columnId = action.payload.columnId;              
+        state.board.columns = state.board.columns.map(column => {
+          if (column._id === columnId) {column.tasks.push(action.payload)}
+          return column;
+        })                    
+      })
+      .addCase(addTask.rejected, handleRejected)
+      .addCase(deleteTask.pending, handlePending) 
       .addCase(deleteTask.fulfilled, (state, action) => {
-        let taskId = action.payload._id 
+        let taskId = action.payload._id; 
         state.board.columns = state.board.columns.map((column) => {
           return {
             ...column,
@@ -137,51 +111,40 @@ export const boardsSlice = createSlice({
           }
         })
       })
-
+      .addCase(deleteTask.rejected, handleRejected)
       .addCase(editTask.pending, handlePending)
       .addCase(editTask.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-
         state.board.columns = state.board.columns.map(column => {
           if (column._id === action.payload.columnId) {
             column.tasks = column.tasks.map(task => {
               if (task._id === action.payload._id) {
-                return action.payload
+                return action.payload;
               }
-
               return task;
             })
           }
-
-          return column
-        })
-                
+          return column;
+        })                
       })
       .addCase(editTask.rejected, handleRejected)
-    
-
       .addCase(replaceTask.pending, handlePending)
       .addCase(replaceTask.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        console.log("boardsSlice:replaceTask:action", action)
-
-        const columnIdx = state.board.columns.findIndex(column => column._id === action.payload.columnId)
-        const currentColumnIdx = state.board.columns.findIndex(column => column._id === action.payload.currentColumnId)
-        const currentCardIdx = state.board.columns[currentColumnIdx].tasks.findIndex(task => task._id === action.payload.taskId)
-        const currentCard = state.board.columns[currentColumnIdx].tasks[currentCardIdx]
-
-        currentCard.columnId = action.payload.columnId
-
-        state.board.columns[columnIdx].tasks.push(currentCard)
-        state.board.columns[currentColumnIdx].tasks = state.board.columns[currentColumnIdx].tasks.filter(task => task._id !== action.payload.taskId)
-             
+        const columnIdx = state.board.columns.findIndex(column => column._id === action.payload.columnId);
+        const currentColumnIdx = state.board.columns.findIndex(column => column._id === action.payload.currentColumnId);
+        const currentCardIdx = state.board.columns[currentColumnIdx].tasks.findIndex(task => task._id === action.payload.taskId);
+        const currentCard = state.board.columns[currentColumnIdx].tasks[currentCardIdx];
+        currentCard.columnId = action.payload.columnId;
+        state.board.columns[columnIdx].tasks.push(currentCard);
+        state.board.columns[currentColumnIdx].tasks = state.board.columns[currentColumnIdx].tasks.filter(
+          task => task._id !== action.payload.taskId
+        );             
       })
-      .addCase(replaceTask.rejected, handleRejected)
-    
-    }
-
+      .addCase(replaceTask.rejected, handleRejected)    
+  }
 });
 
-// export const boardsReducer = boardsSlice.reducer;
+export const boardsReducer = boardsSlice.reducer;

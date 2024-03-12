@@ -1,15 +1,9 @@
 import Welcome from 'components/Welcome/Welcome';
-// import { Suspense } from 'react';
-// import { Outlet } from 'react-router-dom';
 
-
-export default function WelcomePage() {
+const WelcomePage = () => {
   return (
-  
-    // <Suspense>
-      <Welcome/>
-      //   <Outlet />
-      // </Suspense>
-
+    <Welcome />
   );
 }
+
+export default WelcomePage;
