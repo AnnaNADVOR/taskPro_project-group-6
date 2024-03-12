@@ -1,5 +1,4 @@
 .card {
-
     border-radius: 8px;
     width:100%;
     background-color: var(--add-column-btn);
@@ -9,14 +8,6 @@
     letter-spacing: -0.02em;
     color: var(--burger-color);    
 }
-
-@media screen and (min-width: 375px) {
-    .card {
-        width: 335px; 
-    }
-
-}
-
 
 .cardTitle {
   font-weight: 600;
@@ -131,5 +122,6 @@
   display: flex;
   flex-direction: column;
   max-height: 480px;
-  gap: 8px;
+  gap: 8px; 
+  margin-right: 8px;
 }

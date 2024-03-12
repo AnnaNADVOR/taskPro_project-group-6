@@ -1,5 +1,6 @@
 .columnsListContainer {
   margin-right: 34px;
+  display:flex;
 }
 
 .columnList {
@@ -48,7 +49,7 @@
 .cardContainer {
   margin-bottom: 14px;
   overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: hidden;  
 }
 
 .cardContainer::-webkit-scrollbar {

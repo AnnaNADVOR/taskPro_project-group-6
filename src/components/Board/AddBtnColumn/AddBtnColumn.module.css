@@ -5,7 +5,7 @@
   text-align: center;
   gap: 8px;
   background-color: var(--add-column-btn);
-  width: 334px;
+  min-width: 300px;
   height: 56px;
   padding: 14px 0px;
   border-radius: 8px;
@@ -15,6 +15,12 @@
   letter-spacing: -0.02em;
   color: var(--secondary-text-color);
   transition: var(--transition);
+}
+
+ @media screen and (min-width: 340px) {
+  .btnAddColumn {
+    min-width: 334px;
+  } 
 }
 
 .btnPlus {
