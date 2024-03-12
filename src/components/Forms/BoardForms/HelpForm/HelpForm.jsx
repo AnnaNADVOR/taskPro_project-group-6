@@ -1,21 +1,28 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { useDispatch } from 'react-redux';
 
 import { requestHelp } from '../../../../redux/user/operation';
 import SendButton from 'components/Buttons/SendButton/SendButton';
 
 import css from './HelpForm.module.css';
 
-
 const validationSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Email is required'),
-  comment: Yup.string().min(7).max(230).required('Comment is required'),
+  comment: Yup.string()
+    .min(7, 'Comment must be at least 7 characters')
+    .max(230, 'Comment must be at most 230 characters')
+    .required('Comment is required'),
 });
 
 const HelpForm = () => {
+  const dispatch = useDispatch();
+
   const handleSubmit = async (values, { setSubmitting }) => {
+    const { email, comment } = values;
+
     try {
-      await requestHelp(values);
+      await dispatch(requestHelp({ email, comment }));
       setSubmitting(false);
     } catch (error) {
       console.error('Error:', error);
