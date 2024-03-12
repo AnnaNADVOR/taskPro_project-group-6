@@ -69,7 +69,7 @@ export const SharedLayout = () => {
           <header>
             <Header toggleSidebar={toggleSidebar} />
           </header>
-          <main style={{ padding: '32px' }} className={css.main}>
+          <main className={css.main}>
             <Outlet />
           </main>
         </div>

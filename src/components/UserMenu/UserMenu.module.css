@@ -1,0 +1,140 @@
+.form {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrap {
+    position: relative;
+}
+
+.title {
+    color: var(--secondary-text-color);
+    font-size: 18px;
+    line-height: normal;
+    letter-spacing: -0.36px;
+    margin-bottom: 24px;
+}
+
+.imgWrap {
+    position: relative;
+    margin: 24px auto 25px;
+    border-radius: 8px;
+    width: 68px;
+    height: 68px;
+    /* background-image: url(${props => props.url}); */
+    background-position: center;
+    background-size: cover;
+}
+
+.userIcon {
+    width: 68px;
+    height: 68px;
+    border-radius: 8px;
+    cursor: pointer;
+    object-fit: cover;
+    fill: var(--logo-icon-color);
+}
+
+.userImg {
+    width: 68px;
+    height: 68px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.userBtn {
+    position: absolute;
+    bottom: -20%;
+    left: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+
+    padding: 0;
+    width: 28px;
+    height: 28px;
+    border: none;
+    background-color: var(--modal-btn-hover);
+
+    transition: all 150ms linear;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.iconPlus {
+    width: 14px;
+    height: 14px;
+    stroke: var(--modal-plus-icon-wrapper);
+}
+
+.hiddenInput {
+    display: none;
+}
+
+.formWrapper {
+    position: relative;
+    margin-bottom: 14px;
+}
+
+.input {
+
+    width: 100%;
+    height: 49px;
+    padding: 14px 18px;
+
+    font-size: 14px;
+    letter-spacing: -0.28px;
+
+    border: 1px solid var(--theme-text-hover-color);
+    background-color: var(--modal-windows-bg-color);
+    outline: none;
+    border-radius: 8px;
+
+    color: var(--secondary-text-color);
+    transition: all 250ms ease;
+    opacity: 0.4;
+
+    &::placeholder {
+        color: var(--secondary-text-color);
+    }
+
+    &:focus {
+        opacity: 1;
+    }
+
+}
+
+.icon {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    stroke: currentColor;
+    fill: none;
+    cursor: pointer;
+}
+
+.submitBtn {
+    margin-top: 10px;
+    padding: 14px;
+    border: none;
+    background: var(--theme-text-hover-color);
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.28px;
+    color: var(--buttons-color);
+
+    transition: all 150ms linear;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}

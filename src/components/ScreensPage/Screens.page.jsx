@@ -7,9 +7,6 @@ import { selectBoard } from '../../redux/boards/selectors';
 
 const ScreensPage = () => {
   const { title, background } = useSelector(selectBoard);
-  console.log(title);
-  console.log(background);
-
   const getClassForBackground = background => {
     switch (background) {
       case '01':

@@ -3,6 +3,7 @@ import { authReducer } from './auth/slice';
 // import { columnsSlice } from './columns/slice';
 import { filterSlice } from './filter/slice';
 import { boardsSlice } from './boards/slice';
+
 import {
   persistStore,
   FLUSH,
@@ -17,7 +18,7 @@ export const store = configureStore({
     reducer: {
         boards: boardsSlice.reducer,
         auth: authReducer,
-        filter: filterSlice.reducer, 
+        filter: filterSlice.reducer,        
     },
     middleware (getDefaultMiddleware) {
         return getDefaultMiddleware({

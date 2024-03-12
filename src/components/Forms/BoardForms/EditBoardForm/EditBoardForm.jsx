@@ -19,7 +19,7 @@ const EditBoardForm = ({
   initialBackgroundName,
 }) => {
   const dispatch = useDispatch();
-
+console.log(initialBackgroundName)
   const [backgroundName, setBackgroundName] = useState(initialBackgroundName);
   const [iconName, setIconName] = useState(initialIconName);
 
