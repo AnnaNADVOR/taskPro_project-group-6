@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { editBoard } from '../../../../redux/auth/operation';
 import { Formik, Form, ErrorMessage, Field } from 'formik';
@@ -19,25 +19,20 @@ const EditBoardForm = ({
   initialBackgroundName,
 }) => {
   const dispatch = useDispatch();
-  // const [backgroundName, setBackgroundName] = useState('00');
-  // const [iconName, setIconName] = useState('mark-circuls-18');
+
   const [backgroundName, setBackgroundName] = useState(initialBackgroundName);
   const [iconName, setIconName] = useState(initialIconName);
 
-  const handleSubmit = values => {
+  const handleSubmit = (values, actions) => {
     dispatch(
-      editBoard(board._id, {
+      editBoard({
         title: values.boardTitle,
         icon: iconName,
         background: backgroundName,
       })
     );
+    actions.resetForm();
   };
-
-  useEffect(() => {
-    setBackgroundName(initialBackgroundName);
-    setIconName(initialIconName);
-  }, [board, initialBackgroundName, initialIconName]);
 
   const initialValues = {
     boardTitle: initialTitle,

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 
 import sprite from 'assets/images/sprite.svg';
 import Modal from 'components/Modal/Modal';
@@ -9,8 +10,11 @@ import { useDispatch } from 'react-redux';
 import css from './BoardListItem.module.css';
 
 const BoardListItem = ({ board }) => {
+  const location = useLocation();
+
   const [showModal, setShowModal] = useState(false);
   const toggleModal = () => setShowModal(prevShowModal => !prevShowModal);
+
   const dispatch = useDispatch();
 
   const handleDeleteBoard = boardId => {
@@ -18,7 +22,11 @@ const BoardListItem = ({ board }) => {
   };
 
   return (
-    <div className={css.boardItem}>
+    <NavLink
+      to={`/home/${board.title}`}
+      state={{ from: location }}
+      className={css.boardItem}
+    >
       <div className={css.boardItemTitleBlock}>
         <svg className={css.boardIcon}>
           <use href={`${sprite}#${board.icon}`}></use>
@@ -61,7 +69,7 @@ const BoardListItem = ({ board }) => {
           />
         </Modal>
       )}
-    </div>
+    </NavLink>
   );
 };
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addBoard } from '../../../../redux/auth/operation';
 import { Formik, Form, ErrorMessage, Field } from 'formik';
 import * as Yup from 'yup';
@@ -14,18 +14,20 @@ const TitleSchema = Yup.object().shape({
 });
 
 const AddBoardForm = () => {
+
   const dispatch = useDispatch();
   const [backgroundName, setBackgroundName] = useState('00');
   const [iconName, setIconName] = useState('mark-circuls-18');
 
-  const handleSubmit = values => {
+  const handleSubmit = (values, actions) => {
     dispatch(
       addBoard({
         title: values.boardTitle,
         icon: iconName,
-        background: backgroundName,
+        background: backgroundName, 
       })
     );
+    actions.resetForm();
   };
 
   return (
