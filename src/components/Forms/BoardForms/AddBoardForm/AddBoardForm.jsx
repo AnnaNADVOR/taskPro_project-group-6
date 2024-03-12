@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { addBoard } from '../../../../redux/auth/operation';
 import { Formik, Form, ErrorMessage, Field } from 'formik';
 import * as Yup from 'yup';

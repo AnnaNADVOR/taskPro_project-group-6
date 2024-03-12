@@ -8,17 +8,8 @@ const ScreensPage = () => {
     <>
       <HeaderDashboard />
       <div className={css.container}>
-        {/* {allColumns ? ( */}
-          <>
           < ColumnsList />
-          <AddBtnColumn /> 
-          </>
-
-        {/* ) : (
-          <></>
-        )
-        } */}
-        
+          <AddBtnColumn />                 
       </div>
     </>
   );
