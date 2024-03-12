@@ -43,7 +43,7 @@ const Filter = () => {
     <div>
       <h2 className={css.filterTitle}>Filters</h2>
       <Formik initialValues={initialValues}>
-        <Form onChange={handleChange}>
+        <Form onChange={handleChange} className={css.filterForm}>
           <div className={css.filterContainer}>
             <div className={css.filterWrap}>
               <p className={css.textLeabel}>Label color</p>

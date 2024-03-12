@@ -16,6 +16,7 @@ const Column = ({ id, title }) => {
   const toggleModal = () => {
     setIsOpen(isOpen => !isOpen);
   };
+
   const handleModalColumnEditOpen = () => {
     setIsModalColumnEditOpen(isModalColumnEditOpen => !isModalColumnEditOpen);
   };
@@ -55,12 +56,14 @@ const Column = ({ id, title }) => {
       <MainAddButton text="Add another card" click={toggleModal} />
       {isOpen && (
         <Modal closeModal={toggleModal}>
+
           <CardForm
             title="Add card"
             action="Add"
             columnId={id}
             handleClose={toggleModal}
           />
+
         </Modal>
       )}
       {isModalColumnEditOpen && (
@@ -73,6 +76,7 @@ const Column = ({ id, title }) => {
           />
         </Modal>
       )}
+     
     </>
   );
 };
