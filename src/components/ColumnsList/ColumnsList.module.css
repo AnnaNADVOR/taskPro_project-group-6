@@ -10,7 +10,7 @@
 .columnItem {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  width: 335px;
 }
 
 .columnTitle {
@@ -43,4 +43,28 @@
   &:focus {
     stroke: var(--theme-text-hover-color);
   }
+}
+
+.cardContainer {
+  margin-bottom: 14px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.cardContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cardContainer::-webkit-scrollbar-track {
+  background: var(--card-list-scroll-bar);
+  border-radius: 12px;
+}
+
+.cardContainer::-webkit-scrollbar-thumb {
+  background: var(--card-list-scroll-thumb);
+  border-radius: 12px;
+}
+
+.cardContainer::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-text-hover-color);
 }

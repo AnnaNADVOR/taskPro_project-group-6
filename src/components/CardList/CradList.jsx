@@ -1,11 +1,13 @@
-import { useSelector } from "react-redux";
-import { selectVisibleTasks } from "../../redux/boards/selectors";
-import Card from "../CardList/Card/Card";
+import { useSelector } from 'react-redux';
+import { selectVisibleTasks } from '../../redux/boards/selectors';
+import Card from '../CardList/Card/Card';
+import css from '../CardList/Card/Card.module.css';
 
-const CardList = ({columnId}) => {
-    const visibleCards = useSelector(selectVisibleTasks);
+const CardList = ({ columnId }) => {
+  const visibleCards = useSelector(selectVisibleTasks);
 
-    const columnCards = visibleCards.filter(item => item.columnId === columnId)
+
+ const columnCards = visibleCards.filter(item => item.columnId === columnId)
    
     return (
         <ul style={{display: "flex", flexDirection:"column", gap:"8px"}}>
@@ -22,4 +24,7 @@ const CardList = ({columnId}) => {
     )
 }
 
-export default CardList; 
+
+
+
+export default CardList;
