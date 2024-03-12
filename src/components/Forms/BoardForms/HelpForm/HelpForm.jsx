@@ -2,7 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 
-import { requestHelp } from '../../../../redux/user/operation';
+import { requestHelp } from '../../../../redux/help/operation';
 import SendButton from 'components/Buttons/SendButton/SendButton';
 
 import css from './HelpForm.module.css';
