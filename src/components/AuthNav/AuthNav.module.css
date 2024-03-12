@@ -5,8 +5,10 @@
     width: 100%;
     background: var(--bacground-welcome-form-color);
     width: 335px;
-    
-    @media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 768px) {
+    .box {
         width: 424px;
         padding: 40px;
     }
