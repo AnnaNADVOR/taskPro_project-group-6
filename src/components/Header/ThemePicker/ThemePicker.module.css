@@ -41,7 +41,7 @@
   flex-direction: column;
   justify-content: center;
   border-radius: 8px;
-  border: 1px solid #bedbb0;
+  border: 1px solid var(--theme-wrapper-border);
   box-shadow: 0 4px 16px 0 rgba(17, 17, 17, 0.1);
   background: var(--theme-wrapper);
   gap: 4px;
