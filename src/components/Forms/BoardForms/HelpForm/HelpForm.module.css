@@ -98,10 +98,22 @@
     }
 }
 
+.label {
+    position: relative;
+}
+
 .helpErrorField {
     position: absolute;
-    right: 24px;
-    top: 50px;
+    right: 3px;
+    top: -30px;
+    font-size: 12px;
+    color: var(--error-color);
+}
+
+.helpCommentErrorField {
+    position: absolute;
+    right: 3px;
+    top: -30px;
     font-size: 12px;
     color: var(--error-color);
 }

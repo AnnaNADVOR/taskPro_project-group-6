@@ -44,7 +44,7 @@ const HelpForm = () => {
               <ErrorMessage name="email" />
             </span>
           </label>
-          <label htmlFor="comment">
+          <label htmlFor="comment" className={css.label}>
             <Field
               className={css.helpCommentInput}
               as="textarea"
@@ -53,7 +53,7 @@ const HelpForm = () => {
               placeholder="Comment"
               required
             />
-            <span className={css.helpErrorField}>
+            <span className={css.helpCommentErrorField}>
               <ErrorMessage name="comment" />
             </span>
           </label>
