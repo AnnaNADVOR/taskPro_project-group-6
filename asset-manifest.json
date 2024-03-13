@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/taskPro_project-group-6/static/css/main.9a0bfc7d.css",
-    "main.js": "/taskPro_project-group-6/static/js/main.16778c26.js",
+    "main.css": "/taskPro_project-group-6/static/css/main.a21cb10e.css",
+    "main.js": "/taskPro_project-group-6/static/js/main.16dbe4d8.js",
     "static/css/880.a35c5edf.chunk.css": "/taskPro_project-group-6/static/css/880.a35c5edf.chunk.css",
     "static/js/880.4391f5ae.chunk.js": "/taskPro_project-group-6/static/js/880.4391f5ae.chunk.js",
     "static/css/97.790c0ad3.chunk.css": "/taskPro_project-group-6/static/css/97.790c0ad3.chunk.css",
@@ -107,8 +107,8 @@
     "static/media/06phone.jpg": "/taskPro_project-group-6/static/media/06phone.c5918f81a272cdffd22b.jpg",
     "static/media/10phone.jpg": "/taskPro_project-group-6/static/media/10phone.0eda8675a82eed99048f.jpg",
     "index.html": "/taskPro_project-group-6/index.html",
-    "main.9a0bfc7d.css.map": "/taskPro_project-group-6/static/css/main.9a0bfc7d.css.map",
-    "main.16778c26.js.map": "/taskPro_project-group-6/static/js/main.16778c26.js.map",
+    "main.a21cb10e.css.map": "/taskPro_project-group-6/static/css/main.a21cb10e.css.map",
+    "main.16dbe4d8.js.map": "/taskPro_project-group-6/static/js/main.16dbe4d8.js.map",
     "880.a35c5edf.chunk.css.map": "/taskPro_project-group-6/static/css/880.a35c5edf.chunk.css.map",
     "880.4391f5ae.chunk.js.map": "/taskPro_project-group-6/static/js/880.4391f5ae.chunk.js.map",
     "97.790c0ad3.chunk.css.map": "/taskPro_project-group-6/static/css/97.790c0ad3.chunk.css.map",
@@ -119,7 +119,7 @@
     "830.1b22eaa6.chunk.js.map": "/taskPro_project-group-6/static/js/830.1b22eaa6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9a0bfc7d.css",
-    "static/js/main.16778c26.js"
+    "static/css/main.a21cb10e.css",
+    "static/js/main.16dbe4d8.js"
   ]
 }
