@@ -77,6 +77,12 @@
     --calendar-bg-color: #fff;
     --calendar-numbers-out-low-op: rgba(22, 22, 22, 0.2);
     --active-navlink-bg: #f6f6f7;
+    --toasbordersuccess: #f6f6f7;
+    --toastbgsuccess: rgba(82, 225, 132, 0.5);;
+    --toastbgerror: rgba(22, 22, 22, 0.2);
+    --toastbordererror: #dd5e5e;
+    --toasttext:#121212;
+    --toasttexterr:#ff2929;
 }
 
 [data-theme='dark'] {
@@ -136,6 +142,12 @@
     --calendar-bg-color: #1f1f1f;
     --calendar-numbers-out-low-op: rgba(255, 255, 255, 0.2);
     --active-navlink-bg: #1f1f1f;
+    --toastbgsuccess: rgba(72, 72, 72, 0.5);
+    --toasbordersuccess: #9dc888;
+    --toastbgerror: rgba(72, 72, 72, 0.5);
+    --toastbordererror: #dd5e5e;
+    --toasttext: #fff;
+    --toasttexterr:#ff2929;
 }
 
 [data-theme='violet'] {
@@ -144,7 +156,7 @@
     --main-text-color: #fff;
     --secondary-text-color: #161616;
     --buttons-color: #fff;
-    --secondary-buttons-color: #fff;
+    --secondary-buttons-color: #ffffff;
     --add-board-button-hover-bg: #979cea;
     --buttons-bg-color: #b8bcfd;
     --burger-color: #161616;
@@ -195,4 +207,10 @@
     --calendar-bg-color: #fff;
     --calendar-numbers-out-low-op: rgba(22, 22, 22, 0.2);
     --active-navlink-bg: rgba(255, 255, 255, 0.5);
+    --toastbgsuccess: rgba(180, 124, 223, 0.5);
+    --toasbordersuccess: #f5ecef;
+    --toastbgerror: rgba(72, 72, 72, 0.5);
+    --toastbordererror: #dd5e5e;
+    --toasttext: #121212;
+    --toasttexterr:#ff2929;
 }
