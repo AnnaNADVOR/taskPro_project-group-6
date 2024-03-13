@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { useState } from 'react';
 
 import { getBoard } from '../../../redux/boards/operation';
 import { selectUser } from '../../../redux/auth/selectors';
@@ -13,9 +14,11 @@ const BoardList = () => {
   const boards = user.boards;
   
   const dispatch = useDispatch();
+   const [activeBoardId, setActiveBoardId] = useState(null);
 
-  const handleClick = boardId => {
-    dispatch(getBoard(boardId));    
+ const handleClick = boardId => {
+    dispatch(getBoard(boardId));
+    setActiveBoardId(boardId);
   };
 
   console.log("BoardList:boards", boards)
@@ -23,8 +26,12 @@ const BoardList = () => {
   return (
     <ul className={css.boardList}>
       {boards?.map(board => (
-        <li key={board._id} onClick={() => handleClick(board._id)}>          
-            <BoardListItem board={board} allBoards={boards} />
+        <li
+          key={board._id}
+          onClick={() => handleClick(board._id)}
+          className={`${activeBoardId === board._id ? css.activeBoard : ''}`}
+        >
+          <BoardListItem board={board} allBoards={boards} />
         </li>
       ))}
     </ul>

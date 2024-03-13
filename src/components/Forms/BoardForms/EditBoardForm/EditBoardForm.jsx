@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { editBoard } from '../../../../redux/auth/operation';
 import { Formik, Form, ErrorMessage, Field } from 'formik';
 import * as Yup from 'yup';
@@ -7,8 +7,6 @@ import MainAddButton from 'components/Buttons/MainAddButton/MainAddButton';
 import BoardBackgroundPicker from 'components/BoardBackgroundPicker/BoardBeckgroundPicker';
 import BoardMarkPicker from 'components/BoardMarkPicker/BoardMarkPicker';
 import css from '../AddBoardForm/AddBoardForm.module.css';
-import { selectBoard } from '../../../../redux/boards/selectors';
-
 
 const TitleSchema = Yup.object().shape({
   boardTitle: Yup.string().required('Title is required'),
@@ -19,6 +17,7 @@ const EditBoardForm = ({
   initialTitle,
   initialIconName,
   initialBackgroundName,
+  handleClose,
 }) => {
   // board= useSelector(selectBoard)
 
@@ -40,6 +39,7 @@ const EditBoardForm = ({
       })
     );
     actions.resetForm();
+     handleClose();
   };
 
   const initialValues = {

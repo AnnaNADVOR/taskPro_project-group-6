@@ -7,6 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba(137, 137, 137, 0.2);
     z-index: 1200;
 }
 
@@ -20,5 +21,7 @@
 }
 
 @media screen and (min-width: 1440px) {
-    .main {margin-left: 260px;}
+    .main {
+        margin-left: 260px;
+    }
 }

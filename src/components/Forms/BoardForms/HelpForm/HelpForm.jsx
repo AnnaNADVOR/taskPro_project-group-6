@@ -13,16 +13,17 @@ const validationSchema = Yup.object().shape({
 });
 
 
-const HelpForm = () => {
+const HelpForm = ({ handleClose }) => {
   const dispatch = useDispatch();
   const handleSubmit = async (values, { setSubmitting }) => {
     const { email, comment } = values;
     try {
       await dispatch(requestHelp({ email, comment }));
-      setSubmitting(false);
+      setSubmitting(false);      
+      handleClose();
     } catch (error) {
       console.error('Error:', error);
-    }
+    }      
   };
 
   return (
@@ -47,7 +48,7 @@ const HelpForm = () => {
               <ErrorMessage name="email" />
             </span>
           </label>
-          <label htmlFor="comment">
+          <label htmlFor="comment" className={css.label}>
             <Field
               className={css.helpCommentInput}
               as="textarea"
@@ -56,7 +57,7 @@ const HelpForm = () => {
               placeholder="Comment"
               required
             />
-            <span className={css.helpErrorField}>
+            <span className={css.helpCommentErrorField}>
               <ErrorMessage name="comment" />
             </span>
           </label>

@@ -62,7 +62,7 @@ const SideBar = ({ showSidebar }) => {
 
       {showModal && (
         <Modal closeModal={toggleModal}>
-          <AddBoardForm />
+          <AddBoardForm handleClose={toggleModal} />
         </Modal>
       )}
     </aside>
