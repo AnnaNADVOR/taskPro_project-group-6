@@ -136,7 +136,7 @@ const UserMenu = ({ selectedTheme, handleClose }) => {
       onSubmit={handleSubmit}
     >
       {({ errors }) => (
-        <Form className={styles.form}>
+        <Form className={styles.form} autoComplete="off">
           <div className={styles.wrap}>
           </div>
           <div className={styles.formWrapper}>

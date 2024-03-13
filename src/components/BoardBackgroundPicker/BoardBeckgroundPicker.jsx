@@ -1,5 +1,4 @@
 import { useState } from 'react';
-// import { useEffect } from 'react';
 import css from '../Forms/BoardForms/AddBoardForm/AddBoardForm.module.css';
 
 const BoardBackgroundPicker = ({ onChangeImage, backgroundName }) => {
@@ -24,14 +23,6 @@ const BoardBackgroundPicker = ({ onChangeImage, backgroundName }) => {
   ];
 
   const [selectedValue, setSelectedValue] = useState("");
-
-  // useEffect(() => {
-  //   if (!selectedValue) {
-  //     setSelectedValue(backgroundName  || '00');
-  //   }
-  //   console.log("efect")
-  // }, [backgroundName , selectedValue]);
-
   const handleRadioChange = imgId => {
     onChangeImage(imgId);
     setSelectedValue(imgId);

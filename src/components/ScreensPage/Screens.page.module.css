@@ -8,25 +8,19 @@
   min-height: calc(100vh - 6rem);
 }
 
-@media screen and (max-width: 320px) {
-  .container {
-    /* height: calc(100vh - 195px); */
-    padding: 14px 20px;
-  }
-}
-
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .container {
     height: calc(100vh - 195px);
-    padding: 14px 20px;
+    padding-top: 14px;
+   padding-left: 20px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .container {
-    /* height: calc(100vh - 211px); */
     min-height: calc(100vh - 6.8rem);
-    padding: 14px 20px;
+    padding-top: 14px;
+    padding-left: 20px;
   }
 }
 
@@ -39,7 +33,8 @@
 }
 
 .bgImage1 {
-  background-image: url('../../assets/images/boardBacgrounds/1x/blooming-tree.jpg');
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), 
+    url('../../assets/images/boardBacgrounds/1x/blooming-tree.jpg');
 }
 
 @media (min-device-pixel-ratio: 2),
@@ -47,13 +42,15 @@
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .bgImage1 {
-    background-image: url('../../assets/images/boardBacgrounds/2x/blooming-tree-2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+       url('../../assets/images/boardBacgrounds/2x/blooming-tree-2x.jpg');
   }
 }
 
 @media screen and (min-width: 321px) and (max-width: 768px) {
   .bgImage1 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet1x/01tablet.jpg');
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../../assets/images/boardBacgrounds/tablet1x/01tablet.jpg');
   }
 }
 
@@ -62,13 +59,15 @@
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 192dpi),
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 2dppx) {
   .bgImage1 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet2x/01tablet2x.jpg');
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../../assets/images/boardBacgrounds/tablet2x/01tablet2x.jpg');
   }
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .bgImage1 {
-    background-image: url('../../assets/images/boardBacgrounds/phone1x/01phone.jpg');
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../../assets/images/boardBacgrounds/phone1x/01phone.jpg');
   }
 }
 
@@ -77,24 +76,28 @@
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 192dpi),
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 2dppx) {
   .bgImage1 {
-    background-image: url('../../assets/images/boardBacgrounds/phone2x/01phone2x.jpg');
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../../assets/images/boardBacgrounds/phone2x/01phone2x.jpg');
   }
 }
 .bgImage2 {
-  background-image: url('../../assets/images/boardBacgrounds/1x/mountains.jpg');
+  background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+   url('../../assets/images/boardBacgrounds/1x/mountains.jpg');
 }
 @media (min-device-pixel-ratio: 2),
   (-webkit-min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .bgImage2 {
-    background-image: url('../../assets/images/boardBacgrounds/2x/mountains-2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/2x/mountains-2x.jpg');
   }
 }
 
 @media screen and (min-width: 321px) and (max-width: 768px) {
   .bgImage2 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet1x/02tablet.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/tablet1x/02tablet.jpg');
   }
 }
 
@@ -103,13 +106,15 @@
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 192dpi),
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 2dppx) {
   .bgImage2 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet2x/02tablet2x.jpg');
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../../assets/images/boardBacgrounds/tablet2x/02tablet2x.jpg');
   }
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .bgImage2 {
-    background-image: url('../../assets/images/boardBacgrounds/phone1x/02phone.jpg');
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../../assets/images/boardBacgrounds/phone1x/02phone.jpg');
   }
 }
 
@@ -118,11 +123,13 @@
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 192dpi),
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 2dppx) {
   .bgImage2 {
-    background-image: url('../../assets/images/boardBacgrounds/phone2x/02phone2x.jpg');
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../../assets/images/boardBacgrounds/phone2x/02phone2x.jpg');
   }
 }
 .bgImage3 {
-  background-image: url('../../assets/images/boardBacgrounds/1x/fern.jpg');
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+  url('../../assets/images/boardBacgrounds/1x/fern.jpg');
 }
 
 @media (min-device-pixel-ratio: 2),
@@ -130,13 +137,15 @@
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .bgImage3 {
-    background-image: url('../../assets/images/boardBacgrounds/2x/fern-2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/2x/fern-2x.jpg');
   }
 }
 
 @media screen and (min-width: 321px) and (max-width: 768px) {
   .bgImage3 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet1x/03tablet.jpg');
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../../assets/images/boardBacgrounds/tablet1x/03tablet.jpg');
   }
 }
 
@@ -145,13 +154,15 @@
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 192dpi),
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 2dppx) {
   .bgImage3 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet2x/03tablet2x.jpg');
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../../assets/images/boardBacgrounds/tablet2x/03tablet2x.jpg');
   }
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .bgImage3 {
-    background-image: url('../../assets/images/boardBacgrounds/phone1x/03phone.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/phone1x/03phone.jpg');
   }
 }
 
@@ -160,25 +171,29 @@
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 192dpi),
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 2dppx) {
   .bgImage3 {
-    background-image: url('../../assets/images/boardBacgrounds/phone2x/03phone2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/phone2x/03phone2x.jpg');
   }
 }
 
 .bgImage4 {
-  background-image: url('../../assets/images/boardBacgrounds/1x/sky.jpg');
+  background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+   url('../../assets/images/boardBacgrounds/1x/sky.jpg');
 }
 @media (min-device-pixel-ratio: 2),
   (-webkit-min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .bgImage4 {
-    background-image: url('../../assets/images/boardBacgrounds/2x/sky-2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/2x/sky-2x.jpg');
   }
 }
 
 @media screen and (min-width: 321px) and (max-width: 768px) {
   .bgImage4 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet1x/04tablet.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/tablet1x/04tablet.jpg');
   }
 }
 
@@ -187,13 +202,15 @@
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 192dpi),
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 2dppx) {
   .bgImage4 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet2x/04tablet2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/tablet2x/04tablet2x.jpg');
   }
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .bgImage4 {
-    background-image: url('../../assets/images/boardBacgrounds/phone1x/04phone.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/phone1x/04phone.jpg');
   }
 }
 
@@ -202,12 +219,14 @@
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 192dpi),
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 2dppx) {
   .bgImage4 {
-    background-image: url('../../assets/images/boardBacgrounds/phone2x/04phone2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/phone2x/04phone2x.jpg');
   }
 }
 
 .bgImage5 {
-  background-image: url('../../assets/images/boardBacgrounds/1x/drop.jpg');
+  background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+   url('../../assets/images/boardBacgrounds/1x/drop.jpg');
 }
 
 @media (min-device-pixel-ratio: 2),
@@ -215,13 +234,15 @@
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .bgImage5 {
-    background-image: url('../../assets/images/boardBacgrounds/2x/drop-2x.jpg');
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../../assets/images/boardBacgrounds/2x/drop-2x.jpg');
   }
 }
 
 @media screen and (min-width: 321px) and (max-width: 768px) {
   .bgImage5 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet1x/05tablet.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/tablet1x/05tablet.jpg');
   }
 }
 
@@ -230,13 +251,15 @@
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 192dpi),
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 2dppx) {
   .bgImage5 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet2x/05tablet2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/tablet2x/05tablet2x.jpg');
   }
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .bgImage5 {
-    background-image: url('../../assets/images/boardBacgrounds/phone1x/05phone.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/phone1x/05phone.jpg');
   }
 }
 
@@ -245,25 +268,29 @@
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 192dpi),
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 2dppx) {
   .bgImage5 {
-    background-image: url('../../assets/images/boardBacgrounds/phone2x/05phone2x.jpg');
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../../assets/images/boardBacgrounds/phone2x/05phone2x.jpg');
   }
 }
 
 .bgImage6 {
-  background-image: url('../../assets/images/boardBacgrounds/1x/yaht.jpg');
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+   url('../../assets/images/boardBacgrounds/1x/yaht.jpg');
 }
 @media (min-device-pixel-ratio: 2),
   (-webkit-min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .bgImage6 {
-    background-image: url('../../assets/images/boardBacgrounds/2x/yaht-2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/2x/yaht-2x.jpg');
   }
 }
 
 @media screen and (min-width: 321px) and (max-width: 768px) {
   .bgImage6 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet1x/06tablet.jpg');
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../../assets/images/boardBacgrounds/tablet1x/06tablet.jpg');
   }
 }
 
@@ -272,13 +299,15 @@
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 192dpi),
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 2dppx) {
   .bgImage6 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet2x/06tablet2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/tablet2x/06tablet2x.jpg');
   }
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .bgImage6 {
-    background-image: url('../../assets/images/boardBacgrounds/phone1x/06phone.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/phone1x/06phone.jpg');
   }
 }
 
@@ -287,25 +316,29 @@
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 192dpi),
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 2dppx) {
   .bgImage6 {
-    background-image: url('../../assets/images/boardBacgrounds/phone2x/06phone2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/phone2x/06phone2x.jpg');
   }
 }
 
 .bgImage7 {
-  background-image: url('../../assets/images/boardBacgrounds/1x/magnolia.jpg');
+  background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+   url('../../assets/images/boardBacgrounds/1x/magnolia.jpg');
 }
 @media (min-device-pixel-ratio: 2),
   (-webkit-min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .bgImage7 {
-    background-image: url('../../assets/images/boardBacgrounds/2x/magnolia-2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/2x/magnolia-2x.jpg');
   }
 }
 
 @media screen and (min-width: 321px) and (max-width: 768px) {
   .bgImage7 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet1x/07tablet.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/tablet1x/07tablet.jpg');
   }
 }
 
@@ -314,13 +347,15 @@
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 192dpi),
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 2dppx) {
   .bgImage7 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet2x/07tablet2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/tablet2x/07tablet2x.jpg');
   }
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .bgImage7 {
-    background-image: url('../../assets/images/boardBacgrounds/phone1x/07phone.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/phone1x/07phone.jpg');
   }
 }
 
@@ -329,12 +364,14 @@
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 192dpi),
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 2dppx) {
   .bgImage7 {
-    background-image: url('../../assets/images/boardBacgrounds/phone2x/07phone2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/phone2x/07phone2x.jpg');
   }
 }
 
 .bgImage8 {
-  background-image: url('../../assets/images/boardBacgrounds/1x/young-moon.jpg');
+  background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+   url('../../assets/images/boardBacgrounds/1x/young-moon.jpg');
 }
 
 @media (min-device-pixel-ratio: 2),
@@ -342,13 +379,15 @@
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .bgImage8 {
-    background-image: url('../../assets/images/boardBacgrounds/2x/young-moon-2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/2x/young-moon-2x.jpg');
   }
 }
 
 @media screen and (min-width: 321px) and (max-width: 768px) {
   .bgImage8 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet1x/08tablet.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/tablet1x/08tablet.jpg');
   }
 }
 
@@ -357,13 +396,15 @@
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 192dpi),
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 2dppx) {
   .bgImage8 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet2x/08tablet2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/tablet2x/08tablet2x.jpg');
   }
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .bgImage8 {
-    background-image: url('../../assets/images/boardBacgrounds/phone1x/08phone.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/phone1x/08phone.jpg');
   }
 }
 
@@ -372,12 +413,14 @@
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 192dpi),
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 2dppx) {
   .bgImage8 {
-    background-image: url('../../assets/images/boardBacgrounds/phone2x/08phone2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/phone2x/08phone2x.jpg');
   }
 }
 
 .bgImage9 {
-  background-image: url('../../assets/images/boardBacgrounds/1x/ocean-shore.jpg');
+  background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+   url('../../assets/images/boardBacgrounds/1x/ocean-shore.jpg');
 }
 
 @media (min-device-pixel-ratio: 2),
@@ -385,13 +428,15 @@
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .bgImage9 {
-    background-image: url('../../assets/images/boardBacgrounds/2x/ocean-shore-2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/2x/ocean-shore-2x.jpg');
   }
 }
 
 @media screen and (min-width: 321px) and (max-width: 768px) {
   .bgImage9 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet1x/09tablet.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/tablet1x/09tablet.jpg');
   }
 }
 
@@ -400,13 +445,15 @@
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 192dpi),
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 2dppx) {
   .bgImage9 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet2x/09tablet2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/tablet2x/09tablet2x.jpg');
   }
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .bgImage9 {
-    background-image: url('../../assets/images/boardBacgrounds/phone1x/09phone.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/phone1x/09phone.jpg');
   }
 }
 
@@ -415,12 +462,14 @@
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 192dpi),
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 2dppx) {
   .bgImage9 {
-    background-image: url('../../assets/images/boardBacgrounds/phone2x/09phone2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/phone2x/09phone2x.jpg');
   }
 }
 
 .bgImage10 {
-  background-image: url('../../assets/images/boardBacgrounds/1x/moon.jpg');
+  background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+   url('../../assets/images/boardBacgrounds/1x/moon.jpg');
 }
 
 @media (min-device-pixel-ratio: 2),
@@ -428,13 +477,15 @@
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .bgImage10 {
-    background-image: url('../../assets/images/boardBacgrounds/2x/moon-2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/2x/moon-2x.jpg');
   }
 }
 
 @media screen and (min-width: 321px) and (max-width: 768px) {
   .bgImage10 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet1x/10tablet.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/tablet1x/10tablet.jpg');
   }
 }
 
@@ -443,13 +494,15 @@
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 192dpi),
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 2dppx) {
   .bgImage10 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet2x/10tablet2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/tablet2x/10tablet2x.jpg');
   }
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .bgImage10 {
-    background-image: url('../../assets/images/boardBacgrounds/phone1x/10phone.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/phone1x/10phone.jpg');
   }
 }
 
@@ -458,12 +511,14 @@
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 192dpi),
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 2dppx) {
   .bgImage10 {
-    background-image: url('../../assets/images/boardBacgrounds/phone2x/10phone2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/phone2x/10phone2x.jpg');
   }
 }
 
 .bgImage11 {
-  background-image: url('../../assets/images/boardBacgrounds/1x/air-ballon.jpg');
+  background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+   url('../../assets/images/boardBacgrounds/1x/air-ballon.jpg');
 }
 
 @media (min-device-pixel-ratio: 2),
@@ -471,13 +526,15 @@
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .bgImage11 {
-    background-image: url('../../assets/images/boardBacgrounds/2x/air-ballon-2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/2x/air-ballon-2x.jpg');
   }
 }
 
 @media screen and (min-width: 321px) and (max-width: 768px) {
   .bgImage11 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet1x/11tablet.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/tablet1x/11tablet.jpg');
   }
 }
 
@@ -486,13 +543,15 @@
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 192dpi),
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 2dppx) {
   .bgImage11 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet2x/11tablet2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/tablet2x/11tablet2x.jpg');
   }
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .bgImage11 {
-    background-image: url('../../assets/images/boardBacgrounds/phone1x/11phone.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/phone1x/11phone.jpg');
   }
 }
 
@@ -501,12 +560,14 @@
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 192dpi),
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 2dppx) {
   .bgImage11 {
-    background-image: url('../../assets/images/boardBacgrounds/phone2x/11phone2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/phone2x/11phone2x.jpg');
   }
 }
 
 .bgImage12 {
-  background-image: url('../../assets/images/boardBacgrounds/1x/gorge.jpg');
+  background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+   url('../../assets/images/boardBacgrounds/1x/gorge.jpg');
 }
 
 @media (min-device-pixel-ratio: 2),
@@ -514,13 +575,15 @@
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .bgImage12 {
-    background-image: url('../../assets/images/boardBacgrounds/2x/gorge-2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/2x/gorge-2x.jpg');
   }
 }
 
 @media screen and (min-width: 321px) and (max-width: 768px) {
   .bgImage12 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet1x/12tablet.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/tablet1x/12tablet.jpg');
   }
 }
 
@@ -529,13 +592,15 @@
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 192dpi),
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 2dppx) {
   .bgImage12 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet2x/12tablet2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/tablet2x/12tablet2x.jpg');
   }
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .bgImage12 {
-    background-image: url('../../assets/images/boardBacgrounds/phone1x/12phone.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/phone1x/12phone.jpg');
   }
 }
 
@@ -544,12 +609,14 @@
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 192dpi),
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 2dppx) {
   .bgImage12 {
-    background-image: url('../../assets/images/boardBacgrounds/phone2x/12phone2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/phone2x/12phone2x.jpg');
   }
 }
 
 .bgImage13 {
-  background-image: url('../../assets/images/boardBacgrounds/1x/azure-coast.jpg');
+  background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+   url('../../assets/images/boardBacgrounds/1x/azure-coast.jpg');
 }
 
 @media (min-device-pixel-ratio: 2),
@@ -557,13 +624,15 @@
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .bgImage13 {
-    background-image: url('../../assets/images/boardBacgrounds/2x/azure-coast-2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/2x/azure-coast-2x.jpg');
   }
 }
 
 @media screen and (min-width: 321px) and (max-width: 768px) {
   .bgImage13 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet1x/13tablet.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/tablet1x/13tablet.jpg');
   }
 }
 
@@ -572,13 +641,15 @@
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 192dpi),
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 2dppx) {
   .bgImage13 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet2x/13tablet2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/tablet2x/13tablet2x.jpg');
   }
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .bgImage13 {
-    background-image: url('../../assets/images/boardBacgrounds/phone1x/13phone.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/phone1x/13phone.jpg');
   }
 }
 
@@ -587,12 +658,14 @@
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 192dpi),
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 2dppx) {
   .bgImage13 {
-    background-image: url('../../assets/images/boardBacgrounds/phone2x/13phone2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/phone2x/13phone2x.jpg');
   }
 }
 
 .bgImage14 {
-  background-image: url('../../assets/images/boardBacgrounds/1x/hot-air-balloon.jpg');
+  background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+   url('../../assets/images/boardBacgrounds/1x/hot-air-balloon.jpg');
 }
 
 @media (min-device-pixel-ratio: 2),
@@ -600,13 +673,15 @@
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .bgImage14 {
-    background-image: url('../../assets/images/boardBacgrounds/2x/hot-air-balloon-2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/2x/hot-air-balloon-2x.jpg');
   }
 }
 
 @media screen and (min-width: 321px) and (max-width: 768px) {
   .bgImage14 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet1x/14tablet.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/tablet1x/14tablet.jpg');
   }
 }
 
@@ -615,13 +690,15 @@
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 192dpi),
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 2dppx) {
   .bgImage14 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet2x/14tablet2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/tablet2x/14tablet2x.jpg');
   }
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .bgImage14 {
-    background-image: url('../../assets/images/boardBacgrounds/phone1x/14phone.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/phone1x/14phone.jpg');
   }
 }
 
@@ -630,12 +707,14 @@
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 192dpi),
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 2dppx) {
   .bgImage14 {
-    background-image: url('../../assets/images/boardBacgrounds/phone2x/14phone2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/phone2x/14phone2x.jpg');
   }
 }
 
 .bgImage15 {
-  background-image: url('../../assets/images/boardBacgrounds/1x/milky-way.jpg');
+  background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+   url('../../assets/images/boardBacgrounds/1x/milky-way.jpg');
 }
 
 @media (min-device-pixel-ratio: 2),
@@ -643,13 +722,15 @@
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .bgImage15 {
-    background-image: url('../../assets/images/boardBacgrounds/2x/milky-way-2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/2x/milky-way-2x.jpg');
   }
 }
 
 @media screen and (min-width: 321px) and (max-width: 768px) {
   .bgImage15 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet1x/15tablet.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/tablet1x/15tablet.jpg');
   }
 }
 
@@ -658,13 +739,15 @@
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 192dpi),
   screen and (min-width: 768px) and (max-width: 1439px) and (min-resolution: 2dppx) {
   .bgImage15 {
-    background-image: url('../../assets/images/boardBacgrounds/tablet2x/15tablet2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/tablet2x/15tablet2x.jpg');
   }
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .bgImage15 {
-    background-image: url('../../assets/images/boardBacgrounds/phone1x/15phone.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/phone1x/15phone.jpg');
   }
 }
 
@@ -673,7 +756,8 @@
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 192dpi),
   screen and (min-width: 320px) and (max-width: 767px) and (min-resolution: 2dppx) {
   .bgImage15 {
-    background-image: url('../../assets/images/boardBacgrounds/phone2x/15phone2x.jpg');
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+     url('../../assets/images/boardBacgrounds/phone2x/15phone2x.jpg');
   }
 }
 

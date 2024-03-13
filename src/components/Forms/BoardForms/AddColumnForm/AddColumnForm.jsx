@@ -59,7 +59,7 @@ const AddColumnForm = ({
       initialValues={initialValues}
       onSubmit={handleSubmit}
     >
-      <Form>
+      <Form autoComplete="off">
         <h3 className={css.addColumnModalTitle}>{title}</h3>
         <Field
           className={css.addColumnInput}

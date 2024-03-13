@@ -1,17 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as API from '../services/api';
 
-// export const addBoard = createAsyncThunk(
-//   'boards/addBoard',
-//   async (data, { rejectWithValue }) => {
-//     try {
-//       const response = await API.addBoard(data);
-//       return response;
-//     } catch (error) {
-//       return rejectWithValue(error.message);
-//     }
-//   }
-// );
 export const getBoard = createAsyncThunk(
   'boards/getBoard',
   async (boardId, { rejectWithValue }) => {
@@ -23,30 +12,6 @@ export const getBoard = createAsyncThunk(
     }
   }
 );
-
-// export const editBoard = createAsyncThunk(
-//   'boards/editBoard',
-//   async (boardId, data, { rejectWithValue }) => {
-//     try {
-//       const response = await API.editBoard(boardId, data);
-//       return response.data;
-//     } catch (error) {
-//       return rejectWithValue(error.message);
-//     }
-//   }
-// );
-
-// export const deleteBoard = createAsyncThunk(
-//   'boards/ deleteBoard',
-//   async (boardId, { rejectWithValue }) => {
-//     try {
-//       const response = await API.deleteBoard(boardId);
-//       return response.data;
-//     } catch (error) {
-//       return rejectWithValue(error.message);
-//     }
-//   }
-// ); 
 
 //-------------Column operation ------------------//
 export const addColumn = createAsyncThunk(

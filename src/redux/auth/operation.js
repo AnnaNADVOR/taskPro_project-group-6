@@ -1,23 +1,6 @@
 import * as API from '../services/api';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-//import toast
-/*//import axios from 'axios';
-const setAuthHeader = token => {
-  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-};
-
-axios.defaults.baseURL = 'https://project-team-6-backend.onrender.com';
-export const register = createAsyncThunk('auth/register', async (credentials, {rejectWithValue}) => {
-  try {
-    const response = await axios.post('api/users/register', credentials);
-    setAuthHeader(response.data.token);
-    return response.data;
-  } catch (error) {
-    return rejectWithValue(error.message);
-  }
-});/*/
-
 export const register = createAsyncThunk(
   'auth/register',
   async (credentials, { rejectWithValue }) => {
@@ -25,7 +8,6 @@ export const register = createAsyncThunk(
       const response = await API.registration(credentials);
       return response;
     } catch (error) {
-      //toast.error(error.response.data.message)
       return rejectWithValue(error.message);
     }
   }
