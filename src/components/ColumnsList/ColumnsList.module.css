@@ -1,17 +1,63 @@
 .columnsListContainer {
-  margin-right: 34px;
-  display:flex;
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: auto;
+  padding-bottom: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .columnsListContainer {
+    padding-bottom: 52px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .columnsListContainer {
+    padding-bottom: 16px;
+  }
+}
+
+.columnsListContainer::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+}
+
+.columnsListContainer::-webkit-scrollbar-track {
+  background: var(--card-list-scroll-bar);
+  border-radius: 8px;
+  opacity: 0.08;
+}
+
+.columnsListContainer::-webkit-scrollbar-thumb {
+  background: var(--card-list-scroll-thumb);
+  border-radius: 5px;
+}
+
+.columnsListContainer::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-text-hover-color);
 }
 
 .columnList {
   display: flex;
   gap: 34px;
+  margin-right: 34px;
 }
 
 .columnItem {
   display: flex;
   flex-direction: column;
-  width: 335px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 375px) {
+  .columnItem {
+    width: 260px;
+  }
+}
+
+@media screen and (min-width: 376px) {
+  .columnItem {
+    width: 335px;
+  }
 }
 
 .columnTitle {
@@ -49,7 +95,7 @@
 .cardContainer {
   margin-bottom: 14px;
   overflow-y: auto;
-  overflow-x: hidden;  
+  overflow-x: hidden;
 }
 
 .cardContainer::-webkit-scrollbar {
