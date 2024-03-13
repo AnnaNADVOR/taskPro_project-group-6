@@ -5,11 +5,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  min-height: calc(100vh - 6rem);
 }
 
 @media screen and (max-width: 320px) {
   .container {
-    height: calc(100vh - 195px);
+    /* height: calc(100vh - 195px); */
     padding: 14px 20px;
   }
 }
@@ -17,19 +18,23 @@
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .container {
     height: calc(100vh - 195px);
+    padding: 14px 20px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .container {
-    height: calc(100vh - 211px);
-    padding: 26px 32px;
+    /* height: calc(100vh - 211px); */
+    min-height: calc(100vh - 6.8rem);
+    padding: 14px 20px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .container {
     padding: 10px 24px;
+    height: 100%;
+    max-width: 118rem;
   }
 }
 
@@ -674,8 +679,6 @@
 
 .container {
   width: 100%;
-  overflow-y: hidden;
-  overflow-x: auto;
   padding-bottom: 24px;
 }
 
@@ -689,24 +692,4 @@
   .container {
     padding-bottom: 16px;
   }
-}
-
-.container::-webkit-scrollbar {
-  width: 5px;
-  height: 10px;
-}
-
-.container::-webkit-scrollbar-track {
-  background: var(--card-list-scroll-bar);
-  border-radius: 8px;
-  opacity: 0.08;
-}
-
-.container::-webkit-scrollbar-thumb {
-  background: var(--card-list-scroll-thumb);
-  border-radius: 5px;
-}
-
-.container::-webkit-scrollbar-thumb:hover {
-  background: var(--theme-text-hover-color);
 }

@@ -5,7 +5,7 @@ import { editColumn } from '../../../../redux/columns/operation';
 
 import css from './EditColumnForm.module.css';
 
-const EditColumnForm = ({ column, title, columnId }) => {
+const EditColumnForm = ({ column, title, columnId, handleClose }) => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
@@ -16,6 +16,7 @@ const EditColumnForm = ({ column, title, columnId }) => {
       })
     );
     actions.resetForm();
+    handleEditClose();
   };
 
   return (

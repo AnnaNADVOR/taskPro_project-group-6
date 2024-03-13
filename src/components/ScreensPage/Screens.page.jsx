@@ -1,9 +1,8 @@
-import AddBtnColumn from 'components/Board/AddBtnColumn/AddBtnColumn';
-import ColumnsList from '../ColumnsList/ColumnsList';
-import css from './Screens.page.module.css';
-import HeaderDashboard from 'components/Board/HeaderDashboard/HeaderDashboard';
 import { useSelector } from 'react-redux';
+import ColumnsList from '../ColumnsList/ColumnsList';
+import HeaderDashboard from 'components/Board/HeaderDashboard/HeaderDashboard';
 import { selectBoard } from '../../redux/boards/selectors';
+import css from './Screens.page.module.css';
 
 const ScreensPage = () => {
   const { title, background } = useSelector(selectBoard);
@@ -49,11 +48,10 @@ const ScreensPage = () => {
   )}`;
   return (
     <>
-    <HeaderDashboard title={title} />
+      <HeaderDashboard title={title} />
       <div className={(css.container, containerClass)}>
-         < ColumnsList />
-          <AddBtnColumn />          
-       </div>
+        <ColumnsList />
+      </div>
     </>
   );
 };

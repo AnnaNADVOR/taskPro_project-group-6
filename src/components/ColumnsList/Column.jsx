@@ -1,24 +1,24 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import sprite from '../../assets/images/sprite.svg';
-import css from '../ColumnsList/ColumnsList.module.css';
 import CardList from '../CardList/CradList';
 import MainAddButton from '../Buttons/MainAddButton/MainAddButton';
 import Modal from '../Modal/Modal';
 import CardForm from '../Forms/BoardForms/CardForm/CardForm';
 import { deleteColumn } from '../../redux/boards/operation';
 import AddColumnForm from '../Forms/BoardForms/AddColumnForm/AddColumnForm';
+import sprite from '../../assets/images/sprite.svg';
+import css from '../ColumnsList/ColumnsList.module.css';
 
 const Column = ({ id, title }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isModalColumnEditOpen, setIsModalColumnEditOpen] = useState(false);
+  const [isModalColumnOpen, setIsModalColumnOpen] = useState(false);
 
   const toggleModal = () => {
     setIsOpen(isOpen => !isOpen);
   };
 
-  const handleModalColumnEditOpen = () => {
-    setIsModalColumnEditOpen(isModalColumnEditOpen => !isModalColumnEditOpen);
+  const handleModalColumnOpen = () => {
+    setIsModalColumnOpen(isModalColumnOpen => !isModalColumnOpen);
   };
 
   const dispatch = useDispatch();
@@ -33,7 +33,7 @@ const Column = ({ id, title }) => {
         {title}
         <button
           className={css.btnIcon}
-          onClick={handleModalColumnEditOpen}
+          onClick={handleModalColumnOpen}
           type="button"
         >
           <svg className={css.columnTitleIcon} width={16} height={16}>
@@ -56,27 +56,25 @@ const Column = ({ id, title }) => {
       <MainAddButton text="Add another card" click={toggleModal} />
       {isOpen && (
         <Modal closeModal={toggleModal}>
-
           <CardForm
             title="Add card"
             action="Add"
             columnId={id}
             handleClose={toggleModal}
           />
-
         </Modal>
       )}
-      {isModalColumnEditOpen && (
-        <Modal closeModal={handleModalColumnEditOpen}>
+      {isModalColumnOpen && (
+        <Modal closeModal={handleModalColumnOpen}>
           <AddColumnForm
             title="Edit column"
             action="Edit"
             columnId={id}
             columnTitle={title}
+            handleEditClose={handleModalColumnOpen}
           />
         </Modal>
       )}
-     
     </>
   );
 };
