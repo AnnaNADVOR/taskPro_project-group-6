@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import css from '../Forms/BoardForms/AddBoardForm/AddBoardForm.module.css';
 
-const BoardBackgroundPicker = ({ onChangeImage, currentBoardBackground }) => {
+const BoardBackgroundPicker = ({ onChangeImage, backgroundName }) => {
+  
   const images = [
     { alt: 'defoult black bacground', imgId: '00.png' },
     { alt: 'pink flowering tree on the river', imgId: '01.png' },
@@ -21,24 +22,26 @@ const BoardBackgroundPicker = ({ onChangeImage, currentBoardBackground }) => {
     { alt: 'colorful flying balloons over the plain', imgId: '14.png' },
     { alt: 'beautiful northern lights', imgId: '15.png' },
   ];
-
-  const [selectedValue, setSelectedValue] = useState(0);
+console.log("currentBoardBackground", backgroundName )
+  const [selectedValue, setSelectedValue] = useState("");
 
   useEffect(() => {
     if (!selectedValue) {
-      setSelectedValue(currentBoardBackground || '00');
+      setSelectedValue(backgroundName  || '00');
     }
-  }, [currentBoardBackground, selectedValue]);
+    console.log("efect")
+  }, [backgroundName , selectedValue]);
 
   const handleRadioChange = imgId => {
-    setSelectedValue(imgId);
     onChangeImage(imgId);
+    setSelectedValue(imgId);
   };
 
   return (
     <div className={css.backPickerWrapper}>
       {images.map(({ alt, imgId }, index) => {
         const imgKey = imgId.replace('.png', '');
+        
         return (
           <label className={css.backPickerLabel} key={imgKey}>
             <input
@@ -47,7 +50,10 @@ const BoardBackgroundPicker = ({ onChangeImage, currentBoardBackground }) => {
               value={imgId}
               name="image"
               checked={selectedValue === imgKey}
-              onChange={() => handleRadioChange(imgKey)}
+              onChange={() => {
+                console.log("onChange:imgKey", imgKey)
+                handleRadioChange(imgKey)
+              }}
             />
             <img
               src={require(`../../assets/images/boardBacgrounds/${imgId}`)}

@@ -21,6 +21,7 @@ const addCardSchema = Yup.object().shape({
 
 
 const CardForm = ({ title, action, taskTitle, taskDescription, taskPriority, taskDeadline, taskId, columnId, handleClose }) => {
+    console.log("CardForm:startRender:taskTitle", taskTitle, taskId)
    
     const initialValues = {
         cardTitle: "",
@@ -36,6 +37,7 @@ const CardForm = ({ title, action, taskTitle, taskDescription, taskPriority, tas
         initialValues.description = taskDescription; 
     }
     const priorityChange = (event) => {
+        console.log("CardForm:priorityChange")
         setPriority(event.target.value);
     }
 
@@ -67,7 +69,7 @@ const CardForm = ({ title, action, taskTitle, taskDescription, taskPriority, tas
         } else {
             dispatch(addTask(newCard));  
             actions.resetForm(); 
-            handleClose();
+           handleClose();
         }
                
     }
@@ -80,6 +82,8 @@ const CardForm = ({ title, action, taskTitle, taskDescription, taskPriority, tas
         { value: 'High', color: `var(--priority-high-color)` },
         { value: 'Without', color: `var(--priority-color-without)`},
     ];
+
+    console.log("CardForm:initialValues", initialValues)
 
     return (
          <Formik validationSchema={addCardSchema}

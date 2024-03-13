@@ -3,6 +3,7 @@ import { authReducer } from './auth/slice';
 import { filterSlice } from './filter/slice';
 import { boardsReducer } from './boards/slice';
 import { themeReducer } from './themes/slice';
+import { requestHelpReducer } from './help/slice';
 
 import {
   persistStore,
@@ -19,7 +20,8 @@ export const store = configureStore({
         boards: boardsReducer,
         auth: authReducer,
         filter: filterSlice.reducer,  
-        theme: themeReducer,        
+        theme: themeReducer,  
+        help: requestHelpReducer,
     },
 
     middleware (getDefaultMiddleware) {

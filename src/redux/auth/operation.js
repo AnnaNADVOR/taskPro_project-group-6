@@ -36,6 +36,15 @@ export const logIn = createAsyncThunk(
   async (credentials, { rejectWithValue }) => {
     try {
       const response = await API.logIn(credentials);
+      
+      const promises = response.user.boards.map(board => new Promise(function (resolve, reject) { 
+        const fullBoard = API.getBoardById(board._id)
+
+        resolve(fullBoard)
+       }))
+
+      response.user.boards = await Promise.all(promises)
+      
       return response;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -78,6 +87,15 @@ export const refreshUser = createAsyncThunk(
     API.setAuthHeader(token);
     try {
       const response = await API.refresh();
+
+      const promises = response.user.boards.map(board => new Promise(function (resolve, reject) { 
+        const fullBoard = API.getBoardById(board._id)
+
+        resolve(fullBoard)
+       }))
+
+      response.user.boards = await Promise.all(promises)
+      
       return response;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -111,10 +129,13 @@ export const addBoard = createAsyncThunk(
 
 export const editBoard = createAsyncThunk(
   'boards/editBoard',
-  async (boardId, data, { rejectWithValue }) => {
+  async ({boardId, title, background, icon}, { rejectWithValue }) => {
     try {
-      const response = await API.editBoard(boardId, data);
-      return response.data;
+      console.log("operation:editBoard:boardId", boardId)
+
+      const response = await API.editBoard(boardId, {title, background, icon});
+      console.log("operation:editBoard:response", response)
+      return response;
     } catch (error) {
       return rejectWithValue(error.message);
     }
