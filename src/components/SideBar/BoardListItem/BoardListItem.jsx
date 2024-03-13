@@ -19,7 +19,6 @@ const BoardListItem = ({ board }) => {
   const navigate = useNavigate();
 
   const currentBoard = useSelector(selectBoard);
-
   const handleDeleteBoard = boardId => {
     dispatch(deleteBoard(boardId)).then(action => {
       if (action.type !== 'boards/deleteBoard/fulfilled') {

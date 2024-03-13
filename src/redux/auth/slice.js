@@ -36,7 +36,7 @@ const authSlice = createSlice({
     isLoadingLogin: false,
     isLoadingLogout: false,
     isLoggedIn: false,
-    isRefreshing: false,
+    isRefreshing: false,    
   },
   extraReducers: builder => {
     builder
@@ -105,6 +105,7 @@ const authSlice = createSlice({
         state.user.user.boards[index].title = action.payload.title;
         state.user.user.boards[index].icon = action.payload.icon;
         state.user.user.boards[index].background = action.payload.background;
+        state.isUpdateBoard = true; 
       })
       .addCase(editBoard.rejected, (state, action) => {
         state.isLoading = false;

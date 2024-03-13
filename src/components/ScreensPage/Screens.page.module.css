@@ -11,22 +11,17 @@
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .container {
     height: calc(100vh - 195px);
-    padding-top: 14px;
-    padding-left: 20px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .container {
-    min-height: calc(100vh - 6.8rem);
-    padding-top: 14px;
-    padding-left: 20px;
+    min-height: calc(100vh - 6.8rem);    
   }
 }
 
 @media screen and (min-width: 1440px) {
   .container {
-    padding: 10px 24px;
     height: 100%;
     max-width: 118rem;
   }

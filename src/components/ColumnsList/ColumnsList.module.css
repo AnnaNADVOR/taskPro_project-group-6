@@ -2,18 +2,20 @@
   display: flex;
   overflow-y: hidden;
   overflow-x: auto;
-  padding-bottom: 24px;
+  padding: 14px 20px; 
 }
 
 @media screen and (min-width: 768px) {
   .columnsListContainer {
     padding-bottom: 52px;
+    padding: 14px 20px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .columnsListContainer {
     padding-bottom: 16px;
+    padding: 10px 24px;
   }
 }
 

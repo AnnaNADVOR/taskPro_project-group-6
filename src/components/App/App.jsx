@@ -14,6 +14,8 @@ import { PrivateRoute } from 'components/PrivateRoute';
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
 const AuthPage = lazy(() => import('../../pages/AuthPage/AuthPage'));
 const ScreensPage = lazy(() => import('../ScreensPage/Screens.page'));
+const NotFound = lazy(() => import('../../pages/NotFoundPage/NotFoundPage'));
+
 
 const App = () => {
   const dispatch = useDispatch();
@@ -49,6 +51,7 @@ const App = () => {
               }
             />
           </Route>
+          <Route path="*" element={<NotFound/>} />
         </Routes>
         <Toaster
           position="top-center"

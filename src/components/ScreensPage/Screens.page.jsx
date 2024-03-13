@@ -4,12 +4,12 @@ import { useEffect } from 'react';
 import ColumnsList from '../ColumnsList/ColumnsList';
 import HeaderDashboard from 'components/Board/HeaderDashboard/HeaderDashboard';
 import { selectBoard } from '../../redux/boards/selectors';
-
 import css from './Screens.page.module.css';
 import { useNavigate } from 'react-router-dom';
 
 const ScreensPage = () => {
   const { title, background } = useSelector(selectBoard);
+  
   const getClassForBackground = background => {
     switch (background) {
       case '01':
@@ -46,7 +46,6 @@ const ScreensPage = () => {
         break;
     }
   };
-  console.log(title, background);
 
   const navigate = useNavigate();
 
@@ -55,13 +54,11 @@ const ScreensPage = () => {
     // eslint-disable-next-line
   }, [title]);
 
-  const containerClass = `${css.container} ${getClassForBackground(
-    background
-  )}`;
+  const containerClass = `${css.container} ${getClassForBackground(background)}`;
   return (
     <>
       <HeaderDashboard title={title} />
-      <div className={(css.container, containerClass)}>
+      <div className={containerClass}>
         <ColumnsList />
       </div>
     </>
