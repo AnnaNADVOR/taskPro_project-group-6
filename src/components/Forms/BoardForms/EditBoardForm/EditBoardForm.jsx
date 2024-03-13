@@ -31,11 +31,6 @@ const EditBoardForm = ({
   const [iconName, setIconName] = useState(initialIconName);
 
   const handleSubmit = (values, actions) => {
-    console.log("borard in edit:handleSubmit:boardId", boardId)
-    console.log("borard in edit:handleSubmit:values", values)
-    console.log("borard in edit:handleSubmit:iconName", iconName)
-    console.log("borard in edit:handleSubmit:backgroundName", backgroundName)
-
     dispatch(
       editBoard({
         boardId: boardId,
