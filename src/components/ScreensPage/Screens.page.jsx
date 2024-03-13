@@ -1,10 +1,12 @@
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 import ColumnsList from '../ColumnsList/ColumnsList';
 import HeaderDashboard from 'components/Board/HeaderDashboard/HeaderDashboard';
 import { selectBoard } from '../../redux/boards/selectors';
 
 import css from './Screens.page.module.css';
+import { useNavigate } from 'react-router-dom';
 
 const ScreensPage = () => {
   const { title, background } = useSelector(selectBoard);
@@ -44,6 +46,14 @@ const ScreensPage = () => {
         break;
     }
   };
+  console.log(title, background);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate(`/home/${title}`);
+    // eslint-disable-next-line
+  }, [title]);
 
   const containerClass = `${css.container} ${getClassForBackground(
     background
