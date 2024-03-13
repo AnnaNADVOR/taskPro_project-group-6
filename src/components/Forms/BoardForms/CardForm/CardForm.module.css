@@ -10,7 +10,7 @@
     font-weight: 400;
     font-size: 12px;
     letter-spacing: -0.02em;
-    color:var(--secondary-text-color-low-op);
+    color: var(--secondary-text-color-low-op);
     margin-bottom: 4px;
 }
 
@@ -20,14 +20,14 @@
     border: 1px solid var(--accent-text-color);
     border-radius: 8px;
     box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.08);
-    background-color:var(--modal-input-bg);
+    background-color: var(--modal-input-bg);
     outline: rgba(0, 0, 0, 0);
     font-weight: 400;
     font-size: 14px;
     color: var(--secondary-text-color);
     line-height: 1.28571;
     letter-spacing: -0.02em;
-    opacity: 0.4; 
+    opacity: 0.4;
 }
 
 .inputForm:hover,

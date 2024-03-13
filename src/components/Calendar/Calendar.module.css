@@ -16,7 +16,7 @@
 
 .button:hover,
 .button:focus {
-    color:var(--modal-btn-hover); 
+    color: var(--modal-btn-hover);
 }
 
 .button>svg {
@@ -166,4 +166,3 @@
     width: 5px;
     top: 10px;
 }
-

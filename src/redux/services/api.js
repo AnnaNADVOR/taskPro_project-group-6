@@ -101,6 +101,6 @@ export async function deleteTaskById(taskId) {
 }
 
 export async function replaceTask(taskId, column) {
-    const response = await axios.post(`api/tasks/${taskId}/replace`, {column})
-    return response.data; 
+  const response = await axios.post(`api/tasks/${taskId}/replace`, { column });
+  return response.data;
 }

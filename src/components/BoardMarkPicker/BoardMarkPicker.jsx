@@ -1,5 +1,7 @@
-import sprite from '../../assets/images/sprite.svg';
 import { useState, useEffect } from 'react';
+
+import sprite from '../../assets/images/sprite.svg';
+
 import css from '../Forms/BoardForms/AddBoardForm/AddBoardForm.module.css';
 
 const BoardMarkPicker = ({ iconName, onChangeIcon }) => {

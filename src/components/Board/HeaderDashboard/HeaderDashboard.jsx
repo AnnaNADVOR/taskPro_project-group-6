@@ -1,8 +1,10 @@
-import Filter from 'components/Filter/Filter';
 import { useState } from 'react';
-import css from './HeaderDashboard.module.css';
-import sprite from 'assets/images/sprite.svg';
+
+import Filter from 'components/Filter/Filter';
 import Modal from 'components/Modal/Modal';
+import sprite from 'assets/images/sprite.svg';
+
+import css from './HeaderDashboard.module.css';
 
 const HeaderDashboard = ({ title }) => {
   const [isOpen, setIsOpen] = useState();

@@ -7,8 +7,8 @@ import BoardList from './BoardList/BoardList';
 import NeedHelp from './NeedHelp/NeedHelp';
 import Modal from 'components/Modal/Modal';
 import AddBoardForm from 'components/Forms/BoardForms/AddBoardForm/AddBoardForm';
-
 import sprite from 'assets/images/sprite.svg';
+
 import css from './SideBar.module.css';
 
 const SideBar = ({ showSidebar }) => {

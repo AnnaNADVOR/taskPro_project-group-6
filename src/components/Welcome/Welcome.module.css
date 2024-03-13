@@ -24,11 +24,24 @@
     }
 }
 
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 .image {
     margin: 0 auto;
     width: 124px;
     height: 124px;
     margin-bottom: 14px;
+    animation: slideInLeft 0.5s ease-out;
 }
 
 @media screen and (min-width: 768px) {
@@ -140,10 +153,11 @@
     padding: 14px 0px;
     border-radius: 8px;
     text-decoration: none;
-    transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+    transition: color var(--transition), background-color var(--transition);
 }
 
 @media screen and (min-width: 768px) {
+
     .login,
     .register {
         width: 344px;

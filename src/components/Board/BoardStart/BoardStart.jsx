@@ -1,4 +1,5 @@
 import css from './BoarsStart.module.css';
+
 const BoardStart = () => {
   return (
     <div className={css.boardStartContainer}>

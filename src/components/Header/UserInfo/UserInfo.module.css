@@ -5,6 +5,7 @@
   gap: 8px;
   margin-left: 14px;
 }
+
 .userName {
   font-weight: 500;
   font-size: 14px;
@@ -12,6 +13,7 @@
   color: var(--secondary-text-color);
   margin-right: 8px;
 }
+
 .userIcon {
   width: 32px;
   height: 32px;

@@ -50,6 +50,7 @@
 
   gap: 8px;
 }
+
 .leabelGroup:not(:last-child) {
   padding-bottom: 10px;
 }
@@ -80,7 +81,7 @@
   font-size: 12px;
 }
 
-.label:checked + .labeltext {
+.label:checked+.labeltext {
   color: var(--secondary-text-color);
   transition: stroke var(--transition);
 }

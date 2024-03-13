@@ -51,13 +51,11 @@
     align-items: center;
     justify-content: center;
     border-radius: 8px;
-
     padding: 0;
     width: 28px;
     height: 28px;
     border: none;
     background-color: var(--modal-btn-hover);
-
     transition: all 150ms linear;
     cursor: pointer;
 
@@ -82,19 +80,15 @@
 }
 
 .input {
-
     width: 100%;
     height: 49px;
     padding: 14px 18px;
-
     font-size: 14px;
     letter-spacing: -0.28px;
-
     border: 1px solid var(--theme-text-hover-color);
     background-color: var(--modal-windows-bg-color);
     outline: none;
     border-radius: 8px;
-
     color: var(--secondary-text-color);
     transition: all 250ms ease;
     opacity: 0.4;
@@ -106,14 +100,13 @@
     &:focus {
         opacity: 1;
     }
-
 }
 
 .icon {
     position: absolute;
     top: 16px;
     right: 18px;
-    stroke: currentColor;
+    stroke: var(--secondary-text-color);
     fill: none;
     cursor: pointer;
 }
@@ -124,12 +117,10 @@
     border: none;
     background: var(--theme-text-hover-color);
     border-radius: 8px;
-
     font-size: 14px;
     font-weight: 500;
     letter-spacing: -0.28px;
     color: var(--buttons-color);
-
     transition: all 150ms linear;
     cursor: pointer;
 

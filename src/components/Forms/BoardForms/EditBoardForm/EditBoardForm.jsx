@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { editBoard } from '../../../../redux/auth/operation';
 import { Formik, Form, ErrorMessage, Field } from 'formik';
 import * as Yup from 'yup';
+
+import { editBoard } from '../../../../redux/auth/operation';
 import MainAddButton from 'components/Buttons/MainAddButton/MainAddButton';
 import BoardBackgroundPicker from 'components/BoardBackgroundPicker/BoardBeckgroundPicker';
 import BoardMarkPicker from 'components/BoardMarkPicker/BoardMarkPicker';
+
 import css from '../AddBoardForm/AddBoardForm.module.css';
 
 const TitleSchema = Yup.object().shape({
@@ -19,7 +21,6 @@ const EditBoardForm = ({
   initialBackgroundName,
   handleClose,
 }) => {
- 
   const dispatch = useDispatch();
   const [backgroundName, setBackgroundName] = useState(initialBackgroundName);
   const [iconName, setIconName] = useState(initialIconName);
@@ -34,7 +35,7 @@ const EditBoardForm = ({
       })
     );
     actions.resetForm();
-     handleClose();
+    handleClose();
   };
 
   const initialValues = {
@@ -69,7 +70,6 @@ const EditBoardForm = ({
           backgroundName={backgroundName}
           onChangeImage={setBackgroundName}
         />
-
         <MainAddButton text="Edit" type="submit" />
       </Form>
     </Formik>

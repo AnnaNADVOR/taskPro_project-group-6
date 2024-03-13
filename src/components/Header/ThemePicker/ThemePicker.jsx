@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
-import sprite from '../../../assets/images/sprite.svg';
-import CSS from './ThemePicker.module.css';
-import UserInfo from '../UserInfo/UserInfo';
 import { useDispatch } from 'react-redux';
+
+import UserInfo from '../UserInfo/UserInfo';
 import { updateTheme } from '../../../redux/themes/operation';
+import sprite from '../../../assets/images/sprite.svg';
+
+import css from './ThemePicker.module.css';
 
 const Theme = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -60,17 +62,17 @@ const Theme = () => {
   };
 
   return (
-    <div className={CSS.infoContainer}>
-      <div className={CSS.themeContainer}>
-        <p ref={textRef} className={CSS.themeText} onClick={toggleMenu}>
+    <div className={css.infoContainer}>
+      <div className={css.themeContainer}>
+        <p ref={textRef} className={css.themeText} onClick={toggleMenu}>
           Theme
         </p>
-        <svg ref={svgRef} onClick={toggleMenu} className={CSS.themeIcon}>
+        <svg ref={svgRef} onClick={toggleMenu} className={css.themeIcon}>
           <use href={sprite + '#select-menu-16'} />
         </svg>
         {showMenu && (
-          <div ref={menuRef} className={CSS.dropdownMenu}>
-            <ul className={CSS.themeList}>
+          <div ref={menuRef} className={css.dropdownMenu}>
+            <ul className={css.themeList}>
               <li onClick={() => handleThemeChange('dark')}>Dark</li>
               <li onClick={() => handleThemeChange('light')}>Light</li>
               <li onClick={() => handleThemeChange('violet')}>Violet</li>

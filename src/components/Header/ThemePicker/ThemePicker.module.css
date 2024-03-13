@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
 }
+
 .themeContainer {
   position: relative;
   display: flex;
@@ -9,6 +10,7 @@
   justify-content: space-between;
   cursor: pointer;
 }
+
 .themeList {
   width: 38px;
   height: 71px;
@@ -21,6 +23,7 @@
   letter-spacing: -0.02em;
   color: var(--theme-main-text-color);
 }
+
 .themeIcon {
   width: 16px;
   height: 16px;
@@ -41,12 +44,13 @@
   flex-direction: column;
   justify-content: center;
   border-radius: 8px;
-  border: 1px solid #bedbb0;
+  border: 1px solid var(--theme-wrapper-border);
   box-shadow: 0 4px 16px 0 rgba(17, 17, 17, 0.1);
   background: var(--theme-wrapper);
   gap: 4px;
   z-index: 99;
 }
+
 .dropdownMenu ul {
   list-style: none;
   padding: 0;

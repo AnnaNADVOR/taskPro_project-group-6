@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 
+import HelpForm from 'components/Forms/BoardForms/HelpForm/HelpForm';
+import Modal from 'components/Modal/Modal';
 import plant from 'assets/images/plant-54x78.png';
 import plant2x from 'assets/images/plant-2x-54x78.png';
 import sprite from 'assets/images/sprite.svg';
 
-import HelpForm from 'components/Forms/BoardForms/HelpForm/HelpForm';
-import Modal from 'components/Modal/Modal';
-
 import css from './NeedHelp.module.css';
-
 
 const NeedHelp = () => {
   const [showModal, setShowModal] = useState(false);

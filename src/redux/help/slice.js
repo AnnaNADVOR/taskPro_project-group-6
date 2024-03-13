@@ -14,7 +14,7 @@ export const helpSlice = createSlice({
       .addCase(requestHelp.pending, state => {
         state.isLoading = true;
       })
-        .addCase(requestHelp.fulfilled, (state, action) => {
+      .addCase(requestHelp.fulfilled, (state, action) => {
         state.email = action.meta.arg.email;
         state.comment = action.meta.arg.comment;
         state.isLoading = false;

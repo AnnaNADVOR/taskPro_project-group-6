@@ -1,13 +1,13 @@
 .card {
-    border-radius: 8px;
-    width:100%;
-    height: 154px;
-    background-color: var(--add-column-btn);
-    padding: 14px 24px;
-    font-weight: 400;
-    font-size: 10px;
-    letter-spacing: -0.02em;
-    color: var(--burger-color);    
+  border-radius: 8px;
+  width: 100%;
+  height: 154px;
+  background-color: var(--add-column-btn);
+  padding: 14px 24px;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: -0.02em;
+  color: var(--burger-color);
 }
 
 .cardTitle {
@@ -56,7 +56,6 @@
   width: 12px;
   height: 12px;
   border-radius: 100%;
-  /* background-color: #8fa1d0;; */
 }
 
 .priorityLabel {
@@ -78,8 +77,8 @@
   background-color: transparent;
 }
 
-.optionBtn > svg:hover,
-.optionBtn > svg:focus {
+.optionBtn>svg:hover,
+.optionBtn>svg:focus {
   stroke: var(--modal-btn-hover);
 }
 
@@ -123,6 +122,6 @@
   display: flex;
   flex-direction: column;
   max-height: 480px;
-  gap: 8px; 
+  gap: 8px;
   margin-right: 8px;
 }
