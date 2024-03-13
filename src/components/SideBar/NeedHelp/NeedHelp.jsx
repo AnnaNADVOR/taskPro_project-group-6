@@ -36,7 +36,7 @@ const NeedHelp = () => {
 
       {showModal && (
         <Modal closeModal={toggleModal} style={css.helpModal}>
-          <HelpForm />
+          <HelpForm handleClose={toggleModal} />
         </Modal>
       )}
     </div>

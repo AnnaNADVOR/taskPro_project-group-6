@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import sprite from 'assets/images/sprite.svg';
-import css from './AddBtnColumn.module.css';
 import Modal from 'components/Modal/Modal';
 import AddColumnForm from '../../Forms/BoardForms/AddColumnForm/AddColumnForm';
+import css from './AddBtnColumn.module.css';
 
 const AddBtnColumn = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +23,11 @@ const AddBtnColumn = () => {
       </button>
       {isOpen && (
         <Modal closeModal={toggleModal}>
-          <AddColumnForm title="Add column" action="Add" />
+          <AddColumnForm
+            title="Add column"
+            action="Add"
+            handleClose={toggleModal}
+          />
         </Modal>
       )}
     </>

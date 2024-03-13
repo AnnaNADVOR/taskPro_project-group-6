@@ -39,6 +39,10 @@
         & .boardItemButtonsBlock {
             display: flex;
         }
+
+        & .boardBtn {
+            display: block;
+        }
     }
 }
 
@@ -80,12 +84,12 @@
 }
 
 .boardItemButtonsBlock {
-    display: none;
+    display: flex;
     gap: 8px;
 }
 
 .boardBtn {
-    display: block;
+    display: none;
     width: 16px;
     height: 16px;
     border: none;
@@ -100,6 +104,7 @@
     transition: transform var(--transition);
 }
 
-.boardBtnSvg:hover, .boardBtnSvg:focus {
+.boardBtnSvg:hover,
+.boardBtnSvg:focus {
     transform: scale(1.3);
 }

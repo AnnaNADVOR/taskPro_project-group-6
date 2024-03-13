@@ -13,25 +13,28 @@ const TitleSchema = Yup.object().shape({
 });
 
 const EditBoardForm = ({
-  board,
+  boardId,
   initialTitle,
   initialIconName,
   initialBackgroundName,
+  handleClose,
 }) => {
+ 
   const dispatch = useDispatch();
-console.log(initialBackgroundName)
   const [backgroundName, setBackgroundName] = useState(initialBackgroundName);
   const [iconName, setIconName] = useState(initialIconName);
 
   const handleSubmit = (values, actions) => {
     dispatch(
       editBoard({
+        boardId: boardId,
         title: values.boardTitle,
         icon: iconName,
         background: backgroundName,
       })
     );
     actions.resetForm();
+     handleClose();
   };
 
   const initialValues = {

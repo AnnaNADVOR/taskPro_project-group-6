@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addBoard } from '../../../../redux/auth/operation';
 import { Formik, Form, ErrorMessage, Field } from 'formik';
 import * as Yup from 'yup';
@@ -8,13 +8,11 @@ import BoardBackgroundPicker from 'components/BoardBackgroundPicker/BoardBeckgro
 import BoardMarkPicker from 'components/BoardMarkPicker/BoardMarkPicker';
 import css from '../AddBoardForm/AddBoardForm.module.css';
 
-
 const TitleSchema = Yup.object().shape({
   boardTitle: Yup.string().required('Title is required'),
 });
 
-const AddBoardForm = () => {
-
+const AddBoardForm = ({handleClose}) => {
   const dispatch = useDispatch();
   const [backgroundName, setBackgroundName] = useState('00');
   const [iconName, setIconName] = useState('mark-circuls-18');
@@ -24,10 +22,11 @@ const AddBoardForm = () => {
       addBoard({
         title: values.boardTitle,
         icon: iconName,
-        background: backgroundName, 
+        background: backgroundName,
       })
     );
     actions.resetForm();
+    handleClose();
   };
 
   return (

@@ -1,7 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-
-import { requestHelp } from '../../../../redux/user/operation';
+import { useDispatch } from 'react-redux';
+import { requestHelp } from '../../../../redux/help/operation';
 import SendButton from 'components/Buttons/SendButton/SendButton';
 
 import css from './HelpForm.module.css';
@@ -12,14 +12,18 @@ const validationSchema = Yup.object().shape({
   comment: Yup.string().min(7).max(230).required('Comment is required'),
 });
 
-const HelpForm = () => {
+
+const HelpForm = ({ handleClose }) => {
+  const dispatch = useDispatch();
   const handleSubmit = async (values, { setSubmitting }) => {
+    const { email, comment } = values;
     try {
-      await requestHelp(values);
-      setSubmitting(false);
+      await dispatch(requestHelp({ email, comment }));
+      setSubmitting(false);      
+      handleClose();
     } catch (error) {
       console.error('Error:', error);
-    }
+    }      
   };
 
   return (
@@ -44,7 +48,7 @@ const HelpForm = () => {
               <ErrorMessage name="email" />
             </span>
           </label>
-          <label htmlFor="comment">
+          <label htmlFor="comment" className={css.label}>
             <Field
               className={css.helpCommentInput}
               as="textarea"
@@ -53,7 +57,7 @@ const HelpForm = () => {
               placeholder="Comment"
               required
             />
-            <span className={css.helpErrorField}>
+            <span className={css.helpCommentErrorField}>
               <ErrorMessage name="comment" />
             </span>
           </label>

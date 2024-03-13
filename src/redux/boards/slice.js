@@ -43,30 +43,8 @@ const boardsSlice = createSlice ({
         state.isLoading = false;
         state.error = action.payload;
       })
-
       // .addCase(deleteBoard.pending, handlePending)
-      // // .addCase(deleteBoard.fulfilled, (state, action) => {
-      // //   state.isLoading = false;
-      // //   state.error = null;
-      // //   const index = state.boardList.findIndex(
-      // //     board => board._id === action.payload._id
-      // //   );
-      // //   state.boardList.splice(index, 1);
-      // // })
-      // .addCase(deleteBoard.rejected, handleRejected)
-      // .addCase(editBoard.pending, handlePending)
-      // .addCase(editBoard.fulfilled, (state, action) => {
-      //   state.isLoading = false;
-      //   state.error = null;
-      //   const index = state.boardList.findIndex(
-      //     el => el._id === action.payload._id
-      //   );
-      //   state.boardList[index] = action.payload;
-      // })
-      // .addCase(editBoard.rejected, handleRejected)
-
-      //-------------Columns case ------------------//  
-      
+      //-------------Columns case ------------------//        
       .addCase(addColumn.pending, handlePending)
       .addCase(addColumn.fulfilled, (state, action) => {
         state.isLoading = false;

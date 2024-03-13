@@ -23,7 +23,6 @@
     border-radius: 8px;
     width: 68px;
     height: 68px;
-    /* background-image: url(${props => props.url}); */
     background-position: center;
     background-size: cover;
 }

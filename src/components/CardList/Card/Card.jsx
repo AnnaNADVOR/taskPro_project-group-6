@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 import Modal from 'components/Modal/Modal';
 import CardForm from 'components/Forms/BoardForms/CardForm/CardForm';
 import Progress from '../Progress/Progress';
-// import { selectDeletetaskId } from "../../../redux/tasks/selectors";
 import { deleteTask } from '../../../redux/boards/operation';
 
 
@@ -23,10 +22,6 @@ const Card = ({ newCard, columnId }) => {
     
   }
   const today = new Date().toISOString().replace(/T.*/, '').split('-').reverse().join('/'); 
-  
-  
-   
-
   const deadline = newCard.deadline.replace(/T.*/, '').split('-').reverse().join('/'); 
  
   const priority = newCard.priority;
