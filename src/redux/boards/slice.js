@@ -9,6 +9,7 @@ import {
   deleteColumn,
   editColumn,
 } from './operation';
+import { editBoard } from '../auth/operation';
 
 const handlePending = state => {
   state.isLoading = true;
@@ -22,7 +23,7 @@ const handleRejected = (state, action) => {
 const boardsSlice = createSlice({
   name: 'boards',
   initialState: {
-    board: [],
+    board: {},
     background: null,
     error: null,
     isLoading: false,
@@ -40,6 +41,10 @@ const boardsSlice = createSlice({
       .addCase(getBoard.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
+      })
+      .addCase(editBoard.fulfilled, (state, { payload }) =>
+      {
+        state.board = {...state.board, ...payload}
       })
       //-------------Columns case ------------------//
       .addCase(addColumn.pending, handlePending)
