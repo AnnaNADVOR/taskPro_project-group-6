@@ -1,18 +1,18 @@
-import { Formik, Form, Field } from 'formik';
-import css from './Filter.module.css';
 import { useState } from 'react';
-
 import { useDispatch } from 'react-redux';
+import { Formik, Form, Field } from 'formik';
+
 import { setFilter } from '../../redux/filter/slice';
 
+import css from './Filter.module.css';
+
 const Filter = () => {
-  
-  const dispatch = useDispatch()
-  
-    const onChange = event => {
-        dispatch(setFilter(event.currentTarget.value));
-    }
-    
+  const dispatch = useDispatch();
+
+  const onChange = event => {
+    dispatch(setFilter(event.currentTarget.value));
+  };
+
   const [priority, setPriority] = useState('');
 
   const priorityOptions = [
@@ -25,14 +25,13 @@ const Filter = () => {
     { value: 'Medium', color: `var(--priority-medium-color)`, text: 'Medium' },
     { value: 'High', color: `var(--priority-high-color)`, text: 'High' },
   ];
- 
+
   const handleChange = event => {
     setPriority(event.target.value);
   };
   const handleShowAll = () => {
-    setPriority("");
-    dispatch(setFilter(""));
-    
+    setPriority('');
+    dispatch(setFilter(''));
   };
 
   const initialValues = {
@@ -68,14 +67,14 @@ const Filter = () => {
                       checked={priority === value}
                       style={{ backgroundColor: color }}
                       onClick={handleChange}
-                      onChange={ onChange }
+                      onChange={onChange}
                       className={css.label}
                     />{' '}
                     <span className={css.labeltext}> {text}</span>
                   </li>
                 ))}
               </ul>
-            }           
+            }
           </div>
         </Form>
       </Formik>

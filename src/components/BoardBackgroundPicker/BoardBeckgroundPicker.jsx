@@ -1,8 +1,8 @@
 import { useState } from 'react';
+
 import css from '../Forms/BoardForms/AddBoardForm/AddBoardForm.module.css';
 
 const BoardBackgroundPicker = ({ onChangeImage, backgroundName }) => {
-  
   const images = [
     { alt: 'defoult black bacground', imgId: '00.png' },
     { alt: 'pink flowering tree on the river', imgId: '01.png' },
@@ -22,7 +22,7 @@ const BoardBackgroundPicker = ({ onChangeImage, backgroundName }) => {
     { alt: 'beautiful northern lights', imgId: '15.png' },
   ];
 
-  const [selectedValue, setSelectedValue] = useState("");
+  const [selectedValue, setSelectedValue] = useState('');
   const handleRadioChange = imgId => {
     onChangeImage(imgId);
     setSelectedValue(imgId);
@@ -32,7 +32,7 @@ const BoardBackgroundPicker = ({ onChangeImage, backgroundName }) => {
     <div className={css.backPickerWrapper}>
       {images.map(({ alt, imgId }, index) => {
         const imgKey = imgId.replace('.png', '');
-        
+
         return (
           <label className={css.backPickerLabel} key={imgKey}>
             <input
@@ -42,7 +42,7 @@ const BoardBackgroundPicker = ({ onChangeImage, backgroundName }) => {
               name="image"
               checked={selectedValue === imgKey}
               onChange={() => {
-                handleRadioChange(imgKey)
+                handleRadioChange(imgKey);
               }}
             />
             <img

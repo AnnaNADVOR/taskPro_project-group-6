@@ -25,7 +25,7 @@
     stroke: var(--modal-plus-icon);
 }
 
-.plus{
+.plus {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,8 +33,7 @@
     width: 28px;
     height: 28px;
     border-radius: 8px;
-    padding: 7px; 
+    padding: 7px;
     text-align: center;
     margin-right: 8px;
 }
-

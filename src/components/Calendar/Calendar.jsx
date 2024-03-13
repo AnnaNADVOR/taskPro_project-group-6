@@ -1,14 +1,13 @@
-import DatePicker  from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import css from "./Calendar.module.css"
-import { forwardRef } from "react";
-import sprite from "../../assets/images/sprite.svg";
-import en from "date-fns/locale/en-GB";
+import { forwardRef } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import en from 'date-fns/locale/en-GB';
+import sprite from '../../assets/images/sprite.svg';
 
+import css from './Calendar.module.css';
 
 const Calendar = ({ date, changeDate }) => {
-  
-    const getDateFormat = (date) => {
+  const getDateFormat = date => {
     const today = new Date();
     const tomorrow = new Date();
     tomorrow.setDate(today.getDate() + 1);
@@ -25,10 +24,10 @@ const Calendar = ({ date, changeDate }) => {
     ) {
       return "'Tomorrow', MMMM dd";
     } else {
-      return "EEEE, MMMM dd";
+      return 'EEEE, MMMM dd';
     }
   };
-    
+
   const CustomInput = forwardRef(({ value, onClick }, ref) => (
     <button type="button" className={css.button} onClick={onClick} ref={ref}>
       {value}
@@ -37,19 +36,20 @@ const Calendar = ({ date, changeDate }) => {
       </svg>
     </button>
   ));
- 
+
   return (
-    <DatePicker className={css.picker}
-      locale={en}                
+    <DatePicker
+      className={css.picker}
+      locale={en}
       selected={date}
       onChange={changeDate}
       minDate={new Date()}
       dateFormat={getDateFormat(date)}
-      onFocus={(event) => event.target.blur()}
-      onKeyDown={(event) => event.preventDefault()}
-      customInput={<CustomInput />}       
+      onFocus={event => event.target.blur()}
+      onKeyDown={event => event.preventDefault()}
+      customInput={<CustomInput />}
     />
-  )
-}
+  );
+};
 
 export default Calendar;

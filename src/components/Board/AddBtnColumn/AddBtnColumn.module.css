@@ -17,10 +17,10 @@
   transition: var(--transition);
 }
 
- @media screen and (min-width: 340px) {
+@media screen and (min-width: 340px) {
   .btnAddColumn {
     min-width: 334px;
-  } 
+  }
 }
 
 .btnPlus {
@@ -40,7 +40,7 @@
   background-color: var(--modal-btn-hover);
 }
 
-.btnPlus > svg {
+.btnPlus>svg {
   width: 14px;
   height: 14px;
   stroke: var(--add-column-btn);

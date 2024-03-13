@@ -52,10 +52,19 @@ export const deleteColumn = createAsyncThunk(
 
 //-------------Tasks operation ------------------//
 export const addTask = createAsyncThunk(
-  "tasks/addTask",
-  async ({ column, title, description, priority, deadline }, { rejectWithValue }) => {
+  'tasks/addTask',
+  async (
+    { column, title, description, priority, deadline },
+    { rejectWithValue }
+  ) => {
     try {
-      const response = await API.addTask( { column, title, description, priority, deadline });
+      const response = await API.addTask({
+        column,
+        title,
+        description,
+        priority,
+        deadline,
+      });
       return response;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -64,23 +73,30 @@ export const addTask = createAsyncThunk(
 );
 
 export const deleteTask = createAsyncThunk(
-  "tasks/deleteTask",
+  'tasks/deleteTask',
   async (taskId, { rejectWithValue }) => {
     try {
-      const response  = await API.deleteTaskById(taskId); 
+      const response = await API.deleteTaskById(taskId);
       return response;
-    } 
-    catch (error) {
+    } catch (error) {
       return rejectWithValue(error.message);
     }
   }
-)
+);
 
 export const editTask = createAsyncThunk(
-  "tasks/editTask",
-  async ({ _id, column, title, description, priority, deadline }, { rejectWithValue }) => {
+  'tasks/editTask',
+  async (
+    { _id, column, title, description, priority, deadline },
+    { rejectWithValue }
+  ) => {
     try {
-      const response = await API.editTaskById(_id, { title, description, priority, deadline });
+      const response = await API.editTaskById(_id, {
+        title,
+        description,
+        priority,
+        deadline,
+      });
       response.columnId = column;
       return response;
     } catch (error) {
@@ -90,17 +106,16 @@ export const editTask = createAsyncThunk(
 );
 
 export const replaceTask = createAsyncThunk(
-  "tasks/replaceTask", 
-  async ({taskId, columnId, currentColumnId}, { rejectWithValue }) => {
+  'tasks/replaceTask',
+  async ({ taskId, columnId, currentColumnId }, { rejectWithValue }) => {
     try {
-      const response = await API.replaceTask(taskId, columnId); 
+      const response = await API.replaceTask(taskId, columnId);
       response.taskId = taskId;
       response.columnId = columnId;
       response.currentColumnId = currentColumnId;
       return response;
-    } 
-    catch (error) {
+    } catch (error) {
       return rejectWithValue(error.message);
     }
   }
-)
+);

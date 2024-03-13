@@ -17,7 +17,7 @@
     --inactive-link-color: rgba(255, 255, 255, 0.3);
 
     /* transition */
-    --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+    --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 [data-theme='light'] {
@@ -78,11 +78,12 @@
     --calendar-numbers-out-low-op: rgba(22, 22, 22, 0.2);
     --active-navlink-bg: #f6f6f7;
     --toasbordersuccess: #f6f6f7;
-    --toastbgsuccess: rgba(82, 225, 132, 0.5);;
+    --toastbgsuccess: rgba(82, 225, 132, 0.5);
+    ;
     --toastbgerror: rgba(22, 22, 22, 0.2);
     --toastbordererror: #dd5e5e;
-    --toasttext:#121212;
-    --toasttexterr:#ff2929;
+    --toasttext: #121212;
+    --toasttexterr: #ff2929;
 }
 
 [data-theme='dark'] {
@@ -147,7 +148,7 @@
     --toastbgerror: rgba(72, 72, 72, 0.5);
     --toastbordererror: #dd5e5e;
     --toasttext: #fff;
-    --toasttexterr:#ff2929;
+    --toasttexterr: #ff2929;
 }
 
 [data-theme='violet'] {
@@ -212,5 +213,5 @@
     --toastbgerror: rgba(72, 72, 72, 0.5);
     --toastbordererror: #dd5e5e;
     --toasttext: #121212;
-    --toasttexterr:#ff2929;
+    --toasttexterr: #ff2929;
 }

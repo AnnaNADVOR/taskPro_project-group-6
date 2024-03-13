@@ -17,7 +17,7 @@ TadkPro is built using a variety of technologies to provide a robust and seamles
 
 **Frontend**:
 
-![React](https://img.shields.io/badge/React-blue) ![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-purple) ![Axios](https://img.shields.io/badge/Axios-orange) ![React Router](https://img.shields.io/badge/React_Router-brightgreen) ![React Hook Form](https://img.shields.io/badge/React_Hook_Form-yellow) ![Emotion](https://img.shields.io/badge/Emotion-pink) ![Yup](https://img.shields.io/badge/Yup-red) ![React Datepicker](https://img.shields.io/badge/React_Datepicker-blueviolet) ![React Tabs](https://img.shields.io/badge/React_Tabs-9cf) ![React Select](https://img.shields.io/badge/React_Select-lightgrey)
+![React](https://img.shields.io/badge/React-blue) ![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-purple) ![Axios](https://img.shields.io/badge/Axios-orange) ![React Router](https://img.shields.io/badge/React_Router-brightgreen) ![Formik](https://img.shields.io/badge/Formik-pink) ![Yup](https://img.shields.io/badge/Yup-red) ![React Datepicker](https://img.shields.io/badge/React_Datepicker-blueviolet)
 
 
 **Backend**:

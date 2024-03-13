@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import sprite from 'assets/images/sprite.svg';
+
 import Modal from 'components/Modal/Modal';
 import AddColumnForm from '../../Forms/BoardForms/AddColumnForm/AddColumnForm';
+import sprite from 'assets/images/sprite.svg';
+
 import css from './AddBtnColumn.module.css';
 
 const AddBtnColumn = () => {

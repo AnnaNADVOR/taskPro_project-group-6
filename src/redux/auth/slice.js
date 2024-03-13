@@ -29,7 +29,7 @@ const authSlice = createSlice({
       email: null,
       theme: null,
       avatarURL: '',
-      background:''
+      background: '',
     },
     token: null,
     isLoadingRegister: false,
@@ -73,14 +73,14 @@ const authSlice = createSlice({
       .addCase(refreshUser.rejected, handleRejected)
       .addCase(updateUser.rejected, handleRejected)
       .addCase(updateUser.pending, handlePending)
-      .addCase(updateUser.fulfilled, (state, action) => {        
+      .addCase(updateUser.fulfilled, (state, action) => {
         const { name, email, theme, avatarURL } = action.payload.user;
         state.user.user.name = name;
         state.user.user.email = email;
         state.user.user.theme = theme;
-        state.user.user.avatarURL = avatarURL;        
+        state.user.user.avatarURL = avatarURL;
         state.isLoading = false;
-      })  
+      })
       .addCase(deleteBoard.pending, handlePending)
       .addCase(deleteBoard.fulfilled, (state, action) => {
         state.user.user.boards = state.user.user.boards.filter(
@@ -100,10 +100,11 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         const index = state.user.user.boards.findIndex(
-        board => board._id === action.payload._id);
+          board => board._id === action.payload._id
+        );
         state.user.user.boards[index].title = action.payload.title;
         state.user.user.boards[index].icon = action.payload.icon;
-        state.user.user.boards[index].background =  action.payload.background;
+        state.user.user.boards[index].background = action.payload.background;
       })
       .addCase(editBoard.rejected, (state, action) => {
         state.isLoading = false;

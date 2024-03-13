@@ -1,10 +1,12 @@
-import CSS from './UserInfo.module.css';
-import sprite from '../../../assets/images/sprite.svg';
-import { useSelector } from 'react-redux';
-import { selectUser } from '../../../redux/auth/selectors';
 import { useState } from 'react';
-import Modal from "../../Modal/Modal"
+import { useSelector } from 'react-redux';
+
+import { selectUser } from '../../../redux/auth/selectors';
+import Modal from '../../Modal/Modal';
 import UserMenu from 'components/UserMenu/UserMenu';
+import sprite from '../../../assets/images/sprite.svg';
+
+import css from './UserInfo.module.css';
 
 const UserInfo = ({ selectedTheme }) => {
   const [open, setOpen] = useState(false);
@@ -12,7 +14,7 @@ const UserInfo = ({ selectedTheme }) => {
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
- 
+
   let iconId;
   switch (selectedTheme) {
     case 'dark':
@@ -34,26 +36,30 @@ const UserInfo = ({ selectedTheme }) => {
 
   return (
     <>
-    <div className={CSS.userInfo}>
-      <p className={CSS.userName}>{user.name}</p>
-      {user.avatarURL ? (
-        <img src={user.avatarURL}
-          alt="User Avatar"
-          className={CSS.userIcon}
-          onClick={handleOpen}/>
-      ) : (
-          <svg className={CSS.userIcon}
-          onClick={handleOpen}>
-          <use href={sprite + iconId} />
-        </svg>
+      <div className={css.userInfo}>
+        <p className={css.userName}>{user.name}</p>
+        {user.avatarURL ? (
+          <img
+            src={user.avatarURL}
+            alt="User Avatar"
+            className={css.userIcon}
+            onClick={handleOpen}
+          />
+        ) : (
+          <svg className={css.userIcon} onClick={handleOpen}>
+            <use href={sprite + iconId} />
+          </svg>
+        )}
+      </div>
+      {open && (
+        <Modal
+          open={open}
+          closeModal={handleClose}
+          children={
+            <UserMenu handleClose={handleClose} selectedTheme={selectedTheme} />
+          }
+        />
       )}
-    </div>
-    { open && 
-      <Modal 
-        open={open}
-        closeModal={handleClose}
-        children={<UserMenu handleClose={handleClose} selectedTheme={selectedTheme}/>}
-      />}
     </>
   );
 };

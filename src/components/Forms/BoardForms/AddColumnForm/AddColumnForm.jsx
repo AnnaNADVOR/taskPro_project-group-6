@@ -1,9 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+
 import MainAddButton from 'components/Buttons/MainAddButton/MainAddButton';
 import { addColumn, editColumn } from '../../../../redux/boards/operation';
 import { selectBoard } from '../../../../redux/boards/selectors';
+
 import css from './AddColumnForm.module.css';
 
 const addColumnSchema = Yup.object().shape({

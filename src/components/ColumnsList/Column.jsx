@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+
 import CardList from '../CardList/CradList';
 import MainAddButton from '../Buttons/MainAddButton/MainAddButton';
 import Modal from '../Modal/Modal';
@@ -7,6 +8,7 @@ import CardForm from '../Forms/BoardForms/CardForm/CardForm';
 import { deleteColumn } from '../../redux/boards/operation';
 import AddColumnForm from '../Forms/BoardForms/AddColumnForm/AddColumnForm';
 import sprite from '../../assets/images/sprite.svg';
+
 import css from '../ColumnsList/ColumnsList.module.css';
 
 const Column = ({ id, title }) => {

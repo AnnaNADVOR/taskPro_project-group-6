@@ -20,13 +20,13 @@
     background-color: var(--modal-windows-bg-color);
     border: 1px solid var(--modal-windows-border-color);
     border-radius: 8px;
-    padding: 24px;    
+    padding: 24px;
 }
-    
+
 @media screen and (min-width: 375px) {
     .modal {
-        width: 335px;  
-    }       
+        width: 335px;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -45,12 +45,12 @@
     border: none;
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
 }
 
 .closeButton:hover svg,
 .closeButton:focus svg {
-    stroke: var(--add-board-button-hover-bg);    
+    stroke: var(--add-board-button-hover-bg);
 }
 
 .closeButtonSvg {
@@ -58,5 +58,5 @@
     stroke: var(--burger-color);
     width: 18px;
     height: 18px;
-    transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);      
+    transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }

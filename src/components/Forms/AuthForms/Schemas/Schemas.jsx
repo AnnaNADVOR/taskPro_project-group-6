@@ -1,4 +1,5 @@
 import * as yup from 'yup';
+
 const Schema = yup.object({
   name: yup
     .string()
@@ -19,7 +20,7 @@ const Schema = yup.object({
       'Invalid email format'
     ),
   password: yup
-     .string()
+    .string()
     .trim()
     .required('Password is required')
     .min(8, 'Password must be at least 8 characters')

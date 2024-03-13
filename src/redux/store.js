@@ -16,21 +16,21 @@ import {
 } from 'redux-persist';
 
 export const store = configureStore({
-    reducer: {
-        boards: boardsReducer,
-        auth: authReducer,
-        filter: filterSlice.reducer,  
-        theme: themeReducer,  
-        help: requestHelpReducer,
-    },
+  reducer: {
+    boards: boardsReducer,
+    auth: authReducer,
+    filter: filterSlice.reducer,
+    theme: themeReducer,
+    help: requestHelpReducer,
+  },
 
-    middleware (getDefaultMiddleware) {
-        return getDefaultMiddleware({
-            serializableCheck: {
-                ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-            },
-        })
-    },
-})
+  middleware(getDefaultMiddleware) {
+    return getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    });
+  },
+});
 
 export const persistor = persistStore(store);

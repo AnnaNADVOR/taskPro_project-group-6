@@ -1,7 +1,9 @@
 import { useSelector } from 'react-redux';
+
 import ColumnsList from '../ColumnsList/ColumnsList';
 import HeaderDashboard from 'components/Board/HeaderDashboard/HeaderDashboard';
 import { selectBoard } from '../../redux/boards/selectors';
+
 import css from './Screens.page.module.css';
 
 const ScreensPage = () => {
