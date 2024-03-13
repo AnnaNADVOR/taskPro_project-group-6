@@ -1,112 +1,31 @@
-# React homework template
+# TadkPro: Web-Based Task Manager
 
-Цей проект був створений за допомогою
-[Create React App](https://github.com/facebook/create-react-app). Для знайомства
-і налаштування додаткових можливостей
-[звернися до документації](https://facebook.github.io/create-react-app/docs/getting-started).
+TadkPro is a powerful web-based task manager application designed to empower users in conveniently managing their tasks and tracking their progress. Whether you're organizing your work projects, planning your personal goals, or simply keeping track of your daily to-dos, TadkPro offers the tools you need to stay organized and productive.
 
-## Створення репозиторію за шаблоном
+## Features
 
-Використовуй цей репозиторій організації GoIT як шаблон для створення репозиторію
-свого проєкта. Для цього натисни на кнопку `«Use this template»` і вибери опцію
-`«Create a new repository»`, як показано на зображенні.
+- **Task Tracking**: Easily keep track of all your tasks, from pending to completed, ensuring nothing falls through the cracks.
+- **Task Categorization**: Organize your tasks into categories to streamline your workflow and prioritize effectively.
+- **User Authentication**: Secure user authentication system to protect your data and ensure privacy.
+- **Profile Customization**: Personalize your profile to suit your preferences, from themes to background images.
+- **Intuitive User Interface**: Enjoy a clear and user-friendly interface that makes task management a breeze.
+- **Security**: Utilizes password encryption and token-based identification for enhanced security.
 
-![Creating repo from a template step 1](./assets/template-step-1.png)
+## Technologies Used
 
-На наступному кроці відкриється сторінка створення нового репозиторію. Заповни поле
-його імені, переконайся що репозиторій публічний, після чого натисни кнопку
-`«Create repository from template»`.
+TadkPro is built using a variety of technologies to provide a robust and seamless user experience:
 
-![Creating repo from a template step 2](./assets/template-step-2.png)
+**Frontend**:
 
-Після того як репозиторій буде створено, необхідно перейти в налаштування
-створеного репозиторію на вкладку `Settings` > `Actions` > `General` як
-показано на зображенні.
+![React](https://img.shields.io/badge/React-blue) ![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-purple) ![Axios](https://img.shields.io/badge/Axios-orange) ![React Router](https://img.shields.io/badge/React_Router-brightgreen) ![React Hook Form](https://img.shields.io/badge/React_Hook_Form-yellow) ![Emotion](https://img.shields.io/badge/Emotion-pink) ![Yup](https://img.shields.io/badge/Yup-red) ![React Datepicker](https://img.shields.io/badge/React_Datepicker-blueviolet) ![React Tabs](https://img.shields.io/badge/React_Tabs-9cf) ![React Select](https://img.shields.io/badge/React_Select-lightgrey)
 
-![Settings GitHub Actions permissions step 1](./assets/gh-actions-perm-1.png)
 
-Проскроливши сторінку до самого кінця, у секції `«Workflow permissions»` вибери
-опцію `«Read and write permissions»` і постав галочку в чекбоксі. Це
-необхідно для автоматизації процесу деплою проєкту.
+**Backend**:
 
-![Settings GitHub Actions permissions step 2](./assets/gh-actions-perm-2.png)
+![Node.js](https://img.shields.io/badge/Node.js-green) ![Express.js](https://img.shields.io/badge/Express.js-lightgrey) ![MongoDB](https://img.shields.io/badge/MongoDB-yellowgreen) ![Mongoose](https://img.shields.io/badge/Mongoose-blue) ![jsonwebtoken](https://img.shields.io/badge/jsonwebtoken-orange) ![bcryptjs](https://img.shields.io/badge/bcryptjs-red)
 
-Тепер у тебе є особистий репозиторій проекту, зі структурою файлів і папок
-репозиторію-шаблону. Далі працюй із ним як із будь-яким іншим особистим репозиторієм,
-клонуй його собі на комп'ютер, пиши код, роби комміти і відправляй їх на
-GitHub.
+**Additional Libraries**:
 
-## Підготовка до роботи
+![Cloudinary](https://img.shields.io/badge/Cloudinary-blueviolet) ![Nodemailer](https://img.shields.io/badge/Nodemailer-yellow) ![Swagger UI Express](https://img.shields.io/badge/Swagger_UI_Express-orange)
 
-1. Переконайся що на комп'ютері встановлено LTS-версія Node.js.
-   [Завантаж і встанови](https://nodejs.org/en/) її якщо необхідно.
-2. Встанови базові залежності проєкту командою `npm install`.
-3. Запусти режим розробки, виконавши команду `npm start`.
-4. Перейди в браузері за адресою [http://localhost:3000](http://localhost:3000).
-   Ця сторінка буде автоматично перезавантажуватися після збереження змін у файлах проєкту.
-
-## Деплой
-
-Продакшн версія проєкту буде автоматично проходити лінтинг, збиратися і
-деплоїтися на GitHub Pages, у гілку `gh-pages`, щоразу, коли оновлюється
-гілка `main`. Наприклад, після прямого пушу або прийнятого пул-реквесту. Для цього
-необхідно у файлі `package.json` відредагувати поле `homepage`, замінивши
-`your_username` і `your_repo_name` на свої, і відправити зміни на GitHub.
-
-```json
-"homepage": "https://your_username.github.io/your_repo_name/"
-```
-
-Далі необхідно зайти в налаштування GitHub-репозиторію (`Settings` > `Pages`) і
-виставити роздачу продакшн-версії файлів із папки `/root` гілки `gh-pages`, якщо
-це не було зроблено автоматично.
-
-![GitHub Pages settings](./assets/repo-settings.png)
-
-### Статус деплоя
-
-Статус деплою крайнього коміту відображається іконкою біля його ідентифікатора.
-
-- **Жовтий колір** - виконується збірка і деплой проєкту.
-- **Зелений колір** - деплой завершився успішно.
-- **Червоний колір** - під час лінтингу, сборки або деплою сталася помилка.
-
-Детальнішу інформацію про статус можна подивитися, клікнувши на іконку, і
-у вікні, що випадає, перейти за посиланням `Details`.
-
-![Deployment status](./assets/deploy-status.png)
-
-### Жива сторінка
-
-Через якийсь час, зазвичай кілька хвилин, живу сторінку можна буде подивитися
-за адресою, вказаною у відредагованій властивості `homepage`. Наприклад, ось
-посилання на живу версію для цього репозиторію
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
-
-Якщо відкривається порожня сторінка, переконайся, що у вкладці `Console` немає помилок
-пов'язаних із неправильними шляхами до CSS і JS файлів проєкту (**404**). Швидше 
-за все у тебе неправильне значення властивості `homepage` у файлі `package.json`.
-
-### Маршрутизація
-
-Якщо додаток використовує бібліотеку `react-router-dom` для маршрутизації,
-необхідно додатково налаштувати компонент `<BrowserRouter>`, передавши у пропе
-`basename` точну назву твого репозиторію. Слеш на початку рядка обов'язковий.
-
-```jsx
-<BrowserRouter basename="/your_repo_name">
-  <App />
-</BrowserRouter>
-```
-
-## Як це працює
-
-![How it works](./assets/how-it-works.png)
-
-1. Після кожного пушу в гілку `main` GitHub-репозиторія, запускається спеціальний
-   скрипт (GitHub Action) з файла `.github/workflows/deploy.yml`.
-2. Усі файли репозиторію копіюються на сервер, де проект ініціалізується і
-   проходить лінтинг і збірку перед деплоєм.
-3. Якщо всі кроки пройшли успішно, зібрана продакшн-версія файлів проєкту
-   відправляється в гілку `gh-pages`. В іншому випадку, в лозі виконання
-   скрипта буде вказано в чому проблема.
+Happy task managing with TadkPro! 🚀
