@@ -39,45 +39,45 @@ const BoardListItem = ({ board }) => {
 
   return (
     <>
-    <NavLink
-      to={`/home/${board.title}`}
-      state={{ from: location }}
-      className={css.boardItem} 
-    >
-      <div className={css.boardItemTitleBlock}>
-        <svg className={css.boardIcon}>
-          <use href={`${sprite}#${board.icon}`}></use>
-        </svg>
-        <h2 className={css.boardTitle}>{board.title}</h2>
-      </div>
-      <div>
-        <ul className={css.boardItemButtonsBlock}>
-          <li>
-            <button
-              className={css.boardBtn}
-              type="button"
-              onClick={toggleModal}
-            >
-              <svg className={css.boardBtnSvg}>
-                <use href={`${sprite}#pencil-16`}></use>
-              </svg>
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => handleDeleteBoard(board._id)}
-              className={css.boardBtn}
-              type="button"
-            >
-              <svg className={css.boardBtnSvg}>
-                <use href={`${sprite}#trash-16`}></use>
-              </svg>
-            </button>
-          </li>
-        </ul>
-      </div>
+      <NavLink
+        to={`/home/${board.title}`}
+        state={{ from: location }}
+        className={css.boardItem}
+      >
+        <div className={css.boardItemTitleBlock}>
+          <svg className={css.boardIcon}>
+            <use href={`${sprite}#${board.icon}`}></use>
+          </svg>
+          <h2 className={css.boardTitle}>{board.title}</h2>
+        </div>
+        <div>
+          <ul className={css.boardItemButtonsBlock}>
+            <li>
+              <button
+                className={css.boardBtn}
+                type="button"
+                onClick={toggleModal}
+              >
+                <svg className={css.boardBtnSvg}>
+                  <use href={`${sprite}#pencil-16`}></use>
+                </svg>
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => handleDeleteBoard(board._id)}
+                className={css.boardBtn}
+                type="button"
+              >
+                <svg className={css.boardBtnSvg}>
+                  <use href={`${sprite}#trash-16`}></use>
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </div>
       </NavLink>
-      
+
       {showModal && (
         <Modal closeModal={toggleModal}>
           <EditBoardForm
@@ -85,10 +85,11 @@ const BoardListItem = ({ board }) => {
             initialTitle={board.title}
             initialIconName={board.icon}
             initialBackgroundName={board.background}
+            handleClose={toggleModal}
           />
         </Modal>
       )}
-      </>
+    </>
   );
 };
 

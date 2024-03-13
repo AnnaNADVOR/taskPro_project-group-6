@@ -26,8 +26,12 @@ const BoardList = () => {
   return (
     <ul className={css.boardList}>
       {boards?.map(board => (
-        <li key={board._id} onClick={() => handleClick(board._id)}>          
-            <BoardListItem board={board} allBoards={boards} />
+        <li
+          key={board._id}
+          onClick={() => handleClick(board._id)}
+          className={`${activeBoardId === board._id ? css.activeBoard : ''}`}
+        >
+          <BoardListItem board={board} allBoards={boards} />
         </li>
       ))}
     </ul>
