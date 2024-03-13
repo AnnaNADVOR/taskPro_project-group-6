@@ -4,12 +4,10 @@
     font-weight: 400;
     line-height: normal;
     letter-spacing: -0.64px;
-    align-items: end;
     gap: 4px;
     margin-top: 10px;
-    position: fixed;
-    top: 600px;
-    left: 710px;
+    display: flex;
+    align-items: center;
     transition: transform 0.3s ease-in-out;
 }
 
