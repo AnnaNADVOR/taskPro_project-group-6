@@ -57,9 +57,9 @@ const App = () => {
           position="top-center"
           containerStyle={{
             top: 60,
-            left: 120,
+            left: 110,
             bottom: 20,
-            right: 20,
+            right: 110,
           }}
           reverseOrder={false}
           gutter={8}

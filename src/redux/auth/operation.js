@@ -1,11 +1,13 @@
 import * as API from '../services/api';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { toast } from 'react-hot-toast';
 
 export const register = createAsyncThunk(
   'auth/register',
   async (credentials, { rejectWithValue }) => {
     try {
       const response = await API.registration(credentials);
+      toast.success('Welcome in TaskPro App!')
       return response;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -28,6 +30,7 @@ export const logIn = createAsyncThunk(
       response.user.boards = await Promise.all(promises);
       return response;
     } catch (error) {
+      toast.error('Something went wrong');
       return rejectWithValue(error.message);
     }
   }

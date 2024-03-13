@@ -79,7 +79,6 @@
     --active-navlink-bg: #f6f6f7;
     --toasbordersuccess: #f6f6f7;
     --toastbgsuccess: rgba(82, 225, 132, 0.5);
-    ;
     --toastbgerror: rgba(22, 22, 22, 0.2);
     --toastbordererror: #dd5e5e;
     --toasttext: #121212;
@@ -145,7 +144,7 @@
     --active-navlink-bg: #1f1f1f;
     --toastbgsuccess: rgba(72, 72, 72, 0.5);
     --toasbordersuccess: #9dc888;
-    --toastbgerror: rgba(72, 72, 72, 0.5);
+    --toastbgerror: rgba(22, 22, 22, 0.2);
     --toastbordererror: #dd5e5e;
     --toasttext: #fff;
     --toasttexterr: #ff2929;
@@ -210,8 +209,8 @@
     --active-navlink-bg: rgba(255, 255, 255, 0.5);
     --toastbgsuccess: rgba(180, 124, 223, 0.5);
     --toasbordersuccess: #f5ecef;
-    --toastbgerror: rgba(72, 72, 72, 0.5);
+    --toastbgerror: rgba(22, 22, 22, 0.2);
     --toastbordererror: #dd5e5e;
-    --toasttext: #121212;
+    --toasttext: #080808;
     --toasttexterr: #ff2929;
 }
