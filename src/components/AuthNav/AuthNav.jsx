@@ -6,13 +6,13 @@ const ActiveAuthLink = () => {
     <div className={style.links}>
       <NavLink
         className={({ isActive }) =>
-        isActive ? `${style.link} ${style.active}` : style.link}
+        isActive ? `${style.link} ${style.activelink}` : style.link}
         to={`/auth/register`}>
         Registration
       </NavLink>
       <NavLink
         className={({ isActive }) =>
-        isActive ? `${style.link} ${style.active}` : style.link}
+        isActive ? `${style.link} ${style.activelink}` : style.link}
         to={`/auth/login`}>
         Log In
       </NavLink>
