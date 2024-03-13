@@ -7,7 +7,7 @@ import { RestrictedRoute } from "components/RestrictedRoute";
 import { PrivateRoute } from "components/PrivateRoute";
 import { useDispatch } from "react-redux";
 import { useEffect, lazy, Suspense } from "react";
-
+import { Toaster } from 'react-hot-toast';
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 const AuthPage = lazy(() => import("../../pages/AuthPage/AuthPage"));
 const ScreensPage = lazy(()=>import("../ScreensPage/Screens.page"))
@@ -47,7 +47,39 @@ const App = () => {
               />
             </Route>
           </Routes>
-        </Suspense>
+          <Toaster position="top-center"
+  containerStyle={{
+    top: 60,
+    left: 120,
+    bottom: 20,
+    right: 20,
+  }}
+    reverseOrder={false}
+    gutter={8}
+    containerClassName=""
+    toastOptions={{
+      success: {
+            icon: '🎉',
+            style: {
+            background: 'var(--toastbgsuccess)',
+            color: 'var(--toasttext)',
+            border: '2px solid var(--toasbordersuccess)',
+            padding: '16px',
+            duration: '500',
+                   },
+               },
+      error: {
+            icon: '❌',
+            style: {
+            background: 'var(--toastbgerror)',
+            color: 'var(--toasttexterr)',
+            border: 'var(--toastbordererror)',
+            padding: '16px',
+            duration: '500',
+                  },
+              },
+        }}/>
+       </Suspense>
       )
     );
 };
