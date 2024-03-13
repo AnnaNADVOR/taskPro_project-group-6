@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import css from '../Forms/BoardForms/AddBoardForm/AddBoardForm.module.css';
 
 const BoardBackgroundPicker = ({ onChangeImage, backgroundName }) => {
@@ -51,7 +51,6 @@ const BoardBackgroundPicker = ({ onChangeImage, backgroundName }) => {
               name="image"
               checked={selectedValue === imgKey}
               onChange={() => {
-                console.log("onChange:imgKey", imgKey)
                 handleRadioChange(imgKey)
               }}
             />
