@@ -12,7 +12,7 @@ const clearAuthHeader = () => {
 
 export async function registration(credentials) {
   const response = await axios.post('api/users/register', credentials);
-  setAuthHeader(response.data.user.token);
+  setAuthHeader(response.data.token);
   return response.data;
 }
 

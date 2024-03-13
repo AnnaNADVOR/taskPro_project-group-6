@@ -2,7 +2,7 @@ import sprite from '../../assets/images/sprite.svg';
 import { useState, useEffect } from 'react';
 import css from '../Forms/BoardForms/AddBoardForm/AddBoardForm.module.css';
 
-const BoardMarkPicker = ({ onChangeIcon, currentBoardIcon }) => {
+const BoardMarkPicker = ({ iconName, onChangeIcon }) => {
   const icons = [
     'mark-circuls-18',
     'mark-star-18',
@@ -18,9 +18,9 @@ const BoardMarkPicker = ({ onChangeIcon, currentBoardIcon }) => {
 
   useEffect(() => {
     if (!selectedValue) {
-      setSelectedValue(currentBoardIcon || 'mark-circuls-18');
+      setSelectedValue(iconName || 'mark-circuls-18');
     }
-  }, [currentBoardIcon, selectedValue]);
+  }, [iconName, selectedValue]);
 
   const handleRadioChange = icon => {
     setSelectedValue(icon);
