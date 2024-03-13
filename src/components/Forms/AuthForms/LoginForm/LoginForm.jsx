@@ -59,16 +59,29 @@ const handleTogglePassword = () => {
                 type={showPassword ? 'text' : 'password'}
                 name="password"
                 placeholder="Confirm a password"
+  
             />
         <div className={style.wrapper}>
+      {showPassword ? (
                 <svg 
-                  width={18}
-                  height={18}
-                  className={style.icon}
-                  onClick={handleTogglePassword}
+                width={18}
+                height={18}
+                className={style.icon}
+                onClick={handleTogglePassword}
                 >
-                  <use href={`${sprite}#password-eye-18`} />
+                <use href={`${sprite}#password-eye-18`} />
+                </svg> 
+                 ) : (
+
+                <svg 
+                width={18}
+                height={18}
+                className={style.icon}
+                onClick={handleTogglePassword}
+                >
+                <use href={`${sprite}#icon-eye-off-1`} />
                 </svg>
+       )}
         </div>
         </div>
     </div>

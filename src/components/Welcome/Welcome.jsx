@@ -1,14 +1,34 @@
 import { NavLink } from 'react-router-dom';
-import avatar  from '../../assets/images/logo-image-162.png';
 import sprite  from '../../assets/images/sprite.svg';
 import style from './Welcome.module.css'
 import Wrapper from 'components/Forms/AuthForms/Wrapper/Wrapper';
+import avatar1x from '../../assets/images/logo-image-162.png';
+import avatar2x from '../../assets/images/logo-image-2x-162.png';
+import avatar1xmob from '../../assets/images/logo-image-124.png';
+import avatar2xmob from '../../assets/images/logo-image-124-2x.png';
 
 export default function Welcome() {
     return (
 <Wrapper>
 <div className={style.section}>
-   <img src={avatar} alt="Avatar" className={style.image} />
+   <picture className={style.image} >
+      <source
+        media="(max-width: 375px)"
+        srcSet={`${avatar1xmob} 1x, ${avatar2xmob} 2x`}
+      />
+      <source
+        media="(min-width: 768px)"
+        srcSet={`${avatar1x} 1x, ${avatar2x} 2x`}
+      />
+      <source
+        media="(min-width: 1440px)"
+        srcSet={`${avatar1x} 1x, ${avatar2x} 2x`}
+      />
+      <img
+      src={avatar1xmob} srcSet={`${avatar1xmob} 1x, ${avatar2xmob} 2x`}
+      alt="Avatar"
+      />
+    </picture>
    <div className={style.box}>
         <svg className={style.icon}>
             <use href={`${sprite}#logo-black`} />
