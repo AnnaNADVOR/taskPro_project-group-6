@@ -59,7 +59,6 @@ const SideBar = ({ showSidebar }) => {
           <p className={css.logoutText}>Log out</p>
         </Link>
       </div>
-
       {showModal && (
         <Modal closeModal={toggleModal}>
           <AddBoardForm handleClose={toggleModal} />

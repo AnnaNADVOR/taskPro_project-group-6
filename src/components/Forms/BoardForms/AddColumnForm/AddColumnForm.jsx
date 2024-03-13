@@ -12,7 +12,6 @@ const addColumnSchema = Yup.object().shape({
 });
 
 const AddColumnForm = ({ title, action, columnId, columnTitle }) => {
-  console.log("columnId",columnId)
   const board = useSelector(selectBoard); 
   const dispatch = useDispatch();
 

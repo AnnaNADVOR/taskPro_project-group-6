@@ -22,15 +22,15 @@ const BoardBackgroundPicker = ({ onChangeImage, backgroundName }) => {
     { alt: 'colorful flying balloons over the plain', imgId: '14.png' },
     { alt: 'beautiful northern lights', imgId: '15.png' },
   ];
-console.log("currentBoardBackground", backgroundName )
+
   const [selectedValue, setSelectedValue] = useState("");
 
-  useEffect(() => {
-    if (!selectedValue) {
-      setSelectedValue(backgroundName  || '00');
-    }
-    console.log("efect")
-  }, [backgroundName , selectedValue]);
+  // useEffect(() => {
+  //   if (!selectedValue) {
+  //     setSelectedValue(backgroundName  || '00');
+  //   }
+  //   console.log("efect")
+  // }, [backgroundName , selectedValue]);
 
   const handleRadioChange = imgId => {
     onChangeImage(imgId);

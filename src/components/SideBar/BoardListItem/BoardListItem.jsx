@@ -15,7 +15,6 @@ const BoardListItem = ({ board }) => {
 
   const [showModal, setShowModal] = useState(false);
   const toggleModal = () => setShowModal(prevShowModal => !prevShowModal);
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -23,19 +22,14 @@ const BoardListItem = ({ board }) => {
 
   const handleDeleteBoard = boardId => {
     dispatch(deleteBoard(boardId)).then((action) => {
-        console.log("dispatch deleteBoard action.type", action.type)
-
       if (action.type !== 'boards/deleteBoard/fulfilled') {
         return
       }
-
       if (currentBoard._id === boardId) {
         navigate('/home')
       }
     })
   };
-
-  console.log("BoardListItem:board", board)
 
   return (
     <>
@@ -77,7 +71,6 @@ const BoardListItem = ({ board }) => {
           </ul>
         </div>
       </NavLink>
-
       {showModal && (
         <Modal closeModal={toggleModal}>
           <EditBoardForm

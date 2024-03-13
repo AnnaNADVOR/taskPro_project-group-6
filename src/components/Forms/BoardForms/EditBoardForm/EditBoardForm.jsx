@@ -19,12 +19,7 @@ const EditBoardForm = ({
   initialBackgroundName,
   handleClose,
 }) => {
-  // board= useSelector(selectBoard)
-
-  // initialTitle = board.title
-  // initialIconName = board.icon
-  // initialBackgroundName = board.backgroundName
-
+ 
   const dispatch = useDispatch();
   const [backgroundName, setBackgroundName] = useState(initialBackgroundName);
   const [iconName, setIconName] = useState(initialIconName);

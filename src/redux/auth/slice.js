@@ -42,7 +42,6 @@ const authSlice = createSlice({
     builder
       .addCase(register.pending, handlePending)
       .addCase(register.fulfilled, (state, action) => {
-        console.log("register:action.payload", action.payload)
         state.isLoadingRegister = false;
         state.isLoggedIn = true;
         state.user.user = action.payload.user;
@@ -51,7 +50,6 @@ const authSlice = createSlice({
       .addCase(register.rejected, handleRejected)
       .addCase(logIn.pending, handlePending)
       .addCase(logIn.fulfilled, (state, action) => {
-        console.log("register action", action.payload)
         state.isLoadingLogin = false;
         state.isLoggedIn = true;
         state.user = action.payload;
@@ -68,7 +66,6 @@ const authSlice = createSlice({
       .addCase(logOut.rejected, handleRejected)
       .addCase(refreshUser.pending, handlePending)
       .addCase(refreshUser.fulfilled, (state, action) => {
-        console.log("logaut action", action.payload)
         state.user = action.payload;
         state.isLoggedIn = true;
         state.isRefreshing = false;
@@ -95,13 +92,11 @@ const authSlice = createSlice({
       .addCase(addBoard.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        console.log("slice:editBoard:payload",action.payload)
         state.user.user.boards.push(action.payload);
       })
       .addCase(addBoard.rejected, handleRejected)
       .addCase(editBoard.pending, handlePending)
       .addCase(editBoard.fulfilled, (state, action) => {
-        console.log("slice:editBoard:payload", action.payload)
         state.isLoading = false;
         state.error = null;
         const index = state.user.user.boards.findIndex(

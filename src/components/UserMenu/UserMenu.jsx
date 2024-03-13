@@ -10,9 +10,7 @@ import styles from './UserMenu.module.css'
 const UserMenu = ({ selectedTheme, handleClose }) => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
-  
   const inputFileRef = useRef(null); 
-
   // const [showPassword, setShowPassword] = useState(false);
   const [currentImageUrl, setCurrentImageUrl] = useState(user.user.avatarURL);
   const [fileImage, setFileImage] = useState(null);
@@ -28,11 +26,9 @@ const UserMenu = ({ selectedTheme, handleClose }) => {
   useEffect(() => {
     if (fileImage) {
       const reader = new FileReader();
-
       reader.onload = event => {
         setCurrentImageUrl(event.target.result);
       };
-
       reader.readAsDataURL(fileImage);
     }
   }, [fileImage]);
@@ -59,17 +55,12 @@ const UserMenu = ({ selectedTheme, handleClose }) => {
 
   const handleSubmit = (values) => {
     const { name, email, password } = values;
-
     let formData = new FormData();
-
     formData.set('name', name);
     formData.set('email', email);
-
     if (password) formData.set('password', password);
     if (fileImage) formData.set('avatar', fileImage);
-
     dispatch(updateUser(formData));
-
     handleClose();
   }
 
@@ -77,19 +68,18 @@ const UserMenu = ({ selectedTheme, handleClose }) => {
     if (currentImageUrl === '') {
       return user.user.avatarURL;
     }
-
     return currentImageUrl;
   };
 
   const validationSchema = Yup.object().shape({
     name: Yup.string()
-             .min(2,"The name must be longer than 2 letters")
-             .required("Name is required"),
+      .min(2,"The name must be longer than 2 letters")
+      .required("Name is required"),
     email: Yup.string()
-              .email("Invalid email")
-              .required("Email is required"),
+      .email("Invalid email")
+      .required("Email is required"),
     password: Yup.string()
-                .min(8, "Password must be at least 8 characters"),
+      .min(8, "Password must be at least 8 characters"),
   });
 
   let iconId;
@@ -110,15 +100,14 @@ const UserMenu = ({ selectedTheme, handleClose }) => {
   return (
     <>
       <p className={styles.title}>Edit profile</p>
-
       <div className={styles.imgWrap}>
-    {currentImageUrl ? (
-      <img src={changeImage()} alt="user" className={styles.userImg} />
-    ) : (
-      <svg className={styles.userIcon}>
-        <use href={sprite + iconId} />
-      </svg>
-    )}
+        {currentImageUrl ? (
+          <img src={changeImage()} alt="user" className={styles.userImg} />
+        ) : (
+          <svg className={styles.userIcon}>
+            <use href={sprite + iconId} />
+           </svg>
+        )}
       <button
         className={styles.userBtn}
         onClick={() => {
@@ -131,7 +120,6 @@ const UserMenu = ({ selectedTheme, handleClose }) => {
           <use href={sprite + '#plus-20'} />
         </svg>
       </button>
-
       <input
         ref={inputFileRef}
         className={styles.hiddenInput}
@@ -141,58 +129,57 @@ const UserMenu = ({ selectedTheme, handleClose }) => {
         onChange={handleImageUpload}
       />
     </div>
-
     <Formik
-            autoComplete="off"
-            initialValues={initialValues}
-            validationSchema={validationSchema}
-            onSubmit={handleSubmit}
-          >
-            {({ errors }) => (
-              <Form className={styles.form}>
-                <div className={styles.wrap}>
-                  </div>
-                  <div className={styles.formWrapper}>
-                    <Field
-                      className={styles.input}
-                      type="text"
-                      name="name"
-                      placeholder="Enter your name"
-                    />
-                    {errors.name && <FormError name="name" style={{ color: "#red" }} />}
-                  </div>
-                  <div className={styles.formWrapper}>
-                    <Field
-                      className={styles.input}
-                      type="email"
-                      name="email"
-                      placeholder="Enter your email"
-                    />
-                    {errors.email && <FormError name="email" style={{ color: "#bedbb0" }}/>}
-                  </div>
-                  <div className={styles.formWrapper}>
-                    <Field
-                      className={styles.input}
-                      // type={showPassword ? 'text' : 'password'}
-                      type={'password'}
-                      name="password"
-                      placeholder="Change password"
-                    />
-                    {/* <span className={styles.eye_icon} onClick={togglePassword}>
-                      {passwordIcon}
-                    </span>
-                    {errors.password && <FormError name="password" style={{ color: "#bedbb0" }}/>} */}
-                  </div>
-                  <button
-                    className={styles.submitBtn}
-                    type="submit"
-                  >
-                  Send
-                  </button>
-                </Form>
-            )}
-          </Formik>
-    </>
+      autoComplete="off"
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={handleSubmit}
+    >
+      {({ errors }) => (
+        <Form className={styles.form}>
+          <div className={styles.wrap}>
+          </div>
+          <div className={styles.formWrapper}>
+          <Field
+            className={styles.input}
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+          />
+          {errors.name && <FormError name="name" style={{ color: "#red" }} />}
+          </div>
+          <div className={styles.formWrapper}>
+          <Field
+            className={styles.input}
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+          />
+          {errors.email && <FormError name="email" style={{ color: "#bedbb0" }}/>}
+          </div>
+          <div className={styles.formWrapper}>
+          <Field
+            className={styles.input}
+          // type={showPassword ? 'text' : 'password'}
+            type={'password'}
+            name="password"
+            placeholder="Change password"
+          />
+        {/* <span className={styles.eye_icon} onClick={togglePassword}>
+          {passwordIcon}
+        </span>
+        {errors.password && <FormError name="password" style={{ color: "#bedbb0" }}/>} */}
+          </div>
+            <button
+              className={styles.submitBtn}
+              type="submit"
+            > 
+              Send
+            </button>
+            </Form>
+        )}
+    </Formik>
+  </>
   )
 }
 

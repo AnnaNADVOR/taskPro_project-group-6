@@ -23,10 +23,6 @@ const Card = ({ newCard, columnId }) => {
     
   }
   const today = new Date().toISOString().replace(/T.*/, '').split('-').reverse().join('/'); 
-  
-  
-   
-
   const deadline = newCard.deadline.replace(/T.*/, '').split('-').reverse().join('/'); 
  
   const priority = newCard.priority;

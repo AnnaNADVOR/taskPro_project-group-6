@@ -9,19 +9,13 @@ import css from './BoardList.module.css';
 
 const BoardList = () => {
   const { user } = useSelector(selectUser);
-  console.log("BoardList:user", user)
-
   const boards = user.boards;
-  
   const dispatch = useDispatch();
-   const [activeBoardId, setActiveBoardId] = useState(null);
-
- const handleClick = boardId => {
+  const [activeBoardId, setActiveBoardId] = useState(null);
+  const handleClick = boardId => {
     dispatch(getBoard(boardId));
     setActiveBoardId(boardId);
   };
-
-  console.log("BoardList:boards", boards)
 
   return (
     <ul className={css.boardList}>
