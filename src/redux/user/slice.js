@@ -17,7 +17,6 @@ const handlePending = state => {
 };
 
 const handleRejected = (state, action) => {
-   console.log("action", action.payload)
   state.isLoading = false;
   state.error = action.payload;
 };
@@ -67,7 +66,6 @@ const userSlice = createSlice({
       .addCase(logOut.rejected, handleRejected)
       .addCase(refreshUser.pending, handlePending)
       .addCase(refreshUser.fulfilled, (state, action) => {
-         
         state.user = action.payload;
         state.isLoggedIn = true;
         state.isRefreshing = false;
