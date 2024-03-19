@@ -3,8 +3,8 @@ import * as Yup from 'yup';
 import { useState, useRef, useEffect } from 'react';
 import { Field, Formik, Form, ErrorMessage } from 'formik';
 
-import { selectUser } from '../../redux/auth/selectors';
-import { updateUser } from '../../redux/auth/operation';
+import { selectUser } from '../../redux/user/selectors';
+import { updateUser } from '../../redux/user/operation';
 import sprite from '../../assets/images/sprite.svg';
 
 import styles from './UserMenu.module.css';

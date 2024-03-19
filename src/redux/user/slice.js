@@ -17,12 +17,13 @@ const handlePending = state => {
 };
 
 const handleRejected = (state, action) => {
+   console.log("action", action.payload)
   state.isLoading = false;
   state.error = action.payload;
 };
 
-const authSlice = createSlice({
-  name: 'auth',
+const userSlice = createSlice({
+  name: 'user',
   initialState: {
     user: {
       name: null,
@@ -66,6 +67,7 @@ const authSlice = createSlice({
       .addCase(logOut.rejected, handleRejected)
       .addCase(refreshUser.pending, handlePending)
       .addCase(refreshUser.fulfilled, (state, action) => {
+         
         state.user = action.payload;
         state.isLoggedIn = true;
         state.isRefreshing = false;
@@ -120,4 +122,4 @@ const persistConfig = {
   whitelist: ['token'],
 };
 
-export const authReducer = persistReducer(persistConfig, authSlice.reducer);
+export const userReducer = persistReducer(persistConfig, userSlice.reducer);

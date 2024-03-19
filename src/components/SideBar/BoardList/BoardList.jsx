@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 
 import { getBoard } from '../../../redux/boards/operation';
-import { selectUser } from '../../../redux/auth/selectors';
+import { selectUser } from '../../../redux/user/selectors';
 import BoardListItem from '../BoardListItem/BoardListItem';
 
 import css from './BoardList.module.css';

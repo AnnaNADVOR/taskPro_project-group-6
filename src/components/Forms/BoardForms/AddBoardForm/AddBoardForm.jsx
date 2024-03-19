@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Formik, Form, ErrorMessage, Field } from 'formik';
 import * as Yup from 'yup';
 
-import { addBoard } from '../../../../redux/auth/operation';
+import { addBoard } from '../../../../redux/user/operation';
 import MainAddButton from 'components/Buttons/MainAddButton/MainAddButton';
 import BoardBackgroundPicker from 'components/BoardBackgroundPicker/BoardBeckgroundPicker';
 import BoardMarkPicker from 'components/BoardMarkPicker/BoardMarkPicker';

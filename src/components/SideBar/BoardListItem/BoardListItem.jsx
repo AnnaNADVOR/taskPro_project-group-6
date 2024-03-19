@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Modal from 'components/Modal/Modal';
 import EditBoardForm from 'components/Forms/BoardForms/EditBoardForm/EditBoardForm';
-import { deleteBoard } from '../../../redux/auth/operation';
+import { deleteBoard } from '../../../redux/user/operation';
 import { selectBoard } from '../../../redux/boards/selectors';
 import sprite from 'assets/images/sprite.svg';
 

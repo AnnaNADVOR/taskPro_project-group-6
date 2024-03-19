@@ -4,8 +4,8 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 
 import Schema from '../Schemas/Schemas';
 
-import { logIn } from '../../../../redux/auth/operation';
-import { selectIsLoadingLogin } from '../../../../redux/auth/selectors';
+import { logIn } from '../../../../redux/user/operation';
+import { selectIsLoadingLogin } from '../../../../redux/user/selectors';
 import ActiveAuth from 'components/AuthNav/AuthNav';
 import sprite from '../../../../assets/images/sprite.svg';
 

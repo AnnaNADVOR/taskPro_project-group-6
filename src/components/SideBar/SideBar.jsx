@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import { logOut } from '../../redux/auth/operation';
+import { logOut } from '../../redux/user/operation';
 import BoardList from './BoardList/BoardList';
 import NeedHelp from './NeedHelp/NeedHelp';
 import Modal from 'components/Modal/Modal';

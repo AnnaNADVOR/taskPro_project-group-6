@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { selectUser } from '../../../redux/auth/selectors';
+import { selectUser } from '../../../redux/user/selectors';
 import Modal from '../../Modal/Modal';
 import UserMenu from 'components/UserMenu/UserMenu';
 import sprite from '../../../assets/images/sprite.svg';

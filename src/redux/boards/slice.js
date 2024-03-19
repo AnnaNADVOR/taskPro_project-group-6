@@ -9,7 +9,7 @@ import {
   deleteColumn,
   editColumn,
 } from './operation';
-import { editBoard } from '../auth/operation';
+import { editBoard } from '../user/operation';
 
 const handlePending = state => {
   state.isLoading = true;

@@ -7,7 +7,7 @@ import WelcomePage from 'pages/WelcomePage/WelcomePage';
 import SharedLayout from 'components/SharedLayuout/SharedLayout';
 
 import { useAuth } from 'hooks/useAuth';
-import { refreshUser } from '../../redux/auth/operation';
+import { refreshUser } from '../../redux/user/operation';
 import { RestrictedRoute } from 'components/RestrictedRoute';
 import { PrivateRoute } from 'components/PrivateRoute';
 

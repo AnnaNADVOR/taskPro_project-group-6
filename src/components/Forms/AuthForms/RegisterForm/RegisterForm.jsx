@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { register } from '../../../../redux/auth/operation';
+import { register } from '../../../../redux/user/operation';
 import { useDispatch, useSelector } from 'react-redux';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 
 import Schema from '../Schemas/Schemas';
 import ActiveAuth from 'components/AuthNav/AuthNav';
-import { selectIsLoadingRegister } from '../../../../redux/auth/selectors';
+import { selectIsLoadingRegister } from '../../../../redux/user/selectors';
 import sprite from '../../../../assets/images/sprite.svg';
 
 import style from '../../../AuthNav/AuthNav.module.css';

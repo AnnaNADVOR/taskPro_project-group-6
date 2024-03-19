@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { authReducer } from './auth/slice';
+import { userReducer } from './user/slice';
 import { filterSlice } from './filter/slice';
 import { boardsReducer } from './boards/slice';
 import { themeReducer } from './themes/slice';
@@ -18,7 +18,7 @@ import {
 export const store = configureStore({
   reducer: {
     boards: boardsReducer,
-    auth: authReducer,
+    user: userReducer,
     filter: filterSlice.reducer,
     theme: themeReducer,
     help: requestHelpReducer,
