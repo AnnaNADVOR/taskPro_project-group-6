@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/taskPro_project-group-6/static/css/main.7aa8c556.css",
-    "main.js": "/taskPro_project-group-6/static/js/main.58870884.js",
+    "main.js": "/taskPro_project-group-6/static/js/main.d91a94cd.js",
     "static/css/880.a35c5edf.chunk.css": "/taskPro_project-group-6/static/css/880.a35c5edf.chunk.css",
     "static/js/880.4391f5ae.chunk.js": "/taskPro_project-group-6/static/js/880.4391f5ae.chunk.js",
     "static/css/97.caf90f9a.chunk.css": "/taskPro_project-group-6/static/css/97.caf90f9a.chunk.css",
-    "static/js/97.933d52b5.chunk.js": "/taskPro_project-group-6/static/js/97.933d52b5.chunk.js",
-    "static/css/849.11591545.chunk.css": "/taskPro_project-group-6/static/css/849.11591545.chunk.css",
+    "static/js/97.1b57bf3a.chunk.js": "/taskPro_project-group-6/static/js/97.1b57bf3a.chunk.js",
+    "static/css/849.cdc4de95.chunk.css": "/taskPro_project-group-6/static/css/849.cdc4de95.chunk.css",
     "static/js/849.71a1f5b1.chunk.js": "/taskPro_project-group-6/static/js/849.71a1f5b1.chunk.js",
     "static/css/167.0ac3f3d7.chunk.css": "/taskPro_project-group-6/static/css/167.0ac3f3d7.chunk.css",
     "static/js/167.d9d1f954.chunk.js": "/taskPro_project-group-6/static/js/167.d9d1f954.chunk.js",
@@ -113,12 +113,12 @@
     "static/media/10phone.jpg": "/taskPro_project-group-6/static/media/10phone.0eda8675a82eed99048f.jpg",
     "index.html": "/taskPro_project-group-6/index.html",
     "main.7aa8c556.css.map": "/taskPro_project-group-6/static/css/main.7aa8c556.css.map",
-    "main.58870884.js.map": "/taskPro_project-group-6/static/js/main.58870884.js.map",
+    "main.d91a94cd.js.map": "/taskPro_project-group-6/static/js/main.d91a94cd.js.map",
     "880.a35c5edf.chunk.css.map": "/taskPro_project-group-6/static/css/880.a35c5edf.chunk.css.map",
     "880.4391f5ae.chunk.js.map": "/taskPro_project-group-6/static/js/880.4391f5ae.chunk.js.map",
     "97.caf90f9a.chunk.css.map": "/taskPro_project-group-6/static/css/97.caf90f9a.chunk.css.map",
-    "97.933d52b5.chunk.js.map": "/taskPro_project-group-6/static/js/97.933d52b5.chunk.js.map",
-    "849.11591545.chunk.css.map": "/taskPro_project-group-6/static/css/849.11591545.chunk.css.map",
+    "97.1b57bf3a.chunk.js.map": "/taskPro_project-group-6/static/js/97.1b57bf3a.chunk.js.map",
+    "849.cdc4de95.chunk.css.map": "/taskPro_project-group-6/static/css/849.cdc4de95.chunk.css.map",
     "849.71a1f5b1.chunk.js.map": "/taskPro_project-group-6/static/js/849.71a1f5b1.chunk.js.map",
     "167.0ac3f3d7.chunk.css.map": "/taskPro_project-group-6/static/css/167.0ac3f3d7.chunk.css.map",
     "167.d9d1f954.chunk.js.map": "/taskPro_project-group-6/static/js/167.d9d1f954.chunk.js.map",
@@ -127,6 +127,6 @@
   },
   "entrypoints": [
     "static/css/main.7aa8c556.css",
-    "static/js/main.58870884.js"
+    "static/js/main.d91a94cd.js"
   ]
 }
